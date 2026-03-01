@@ -1,114 +1,174 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ELMIS System</title>
+<title>Ministry of Labor & Skills</title>
 
 <style>
 body{
-font-family: Arial, sans-serif;
-margin:0;
-background:#f4f6f9;
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
 }
 
 header{
-background:#0d6efd;
-color:white;
-padding:15px;
-text-align:center;
-font-size:22px;
+    background:#003366;
+    color:white;
+    padding:15px;
+    text-align:center;
 }
 
-.container{
-padding:20px;
-max-width:900px;
-margin:auto;
+nav{
+    background:#00509e;
+    padding:10px;
+    text-align:center;
 }
 
-input, button{
-padding:10px;
-margin:5px 0;
-width:100%;
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
 }
 
-button{
-background:#0d6efd;
-color:white;
-border:none;
-cursor:pointer;
+.hero{
+    background:#e9f2ff;
+    padding:40px;
+    text-align:center;
 }
 
-button:hover{
-background:#084298;
+.section{
+    padding:40px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
 }
 
 .card{
-background:white;
-padding:15px;
-margin-top:15px;
-border-radius:8px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
+    background:white;
+    padding:20px;
+    border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+button{
+    background:#00509e;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+footer{
+    background:#002244;
+    color:white;
+    padding:30px;
+    text-align:center;
+    margin-top:40px;
 }
 </style>
 </head>
 
 <body>
 
-<header>ELMIS Inventory System</header>
+<header>
+<h1>Ministry of Labor & Skills</h1>
+<p>Federal Democratic Republic of Ethiopia</p>
+</header>
 
-<div class="container">
+<nav>
+<a href="#">Home</a>
+<a href="#">Leadership</a>
+<a href="#">News</a>
+<a href="#">E-LMIS</a>
+<a href="#">Contact</a>
+</nav>
+
+<div class="hero">
+<h2>Welcome to the Official Website</h2>
+<p>National Job Creation • Skills Development • Labor Administration</p>
+<button>Register on E-LMIS</button>
+</div>
+
+<div class="section">
+<h2>Ministry Leadership</h2>
+<div class="cards">
+<div class="card">
+<h3>H.E. Muferihat Kamil Ahmed</h3>
+<p>Minister of Labor and Skills</p>
+<button>Read More</button>
+</div>
 
 <div class="card">
-<h3>Add Product</h3>
-<input type="text" id="name" placeholder="Product Name">
-<input type="number" id="quantity" placeholder="Quantity">
-<button onclick="addProduct()">Save</button>
+<h3>H.E. Dr. Teshale Berecha</h3>
+<p>State Minister - TVET</p>
+<button>Read More</button>
 </div>
 
 <div class="card">
-<h3>Product List</h3>
-<div id="list"></div>
+<h3>H.E. Mr. Solomon Soka</h3>
+<p>State Minister - Labor & Market</p>
+<button>Read More</button>
 </div>
 
+<div class="card">
+<h3>H.E. Mr. Daniel Teressa Shone</h3>
+<p>State Minister - Labor Affairs</p>
+<button>Read More</button>
 </div>
 
-<script>
-let products=[];
+<div class="card">
+<h3>H.E. Mrs. Nebiya Mohamed</h3>
+<p>State Minister Advisor</p>
+<button>Read More</button>
+</div>
+</div>
+</div>
 
-function addProduct(){
-let name=document.getElementById("name").value;
-let qty=document.getElementById("quantity").value;
+<div class="section">
+<h2>Latest News</h2>
+<div class="cards">
+<div class="card">
+<p>የመንግስት አገልግሎትና አስተዳደር የሪፎርም ሥራው ባለቤት ሠራተኛው ነው።</p>
+<small>March 1, 2026</small>
+</div>
 
-if(name=="" || qty==""){
-alert("Please fill all fields");
-return;
-}
+<div class="card">
+<p>ብሩህ ሀገር አገፍ የፈጠራ ሃሳብ ውድድር ጀመረ</p>
+<small>March 1, 2026</small>
+</div>
 
-products.push({name:name, quantity:qty});
-displayProducts();
+<div class="card">
+<p>የሀገር ብልጽግናን የሚያፋጥኑ አዳዲስ የፈጠራ ሃሳቦች</p>
+<small>March 1, 2026</small>
+</div>
+</div>
+</div>
 
-document.getElementById("name").value="";
-document.getElementById("quantity").value="";
-}
+<div class="section">
+<h2>Employment Statistics</h2>
+<p>In the first 11 months of the 2014 Ethiopian budget year, 72% of planned permanent jobs were achieved.</p>
+</div>
 
-function displayProducts(){
-let list=document.getElementById("list");
-list.innerHTML="";
+<div class="section">
+<h2>Enter Your 6-Digit Code</h2>
+<input type="text" placeholder="Enter Code" maxlength="6">
+<button>Submit</button>
+</div>
 
-products.forEach((p,index)=>{
-list.innerHTML+=`
-<p>${p.name} - ${p.quantity} 
-<button onclick="deleteProduct(${index})">Delete</button>
-</p>`;
-});
-}
-
-function deleteProduct(index){
-products.splice(index,1);
-displayProducts();
-}
-</script>
+<footer>
+<h3>Contact Us</h3>
+<p>Tel: +251 116 671792</p>
+<p>Email: info@mols.gov.et</p>
+<p>© 2025 Ministry of Labor & Skills</p>
+</footer>
 
 </body>
-</html>
+</html
