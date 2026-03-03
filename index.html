@@ -1,71 +1,149 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>E-LMIS Login</title>
+<title>E-LMIS | Ministry of Labor and Skills</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-body{
-  font-family: Arial;
-  background: linear-gradient(to right,#1e3c72,#2a5298);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
+body{margin:0;font-family:Arial;}
+header{
+background:#003366;
+color:white;
+padding:15px;
+text-align:center;
 }
-.box{
-  background:white;
-  padding:30px;
-  border-radius:8px;
-  width:300px;
-  text-align:center;
+nav{
+background:#005599;
+padding:10px;
+text-align:center;
 }
-input{
-  width:100%;
-  padding:10px;
-  margin:8px 0;
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-weight:bold;
+}
+.slider{
+position:relative;
+height:400px;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:#1e3c72;
+}
+.slide{
+display:none;
+}
+.slide.active{
+display:block;
+}
+.news{
+padding:40px;
+background:#f4f4f4;
+}
+.news h2{text-align:center;}
+.news-item{
+background:white;
+padding:15px;
+margin:15px 0;
+border-radius:6px;
+}
+.faq{
+padding:40px;
+}
+.faq-item{
+margin:15px 0;
+}
+footer{
+background:#003366;
+color:white;
+padding:30px;
+text-align:center;
 }
 button{
-  width:100%;
-  padding:10px;
-  background:#2a5298;
-  color:white;
-  border:none;
+padding:10px 20px;
+background:#005599;
+color:white;
+border:none;
+margin-top:10px;
 }
 </style>
 </head>
 <body>
 
-<div class="box">
-<h2>Login</h2>
-<input type="email" id="email" placeholder="Email">
-<input type="password" id="password" placeholder="Password">
-<button onclick="login()">Login</button>
-<p><a href="signup.html">Create Account</a></p>
+<header>
+<h1>Ministry of Labor and Skills</h1>
+<p>E-LMIS System</p>
+</header>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">News</a>
+<a href="#">FAQ</a>
+<a href="#">Contact</a>
+</nav>
+
+<section class="slider">
+<div class="slide active">
+<h2>Minister of Labor and Skills</h2>
+<p>H.E Muferihat Kamil Ahmed</p>
+<button>Read More</button>
 </div>
 
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
+<div class="slide">
+<h2>State Minister for TVET</h2>
+<p>H.E Dr. Teshale Berecha</p>
+<button>Read More</button>
+</div>
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCVAAbKGCRENoX20XcSSJNuyuZvPgvIHhc",
-  authDomain: "work12-eec29.firebaseapp.com",
-  projectId: "work12-eec29",
-  storageBucket: "work12-eec29.firebasestorage.app",
-  messagingSenderId: "901174825773",
-  appId: "1:901174825773:web:4273daaefc37c7015d39a4"
-};
+<div class="slide">
+<h2>State Minister for Labor Market</h2>
+<p>H.E Mr. Solomon Soka</p>
+<button>Read More</button>
+</div>
+</section>
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+<section class="news">
+<h2>News</h2>
 
-window.login = function(){
-  const email=document.getElementById("email").value;
-  const password=document.getElementById("password").value;
+<div class="news-item">
+<h3>የመንግስት አገልግሎትና አስተዳደር ሪፎርም</h3>
+<p>MARCH 3, 2026</p>
+</div>
 
-  signInWithEmailAndPassword(auth,email,password)
-  .then(()=>{ window.location="dashboard.html"; })
-  .catch(err=> alert(err.message));
-}
+<div class="news-item">
+<h3>ብሩህ ሀገር የፈጠራ ሃሳብ ውድድር</h3>
+<p>MARCH 3, 2026</p>
+</div>
+
+</section>
+
+<section class="faq">
+<h2>Frequently Asked Question</h2>
+
+<div class="faq-item">
+<strong>What is job creation performance?</strong>
+<p>2,949,293 permanent jobs were planned in fiscal year 2014.</p>
+</div>
+
+</section>
+
+<footer>
+<h3>The Ministry of Labor & Skills</h3>
+<p>Tel: +251 116 671792</p>
+<p>Email: info@Mols.gov.et</p>
+<p>© 2025 All rights reserved</p>
+</footer>
+
+<script>
+let slides=document.querySelectorAll(".slide");
+let index=0;
+setInterval(()=>{
+slides[index].classList.remove("active");
+index=(index+1)%slides.length;
+slides[index].classList.add("active");
+},4000);
 </script>
 
 </body>
