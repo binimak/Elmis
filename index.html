@@ -1,62 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>E-LMIS Login</title>
+  <title>Dashboard</title>
   <style>
-    body{
-      margin:0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #1e3c72, #2a5298);
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      height:100vh;
-    }
-
-    .login-box{
-      background:white;
-      padding:40px;
-      border-radius:10px;
-      width:300px;
-      box-shadow:0 10px 25px rgba(0,0,0,0.2);
-      text-align:center;
-    }
-
-    input{
-      width:100%;
-      padding:10px;
-      margin:10px 0;
-      border-radius:5px;
-      border:1px solid #ccc;
-    }
-
-    button{
-      width:100%;
-      padding:10px;
-      background:#2a5298;
-      color:white;
-      border:none;
-      border-radius:5px;
-      cursor:pointer;
-    }
-
-    button:hover{
-      background:#1e3c72;
-    }
+    body{ margin:0; font-family:Arial; background:#f4f6f9;}
+    .header{ background:#2a5298; color:white; padding:15px; text-align:center;}
+    .content{ padding:20px;}
+    .card{ background:white; padding:20px; border-radius:10px; margin-bottom:20px;}
+    input{ padding:8px; margin:5px; }
+    button{ padding:8px 12px; background:#2a5298; color:white; border:none; border-radius:5px; cursor:pointer;}
+    table{ width:100%; border-collapse:collapse; margin-top:15px;}
+    th,td{ border:1px solid #ddd; padding:8px; text-align:center;}
+    th{ background:#2a5298; color:white;}
   </style>
 </head>
 <body>
 
-<div class="login-box">
-  <h2>E-LMIS Login</h2>
-  <input type="email" id="email" placeholder="Enter Email">
-  <input type="password" id="password" placeholder="Enter Password">
-  <button id="loginBtn">Login</button>
+<div class="header">E-LMIS Dashboard</div>
+
+<div class="content">
+
+  <div class="card">
+    <h3>Add Product</h3>
+    <input type="text" id="name" placeholder="Product Name">
+    <input type="number" id="quantity" placeholder="Quantity">
+    <button onclick="addProduct()">Add</button>
+  </div>
+
+  <div class="card">
+    <h3>Stock List</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody id="productList"></tbody>
+    </table>
+  </div>
+
 </div>
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
+import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCVAAbKGCRENoX20XcSSJNuyuZvPgvIHhc",
@@ -66,18 +54,40 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+const db = getFirestore(app);
 
-document.getElementById("loginBtn").addEventListener("click", () => {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+window.addProduct = async function(){
+  const name = document.getElementById("name").value;
+  const quantity = document.getElementById("quantity").value;
 
-  signInWithEmailAndPassword(auth, email, password)
-    .then(() => {
-      window.location.href = "dashboard.html";
-    })
-    .catch(error => alert(error.message));
-});
+  if(!name || !quantity) return alert("Fill all fields");
+
+  await addDoc(collection(db, "products"), {
+    name: name,
+    quantity: quantity
+  });
+
+  alert("Product Added");
+  loadProducts();
+};
+
+async function loadProducts(){
+  const querySnapshot = await getDocs(collection(db, "products"));
+  const table = document.getElementById("productList");
+  table.innerHTML = "";
+
+  querySnapshot.forEach((doc)=>{
+    const data = doc.data();
+    table.innerHTML += `
+      <tr>
+        <td>${data.name}</td>
+        <td>${data.quantity}</td>
+      </tr>
+    `;
+  });
+}
+
+loadProducts();
 </script>
 
 </body>
