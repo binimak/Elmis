@@ -1,197 +1,56 @@
-!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ministry of Labor & Skills</title>
+<h2>Signup</h2>
+<input type="email" id="signup-email" placeholder="Email"><br><br>
+<input type="password" id="signup-password" placeholder="Password"><br><br>
+<button onclick="signup()">Signup</button>
 
-<style>
-body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background:#f4f6f9;
-}
+<hr>
 
-header{
-    background:#003366;
-    color:white;
-    padding:15px;
-    text-align:center;
-}
+<h2>Login</h2>
+<input type="email" id="login-email" placeholder="Email"><br><br>
+<input type="password" id="login-password" placeholder="Password"><br><br>
+<button onclick="login()">Login</button>
 
-nav{
-    background:#00509e;
-    padding:10px;
-    text-align:center;
-}
+<hr>
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 15px;
-    font-weight:bold;
-}
+<button onclick="logout()">Logout</button>
 
-.hero{
-    background:url('https://images.unsplash.com/photo-1521790366321-9d4a1b8b7f63') center/cover;
-    color:white;
-    padding:80px 20px;
-    text-align:center;
-}
-
-.section{
-    padding:40px;
-    max-width:1100px;
-    margin:auto;
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:white;
-    border-radius:8px;
-    overflow:hidden;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
-}
-
-.card img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-}
-
-.card-content{
-    padding:20px;
-}
-
-button{
-    background:#00509e;
-    color:white;
-    border:none;
-    padding:10px 15px;
-    cursor:pointer;
-    border-radius:5px;
-}
-
-footer{
-    background:#002244;
-    color:white;
-    padding:30px;
-    text-align:center;
-    margin-top:40px;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-<h1>Ministry of Labor & Skills</h1>
-<p>Federal Democratic Republic of Ethiopia</p>
-</header>
-
-<nav>
-<a href="#">Home</a>
-<a href="#">Leadership</a>
-<a href="#">News</a>
-<a href="#">Contact</a>
-</nav>
-
-<div class="hero">
-<h2>Welcome to the Official Website</h2>
-<p>National Job Creation • Skills Development • Labor Administration</p>
-<button>Register on E-LMIS</button>
-</div>
-
-<div class="section">
-<h2>Ministry Leadership</h2>
-<div class="cards">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1556157382-97eda2f9e2bf" alt="">
-<div class="card-content">
-<h3>H.E. Muferihat Kamil Ahmed</h3>
-<p>Minister of Labor and Skills</p>
-<button>Read More</button>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d" alt="">
-<div class="card-content">
-<h3>H.E. Dr. Teshale Berecha</h3>
-<p>State Minister - TVET</p>
-<button>Read More</button>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c" alt="">
-<div class="card-content">
-<h3>H.E. Mr. Solomon Soka</h3>
-<p>State Minister - Labor & Market</p>
-<button>Read More</button>
-</div>
-</div>
-
-</div>
-</div>
-
-<div class="section">
-<h2>Latest News</h2>
-<div class="cards">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c" alt="">
-<div class="card-content">
-<p>የመንግስት አገልግሎትና አስተዳደር የሪፎርም ሥራው ባለቤት ሠራተኛው ነው።</p>
-<small>March 1, 2026</small>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7" alt="">
-<div class="card-content">
-<p>ብሩህ ሀገር የፈጠራ ሃሳብ ውድድር ጀመረ</p>
-<small>March 1, 2026</small>
-</div>
-</div>
-
-</div>
-</div>
-
-<footer>
-<h3>Contact Us</h3>
-<p>Tel: +251 116 671792</p>
-<p>Email: info@mols.gov.et</p>
-<p>© 2025 Ministry of Labor & Skills</p>
-</footer>
 <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut }
+from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyCVAAbKGCRENoX20XcSSJNuyuZvPgvIHhc",
-    authDomain: "work12-eec29.firebaseapp.com",
-    projectId: "work12-eec29",
-    storageBucket: "work12-eec29.firebasestorage.app",
-    messagingSenderId: "901174825773",
-    appId: "1:901174825773:web:4273daaefc37c7015d39a4",
-    measurementId: "G-D5HTG4JLGD"
-  };
+const firebaseConfig = {
+  apiKey: "AIzaSyCVAAbKGCRENoX20XcSSJNuyuZvPgvIHhc",
+  authDomain: "work12-eec29.firebaseapp.com",
+  projectId: "work12-eec29",
+  storageBucket: "work12-eec29.firebasestorage.app",
+  messagingSenderId: "901174825773",
+  appId: "1:901174825773:web:4273daaefc37c7015d39a4"
+};
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+window.signup = function() {
+  const email = document.getElementById("signup-email").value;
+  const password = document.getElementById("signup-password").value;
+
+  createUserWithEmailAndPassword(auth, email, password)
+    .then(() => alert("Signup successful"))
+    .catch(error => alert(error.message));
+}
+
+window.login = function() {
+  const email = document.getElementById("login-email").value;
+  const password = document.getElementById("login-password").value;
+
+  signInWithEmailAndPassword(auth, email, password)
+    .then(() => alert("Login successful"))
+    .catch(error => alert(error.message));
+}
+
+window.logout = function() {
+  signOut(auth)
+    .then(() => alert("Logged out"));
+}
 </script>
-</body>
-</html>
