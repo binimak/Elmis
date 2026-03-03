@@ -1,25 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Login</title>
-</head>
-<body>
-
-  <h2>Login</h2>
-
-  <input type="email" id="loginEmail" placeholder="Email">
-  <br><br>
-
-  <input type="password" id="loginPassword" placeholder="Password">
-  <br><br>
-
-  <button id="loginBtn">Login</button>
-
 <script type="module">
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } 
-from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCVAAbKGCRENoX20XcSSJNuyuZvPgvIHhc",
@@ -33,21 +14,16 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-document.getElementById("loginBtn").addEventListener("click", () => {
-  const email = document.getElementById("loginEmail").value;
-  const password = document.getElementById("loginPassword").value;
+document.querySelector("button").addEventListener("click", function() {
+  const email = document.querySelector("input[type='email']").value;
+  const password = document.querySelector("input[type='password']").value;
 
   signInWithEmailAndPassword(auth, email, password)
-    .then(() => {
-      alert("Login successful");
+    .then((userCredential) => {
       window.location.href = "dashboard.html";
     })
     .catch((error) => {
-      alert(error.message);
+      alert("Login Failed: " + error.message);
     });
 });
-
 </script>
-
-</body>
-</html>
