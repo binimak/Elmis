@@ -1,39 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login</title>
+  <title>Dashboard</title>
 </head>
 <body>
 
-<h2>Login</h2>
-
-<input type="email" id="email" placeholder="Email"><br><br>
-<input type="password" id="password" placeholder="Password"><br><br>
-<button id="loginBtn">Login</button>
+<h2>Welcome to Dashboard</h2>
+<button id="logoutBtn">Logout</button>
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCVAAbKGCRENoX20XcSSJNuyuZvPgvIHhc",
-  authDomain: "work12-eec29.firebaseapp.com",
-  projectId: "work12-eec29",
-  appId: "1:901174825773:web:4273daaefc37c7015d39a4"
+  apiKey: "YOUR_KEY",
+  authDomain: "YOUR_DOMAIN",
+  projectId: "YOUR_ID",
+  appId: "YOUR_APP_ID"
 };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-document.getElementById("loginBtn").addEventListener("click", () => {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+onAuthStateChanged(auth, user => {
+  if (!user) {
+    window.location.href = "index.html";
+  }
+});
 
-  signInWithEmailAndPassword(auth, email, password)
-    .then(() => {
-      window.location.href = "dashboard.html";
-    })
-    .catch(error => alert(error.message));
+document.getElementById("logoutBtn").addEventListener("click", () => {
+  signOut(auth).then(() => {
+    window.location.href = "index.html";
+  });
 });
 </script>
 
