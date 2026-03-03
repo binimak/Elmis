@@ -1,150 +1,175 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>E-LMIS | Ministry of Labor and Skills</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body{margin:0;font-family:Arial;}
-header{
-background:#003366;
-<img src="minister1.jpg" width="200">:white;
-padding:15px;
-text-align:center;
-}
-nav{
-background:#005599;
-padding:10px;
-text-align:center;
-}
-nav a{
-color:white;
-margin:10px;
-text-decoration:none;
-font-weight:bold;
-}
-.slider{
-position:relative;
-height:400px;
-color:white;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-background:#1e3c72;
-}
-.slide{
-display:none;
-}
-.slide.active{
-display:block;
-}
-.news{
-padding:40px;
-background:#f4f4f4;
-}
-.news h2{text-align:center;}
-.news-item{
-background:white;
-padding:15px;
-margin:15px 0;
-border-radius:6px;
-}
-.faq{
-padding:40px;
-}
-.faq-item{
-margin:15px 0;
-}
-footer{
-background:#003366;
-color:white;
-padding:30px;
-text-align:center;
-}
-button{
-padding:10px 20px;
-background:#005599;
-color:white;
-border:none;
-margin-top:10px;
-}
-</style>
+    <meta charset="UTF-8">
+    <title>Online Services – Ministry of Labor and Skills</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin:0;
+            padding:0;
+            background:#f4f6f9;
+        }
+
+        header{
+            background:#0b3d6d;
+            color:white;
+            padding:15px;
+        }
+
+        header ul{
+            list-style:none;
+            padding:0;
+            margin:0;
+            display:flex;
+            flex-wrap:wrap;
+            gap:15px;
+        }
+
+        header ul li a{
+            color:white;
+            text-decoration:none;
+            font-weight:bold;
+        }
+
+        .container{
+            padding:40px;
+            text-align:center;
+        }
+
+        .services{
+            display:grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+            margin-top:30px;
+        }
+
+        .card{
+            background:white;
+            padding:20px;
+            border-radius:8px;
+            box-shadow:0 2px 6px rgba(0,0,0,0.1);
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-5px);
+        }
+
+        .card a{
+            text-decoration:none;
+            color:#0b3d6d;
+            font-weight:bold;
+        }
+
+        footer{
+            background:#0b3d6d;
+            color:white;
+            padding:30px;
+            margin-top:40px;
+        }
+
+        footer a{
+            color:#ffd700;
+            text-decoration:none;
+        }
+
+        .footer-grid{
+            display:grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+        }
+    </style>
 </head>
+
 <body>
 
 <header>
-<h1>Ministry of Labor and Skills</h1>
-<p>E-LMIS System</p>
+    <ul>
+        <li><a href="https://mols.gov.et/">Home</a></li>
+        <li><a href="https://mols.gov.et/about/">About us</a></li>
+        <li><a href="https://mols.gov.et/administration/">Leadership</a></li>
+        <li><a href="https://mols.gov.et/minster-corner/">Citizens Corner</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Media</a></li>
+    </ul>
 </header>
 
-<nav>
-<a href="#">Home</a>
-<a href="#">News</a>
-<a href="#">FAQ</a>
-<a href="#">Contact</a>
-</nav>
+<section class="container">
+    <h1>Online Services</h1>
+    <p>
+        An online service is an entity that provides access to various types of data 
+        for different uses via the Internet.
+    </p>
 
-<section class="slider">
-<div class="slide active">
-<h2>Minister of Labor and Skills</h2>
-<p>H.E Muferihat Kamil Ahmed</p>
-<button>Read More</button>
-</div>
+    <div class="services">
 
-<div class="slide">
-<h2>State Minister for TVET</h2>
-<p>H.E Dr. Teshale Berecha</p>
-<button>Read More</button>
-</div>
+        <div class="card">
+            <a href="http://lmis.gov.et/">
+                Ethiopian Labor Market Information System (E-LMIS)
+            </a>
+        </div>
 
-<div class="slide">
-<h2>State Minister for Labor Market</h2>
-<p>H.E Mr. Solomon Soka</p>
-<button>Read More</button>
-</div>
-</section>
+        <div class="card">
+            <a href="http://pfs.mols.gov.et/">
+                Public Feedback System (PFS)
+            </a>
+        </div>
 
-<section class="news">
-<h2>News</h2>
+        <div class="card">
+            <a href="https://appointment.mols.gov.et/login">
+                Appointment
+            </a>
+        </div>
 
-<div class="news-item">
-<h3>የመንግስት አገልግሎትና አስተዳደር ሪፎርም</h3>
-<p>MARCH 3, 2026</p>
-</div>
+        <div class="card">
+            <a href="https://ewp.lmis.gov.et/">
+                Expatriate Work Permit
+            </a>
+        </div>
 
-<div class="news-item">
-<h3>ብሩህ ሀገር የፈጠራ ሃሳብ ውድድር</h3>
-<p>MARCH 3, 2026</p>
-</div>
-
-</section>
-
-<section class="faq">
-<h2>Frequently Asked Question</h2>
-
-<div class="faq-item">
-<strong>What is job creation performance?</strong>
-<p>2,949,293 permanent jobs were planned in fiscal year 2014.</p>
-</div>
-
+    </div>
 </section>
 
 <footer>
-<h3>The Ministry of Labor & Skills</h3>
-<p>Tel: +251 116 671792</p>
-<p>Email: info@Mols.gov.et</p>
-<p>© 2025 All rights reserved</p>
-</footer>
 
-<script>
-let slides=document.querySelectorAll(".slide");
-let index=0;
-setInterval(()=>{
-slides[index].classList.remove("active");
-index=(index+1)%slides.length;
-slides[index].classList.add("active");
-},4000);
-</script>
+    <div class="footer-grid">
+
+        <div>
+            <h3>Contact Us</h3>
+            <p>Tel: +251 116 671792</p>
+            <p>Po Box: 25534</p>
+            <p>Fax: +251 116 671568</p>
+            <p>Address: Behind Lambert Ethiopian Technical and Vocational Institute</p>
+            <p>Email: info@Mols.gov.et</p>
+        </div>
+
+        <div>
+            <h3>Menu</h3>
+            <p><a href="https://mols.gov.et/privacy/">Privacy Policy</a></p>
+            <p><a href="https://mols.gov.et/copyright/">Copyright</a></p>
+        </div>
+
+        <div>
+            <h3>Follow Us</h3>
+            <p>
+                <a href="http://twitter.com/Jobs_%E1%88%9A%E1%8A%92%E1%88%B5%E1%89%B4%E1%88%AD">Twitter</a> |
+                <a href="https://www.facebook.com/MolsFDRE">Facebook</a> |
+                <a href="https://www.youtube.com/channel/UC1k7Ug_DRUY_vzxubKSNX0A">YouTube</a> |
+                <a href="https://t.me/FDRE_MoLSofficial">Telegram</a> |
+                <a href="http://tiktok.com/@mols_official">TikTok</a>
+            </p>
+        </div>
+
+    </div>
+
+    <p style="text-align:center;margin-top:20px;">
+        © 2024 Ministry of Labor & Skills. All rights reserved.
+    </p>
+
+</footer>
 
 </body>
 </html>
