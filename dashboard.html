@@ -82,7 +82,34 @@ margin-top:15px;
 <p><b>Last Update:</b> 2026-03-06</p>
 
 </div>
+<h3>Upload receipt (photo)</h3>
 
+<input type="file" id="receipt" accept="image/*">
+<br><br>
+
+<button id="submitBtn">Submit receipt</button>
+
+</div>
+
+<script>
+
+document.getElementById("submitBtn").addEventListener("click", function(){
+
+let file = document.getElementById("receipt").files[0];
+
+if(!file){
+alert("Please upload receipt photo");
+return;
+}
+
+window.location.href="nextpage.html";
+
+});
+
+</script>
+
+</body>
+</html>
 <h3>Upload receipt (photo)</h3>
 
 <input type="file" id="receipt" accept="image/*">
