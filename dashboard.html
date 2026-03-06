@@ -97,15 +97,17 @@ document.getElementById("submitBtn").addEventListener("click", function(){
 
 let file = document.getElementById("receipt").files[0];
 
-if(!file){
+  if(!file){
 alert("Please upload receipt photo");
 return;
 }
-
 window.location.href = "nextpage.html";
 
 });
 
 </script>
+  <a href="nextpage.html">
+<button>Next Page</button>
+</a>
 </body>
 </html>
