@@ -174,24 +174,34 @@ text-align:center;
 </div>
   <section class="verify">
 <h2>Enter Your 6-Digit Code</h2>
+   <input type="text" id="code" placeholder="Enter 6-digit code">
 
-<input type="text" id="code" placeholder="Enter Code" maxlength="6">
-
-<button onclick="checkCode()">Submit</button>
+<button onclick="checkCode()">Verify</button> 
 <script>
+
 function checkCode(){
 
 var code = document.getElementById("code").value;
-var correctCode = "123456";   // እዚህ የምትፈልገውን ቁጥር አስገባ
 
-if(code === correctCode){
+var validCodes = [
+"123456",
+"654321",
+"111222",
+"987654"
+];
+
+if(validCodes.includes(code)){
 window.location.href="nextpage.html";
-}else{
-alert("Incorrect Code");
 }
+
+else{
+alert("Invalid verification code");
 }
+
+}
+
 </script>
-</section>
+
 <section class="about">
   <h2>The Ministry of Labor & Skills</h2>
   <img src="logo.png" alt="MoLS Logo" style="width:120px;">
