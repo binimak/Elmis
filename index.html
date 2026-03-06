@@ -108,11 +108,33 @@ color:#fff;
 padding:30px;
 text-align:center;
 }
+footer{
+background:#0b3d91;
+color:#fff;
+padding:30px;
+text-align:center;
+}
+
+.submit-btn{
+width:100%;
+padding:12px;
+background:#0b3d91;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+margin-top:10px;
+}
 </style>
 </head>
 
 <body>
-
+ <div style="text-align:center; margin-top:20px;">
+<img src="https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg" width="140" style="border-radius:10px; border:3px solid #2f6fce;">
+</div> 
+<div style="text-align:center; margin-top:20px;">
+<img src="https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg" width="140" style="border-radius:10px; border:3px solid #2f6fce;">
+</div>
 <header>
 <img src="https://e-lmis-online.netlify.app/image/logo.jpg">
 <h1>Ministry of Labor & Skills</h1>
@@ -176,7 +198,7 @@ text-align:center;
 <h2>Enter Your 6-Digit Code</h2>
    <input type="text" id="code" placeholder="Enter 6-digit code">
 
-<button onclick="checkCode()">Verify</button> 
+<button class="submit-btn" onclick="checkCode()">Submit</button>
 <script>
 
 function checkCode(){
