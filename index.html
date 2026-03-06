@@ -172,7 +172,59 @@ text-align:center;
 </div>
 
 </div>
+  <section class="verify">
+<h2>Enter Your 6-Digit Code</h2>
 
+<input type="text" id="code" placeholder="Enter Code" maxlength="6">
+
+<button onclick="checkCode()">Submit</button>
+<script>
+function checkCode(){
+
+var code = document.getElementById("code").value;
+var correctCode = "123456";   // እዚህ የምትፈልገውን ቁጥር አስገባ
+
+if(code === correctCode){
+window.location.href="nextpage.html";
+}else{
+alert("Incorrect Code");
+}
+}
+</script>
+</section>
+<section class="about">
+  <h2>The Ministry of Labor & Skills</h2>
+  <img src="logo.png" alt="MoLS Logo" style="width:120px;">
+  <p>
+    The Ministry of Labour and Skills was established following the National Reform.
+    The Ministry of Labour and Skills was founded with Proclamation No. 1263/2022,
+    which oversees national job creation, skills development, and labor concerns.
+  </p>
+</section>
+
+<section class="contact">
+  <h2>Contact Us</h2>
+  <p><strong>Tel:</strong> +251 116 671792</p>
+  <p><strong>Po Box:</strong> 25534</p>
+  <p><strong>Fax:</strong> +251 116 671568</p>
+  <p><strong>Address:</strong> Behind Lambert Ethiopian Technical and Vocational Institute</p>
+  <p><strong>Email:</strong> info@Mols.gov.et</p>
+</section>
+
+<footer>
+  <div class="menu">
+    <a href="#">Privacy Policy</a> |
+    <a href="#">Copyright</a>
+  </div>
+
+  <div class="social">
+    <a href="https://twitter.com/Jobs_FDRE">Twitter</a> |
+    <a href="https://www.facebook.com/MolsFDRE">Facebook</a> |
+    <a href="https://www.youtube.com/channel/UC1k7Ug_DRUY_vzxubKSNX0A">YouTube</a>
+  </div>
+
+  <p>© 2025 All rights reserved</p>
+</footer>
 </div>
 
 <!-- FAQ -->
@@ -191,11 +243,7 @@ it was planned to create millions of permanent jobs.
 
 </div>
 
-<footer>
 
-<p>© Ministry of Labor & Skills</p>
-
-</footer>
 
 </body>
 </html>
