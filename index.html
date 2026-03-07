@@ -216,7 +216,7 @@ margin-top:40px;
 
 <h2>Enter Your 6-Digit Code</h2>
 
-<input type="text" id="code" maxlength="6">
+<input type="text" id="code" maxlength="6" placeholder="Enter Code">
 
 <br>
 
@@ -239,19 +239,67 @@ margin-top:40px;
 
 <script>
 
+let users={
+
+"460067":{
+name:"Abel Tesfaye",
+photo:"https://i.pravatar.cc/150?img=1",
+region:"Addis Ababa"
+},
+
+"460068":{
+name:"Sara Mohammed",
+photo:"https://i.pravatar.cc/150?img=2",
+region:"Oromia"
+},
+
+"460069":{
+name:"Daniel Bekele",
+photo:"https://i.pravatar.cc/150?img=3",
+region:"Amhara"
+},
+
+"460070":{
+name:"Rahel Girma",
+photo:"https://i.pravatar.cc/150?img=4",
+region:"Tigray"
+}
+
+};
+
 function checkCode(){
 
 let code=document.getElementById("code").value;
 
-if(code=="460067"){
+if(code.length!=6){
+
+document.getElementById("msg").innerHTML="Code must be 6 digits";
+return;
+
+}
+
+if(users[code]){
+
+localStorage.setItem("user",JSON.stringify(users[code]));
 window.location.href="personal.html";
+
 }
 
 else{
+
 document.getElementById("msg").innerHTML="Invalid Code";
+
 }
 
 }
+
+document.getElementById("code").addEventListener("keypress",function(e){
+
+if(e.key==="Enter"){
+checkCode();
+}
+
+});
 
 </script>
 
