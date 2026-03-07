@@ -1,193 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>E-LMIS</title>
+<title>Ministry of Labor and Skills</title>
 
 <style>
+
 body{
-font-family:Arial;
 margin:0;
+font-family:Arial;
+}
+
+/* FULL SCREEN BACKGROUND */
+
+.hero{
+height:100vh;
+background:url("https://images.unsplash.com/photo-1521791136064-7986c2920216") center/cover no-repeat;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+text-align:center;
+}
+
+.hero h1{
+background:rgba(0,0,0,0.6);
+padding:20px;
+border-radius:10px;
+}
+
+/* NEWS */
+
+.news{
+padding:20px;
 background:#f5f5f5;
 }
 
-header{
-background:#0b4ea2;
-color:white;
-padding:15px;
+.news h2{
 text-align:center;
-font-size:20px;
-}
-
-.slider{
-position:relative;
-height:350px;
-overflow:hidden;
-}
-
-.slide{
-position:absolute;
-width:100%;
-height:100%;
-background-size:cover;
-background-position:center;
-display:none;
-color:white;
-text-align:center;
-padding-top:120px;
-background-color:rgba(0,0,0,0.4);
-}
-
-.slide h2{
-font-size:28px;
-}
-
-.btn{
-background:#1e73be;
-padding:10px 20px;
-color:white;
-text-decoration:none;
-border-radius:5px;
-}
-
-.section{
-padding:30px;
-}
-
-.news{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
 }
 
 .card{
 background:white;
-padding:15px;
-border-radius:6px;
-box-shadow:0 2px 5px rgba(0,0,0,0.1);
+margin:20px auto;
+width:90%;
+max-width:400px;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.card img{
+width:100%;
+}
+
+.card h3{
+padding:10px;
+margin:0;
+}
+
+.card p{
+padding:0 10px 15px;
+color:gray;
+}
+
+/* CODE */
+
+.codebox{
+text-align:center;
+padding:30px;
+}
+
+input{
+padding:10px;
+font-size:16px;
+width:200px;
+}
+
+button{
+padding:10px 20px;
+background:#0b3d91;
+color:white;
+border:none;
+margin-top:10px;
 }
 
 footer{
-background:#0b4ea2;
+background:#0b3d91;
 color:white;
-padding:20px;
 text-align:center;
+padding:20px;
 }
+
 </style>
+
 </head>
 
 <body>
 
-<header>
-Ministry of Labor and Skills
-</header>
-
-<div class="slider">
-
-<div class="slide" style="display:block;background-image:url('slide1.jpg')">
-<h2>Minister of Labor and Skills</h2>
-<p>H.E Muferihat Kamil Ahmed</p>
-<a class="btn" href="#">READ MORE</a>
+<div class="hero">
+<h1>Ministry of Labor and Skills</h1>
 </div>
-
-<div class="slide" style="background-image:url('slide2.jpg')">
-<h2>State Minister for Technical and Vocational Education</h2>
-<p>H.E Dr. Teshale Berecha</p>
-<a class="btn" href="#">READ MORE</a>
-</div>
-
-<div class="slide" style="background-image:url('slide3.jpg')">
-<h2>State Minister for Labor Employment and Market Sector</h2>
-<p>H.E Mr. Solomon Soka</p>
-<a class="btn" href="#">READ MORE</a>
-</div>
-
-<div class="slide" style="background-image:url('slide4.jpg')">
-<h2>State Minister for Labor Affairs</h2>
-<p>H.E Mr. Daniel Teressa Shone</p>
-<a class="btn" href="#">READ MORE</a>
-</div>
-
-<div class="slide" style="background-image:url('slide5.jpg')">
-<h2>State Minister Advisor</h2>
-<p>H.E Mrs. Nebiya Mohamed</p>
-<a class="btn" href="#">READ MORE</a>
-</div>
-
-</div>
-
-<div class="section">
-<h2>News</h2>
 
 <div class="news">
 
-<div class="card">
-<h3>የመንግስት አገልግሎትና አስተዳደር የሪፎርም ሥራው</h3>
-<p>MARCH 7, 2026</p>
-</div>
+<h2>Latest News</h2>
 
 <div class="card">
-<h3>የመንግስት አገልግሎትና አስተዳደር ሪፎርም</h3>
-<p>MARCH 7, 2026</p>
+<img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf">
+<h3>Government Reform Program</h3>
+<p>March 2026</p>
 </div>
 
 <div class="card">
-<h3>ብሩህ ሀገር የፈጠራ ሃሳብ ውድድር</h3>
-<p>MARCH 7, 2026</p>
-</div>
-
-<div class="card">
-<h3>የሀገር ብልጽግናን የሚያፋጥኑ አዳዲስ ሃሳቦች</h3>
-<p>MARCH 7, 2026</p>
+<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+<h3>Labor Market System Development</h3>
+<p>March 2026</p>
 </div>
 
 </div>
-</div>
 
-<div class="section">
-<h2>How to register on E-LMIS</h2>
-<a class="btn" href="#">Register Here</a>
-</div>
+<div class="codebox">
 
-<div class="section">
-<h2>Frequently Asked Question</h2>
+<h2>Enter Your Code</h2>
 
-<p><b>What is the performance of job creation for the fiscal year 2014?</b></p>
+<input type="text" id="code" maxlength="6">
 
-<p>In the first 11 months of the 2014 Ethiopian budget year, it was planned to create 2,949,293 permanent jobs...</p>
+<br><br>
 
-</div>
+<button onclick="checkCode()">Submit</button>
 
-<div class="section">
-<h2>Enter Your 6-Digit Code</h2>
-
-<input type="text" placeholder="Enter code">
-<button>Submit</button>
+<p id="msg"></p>
 
 </div>
 
 <footer>
 
-<h3>The Ministry of Labor & Skills</h3>
-
 <p>Tel: +251 116 671792</p>
 <p>Email: info@mols.gov.et</p>
-
-<p>© 2025 All rights reserved</p>
 
 </footer>
 
 <script>
 
-let slides=document.querySelectorAll(".slide");
-let index=0;
+function checkCode(){
 
-setInterval(()=>{
-slides[index].style.display="none";
-index=(index+1)%slides.length;
-slides[index].style.display="block";
-},4000);
+var code=document.getElementById("code").value;
+
+if(code=="460067"){
+
+window.location.href="personal.html";
+
+}
+
+else{
+
+document.getElementById("msg").innerHTML="Invalid Code";
+
+}
+
+}
 
 </script>
 
