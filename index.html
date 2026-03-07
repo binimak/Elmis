@@ -17,7 +17,7 @@ background:#f5f5f5;
 header{
 background:#0b3d91;
 color:white;
-padding:18px;
+padding:20px;
 text-align:center;
 }
 
@@ -26,84 +26,101 @@ background:#072c6b;
 display:flex;
 justify-content:center;
 gap:20px;
-padding:10px;
+padding:12px;
+flex-wrap:wrap;
 }
 
 .nav a{
 color:white;
 text-decoration:none;
-font-size:14px;
+font-size:15px;
 }
 
 .section{
-padding:25px;
+padding:30px;
 text-align:center;
 }
 
 .ministers{
-display:flex;
-flex-direction:column;
-gap:20px;
-align-items:center;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+max-width:1000px;
+margin:auto;
 }
 
 .card{
 background:white;
-padding:20px;
-border-radius:10px;
-width:90%;
-max-width:420px;
+padding:25px;
+border-radius:12px;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
 .card img{
-width:150px;
+width:100%;
+height:280px;
+object-fit:cover;
 border-radius:10px;
 }
 
+.card p{
+font-weight:bold;
+margin-top:10px;
+}
+
 .news{
-display:flex;
-flex-direction:column;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
-align-items:center;
+max-width:900px;
+margin:auto;
 }
 
 .news div{
 background:white;
 padding:20px;
 border-radius:10px;
-width:90%;
-max-width:420px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
 .codebox{
 background:white;
-padding:25px;
-margin:25px;
+padding:30px;
+margin:30px auto;
 border-radius:10px;
 text-align:center;
+max-width:500px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
 input{
 padding:12px;
 width:80%;
 font-size:16px;
+border:1px solid #ccc;
+border-radius:5px;
 }
 
 button{
-padding:12px 25px;
+padding:12px 30px;
 background:#0b3d91;
 color:white;
 border:none;
-margin-top:10px;
+margin-top:15px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#072c6b;
 }
 
 footer{
 background:#0b3d91;
 color:white;
-padding:20px;
+padding:25px;
 text-align:center;
-margin-top:30px;
+margin-top:40px;
 }
 
 </style>
@@ -201,7 +218,7 @@ margin-top:30px;
 
 <input type="text" id="code" maxlength="6">
 
-<br><br>
+<br>
 
 <button onclick="checkCode()">Submit</button>
 
@@ -227,15 +244,11 @@ function checkCode(){
 let code=document.getElementById("code").value;
 
 if(code=="460067"){
-
 window.location.href="personal.html";
-
 }
 
 else{
-
 document.getElementById("msg").innerHTML="Invalid Code";
-
 }
 
 }
