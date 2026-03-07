@@ -9,79 +9,86 @@
 <style>
 
 body{
-font-family:Arial;
 margin:0;
+font-family:Arial;
 background:#f5f5f5;
 }
 
-header{
-background:#0b3d91;
-color:white;
-padding:18px;
-text-align:center;
-}
+/* MOVING BACKGROUND */
 
-.nav{
-background:#072c6b;
+.hero{
+height:100vh;
+background-image:url("https://e-lmis-online.netlify.app/image/photo_1_2025-11-29_18-19-07.jpg");
+background-size:cover;
+background-position:center;
+animation:movebg 20s infinite alternate;
 display:flex;
+align-items:center;
 justify-content:center;
-gap:20px;
-padding:10px;
-}
-
-.nav a{
 color:white;
-text-decoration:none;
-font-size:14px;
-}
-
-.section{
-padding:25px;
 text-align:center;
 }
 
-.ministers{
+@keyframes movebg{
+
+0%{background-position:center top;}
+
+100%{background-position:center bottom;}
+
+}
+
+.hero h1{
+background:rgba(0,0,0,0.5);
+padding:20px;
+border-radius:10px;
+}
+
+/* NEWS SECTION */
+
+.news{
+padding:30px;
+text-align:center;
+}
+
+.news-container{
 display:flex;
 flex-direction:column;
-gap:25px;
+gap:20px;
 align-items:center;
 }
 
-.card{
+.news-card{
 background:white;
-padding:15px;
-border-radius:10px;
-width:95%;
+width:90%;
 max-width:420px;
+border-radius:10px;
+overflow:hidden;
 box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
-.card img{
+.news-card img{
 width:100%;
-height:230px;
+height:200px;
 object-fit:cover;
-border-radius:10px;
 }
 
-.news{
-display:flex;
-flex-direction:column;
-gap:20px;
-align-items:center;
+.news-card h3{
+padding:10px;
+margin:0;
 }
 
-.news div{
-background:white;
-padding:20px;
-border-radius:10px;
-width:90%;
-max-width:420px;
+.news-card p{
+padding:0 10px 15px;
+font-size:14px;
+color:gray;
 }
+
+/* CODE BOX */
 
 .codebox{
 background:white;
-padding:25px;
-margin:25px;
+padding:30px;
+margin:30px;
 border-radius:10px;
 text-align:center;
 }
@@ -105,7 +112,6 @@ background:#0b3d91;
 color:white;
 padding:20px;
 text-align:center;
-margin-top:30px;
 }
 
 </style>
@@ -114,88 +120,45 @@ margin-top:30px;
 
 <body>
 
-<header>
-<h2>Ministry of Labor and Skills</h2>
-</header>
+<!-- MOVING IMAGE HEADER -->
 
-<div class="nav">
-<a href="#">Home</a>
-<a href="#">News</a>
-<a href="#">FAQ</a>
-<a href="#">Contact</a>
-</div>
+<div class="hero">
 
-<div class="section">
-
-<h2>Minister of Labor and Skills</h2>
-
-<div class="ministers">
-
-<div class="card">
-<img src="https://e-lmis-online.netlify.app/image/photo_1_2025-11-29_18-19-07.jpg">
-<p>H.E Muferihat Kamil Ahmed</p>
-</div>
-
-<div class="card">
-<img src="https://e-lmis-online.netlify.app/image/photo_3_2025-11-29_18-58-10.jpg">
-<p>H.E Dr. Teshale Berecha</p>
-</div>
-
-<div class="card">
-<img src="https://e-lmis-online.netlify.app/image/photo_4_2025-11-29_18-58-10.jpg">
-<p>H.E Mr. Solomon Soka</p>
-</div>
-
-<div class="card">
-<img src="https://e-lmis-online.netlify.app/image/photo_1_2025-11-29_18-58-10.jpg">
-<p>H.E Mr. Daniel Teressa Shone</p>
-</div>
-
-<div class="card">
-<img src="https://e-lmis-online.netlify.app/image/photo_2025-11-29_19-17-01.jpg">
-<p>H.E Mrs. Nebiya Mohamed</p>
-</div>
+<h1>Ministry of Labor and Skills</h1>
 
 </div>
 
-</div>
-
-<div class="section">
-
-<h2>News</h2>
+<!-- NEWS -->
 
 <div class="news">
 
-<div>
-<p>የመንግስት አገልግሎትና አስተዳደር ሪፎርም</p>
-<p>MARCH 7, 2026</p>
+<h2>Latest News</h2>
+
+<div class="news-container">
+
+<div class="news-card">
+<img src="https://e-lmis-online.netlify.app/image/photo_1_2025-11-29_18-19-07.jpg">
+<h3>Government Service Reform</h3>
+<p>March 7, 2026</p>
 </div>
 
-<div>
-<p>የመንግስት አገልግሎትና አስተዳደር የሪፎርም ሥራ</p>
-<p>MARCH 7, 2026</p>
+<div class="news-card">
+<img src="https://e-lmis-online.netlify.app/image/photo_3_2025-11-29_18-58-10.jpg">
+<h3>Labor Market Information System Development</h3>
+<p>March 7, 2026</p>
 </div>
 
-<div>
-<p>ብሩህ ሀገር የፈጠራ ሃሳብ ውድድር</p>
-<p>MARCH 7, 2026</p>
+<div class="news-card">
+<img src="https://e-lmis-online.netlify.app/image/photo_4_2025-11-29_18-58-10.jpg">
+<h3>Bright Nation Innovation Competition</h3>
+<p>March 7, 2026</p>
 </div>
 
 </div>
 
 </div>
 
-<div class="section">
-
-<h2>Frequently Asked Questions</h2>
-
-<p><b>What is the performance of job creation?</b></p>
-<p>In the first 11 months of the fiscal year 2,949,293 jobs were planned.</p>
-
-<p><b>What is Differentiation in Zoning and Training Fields?</b></p>
-<p>Explanation about zoning and training fields.</p>
-
-</div>
+<!-- CODE -->
 
 <div class="codebox">
 
@@ -213,12 +176,10 @@ margin-top:30px;
 
 <footer>
 
-<h3>Contact Us</h3>
-
 <p>Tel: +251 116 671792</p>
 <p>Email: info@mols.gov.et</p>
 
-<p>© 2025 All rights reserved</p>
+<p>© 2026 All Rights Reserved</p>
 
 </footer>
 
