@@ -1,24 +1,72 @@
-<div class="document-box">
+<div class="receipt-section">
 
-<img src="https://e-lmis-online.netlify.app/image/photo_4_2026-03-05_23-02-06.jpg">
+<h2>Upload receipt (photo) / የክፍያ ደረሰኝ ፎቶ</h2>
+
+<p>Take a photo or choose from gallery. Image will be compressed client-side to reduce upload size.</p>
+
+<div class="upload-box">
+
+<label>Receipt photo / የክፍያ ደረሰኝ ፎቶ</label>
+
+<p class="small-text">
+Click to choose or tap to open camera. Allowed: JPG/PNG. Keep under 8MB. We'll compress automatically.
+</p>
+
+<input type="file" accept="image/png, image/jpeg">
+
+<br><br>
+
+<button>Choose / Take photo</button>
+
+<p class="file-status">No file chosen</p>
+
+</div>
 
 </div>
 
 <style>
 
-.document-box{
+.receipt-section{
 max-width:700px;
-margin:30px auto;
-background:#fff;
-padding:15px;
-border-radius:12px;
-box-shadow:0 4px 12px rgba(0,0,0,0.15);
+margin:40px auto;
+font-family:Arial;
 }
 
-.document-box img{
-width:100%;
-height:auto;
+.receipt-section h2{
+color:#1f4f8f;
+}
+
+.upload-box{
+border:2px dashed #c7d7f5;
+background:#f9fbff;
+padding:25px;
 border-radius:10px;
+margin-top:15px;
+}
+
+.small-text{
+font-size:14px;
+color:#555;
+}
+
+input[type=file]{
+margin-top:10px;
+}
+
+button{
+margin-top:15px;
+background:#1f4f8f;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.file-status{
+margin-top:10px;
+color:#777;
+font-size:14px;
 }
 
 </style>
