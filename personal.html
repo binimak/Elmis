@@ -5,7 +5,6 @@
 <title>E-LMIS Profile</title>
 
 <style>
-
 body{
 font-family:Arial;
 background:#f4f4f4;
@@ -13,35 +12,12 @@ margin:0;
 padding:0;
 }
 
-/* HEADER DESIGN */
-
-.header{
-background:#0b6b2f;
-color:white;
-display:flex;
-align-items:center;
-padding:10px 20px;
-}
-
-.header img{
-width:55px;
-margin-right:15px;
-}
-
-.header-title{
-font-size:18px;
-font-weight:bold;
-line-height:1.3;
-}
-
-/* MAIN CONTAINER */
-
 .container{
-max-width:700px;
+max-width:600px;
 margin:auto;
 background:white;
-margin-top:20px;
-padding:25px;
+padding:20px;
+margin-top:30px;
 border-radius:10px;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
@@ -51,33 +27,31 @@ text-align:center;
 margin-bottom:20px;
 }
 
-/* PROFILE PHOTO */
-
 .profile{
 text-align:center;
-margin-bottom:20px;
 }
 
 .profile img{
-width:120px;
-height:120px;
+width:150px;
+height:150px;
+border-radius:10px;
 object-fit:cover;
-border-radius:6px;
-border:2px solid #ddd;
 }
 
-/* INFO ROWS */
+.info{
+margin-top:20px;
+}
 
 .row{
 display:flex;
 justify-content:space-between;
-padding:10px 0;
+padding:8px 0;
 border-bottom:1px solid #eee;
-font-size:14px;
 }
 
 .label{
 font-weight:bold;
+color:#333;
 }
 
 .value{
@@ -89,44 +63,20 @@ color:green;
 font-weight:bold;
 }
 
-/* DOCUMENT */
-
-.document{
-margin-top:25px;
-text-align:center;
-}
-
-.document img{
-width:100%;
-max-width:350px;
-border:1px solid #ccc;
-border-radius:6px;
-}
-
 </style>
 </head>
 
 <body>
-
-<!-- HEADER -->
-
-<div class="header">
-<img src="logo.png">
-<div class="header-title">
-Ministry of Labor and Skills<br>
-E-LMIS Verification System
-</div>
-</div>
-
-<!-- MAIN CONTENT -->
 
 <div class="container">
 
 <h2>Personal Information</h2>
 
 <div class="profile">
-<img src="person.jpg">
+<img src="person.jpg" alt="Person Image">
 </div>
+
+<div class="info">
 
 <div class="row">
 <span class="label">Name</span>
@@ -170,12 +120,19 @@ E-LMIS Verification System
 
 <div class="row">
 <span class="label">Status</span>
-<span class="value status">Verified ✓</span>
+<span class="value status">Verified</span>
 </div>
 
-<div class="document">
-<h3>Document Page 1</h3>
-<img src="document.jpg">
+<div class="row">
+<span class="label">Registration Date</span>
+<span class="value">2026-03-06</span>
+</div>
+
+<div class="row">
+<span class="label">Last Update</span>
+<span class="value">2026-03-06</span>
+</div>
+
 </div>
 
 </div>
