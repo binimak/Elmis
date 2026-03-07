@@ -2,65 +2,139 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>E-LMIS Profile</title>
+<title>Personal Information</title>
 
 <style>
+
 body{
 font-family:Arial;
-background:#f4f4f4;
+background:#f3f4f6;
 margin:0;
 padding:0;
 }
 
+/* container */
+
 .container{
-max-width:600px;
+max-width:750px;
 margin:auto;
+padding:20px;
+}
+
+/* personal card */
+
+.card{
 background:white;
 padding:20px;
-margin-top:30px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+margin-bottom:20px;
 }
 
 h2{
+margin-top:0;
+}
+
+/* profile image */
+
+.profile{
 text-align:center;
 margin-bottom:20px;
 }
 
-.profile{
-text-align:center;
-}
-
 .profile img{
-width:150px;
-height:150px;
-border-radius:10px;
+width:120px;
+height:120px;
 object-fit:cover;
+border-radius:6px;
+border:2px solid #ddd;
 }
 
-.info{
-margin-top:20px;
-}
+/* info rows */
 
 .row{
 display:flex;
 justify-content:space-between;
-padding:8px 0;
+padding:10px 0;
 border-bottom:1px solid #eee;
 }
 
 .label{
 font-weight:bold;
-color:#333;
-}
-
-.value{
-color:#555;
 }
 
 .status{
 color:green;
 font-weight:bold;
+}
+
+/* document slider */
+
+.document-card{
+background:white;
+padding:15px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+margin-bottom:20px;
+position:relative;
+text-align:center;
+}
+
+.slider img{
+width:100%;
+max-width:650px;
+border-radius:10px;
+display:none;
+}
+
+.slider img.active{
+display:block;
+}
+
+.arrow{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:#444;
+color:white;
+border:none;
+padding:10px 14px;
+cursor:pointer;
+border-radius:6px;
+}
+
+.left{
+left:10px;
+}
+
+.right{
+right:10px;
+}
+
+/* upload section */
+
+.upload-card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.upload-box{
+border:2px dashed #ccc;
+padding:25px;
+text-align:center;
+border-radius:8px;
+}
+
+button{
+margin-top:15px;
+padding:10px 20px;
+background:#0b6b2f;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
 }
 
 </style>
@@ -70,72 +144,91 @@ font-weight:bold;
 
 <div class="container">
 
+<!-- PERSONAL INFORMATION -->
+
+<div class="card">
+
 <h2>Personal Information</h2>
 
 <div class="profile">
-<img src="person.jpg" alt="Person Image">
+<img src="person.jpg">
 </div>
 
-<div class="info">
+<div class="row"><span class="label">Name</span><span>TEMESGEN ADISU GANTA</span></div>
+<div class="row"><span class="label">Gender</span><span>Male</span></div>
+<div class="row"><span class="label">Age</span><span>19</span></div>
+<div class="row"><span class="label">Date of Birth</span><span>2006-05-17</span></div>
+<div class="row"><span class="label">E-LMIS ID Number</span><span>217483</span></div>
+<div class="row"><span class="label">Phone Number</span><span>+251 957 689 444</span></div>
+<div class="row"><span class="label">Place of Birth</span><span>Gamo Zone, South Ethiopia Region, Ethiopia</span></div>
+<div class="row"><span class="label">Country Where Process Started</span><span>Switzerland 🇨🇭</span></div>
+<div class="row"><span class="label">Status</span><span class="status">Verified</span></div>
+<div class="row"><span class="label">Registration Date</span><span>2026-03-06</span></div>
+<div class="row"><span class="label">Last Update</span><span>2026-03-06</span></div>
 
-<div class="row">
-<span class="label">Name</span>
-<span class="value">TEMESGEN ADISU GANTA</span>
 </div>
 
-<div class="row">
-<span class="label">Gender</span>
-<span class="value">Male</span>
+<!-- DOCUMENT SLIDER -->
+
+<div class="document-card">
+
+<button class="arrow left" onclick="prev()">◀</button>
+
+<div class="slider">
+<img src="doc1.jpg" class="active">
+<img src="doc2.jpg">
+<img src="doc3.jpg">
 </div>
 
-<div class="row">
-<span class="label">Age</span>
-<span class="value">19</span>
+<button class="arrow right" onclick="next()">▶</button>
+
 </div>
 
-<div class="row">
-<span class="label">Date of Birth</span>
-<span class="value">2006-05-17</span>
-</div>
+<!-- UPLOAD RECEIPT -->
 
-<div class="row">
-<span class="label">E-LMIS ID Number</span>
-<span class="value">217483</span>
-</div>
+<div class="upload-card">
 
-<div class="row">
-<span class="label">Phone Number</span>
-<span class="value">+251 957 689 444</span>
-</div>
+<h3>Upload receipt (photo) / የክፍያ ደረሰኝ ፎቶ</h3>
 
-<div class="row">
-<span class="label">Place of Birth</span>
-<span class="value">Gamo Zone, South Ethiopia Region</span>
-</div>
+<p>Take a photo or choose from gallery.</p>
 
-<div class="row">
-<span class="label">Country Where Process Started</span>
-<span class="value">Switzerland 🇨🇭</span>
-</div>
+<div class="upload-box">
 
-<div class="row">
-<span class="label">Status</span>
-<span class="value status">Verified</span>
-</div>
+<input type="file" accept="image/png, image/jpeg">
 
-<div class="row">
-<span class="label">Registration Date</span>
-<span class="value">2026-03-06</span>
-</div>
+<br>
 
-<div class="row">
-<span class="label">Last Update</span>
-<span class="value">2026-03-06</span>
+<button>Submit receipt</button>
+
 </div>
 
 </div>
 
 </div>
+
+<script>
+
+let index=0;
+let images=document.querySelectorAll(".slider img");
+
+function show(){
+images.forEach(img=>img.classList.remove("active"));
+images[index].classList.add("active");
+}
+
+function next(){
+index++;
+if(index>=images.length){index=0;}
+show();
+}
+
+function prev(){
+index--;
+if(index<0){index=images.length-1;}
+show();
+}
+
+</script>
 
 </body>
 </html>
