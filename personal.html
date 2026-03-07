@@ -1,3 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Information</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background:#f1f3f6;
+margin:0;
+padding:0;
+text-align:center;
+}
+
+.logo{
+margin-top:20px;
+}
+
+.logo img{
+width:160px;
+}
+
+h1{
+color:#2c6fb7;
+margin-top:20px;
+}
+
+.card{
+max-width:650px;
+margin:30px auto;
+background:white;
+border:3px solid #2c6fb7;
+border-radius:15px;
+padding:25px;
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.profile img{
+width:170px;
+height:170px;
+border-radius:15px;
+border:3px solid #2c6fb7;
+object-fit:cover;
+}
+
+table{
+width:100%;
+margin-top:20px;
+border-collapse:collapse;
+font-size:16px;
+}
+
+td{
+padding:12px;
+border-bottom:1px dashed #ccc;
+}
+
+td:first-child{
+font-weight:bold;
+color:#2c6fb7;
+text-align:left;
+width:40%;
+}
+
+td:last-child{
+text-align:left;
+}
+
+.verified{
+background:#28a745;
+color:white;
+padding:6px 15px;
+border-radius:20px;
+font-size:14px;
+display:inline-block;
+}
+
+/* document image */
+
+.document-box{
+max-width:700px;
+margin:30px auto;
+background:#fff;
+padding:15px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+.document-box img{
+width:100%;
+border-radius:10px;
+}
+
+/* upload section */
+
+.upload-box{
+max-width:700px;
+margin:30px auto;
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+.upload-area{
+border:2px dashed #cbd5e1;
+padding:25px;
+border-radius:12px;
+background:#f8fafc;
+}
+
+.choose-btn{
+background:#0f766e;
+color:white;
+padding:14px 24px;
+border-radius:10px;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+display:inline-block;
+margin-top:10px;
+}
+
+.choose-btn:hover{
+background:#115e59;
+}
+
+input[type="file"]{
+display:none;
+}
+
+.submit-btn{
+margin-top:20px;
+padding:10px 25px;
+background:#e2e8f0;
+color:#0f172a;
+border:none;
+border-radius:8px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.submit-btn:hover{
+background:#cbd5e1;
+}
+
+#file-name{
+display:block;
+margin-top:10px;
+color:#555;
+font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="logo">
+<img src="logo.png">
+</div>
+
+<h1>Personal Information</h1>
+
+<div class="card">
+
+<div class="profile">
+<img src="person.jpg">
+</div>
+
+<table>
+
+<tr>
+<td>Name</td>
+<td>TEMESGEN ADISU GANTA</td>
+</tr>
+
+<tr>
+<td>Gender</td>
+<td>Male</td>
+</tr>
+
+<tr>
+<td>Age</td>
+<td>19</td>
+</tr>
+
+<tr>
+<td>Date of Birth</td>
+<td>2006-05-17</td>
+</tr>
+
+<tr>
+<td>E-LMIS ID Number</td>
+<td>217483</td>
+</tr>
+
+<tr>
+<td>Phone Number</td>
+<td>+251 957 689 444</td>
+</tr>
+
+<tr>
+<td>Place of Birth</td>
+<td>Gamo Zone, South Ethiopia Region, Ethiopia</td>
+</tr>
+
+<tr>
+<td>Country Where Process Started</td>
+<td>Switzerland 🇨🇭</td>
+</tr>
+
+<tr>
+<td>Status</td>
+<td><span class="verified">✔ Verified</span></td>
+</tr>
+
+<tr>
+<td>Registration Date</td>
+<td>2026-03-06</td>
+</tr>
+
+<tr>
+<td>Last Update</td>
+<td>2026-03-06</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="document-box">
+<img src="https://e-lmis-online.netlify.app/image/photo_4_2026-03-05_23-02-06.jpg">
+</div>
+
 <div class="upload-box">
 
 <h3>Upload receipt (photo) / የክፍያ ደረሰኝ ፎቶ</h3>
@@ -18,68 +257,17 @@
 
 </div>
 
-<style>
-
-.upload-area{
-border:2px dashed #cbd5e1;
-padding:25px;
-border-radius:12px;
-text-align:center;
-background:#f8fafc;
-}
-
-/* Choose photo button */
-
-.choose-btn{
-background:#0f766e;
-color:white;
-padding:14px 22px;
-border-radius:10px;
-font-size:16px;
-font-weight:bold;
-cursor:pointer;
-display:inline-block;
-margin-top:10px;
-}
-
-.choose-btn:hover{
-background:#115e59;
-}
-
-input[type="file"]{
-display:none;
-}
-
-/* Submit button */
-
-.submit-btn{
-margin-top:20px;
-padding:10px 20px;
-background:#e2e8f0;
-color:#0f172a;
-border:none;
-border-radius:8px;
-font-size:15px;
-font-weight:bold;
-cursor:pointer;
-}
-
-.submit-btn:hover{
-background:#cbd5e1;
-}
-
-#file-name{
-display:block;
-margin-top:10px;
-color:#555;
-font-size:14px;
-}
-
-</style>
-
 <script>
+
 document.getElementById("receipt").addEventListener("change", function(){
+
 const fileName = this.files[0]?.name || "No file chosen";
+
 document.getElementById("file-name").textContent = fileName;
+
 });
+
 </script>
+
+</body>
+</html>
