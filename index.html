@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ministry of Labor and Skills</title>
 
 <style>
@@ -10,31 +8,30 @@
 body{
 font-family:Arial;
 margin:0;
-background:#f2f2f2;
+background:#f5f5f5;
+text-align:center;
 }
 
 header{
 background:#0b3d91;
 color:white;
-padding:15px;
-display:flex;
-align-items:center;
-gap:10px;
+padding:20px;
 }
 
-header img{
-width:60px;
+.section{
+padding:30px;
 }
 
-.slider{
-background:#000;
-color:white;
-text-align:center;
-padding:80px 20px;
+.ministers img{
+width:120px;
+border-radius:8px;
 }
 
-.slide{
-display:none;
+.codebox{
+background:white;
+padding:30px;
+margin:40px;
+border-radius:10px;
 }
 
 button{
@@ -42,61 +39,6 @@ padding:10px 20px;
 background:#0b3d91;
 color:white;
 border:none;
-cursor:pointer;
-}
-
-.container{
-width:90%;
-margin:auto;
-padding:30px 0;
-}
-
-.news{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.card{
-background:white;
-padding:15px;
-border-radius:8px;
-box-shadow:0 2px 5px rgba(0,0,0,0.2);
-}
-
-.card img{
-width:100%;
-border-radius:6px;
-}
-
-.faq details{
-background:white;
-padding:15px;
-margin-bottom:10px;
-border-radius:6px;
-}
-
-.code-box{
-text-align:center;
-margin:40px 0;
-}
-
-.code-box input{
-padding:10px;
-width:200px;
-font-size:16px;
-}
-
-footer{
-background:#0b3d91;
-color:white;
-padding:30px;
-margin-top:40px;
-}
-
-footer a{
-color:white;
-text-decoration:none;
 }
 
 </style>
@@ -105,169 +47,63 @@ text-decoration:none;
 <body>
 
 <header>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Emblem_of_Ethiopia.svg/1200px-Emblem_of_Ethiopia.svg.png">
-<h2>Ministry of Labor and Skills</h2>
+<h1>Ministry of Labor and Skills</h1>
 </header>
 
-<div class="slider">
+<div class="section">
 
-<div class="slide">
 <h2>Minister of Labor and Skills</h2>
+
+<div class="ministers">
+
+<img src="https://e-lmis-online.netlify.app/image/photo_1_2025-11-29_18-19-07.jpg">
 <p>H.E Muferihat Kamil Ahmed</p>
-<button>READ MORE</button>
-</div>
 
-<div class="slide">
-<h2>State Minister for Technical and Vocational Education</h2>
+<img src="https://e-lmis-online.netlify.app/image/photo_3_2025-11-29_18-58-10.jpg">
 <p>H.E Dr. Teshale Berecha</p>
-<button>READ MORE</button>
-</div>
 
-<div class="slide">
-<h2>State Minister for Labor Employment</h2>
+<img src="https://e-lmis-online.netlify.app/image/photo_4_2025-11-29_18-58-10.jpg">
 <p>H.E Mr. Solomon Soka</p>
-<button>READ MORE</button>
-</div>
 
-<div class="slide">
-<h2>State Minister for Labor Affairs</h2>
+<img src="https://e-lmis-online.netlify.app/image/photo_1_2025-11-29_18-58-10.jpg">
 <p>H.E Mr. Daniel Teressa Shone</p>
-<button>READ MORE</button>
-</div>
 
-<div class="slide">
-<h2>State Minister Advisor</h2>
+<img src="https://e-lmis-online.netlify.app/image/photo_2025-11-29_19-17-01.jpg">
 <p>H.E Mrs. Nebiya Mohamed</p>
-<button>READ MORE</button>
-</div>
 
-</div>
-
-<div class="container">
-
-<h2>News</h2>
-
-<div class="news">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
-<p>የመንግስት አገልግሎትና አስተዳደር የሪፎርም ሥራ...</p>
-<small>MARCH 7, 2026</small>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
-<p>የመንግስት አገልግሎትና አስተዳደር ሪፎርም...</p>
-<small>MARCH 7, 2026</small>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
-<p>ብሩህ ሀገር የፈጠራ ሃሳብ ውድድር...</p>
-<small>MARCH 7, 2026</small>
 </div>
 
 </div>
 
-<h2>Frequently Asked Questions</h2>
-
-<div class="faq">
-
-<details>
-<summary>What is the performance of job creation for the fiscal year 2014?</summary>
-<p>In the first 11 months of the 2014 Ethiopian budget year 2,949,293 jobs were planned.</p>
-</details>
-
-<details>
-<summary>What is Differentiation in Zoning and Training Fields?</summary>
-<p>Explanation about zoning and training.</p>
-</details>
-
-<details>
-<summary>Training Areas Differentiation</summary>
-<p>More information about training areas.</p>
-</details>
-
-</div>
-
-<div class="code-box">
+<div class="codebox">
 
 <h2>Enter Your 6-Digit Code</h2>
 
-<input type="text" id="codeInput" maxlength="6" placeholder="Enter code">
+<input type="text" id="code" maxlength="6">
 
 <br><br>
 
 <button onclick="checkCode()">Submit</button>
 
-<p id="result"></p>
+<p id="msg"></p>
 
 </div>
-
-</div>
-
-<footer>
-
-<h3>Contact Us</h3>
-
-<p>Tel: +251 116 671792</p>
-<p>Po Box: 25534</p>
-<p>Email: info@mols.gov.et</p>
-
-<h3>Follow Us</h3>
-
-<a href="https://twitter.com/Jobs_FDRE">Twitter</a> |
-<a href="https://facebook.com/MolsFDRE">Facebook</a> |
-<a href="https://youtube.com">YouTube</a>
-
-<p>© 2025 All rights reserved</p>
-
-</footer>
 
 <script>
 
-let slides=document.querySelectorAll(".slide");
-let index=0;
-
-function showSlide(){
-
-slides.forEach(s=>s.style.display="none");
-
-slides[index].style.display="block";
-
-index++;
-
-if(index>=slides.length){
-index=0;
-}
-
-}
-
-showSlide();
-
-setInterval(showSlide,3000);
-
-let validCodes=["123456","654321","112233","445566"];
-
 function checkCode(){
 
-let userCode=document.getElementById("codeInput").value;
+let code=document.getElementById("code").value;
 
-if(validCodes.includes(userCode)){
+if(code=="460067"){
 
-document.getElementById("result").innerHTML="Access Granted";
-
-setTimeout(function(){
-
-window.location.href="https://e-lmis-online.netlify.app";
-
-},1000);
+window.location.href="personal.html";
 
 }
 
 else{
 
-document.getElementById("result").innerHTML="Invalid Code";
+document.getElementById("msg").innerHTML="Invalid Code";
 
 }
 
