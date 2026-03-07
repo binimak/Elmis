@@ -2,141 +2,209 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Personal Information</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-LMIS Personal Page</title>
 
 <style>
-
 body{
-font-family:Arial;
-background:#f3f4f6;
+font-family: Arial;
 margin:0;
-padding:20px;
+background:#f4f4f4;
 }
 
-/* card */
+header{
+background:#0b5ed7;
+color:white;
+padding:15px;
+text-align:center;
+font-size:22px;
+}
 
-.personal-card{
-max-width:800px;
+.container{
+max-width:900px;
 margin:auto;
 background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 4px 12px rgba(0,0,0,0.1);
-border:2px solid #3b82f6;
+padding:20px;
+margin-top:20px;
+border-radius:8px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
-
-h2{
-margin-top:0;
-margin-bottom:20px;
-}
-
-/* profile image */
 
 .profile{
-text-align:center;
-margin-bottom:20px;
+display:flex;
+gap:20px;
+align-items:center;
 }
 
 .profile img{
-width:110px;
-height:110px;
+width:150px;
+height:150px;
+border-radius:10px;
 object-fit:cover;
-border-radius:6px;
+border:3px solid #0b5ed7;
 }
 
-/* rows */
-
-.row{
-display:flex;
-justify-content:space-between;
-padding:12px 0;
-border-bottom:1px solid #e5e7eb;
-font-size:15px;
-}
-
-.label{
-font-weight:bold;
-color:#374151;
-}
-
-.value{
-color:#111827;
+.info p{
+margin:5px 0;
 }
 
 .status{
-color:#16a34a;
+color:green;
 font-weight:bold;
 }
 
+.upload{
+margin-top:20px;
+padding:15px;
+border:1px solid #ddd;
+border-radius:6px;
+}
+
+button{
+background:#0b5ed7;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#084298;
+}
+
+.slider{
+margin-top:30px;
+}
+
+.slide{
+background:#eee;
+padding:15px;
+margin-bottom:10px;
+border-radius:5px;
+}
+
+.news{
+margin-top:30px;
+}
+
+.news-item{
+border-bottom:1px solid #ddd;
+padding:10px 0;
+}
+
+footer{
+margin-top:40px;
+background:#111;
+color:white;
+padding:20px;
+text-align:center;
+font-size:14px;
+}
 </style>
 </head>
 
 <body>
 
-<div class="personal-card">
+<header>
+Ministry of Labor and Skills – E-LMIS
+</header>
+
+<div class="container">
 
 <h2>Personal Information</h2>
 
 <div class="profile">
 <img src="person.jpg" alt="Person Image">
+
+<div class="info">
+<p><b>Name:</b> TEMESGEN ADISU GANTA</p>
+<p><b>Gender:</b> Male</p>
+<p><b>Age:</b> 19</p>
+<p><b>Date of Birth:</b> 2006-05-17</p>
+<p><b>E-LMIS ID:</b> 217483</p>
+<p><b>Phone:</b> +251 957 689 444</p>
+<p><b>Place of Birth:</b> Gamo Zone, South Ethiopia Region, Ethiopia</p>
+<p><b>Country Where Process Started:</b> Switzerland 🇨🇭</p>
+<p class="status">Status: Verified</p>
+<p><b>Registration Date:</b> 2026-03-06</p>
+<p><b>Last Update:</b> 2026-03-06</p>
+</div>
 </div>
 
-<div class="row">
-<span class="label">Name</span>
-<span class="value">TEMESGEN ADISU GANTA</span>
+<div class="upload">
+<h3>Upload Receipt / የክፍያ ደረሰኝ</h3>
+<p>Take photo or choose from gallery (JPG/PNG under 8MB)</p>
+<input type="file">
+<br><br>
+<button>Submit Receipt</button>
 </div>
 
-<div class="row">
-<span class="label">Gender</span>
-<span class="value">Male</span>
+<div class="slider">
+<h3>Officials</h3>
+
+<div class="slide">
+<b>Minister of Labor and Skills</b><br>
+H.E Muferihat Kamil Ahmed
 </div>
 
-<div class="row">
-<span class="label">Age</span>
-<span class="value">19</span>
+<div class="slide">
+<b>State Minister for Technical and Vocational Education</b><br>
+H.E Dr. Teshale Berecha
 </div>
 
-<div class="row">
-<span class="label">Date of Birth</span>
-<span class="value">2006-05-17</span>
+<div class="slide">
+<b>State Minister for Labor Employment and Market Sector</b><br>
+H.E Mr. Solomon Soka
 </div>
 
-<div class="row">
-<span class="label">E-LMIS ID Number</span>
-<span class="value">217483</span>
+<div class="slide">
+<b>State Minister for Labor Affairs</b><br>
+H.E Mr. Daniel Teressa Shone
 </div>
 
-<div class="row">
-<span class="label">Phone Number</span>
-<span class="value">+251 957 689 444</span>
-</div>
-
-<div class="row">
-<span class="label">Place of Birth</span>
-<span class="value">Gamo Zone, South Ethiopia Region, Ethiopia</span>
-</div>
-
-<div class="row">
-<span class="label">Country Where Process Started</span>
-<span class="value">Switzerland 🇨🇭</span>
-</div>
-
-<div class="row">
-<span class="label">Status</span>
-<span class="value status">Verified</span>
-</div>
-
-<div class="row">
-<span class="label">Registration Date</span>
-<span class="value">2026-03-06</span>
-</div>
-
-<div class="row">
-<span class="label">Last Update</span>
-<span class="value">2026-03-06</span>
+<div class="slide">
+<b>State Minister Advisor</b><br>
+H.E Mrs. Nebiya Mohamed
 </div>
 
 </div>
+
+<div class="news">
+<h3>Latest News</h3>
+
+<div class="news-item">
+የመንግስት አገልግሎትና አስተዳደር የሪፎርም ሥራው ባለቤት ሠራተኛው ነው።  
+<br><small>March 8, 2026</small>
+</div>
+
+<div class="news-item">
+የመንግስት አገልግሎትና አስተዳደር ሪፎርም ትግበራ  
+<br><small>March 8, 2026</small>
+</div>
+
+<div class="news-item">
+ብሩህ ሀገር አገፍ የፈጠራ ሃሳብ ውድድር መካሄድ ጀመረ  
+<br><small>March 8, 2026</small>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<h3>Ministry of Labour and Skills</h3>
+
+Tel: +251 116 671792<br>
+Email: info@mols.gov.et<br>
+Address: Behind Lambert Ethiopian Technical and Vocational Institute
+
+<br><br>
+
+© 2025 All rights reserved
+
+</footer>
 
 </body>
 </html>
