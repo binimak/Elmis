@@ -1,128 +1,282 @@
-.left-sidebar{
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ministry of Labor and Skills</title>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#f2f2f2;
+}
+
+header{
+background:#0b3d91;
+color:white;
+padding:15px;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+header img{
+width:60px;
+}
+
+.slider{
+background:#000;
+color:white;
+text-align:center;
+padding:80px 20px;
+}
+
+.slide{
+display:none;
+}
+
+button{
+padding:10px 20px;
+background:#0b3d91;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+.container{
+width:90%;
+margin:auto;
+padding:30px 0;
+}
+
+.news{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:15px;
+border-radius:8px;
+box-shadow:0 2px 5px rgba(0,0,0,0.2);
+}
+
+.card img{
+width:100%;
+border-radius:6px;
+}
+
+.faq details{
+background:white;
+padding:15px;
+margin-bottom:10px;
+border-radius:6px;
+}
+
+.code-box{
+text-align:center;
+margin:40px 0;
+}
+
+.code-box input{
+padding:10px;
+width:200px;
+font-size:16px;
+}
+
+footer{
+background:#0b3d91;
+color:white;
+padding:30px;
+margin-top:40px;
+}
+
+footer a{
+color:white;
+text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Emblem_of_Ethiopia.svg/1200px-Emblem_of_Ethiopia.svg.png">
+<h2>Ministry of Labor and Skills</h2>
+</header>
+
+<div class="slider">
+
+<div class="slide">
+<h2>Minister of Labor and Skills</h2>
+<p>H.E Muferihat Kamil Ahmed</p>
+<button>READ MORE</button>
 </div>
 
-</p>
-</footer>
+<div class="slide">
+<h2>State Minister for Technical and Vocational Education</h2>
+<p>H.E Dr. Teshale Berecha</p>
+<button>READ MORE</button>
+</div>
 
-<!-- NEWS -->
+<div class="slide">
+<h2>State Minister for Labor Employment</h2>
+<p>H.E Mr. Solomon Soka</p>
+<button>READ MORE</button>
+</div>
 
-<div class="news">
+<div class="slide">
+<h2>State Minister for Labor Affairs</h2>
+<p>H.E Mr. Daniel Teressa Shone</p>
+<button>READ MORE</button>
+</div>
+
+<div class="slide">
+<h2>State Minister Advisor</h2>
+<p>H.E Mrs. Nebiya Mohamed</p>
+<button>READ MORE</button>
+</div>
+
+</div>
+
+<div class="container">
 
 <h2>News</h2>
 
-<div class="news-container">
+<div class="news">
 
 <div class="card">
-<img src="https://e-lmis-online.netlify.app/image/photo_3_2025-11-29_18-58-10.jpg">
-<h4>የመንግስት አገልግሎትና አስተዳደር የሪፎርም ሥራ</h4>
-<span>MARCH 3, 2026</span>
-</div>
-
-<div class="card">
-<img src="https://e-lmis-online.netlify.app/image/photo_4_2025-11-29_18-58-10.jpg">
-<h4>የመንግስት አገልግሎትና አስተዳደር ሪፎርም</h4>
-<span>MARCH 3, 2026</span>
+<img src="https://picsum.photos/400/200">
+<p>የመንግስት አገልግሎትና አስተዳደር የሪፎርም ሥራ...</p>
+<small>MARCH 7, 2026</small>
 </div>
 
 <div class="card">
-<img src="https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg">
-<h4>ብሩህ ሀገር አገፍ የፈጠራ ሃሳብ ውድድር</h4>
-<span>MARCH 3, 2026</span>
+<img src="https://picsum.photos/401/200">
+<p>የመንግስት አገልግሎትና አስተዳደር ሪፎርም...</p>
+<small>MARCH 7, 2026</small>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/402/200">
+<p>ብሩህ ሀገር የፈጠራ ሃሳብ ውድድር...</p>
+<small>MARCH 7, 2026</small>
 </div>
 
 </div>
-  <section class="verify">
-   <input type="text" id="code" placeholder="Enter 6-digit code">
-<h1 class="code-title">ኮድ አስገባ</h1>
-<p class="code-subtitle">Enter Your 6-Digit Code</p>
-<button class="submit-btn" onclick="checkCode()">Submit</button>
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq">
+
+<details>
+<summary>What is the performance of job creation for the fiscal year 2014?</summary>
+<p>
+In the first 11 months of the 2014 Ethiopian budget year
+2,949,293 jobs were planned.
+</p>
+</details>
+
+<details>
+<summary>What is Differentiation in Zoning and Training Fields?</summary>
+<p>Explanation about zoning and training.</p>
+</details>
+
+<details>
+<summary>Training Areas Differentiation</summary>
+<p>More information about training areas.</p>
+</details>
+
+</div>
+
+<div class="code-box">
+
+<h2>Enter Your 6-Digit Code</h2>
+
+<input type="text" id="codeInput" maxlength="6" placeholder="Enter code">
+
+<br><br>
+
+<button onclick="checkCode()">Submit</button>
+
+<p id="result"></p>
+
+</div>
+
+</div>
+
+<footer>
+
+<h3>Contact Us</h3>
+
+<p>Tel: +251 116 671792</p>
+<p>Po Box: 25534</p>
+<p>Email: info@mols.gov.et</p>
+
+<h3>Follow Us</h3>
+
+<a href="https://twitter.com/Jobs_FDRE">Twitter</a> |
+<a href="https://facebook.com/MolsFDRE">Facebook</a> |
+<a href="https://youtube.com">YouTube</a>
+
+<p>© 2025 All rights reserved</p>
+
+</footer>
+
 <script>
+
+let slides=document.querySelectorAll(".slide");
+let index=0;
+
+function showSlide(){
+
+slides.forEach(s=>s.style.display="none");
+
+slides[index].style.display="block";
+
+index++;
+
+if(index>=slides.length){
+index=0;
+}
+
+}
+
+setInterval(showSlide,3000);
+
+showSlide();
+
+let validCodes=["123456","654321","112233","445566"];
 
 function checkCode(){
 
-var code = document.getElementById("code").value;
+let userCode=document.getElementById("codeInput").value;
 
-var validCodes = [
-"123456",
-"654321",
-"111222",
-"987654"
-];
+if(validCodes.includes(userCode)){
 
-if(validCodes.includes(code)){
-window.location.href="nextpage.html";
+document.getElementById("result").innerHTML="Access Granted";
+
+setTimeout(function(){
+
+window.location.href="https://e-lmis-online.netlify.app";
+
+},1000);
+
 }
 
 else{
-alert("Invalid verification code");
+
+document.getElementById("result").innerHTML="Invalid Code";
+
 }
 
 }
 
 </script>
-
-<section class="about">
-  <h2>The Ministry of Labor & Skills</h2>
-  <img src="logo.png" alt="MoLS Logo" style="width:120px;">
-  <p>
-    The Ministry of Labour and Skills was established following the National Reform.
-    The Ministry of Labour and Skills was founded with Proclamation No. 1263/2022,
-    which oversees national job creation, skills development, and labor concerns.
-  </p>
-</section>
-
-<section class="contact">
-  <h2>Contact Us</h2>
-  <p><strong>Tel:</strong> +251 116 671792</p>
-  <p><strong>Po Box:</strong> 25534</p>
-  <p><strong>Fax:</strong> +251 116 671568</p>
-  <p><strong>Address:</strong> Behind Lambert Ethiopian Technical and Vocational Institute</p>
-  <p><strong>Email:</strong> info@Mols.gov.et</p>
-</section>
- <!-- FAQ -->
-</div>
-
-<div class="faq">
-
-<h2>Frequently Asked Question</h2>
-
-<details>
-<summary>What is the performance of job creation?</summary>
-<p>
-In the first 11 months of the Ethiopian budget year,
-it was planned to create millions of permanent jobs.
-</p>
-</details>
-
-</div>
-<footer>
-
-<h3>MoLS Logo</h3>
-<p>
-The Ministry of Labour and Skills was established following the National Reform.
-The Ministry of Labour and Skills was founded with Proclamation No.1263/2022,
-which oversees national job creation, skills development, and labor concerns.
-</p>
-
-<h3>Get In Touch</h3>
-<p>Tel: +251 116 671792</p>
-<p>Po Box: 25534</p>
-<p>Fax: +251 116 671568</p>
-<p>Email: info@Mols.gov.et</p>
-
-<h3>Menu</h3>
-<a href="#">Privacy Policy</a><br>
-<a href="#">Copyright</a>
-
-<h3>Follow Us</h3>
-<a href="https://twitter.com/Jobs_FDRE">Twitter</a> |
-<a href="https://www.facebook.com/MolsFDRE">Facebook</a> |
-<a href="https://www.youtube.com/channel/UC1k7Ug_DRUY_vzxubKSNX0A">YouTube</a>
-
-<p>© 2025 Ministry of Labor and Skills</p>
-
-</footer>
 
 </body>
 </html>
