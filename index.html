@@ -140,7 +140,31 @@ margin-top:5px;
 header{
 border-bottom:2px solid #0b3d91;
 }
-.submit-btn{
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#0b3d91;
+padding:15px 30px;
+color:white;
+}
+
+.navbar nav a{
+color:white;
+margin-left:20px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.navbar nav a:hover{
+text-decoration:underline;
+}
+
+.logo{
+font-size:20px;
+font-weight:bold;
+}
+  .submit-btn{
 width:120%;
 padding:12px;
 background:#0b3d91;
@@ -154,7 +178,20 @@ margin-top:10px;
 </head>
 
 <body>
- <div style="text-align:center; margin-top:20px;">
+ <header class="navbar">
+<div class="logo">
+<h2>E-LMIS</h2>
+</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Jobs</a>
+<a href="#">Training</a>
+<a href="#">Reports</a>
+<a href="#">Contact</a>
+</nav>
+</header>
+  <div style="text-align:center; margin-top:20px;">
 <img src="https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg" width="140" style="border-radius:10px; border:3px solid #2f6fce;">
 </div> 
 <div style="text-align:center; margin-top:20px;">
@@ -203,34 +240,7 @@ which oversees national job creation, skills development, and labor concerns.
 </p>
 </div>
 
-<div style="flex:1;min-width:250px;margin:10px;">
-<h3>Get In Touch</h3>
-<p>Tel no: +251 116 671792</p>
-<p>Po Box: 25534</p>
-<p>Fax: +251 116 671568</p>
-<p>Address: Behind Lambert Ethiopian Technical and Vocational Institute</p>
-<p>Email: info@Mols.gov.et</p>
-</div>
-
-<div style="flex:1;min-width:200px;margin:10px;">
-<h3>Menu</h3>
-<p><a href="#" style="color:white;">Privacy Policy</a></p>
-<p><a href="#" style="color:white;">Copyright</a></p>
-
-<h3>Follow Us</h3>
-<p>
-
-<a href="https://twitter.com/Jobs_FDRE" style="color:white;">Twitter</a><br>
-<a href="https://www.facebook.com/MolsFDRE" style="color:white;">Facebook</a><br>
-<a href="https://www.youtube.com/channel/UC1k7Ug_DRUY_vzxubKSNX0A" style="color:white;">YouTube</a>
 </p>
-</div>
-</div>
-
-<p style="text-align:center;margin-top:20px;">
-© 2025 Ministry of Labor and Skills
-</p>
-
 </footer>
 
 <!-- NEWS -->
@@ -354,3 +364,4 @@ which oversees national job creation, skills development, and labor concerns.
 
 </body>
 </html>
+
