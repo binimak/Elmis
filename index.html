@@ -9,20 +9,20 @@
 <style>
 
 body{
-margin:0;
 font-family:Arial;
-background:#f2f2f2;
+margin:0;
+background:#f5f5f5;
 }
 
 header{
-background:#184a94;
+background:#0b3d91;
 color:white;
-text-align:center;
 padding:18px;
+text-align:center;
 }
 
 .nav{
-background:#0d3570;
+background:#072c6b;
 display:flex;
 justify-content:center;
 gap:20px;
@@ -36,71 +36,46 @@ font-size:14px;
 }
 
 .section{
-padding:20px;
+padding:25px;
 text-align:center;
 }
 
 .ministers{
 display:flex;
 flex-direction:column;
-gap:20px;
+gap:25px;
 align-items:center;
 }
 
 .card{
 background:white;
-padding:20px;
+padding:15px;
 border-radius:10px;
-width:90%;
+width:95%;
 max-width:420px;
 box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
 .card img{
-width:150px;
+width:100%;
+height:230px;
+object-fit:cover;
 border-radius:10px;
 }
 
-.news-section{
-padding:20px;
-text-align:center;
+.news{
+display:flex;
+flex-direction:column;
+gap:20px;
+align-items:center;
 }
 
-.news-card{
-width:100%;
-max-width:420px;
-margin:25px auto;
+.news div{
 background:white;
+padding:20px;
 border-radius:10px;
-overflow:hidden;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
-position:relative;
-}
-
-.news-card img{
-width:100%;
-display:block;
-}
-
-.news-text{
-position:absolute;
-bottom:70px;
-width:100%;
-color:white;
-font-size:18px;
-font-weight:bold;
-text-align:center;
-padding:10px;
-text-shadow:0 2px 5px rgba(0,0,0,0.6);
-}
-
-.news-date{
-background:#0f3d3e;
-color:white;
-text-align:center;
-padding:15px;
-font-weight:bold;
-letter-spacing:1px;
+width:90%;
+max-width:420px;
 }
 
 .codebox{
@@ -119,14 +94,14 @@ font-size:16px;
 
 button{
 padding:12px 25px;
-background:#184a94;
+background:#0b3d91;
 color:white;
 border:none;
 margin-top:10px;
 }
 
 footer{
-background:#184a94;
+background:#0b3d91;
 color:white;
 padding:20px;
 text-align:center;
@@ -134,6 +109,7 @@ margin-top:30px;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -181,44 +157,45 @@ margin-top:30px;
 </div>
 
 </div>
+
 </div>
 
-
-<section class="news-section">
+<div class="section">
 
 <h2>News</h2>
 
-<div class="news-card">
+<div class="news">
 
-<img src="https://e-lmis-online.netlify.app/image/photo_3_2025-11-29_18-58-10.jpg">
-
-<div class="news-text">
-የመንግስት አገልግሎትና አስተዳደር ሪፎርም
+<div>
+<p>የመንግስት አገልግሎትና አስተዳደር ሪፎርም</p>
+<p>MARCH 7, 2026</p>
 </div>
 
-<div class="news-date">
-MARCH 7, 2026
+<div>
+<p>የመንግስት አገልግሎትና አስተዳደር የሪፎርም ሥራ</p>
+<p>MARCH 7, 2026</p>
 </div>
 
-</div>
-
-
-<div class="news-card">
-
-<img src="https://e-lmis-online.netlify.app/image/photo_4_2025-11-29_18-58-10.jpg">
-
-<div class="news-text">
-የመንግስት አገልግሎትና አስተዳደር የሪፎርም ሥራ
-</div>
-
-<div class="news-date">
-MARCH 7, 2026
+<div>
+<p>ብሩህ ሀገር የፈጠራ ሃሳብ ውድድር</p>
+<p>MARCH 7, 2026</p>
 </div>
 
 </div>
 
-</section>
+</div>
 
+<div class="section">
+
+<h2>Frequently Asked Questions</h2>
+
+<p><b>What is the performance of job creation?</b></p>
+<p>In the first 11 months of the fiscal year 2,949,293 jobs were planned.</p>
+
+<p><b>What is Differentiation in Zoning and Training Fields?</b></p>
+<p>Explanation about zoning and training fields.</p>
+
+</div>
 
 <div class="codebox">
 
@@ -234,13 +211,11 @@ MARCH 7, 2026
 
 </div>
 
-
 <footer>
 
 <h3>Contact Us</h3>
 
 <p>Tel: +251 116 671792</p>
-
 <p>Email: info@mols.gov.et</p>
 
 <p>© 2025 All rights reserved</p>
