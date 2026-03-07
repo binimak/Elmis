@@ -1,68 +1,85 @@
 <div class="upload-box">
-  <h3>Upload receipt (photo) / የክፍያ ደረሰኝ ፎቶ</h3>
-  <p>Take a photo or choose from gallery. Image will be compressed client-side to reduce upload size.</p>
 
-  <div class="upload-area">
-    <p><strong>Receipt photo / የክፍያ ደረሰኝ ፎቶ</strong></p>
-    <p>Click to choose or tap to open camera. Allowed: JPG/PNG. Keep under 8MB.</p>
+<h3>Upload receipt (photo) / የክፍያ ደረሰኝ ፎቶ</h3>
 
-    <input type="file" id="receipt" accept="image/png, image/jpeg" capture="environment">
-    
-    <label for="receipt" class="upload-btn">Choose / Take photo</label>
-    <span id="file-name">No file chosen</span>
-  </div>
+<div class="upload-area">
 
-  <button class="submit-btn">Submit receipt</button>
+<input type="file" id="receipt" accept="image/png, image/jpeg" capture="environment">
+
+<label for="receipt" class="choose-btn">
+📷 Choose / Take Photo
+</label>
+
+<span id="file-name">No file chosen</span>
+
+</div>
+
+<button class="submit-btn">Submit</button>
+
 </div>
 
 <style>
-.upload-box{
-  padding:20px;
-  font-family:Arial;
-}
 
 .upload-area{
-  border:2px dashed #cbd5e1;
-  padding:25px;
-  border-radius:10px;
-  text-align:left;
-  background:#f8fafc;
+border:2px dashed #cbd5e1;
+padding:25px;
+border-radius:12px;
+text-align:center;
+background:#f8fafc;
 }
 
-.upload-btn{
-  background:#0f766e;
-  color:white;
-  padding:10px 18px;
-  border-radius:8px;
-  cursor:pointer;
-  display:inline-block;
-  margin-top:10px;
+/* Choose photo button */
+
+.choose-btn{
+background:#0f766e;
+color:white;
+padding:14px 22px;
+border-radius:10px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+display:inline-block;
+margin-top:10px;
+}
+
+.choose-btn:hover{
+background:#115e59;
 }
 
 input[type="file"]{
-  display:none;
+display:none;
 }
 
+/* Submit button */
+
 .submit-btn{
-  width:100%;
-  margin-top:20px;
-  padding:14px;
-  background:#0f2a44;
-  color:white;
-  border:none;
-  border-radius:10px;
-  font-size:16px;
+margin-top:20px;
+padding:10px 20px;
+background:#e2e8f0;
+color:#0f172a;
+border:none;
+border-radius:8px;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.submit-btn:hover{
+background:#cbd5e1;
 }
 
 #file-name{
-  margin-left:10px;
-  color:#555;
+display:block;
+margin-top:10px;
+color:#555;
+font-size:14px;
 }
+
 </style>
 
 <script>
 document.getElementById("receipt").addEventListener("change", function(){
-  const fileName = this.files[0]?.name || "No file chosen";
-  document.getElementById("file-name").textContent = fileName;
+const fileName = this.files[0]?.name || "No file chosen";
+document.getElementById("file-name").textContent = fileName;
 });
 </script>
