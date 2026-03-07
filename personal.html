@@ -1,263 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Personal Information</title>
+<title>E-LMIS Profile</title>
 
 <style>
 
 body{
 font-family:Arial;
-background:#f2f2f2;
+background:#f4f4f4;
 margin:0;
-padding:20px;
+padding:0;
 }
 
-.card{
-max-width:420px;
+/* HEADER DESIGN */
+
+.header{
+background:#0b6b2f;
+color:white;
+display:flex;
+align-items:center;
+padding:10px 20px;
+}
+
+.header img{
+width:55px;
+margin-right:15px;
+}
+
+.header-title{
+font-size:18px;
+font-weight:bold;
+line-height:1.3;
+}
+
+/* MAIN CONTAINER */
+
+.container{
+max-width:700px;
 margin:auto;
 background:white;
-border:3px solid #2f6fce;
-border-radius:15px;
-padding:20px;
+margin-top:20px;
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
-.title{
-text-align:center;
-font-size:20px;
-font-weight:bold;
-margin-bottom:15px;
-}
-
-.photo{
+h2{
 text-align:center;
 margin-bottom:20px;
 }
 
-.photo img{
+/* PROFILE PHOTO */
+
+.profile{
+text-align:center;
+margin-bottom:20px;
+}
+
+.profile img{
 width:120px;
-height:140px;
-border-radius:10px;
-border:3px solid #2f6fce;
+height:120px;
 object-fit:cover;
+border-radius:6px;
+border:2px solid #ddd;
 }
 
-table{
-width:100%;
-border-collapse:collapse;
-}
+/* INFO ROWS */
 
-td{
-padding:10px;
-border-bottom:1px dashed #ccc;
-}
-
-td:first-child{
-width:40%;
-color:#1a5fb4;
-font-weight:bold;
-}
-
-.status{
-background:#28a745;
-color:white;
-padding:5px 12px;
-border-radius:20px;
+.row{
+display:flex;
+justify-content:space-between;
+padding:10px 0;
+border-bottom:1px solid #eee;
 font-size:14px;
 }
 
-/* receipt upload */
+.label{
+font-weight:bold;
+}
 
-.upload-box{
-background:white;
-max-width:420px;
-margin:25px auto;
-padding:20px;
-border-radius:12px;
-border:2px dashed #ccc;
+.value{
+color:#555;
+}
+
+.status{
+color:green;
+font-weight:bold;
+}
+
+/* DOCUMENT */
+
+.document{
+margin-top:25px;
 text-align:center;
 }
 
-.upload-box img{
-max-width:100%;
-margin-top:10px;
-border-radius:8px;
-}
-
-button{
-padding:12px 25px;
-background:#0b3d91;
-color:white;
-border:none;
-border-radius:5px;
-margin-top:15px;
-cursor:pointer;
-}
-
-button:hover{
-background:#072c6b;
-}
-
-footer{
-background:#0b3d91;
-color:white;
-padding:20px;
-text-align:center;
-margin-top:40px;
+.document img{
+width:100%;
+max-width:350px;
+border:1px solid #ccc;
+border-radius:6px;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div class="card">
+<!-- HEADER -->
 
-<div class="title">Personal Information</div>
-
-<div class="photo">
-<img src="https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg">
+<div class="header">
+<img src="logo.png">
+<div class="header-title">
+Ministry of Labor and Skills<br>
+E-LMIS Verification System
+</div>
 </div>
 
-<table>
+<!-- MAIN CONTENT -->
 
-<tr>
-<td>Name</td>
-<td>SULEYIMAN EBRAHIM HUSSIEN</td>
-</tr>
+<div class="container">
 
-<tr>
-<td>Gender</td>
-<td>Male</td>
-</tr>
+<h2>Personal Information</h2>
 
-<tr>
-<td>Age</td>
-<td>34</td>
-</tr>
-
-<tr>
-<td>Date of Birth</td>
-<td>1991-11-21</td>
-</tr>
-
-<tr>
-<td>E-LMIS ID Number</td>
-<td>460067</td>
-</tr>
-
-<tr>
-<td>Passport Number</td>
-<td>EP6297418</td>
-</tr>
-
-<tr>
-<td>Phone Number</td>
-<td>+251 925 261 363</td>
-</tr>
-
-<tr>
-<td>Place of Birth</td>
-<td>Kombolcha, Ethiopia</td>
-</tr>
-
-<tr>
-<td>Country Where Process Started</td>
-<td>Canada 🇨🇦</td>
-</tr>
-
-<tr>
-<td>Status</td>
-<td><span class="status">✔ Verified</span></td>
-</tr>
-
-<tr>
-<td>Registration Date</td>
-<td>2026-03-06</td>
-</tr>
-
-<tr>
-<td>Last Update</td>
-<td>2026-03-06</td>
-</tr>
-
-</table>
-
+<div class="profile">
+<img src="person.jpg">
 </div>
 
-
-<div class="upload-box">
-
-<h3>Upload receipt (photo)</h3>
-
-<p>የክፍያ ደረሰኝ ፎቶ</p>
-
-<input type="file" id="receipt" accept="image/*">
-
-<br>
-
-<img id="preview">
-
-<br>
-
-<button onclick="submitReceipt()">Submit receipt</button>
-
-<p id="msg"></p>
-
+<div class="row">
+<span class="label">Name</span>
+<span class="value">TEMESGEN ADISU GANTA</span>
 </div>
 
-<footer>
+<div class="row">
+<span class="label">Gender</span>
+<span class="value">Male</span>
+</div>
 
-<p>Ministry of Labor and Skills</p>
-<p>© 2025 All rights reserved</p>
+<div class="row">
+<span class="label">Age</span>
+<span class="value">19</span>
+</div>
 
-</footer>
+<div class="row">
+<span class="label">Date of Birth</span>
+<span class="value">2006-05-17</span>
+</div>
 
-<script>
+<div class="row">
+<span class="label">E-LMIS ID Number</span>
+<span class="value">217483</span>
+</div>
 
-let input=document.getElementById("receipt");
+<div class="row">
+<span class="label">Phone Number</span>
+<span class="value">+251 957 689 444</span>
+</div>
 
-input.addEventListener("change",function(){
+<div class="row">
+<span class="label">Place of Birth</span>
+<span class="value">Gamo Zone, South Ethiopia Region</span>
+</div>
 
-let file=this.files[0];
+<div class="row">
+<span class="label">Country Where Process Started</span>
+<span class="value">Switzerland 🇨🇭</span>
+</div>
 
-if(file){
+<div class="row">
+<span class="label">Status</span>
+<span class="value status">Verified ✓</span>
+</div>
 
-let reader=new FileReader();
+<div class="document">
+<h3>Document Page 1</h3>
+<img src="document.jpg">
+</div>
 
-reader.onload=function(e){
-
-document.getElementById("preview").src=e.target.result;
-
-}
-
-reader.readAsDataURL(file);
-
-}
-
-});
-
-function submitReceipt(){
-
-let file=input.files[0];
-
-if(!file){
-
-document.getElementById("msg").innerHTML="Please upload receipt photo";
-return;
-
-}
-
-document.getElementById("msg").innerHTML="Receipt submitted successfully";
-
-}
-
-</script>
+</div>
 
 </body>
 </html>
