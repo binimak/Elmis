@@ -3,7 +3,6 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Ministry of Labor and Skills</title>
 
 <style>
@@ -124,7 +123,6 @@ margin-top:40px;
 }
 
 </style>
-
 </head>
 
 <body>
@@ -172,7 +170,6 @@ margin-top:40px;
 </div>
 
 </div>
-
 </div>
 
 <div class="section">
@@ -197,7 +194,6 @@ margin-top:40px;
 </div>
 
 </div>
-
 </div>
 
 <div class="section">
@@ -229,10 +225,8 @@ margin-top:40px;
 <footer>
 
 <h3>Contact Us</h3>
-
 <p>Tel: +251 116 671792</p>
 <p>Email: info@mols.gov.et</p>
-
 <p>© 2025 All rights reserved</p>
 
 </footer>
@@ -240,31 +234,10 @@ margin-top:40px;
 <script>
 
 let users={
-
-"460067":{
-name:"Abel Tesfaye",
-photo:"https://i.pravatar.cc/150?img=1",
-region:"Addis Ababa"
-},
-
-"460068":{
-name:"Sara Mohammed",
-photo:"https://i.pravatar.cc/150?img=2",
-region:"Oromia"
-},
-
-"460069":{
-name:"Daniel Bekele",
-photo:"https://i.pravatar.cc/150?img=3",
-region:"Amhara"
-},
-
-"460070":{
-name:"Rahel Girma",
-photo:"https://i.pravatar.cc/150?img=4",
-region:"Tigray"
-}
-
+"460067":{name:"Abel Tesfaye",photo:"https://i.pravatar.cc/150?img=1",region:"Addis Ababa"},
+"460068":{name:"Sara Mohammed",photo:"https://i.pravatar.cc/150?img=2",region:"Oromia"},
+"460069":{name:"Daniel Bekele",photo:"https://i.pravatar.cc/150?img=3",region:"Amhara"},
+"460070":{name:"Rahel Girma",photo:"https://i.pravatar.cc/150?img=4",region:"Tigray"}
 };
 
 function checkCode(){
@@ -272,3 +245,33 @@ function checkCode(){
 let code=document.getElementById("code").value;
 
 if(code.length!=6){
+document.getElementById("msg").innerHTML="Code must be 6 digits";
+return;
+}
+
+if(users[code]){
+
+localStorage.setItem("user",JSON.stringify(users[code]));
+
+window.location.href="personal.html";
+
+}else{
+
+document.getElementById("msg").innerHTML="Invalid Code";
+
+}
+
+}
+
+document.getElementById("code").addEventListener("keypress",function(e){
+
+if(e.key==="Enter"){
+checkCode();
+}
+
+});
+
+</script>
+
+</body>
+</html>
