@@ -3,6 +3,7 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ministry of Labor and Skills</title>
 
 <style>
@@ -13,27 +14,18 @@ margin:0;
 background:#f5f5f5;
 }
 
-/* HEADER */
-
 header{
-background:white;
-padding:25px;
+background:#0b3d91;
+color:white;
+padding:20px;
 text-align:center;
-border-bottom:2px solid #ddd;
 }
-
-header img{
-width:340px;
-max-width:95%;
-}
-
-/* NAVIGATION */
 
 .nav{
-background:#0b3d91;
+background:#072c6b;
 display:flex;
 justify-content:center;
-gap:25px;
+gap:20px;
 padding:12px;
 flex-wrap:wrap;
 }
@@ -44,81 +36,10 @@ text-decoration:none;
 font-size:15px;
 }
 
-/* SLIDER */
-
-.slider{
-max-width:1000px;
-margin:40px auto;
-position:relative;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
-}
-
-.slide{
-display:none;
-position:relative;
-}
-
-.slide img{
-width:100%;
-height:420px;
-object-fit:cover;
-}
-
-.text{
-position:absolute;
-top:35%;
-left:40px;
-color:white;
-}
-
-.text h2{
-margin:0;
-font-size:30px;
-}
-
-.text p{
-font-size:20px;
-margin:10px 0;
-}
-
-.text a{
-background:#0b3d91;
-padding:12px 25px;
-color:white;
-text-decoration:none;
-border-radius:8px;
-}
-
-/* DOTS */
-
-.dots{
-text-align:center;
-margin-top:10px;
-}
-
-.dot{
-height:10px;
-width:10px;
-margin:4px;
-background:#bbb;
-border-radius:50%;
-display:inline-block;
-}
-
-.active{
-background:#0b3d91;
-}
-
-/* SECTIONS */
-
 .section{
-padding:40px;
+padding:30px;
 text-align:center;
 }
-
-/* MINISTERS */
 
 .ministers{
 display:grid;
@@ -130,8 +51,8 @@ margin:auto;
 
 .card{
 background:white;
-padding:20px;
-border-radius:10px;
+padding:25px;
+border-radius:12px;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
@@ -144,9 +65,8 @@ border-radius:10px;
 
 .card p{
 font-weight:bold;
+margin-top:10px;
 }
-
-/* NEWS */
 
 .news{
 display:grid;
@@ -163,12 +83,10 @@ border-radius:10px;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
-/* CODE LOGIN */
-
 .codebox{
 background:white;
 padding:30px;
-margin:40px auto;
+margin:30px auto;
 border-radius:10px;
 text-align:center;
 max-width:500px;
@@ -197,8 +115,6 @@ button:hover{
 background:#072c6b;
 }
 
-/* FOOTER */
-
 footer{
 background:#0b3d91;
 color:white;
@@ -208,12 +124,13 @@ margin-top:40px;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
-<img src="logo.png">
+<h2>Ministry of Labor and Skills</h2>
 </header>
 
 <div class="nav">
@@ -222,47 +139,6 @@ margin-top:40px;
 <a href="#">FAQ</a>
 <a href="#">Contact</a>
 </div>
-
-<!-- SLIDER -->
-
-<div class="slider">
-
-<div class="slide">
-<img src="https://e-lmis-online.netlify.app/image/photo_1_2025-11-29_18-19-07.jpg">
-<div class="text">
-<h2>Minister of Labor and Skills</h2>
-<p>H.E Muferihat Kamil Ahmed</p>
-<a href="#">READ MORE</a>
-</div>
-</div>
-
-<div class="slide">
-<img src="https://e-lmis-online.netlify.app/image/photo_3_2025-11-29_18-58-10.jpg">
-<div class="text">
-<h2>State Minister</h2>
-<p>Dr. Teshale Berecha</p>
-<a href="#">READ MORE</a>
-</div>
-</div>
-
-<div class="slide">
-<img src="https://e-lmis-online.netlify.app/image/photo_4_2025-11-29_18-58-10.jpg">
-<div class="text">
-<h2>State Minister</h2>
-<p>Mr. Solomon Soka</p>
-<a href="#">READ MORE</a>
-</div>
-</div>
-
-</div>
-
-<div class="dots">
-<span class="dot"></span>
-<span class="dot"></span>
-<span class="dot"></span>
-</div>
-
-<!-- MINISTERS -->
 
 <div class="section">
 
@@ -285,11 +161,19 @@ margin-top:40px;
 <p>H.E Mr. Solomon Soka</p>
 </div>
 
+<div class="card">
+<img src="https://e-lmis-online.netlify.app/image/photo_1_2025-11-29_18-58-10.jpg">
+<p>H.E Mr. Daniel Teressa Shone</p>
+</div>
+
+<div class="card">
+<img src="https://e-lmis-online.netlify.app/image/photo_2025-11-29_19-17-01.jpg">
+<p>H.E Mrs. Nebiya Mohamed</p>
 </div>
 
 </div>
 
-<!-- NEWS -->
+</div>
 
 <div class="section">
 
@@ -303,20 +187,18 @@ margin-top:40px;
 </div>
 
 <div>
-<p>የመንግስት አገልግሎትና አስተዳደር</p>
+<p>የመንግስት አገልግሎትና አስተዳደር የሪፎርም ሥራ</p>
 <p>MARCH 7, 2026</p>
 </div>
 
 <div>
-<p>ብሩህ ሀገር የፈጠራ ሃሳብ</p>
+<p>ብሩህ ሀገር የፈጠራ ሃሳብ ውድድር</p>
 <p>MARCH 7, 2026</p>
 </div>
 
 </div>
 
 </div>
-
-<!-- FAQ -->
 
 <div class="section">
 
@@ -330,13 +212,11 @@ margin-top:40px;
 
 </div>
 
-<!-- CODE LOGIN -->
-
 <div class="codebox">
 
 <h2>Enter Your 6-Digit Code</h2>
 
-<input type="text" id="code" maxlength="6">
+<input type="text" id="code" maxlength="6" placeholder="Enter Code">
 
 <br>
 
@@ -352,53 +232,43 @@ margin-top:40px;
 
 <p>Tel: +251 116 671792</p>
 <p>Email: info@mols.gov.et</p>
+
 <p>© 2025 All rights reserved</p>
 
 </footer>
 
 <script>
 
-let slideIndex=0;
-showSlides();
+let users={
 
-function showSlides(){
+"460067":{
+name:"Abel Tesfaye",
+photo:"https://i.pravatar.cc/150?img=1",
+region:"Addis Ababa"
+},
 
-let i;
-let slides=document.getElementsByClassName("slide");
-let dots=document.getElementsByClassName("dot");
+"460068":{
+name:"Sara Mohammed",
+photo:"https://i.pravatar.cc/150?img=2",
+region:"Oromia"
+},
 
-for(i=0;i<slides.length;i++){
-slides[i].style.display="none";
+"460069":{
+name:"Daniel Bekele",
+photo:"https://i.pravatar.cc/150?img=3",
+region:"Amhara"
+},
+
+"460070":{
+name:"Rahel Girma",
+photo:"https://i.pravatar.cc/150?img=4",
+region:"Tigray"
 }
 
-slideIndex++;
-
-if(slideIndex>slides.length){slideIndex=1}
-
-for(i=0;i<dots.length;i++){
-dots[i].className=dots[i].className.replace(" active","");
-}
-
-slides[slideIndex-1].style.display="block";
-dots[slideIndex-1].className+=" active";
-
-setTimeout(showSlides,4000);
-
-}
+};
 
 function checkCode(){
 
 let code=document.getElementById("code").value;
 
-if(code=="460067"){
-window.location.href="personal.html";
-}else{
-document.getElementById("msg").innerHTML="Invalid Code";
-}
-
-}
-
-</script>
-
-</body>
-</html>
+if(code.length!=6){
