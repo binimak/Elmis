@@ -1,68 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Personal Information</title>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#f3f3f3;
+text-align:center;
+}
+
+.logo img{
+width:120px;
+margin-top:20px;
+}
+
+h1{
+color:#1f5ea8;
+margin-top:10px;
+}
+
+.card{
+background:white;
+margin:20px;
+padding:20px;
+border-radius:15px;
+border:3px solid #1f5ea8;
+}
+
+.profile img{
+width:150px;
+border-radius:12px;
+border:3px solid #1f5ea8;
+}
+
+table{
+width:100%;
+margin-top:20px;
+border-collapse:collapse;
+}
+
+td{
+padding:10px;
+border-bottom:1px dashed #ccc;
+text-align:left;
+}
+
+.label{
+color:#1f5ea8;
+font-weight:bold;
+}
+
+.verified{
+background:#28a745;
+color:white;
+padding:6px 14px;
+border-radius:20px;
+font-weight:bold;
+}
+
+.document-box img{
+width:95%;
+border-radius:10px;
+margin-top:20px;
+}
+
+.upload-box{
+margin:20px;
+padding:20px;
+border:2px dashed #cbd5e1;
+border-radius:12px;
+background:white;
+text-align:left;
+}
+
+.choose-btn{
+background:#0f766e;
+color:white;
+padding:12px 20px;
+border-radius:10px;
+display:inline-block;
+margin-top:10px;
+cursor:pointer;
+}
+
+.submit-btn{
+width:90%;
+margin:20px;
+padding:15px;
+font-size:18px;
+background:#0f2a44;
+color:white;
+border:none;
+border-radius:12px;
+}
+
+.footer{
+background:#1f5ea8;
+color:white;
+padding:40px 20px;
+margin-top:40px;
+text-align:left;
+}
+
+.footer img{
+width:140px;
+margin-bottom:20px;
+}
+
+.social a{
+display:inline-block;
+background:white;
+color:#1f5ea8;
+padding:10px 14px;
+margin-right:10px;
+border-radius:8px;
+text-decoration:none;
+}
+
+.copy{
+text-align:center;
+margin-top:30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="logo">
+<img src="logo.png">
+</div>
+
+<h1>Personal Information</h1>
+
+<div class="card">
+
+<div class="profile">
+<img src="photo.jpg">
+</div>
 
 <table>
-<tr><td>Name</td><td id="name"></td></tr>
-<tr><td>Gender</td><td id="gender"></td></tr>
-<tr><td>Age</td><td id="age"></td></tr>
-<tr><td>Date of Birth</td><td id="dob"></td></tr>
-<tr><td>E-LMIS ID Number</td><td id="id"></td></tr>
-<tr><td>Phone Number</td><td id="phone"></td></tr>
-<tr><td>Place of Birth</td><td id="place"></td></tr>
-<tr><td>Country Where Process Started</td><td id="country"></td></tr>
-<tr><td>Status</td><td id="status"></td></tr>
-<tr><td>Registration Date</td><td id="reg"></td></tr>
-<tr><td>Last Update</td><td id="update"></td></tr>
+
+<tr>
+<td class="label">Name</td>
+<td>ASHENAFI AYALEW GETU</td>
+</tr>
+
+<tr>
+<td class="label">Gender</td>
+<td>Male</td>
+</tr>
+
+<tr>
+<td class="label">Age</td>
+<td>27</td>
+</tr>
+
+<tr>
+<td class="label">Date of Birth</td>
+<td>1989-04-20</td>
+</tr>
+
+<tr>
+<td class="label">E-LMIS ID Number</td>
+<td>622906</td>
+</tr>
+
+<tr>
+<td class="label">Passport Number</td>
+<td>EQ8179818</td>
+</tr>
+
+<tr>
+<td class="label">Phone Number</td>
+<td>+251 918 029 437</td>
+</tr>
+
+<tr>
+<td class="label">Place of Birth</td>
+<td>Bahir Dar, Ethiopia</td>
+</tr>
+
+<tr>
+<td class="label">Visa Type</td>
+<td>Work Visa</td>
+</tr>
+
+<tr>
+<td class="label">Country Where Process Started</td>
+<td>Canada 🇨🇦</td>
+</tr>
+
+<tr>
+<td class="label">Status</td>
+<td><span class="verified">✔ Verified</span></td>
+</tr>
+
+<tr>
+<td class="label">Registration Date</td>
+<td>2026-03-09</td>
+</tr>
+
+<tr>
+<td class="label">Last Update</td>
+<td>2026-03-09</td>
+</tr>
+
 </table>
 
 </div>
 
 <div class="document-box">
-<img src="Picsart_26-03-09_16-41-42-233.jpg">
+<img src="document.jpg">
 </div>
 
 <div class="upload-box">
 
 <h3>Upload receipt (photo) / የክፍያ ደረሰኝ ፎቶ</h3>
 
-<div class="upload-area">
+<input type="file">
 
-<input type="file" id="receipt" accept="image/png, image/jpeg" capture="environment">
+<br><br>
 
-<label for="receipt" class="choose-btn">📷 Choose / Take Photo</label>
+<label class="choose-btn">Choose / Take photo</label>
 
-<span id="file-name">No file chosen</span>
-
-</div>
-
-<button class="submit-btn">Submit</button>
+<p>No file chosen</p>
 
 </div>
 
-<script>
+<button class="submit-btn">Submit receipt</button>
 
-let user = JSON.parse(localStorage.getItem("user"));
+<footer class="footer">
 
-if(!user){
-window.location.href="index.html";
-}
+<img src="logo.png">
 
-if(user){
+<p>
+The Ministry of Labour and Skills was established following the National Reform.
+The Ministry of Labour and Skills was founded with Proclamation No. 1263/2022,
+which oversees national job creation, skills development, and labor concerns.
+</p>
 
-document.getElementById("photo").src=user.photo;
-document.getElementById("name").innerHTML=user.name;
-document.getElementById("gender").innerHTML=user.gender;
-document.getElementById("age").innerHTML=user.age;
-document.getElementById("dob").innerHTML=user.dob;
-document.getElementById("id").innerHTML=user.id;
-document.getElementById("phone").innerHTML=user.phone;
-document.getElementById("place").innerHTML=user.place;
-document.getElementById("country").innerHTML=user.country;
-document.getElementById("status").innerHTML="✔ Verified "+user.status;
-document.getElementById("reg").innerHTML=user.reg;
-document.getElementById("update").innerHTML=user.update;
+<h2>Get In Touch</h2>
 
-}
+<p>Tel no: +251 116 671792</p>
+<p>Po Box: 25534</p>
+<p>Fax: +251 116 671568</p>
+<p>Address: Behind Lambert Ethiopian Technical and Vocational Institute</p>
+<p>Email: info@MoLS.gov.et</p>
 
-</script>
+<h2>Menu</h2>
+
+<p>Privacy Policy</p>
+<p>Copyright</p>
+
+<div class="social">
+<a href="#">f</a>
+<a href="#">t</a>
+<a href="#">▶</a>
+</div>
+
+<p class="copy">© 2025 All rights reserved</p>
+
+</footer>
 
 </body>
 </html>
