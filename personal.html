@@ -1,85 +1,132 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Personal Information</title>
 
 <style>
 
 body{
 font-family:Arial;
+background:#f2f2f2;
 margin:0;
-background:#f3f3f3;
 text-align:center;
 }
+
+/* logo */
 
 .logo img{
 width:120px;
 margin-top:20px;
 }
 
+/* title */
+
 h1{
-color:#1f5ea8;
-margin-top:10px;
+color:#2f5d94;
 }
+
+/* card */
 
 .card{
 background:white;
 margin:20px;
 padding:20px;
-border-radius:15px;
-border:3px solid #1f5ea8;
+border-radius:20px;
+border:4px solid #2f5d94;
 }
 
+/* profile photo */
+
 .profile img{
-width:150px;
-border-radius:12px;
-border:3px solid #1f5ea8;
+width:70px;
+height:70px;
+border-radius:50%;
+border:4px solid #2f5d94;
+object-fit:cover;
 }
+
+/* table */
 
 table{
 width:100%;
-margin-top:20px;
 border-collapse:collapse;
+margin-top:10px;
 }
 
 td{
-padding:10px;
+padding:12px;
 border-bottom:1px dashed #ccc;
-text-align:left;
 }
 
 .label{
-color:#1f5ea8;
+text-align:left;
+color:#2f5d94;
 font-weight:bold;
 }
+
+.value{
+text-align:right;
+}
+
+/* verified badge */
 
 .verified{
 background:#28a745;
 color:white;
-padding:6px 14px;
+padding:6px 15px;
 border-radius:20px;
 font-weight:bold;
 }
 
-.document-box img{
-width:95%;
-border-radius:10px;
-margin-top:20px;
+/* document slider */
+
+.document-card{
+position:relative;
+background:white;
+margin:20px;
+padding:10px;
+border-radius:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
 
-.upload-box{
+.document-card img{
+width:100%;
+border-radius:10px;
+}
+
+.arrow{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:#666;
+color:white;
+border:none;
+padding:10px 14px;
+font-size:20px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.left{
+left:8px;
+}
+
+.right{
+right:8px;
+}
+
+/* upload */
+
+.upload{
+background:white;
 margin:20px;
 padding:20px;
-border:2px dashed #cbd5e1;
-border-radius:12px;
-background:white;
-text-align:left;
+border-radius:15px;
+border:2px dashed #ccc;
 }
 
-.choose-btn{
+.choose{
 background:#0f766e;
 color:white;
 padding:12px 20px;
@@ -89,47 +136,37 @@ margin-top:10px;
 cursor:pointer;
 }
 
-.submit-btn{
+.submit{
 width:90%;
-margin:20px;
 padding:15px;
 font-size:18px;
 background:#0f2a44;
 color:white;
 border:none;
 border-radius:12px;
+margin:20px;
 }
+
+/* footer */
 
 .footer{
 background:#1f5ea8;
 color:white;
 padding:40px 20px;
-margin-top:40px;
 text-align:left;
 }
 
 .footer img{
-width:140px;
+width:130px;
 margin-bottom:20px;
-}
-
-.social a{
-display:inline-block;
-background:white;
-color:#1f5ea8;
-padding:10px 14px;
-margin-right:10px;
-border-radius:8px;
-text-decoration:none;
 }
 
 .copy{
 text-align:center;
-margin-top:30px;
+margin-top:20px;
 }
 
 </style>
-
 </head>
 
 <body>
@@ -150,78 +187,88 @@ margin-top:30px;
 
 <tr>
 <td class="label">Name</td>
-<td>ASHENAFI AYALEW GETU</td>
+<td class="value">ASHENAFI<br>AYALEW GETU</td>
 </tr>
 
 <tr>
 <td class="label">Gender</td>
-<td>Male</td>
+<td class="value">Male</td>
 </tr>
 
 <tr>
 <td class="label">Age</td>
-<td>27</td>
+<td class="value">27</td>
 </tr>
 
 <tr>
 <td class="label">Date of Birth</td>
-<td>1989-04-20</td>
+<td class="value">1989-04-20</td>
 </tr>
 
 <tr>
 <td class="label">E-LMIS ID Number</td>
-<td>622906</td>
+<td class="value">622906</td>
 </tr>
 
 <tr>
 <td class="label">Passport Number</td>
-<td>EQ8179818</td>
+<td class="value">EQ8179818</td>
 </tr>
 
 <tr>
 <td class="label">Phone Number</td>
-<td>+251 918 029 437</td>
+<td class="value">+251 918 029 437</td>
 </tr>
 
 <tr>
 <td class="label">Place of Birth</td>
-<td>Bahir Dar, Ethiopia</td>
+<td class="value">Bahir Dar, Ethiopia</td>
 </tr>
 
 <tr>
 <td class="label">Visa Type</td>
-<td>Work Visa</td>
+<td class="value">Work Visa</td>
 </tr>
 
 <tr>
 <td class="label">Country Where Process Started</td>
-<td>Canada 🇨🇦</td>
+<td class="value">Canada 🇨🇦</td>
 </tr>
 
 <tr>
 <td class="label">Status</td>
-<td><span class="verified">✔ Verified</span></td>
+<td class="value"><span class="verified">✔ Verified</span></td>
 </tr>
 
 <tr>
 <td class="label">Registration Date</td>
-<td>2026-03-09</td>
+<td class="value">2026-03-09</td>
 </tr>
 
 <tr>
 <td class="label">Last Update</td>
-<td>2026-03-09</td>
+<td class="value">2026-03-09</td>
 </tr>
 
 </table>
 
 </div>
 
-<div class="document-box">
-<img src="document.jpg">
+<!-- document slider -->
+
+<div class="document-card">
+
+<button class="arrow left" onclick="prev()">❮</button>
+
+<img id="doc" src="doc1.jpg">
+
+<button class="arrow right" onclick="next()">❯</button>
+
 </div>
 
-<div class="upload-box">
+<!-- upload receipt -->
+
+<div class="upload">
 
 <h3>Upload receipt (photo) / የክፍያ ደረሰኝ ፎቶ</h3>
 
@@ -229,13 +276,13 @@ margin-top:30px;
 
 <br><br>
 
-<label class="choose-btn">Choose / Take photo</label>
+<span class="choose">Choose / Take photo</span>
 
 <p>No file chosen</p>
 
 </div>
 
-<button class="submit-btn">Submit receipt</button>
+<button class="submit">Submit receipt</button>
 
 <footer class="footer">
 
@@ -243,32 +290,47 @@ margin-top:30px;
 
 <p>
 The Ministry of Labour and Skills was established following the National Reform.
-The Ministry of Labour and Skills was founded with Proclamation No. 1263/2022,
-which oversees national job creation, skills development, and labor concerns.
+The Ministry of Labour and Skills was founded with Proclamation No. 1263/2022.
 </p>
 
-<h2>Get In Touch</h2>
+<h3>Get In Touch</h3>
 
-<p>Tel no: +251 116 671792</p>
-<p>Po Box: 25534</p>
+<p>Tel: +251 116 671792</p>
 <p>Fax: +251 116 671568</p>
-<p>Address: Behind Lambert Ethiopian Technical and Vocational Institute</p>
-<p>Email: info@MoLS.gov.et</p>
-
-<h2>Menu</h2>
-
-<p>Privacy Policy</p>
-<p>Copyright</p>
-
-<div class="social">
-<a href="#">f</a>
-<a href="#">t</a>
-<a href="#">▶</a>
-</div>
+<p>P.O.Box: 25534</p>
 
 <p class="copy">© 2025 All rights reserved</p>
 
 </footer>
+
+<script>
+
+var docs=[
+"doc1.jpg",
+"doc2.jpg",
+"doc3.jpg",
+"doc4.jpg"
+];
+
+var i=0;
+
+function show(){
+document.getElementById("doc").src=docs[i];
+}
+
+function next(){
+i++;
+if(i>=docs.length){i=0;}
+show();
+}
+
+function prev(){
+i--;
+if(i<0){i=docs.length-1;}
+show();
+}
+
+</script>
 
 </body>
 </html>
