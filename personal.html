@@ -2,18 +2,6 @@
 <html>
 <head>
 <title>Personal Page</title>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
-<style>
-#idcard{
-border:1px solid black;
-width:300px;
-padding:10px;
-margin-top:20px;
-}
-</style>
-
 </head>
 
 <body>
@@ -91,29 +79,6 @@ margin-top:20px;
 <input type="file" id="receipt">
 <p id="file-name">No file chosen</p>
 
-<br>
-<img id="receipt-preview" width="200">
-
-<br><br>
-
-<h3>Your QR Code</h3>
-<div id="qrcode"></div>
-
-<br><br>
-
-<button onclick="downloadID()">Download ID Card</button>
-
-<div id="idcard">
-
-<h3>ID CARD</h3>
-
-<img id="cardphoto" width="100"><br>
-
-Name: <span id="cardname"></span><br>
-ID: <span id="cardid"></span><br>
-
-</div>
-
 <script>
 
 let user = JSON.parse(localStorage.getItem("user"));
@@ -139,53 +104,13 @@ document.getElementById("status").innerHTML = "✔ Verified";
 document.getElementById("reg").innerHTML = user.reg;
 document.getElementById("update").innerHTML = user.update;
 
-document.getElementById("cardphoto").src = user.photo;
-document.getElementById("cardname").innerHTML = user.name;
-document.getElementById("cardid").innerHTML = user.id;
-
 document.getElementById("receipt").addEventListener("change", function(){
 
-const file = this.files[0];
-
-const fileName = file ? file.name : "No file chosen";
+const fileName = this.files[0] ? this.files[0].name : "No file chosen";
 
 document.getElementById("file-name").textContent = fileName;
 
-if(file){
-
-const reader = new FileReader();
-
-reader.onload = function(e){
-
-document.getElementById("receipt-preview").src = e.target.result;
-
-}
-
-reader.readAsDataURL(file);
-
-}
-
 });
-
-new QRCode(document.getElementById("qrcode"), {
-
-text: user.id,
-width: 150,
-height: 150
-
-});
-
-function downloadID(){
-
-const link = document.createElement("a");
-
-link.download = "ID-Card.html";
-
-link.href = "data:text/html;charset=utf-8," + encodeURIComponent(document.documentElement.outerHTML);
-
-link.click();
-
-}
 
 </script>
 
