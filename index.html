@@ -3,6 +3,7 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ministry of Labor and Skills</title>
 
 <style>
@@ -10,14 +11,14 @@
 body{
 font-family:Arial;
 margin:0;
-background:#f5f5f5;
+background:#f2f2f2;
 }
 
 header{
 background:#0b3d91;
 color:white;
-padding:20px;
 text-align:center;
+padding:20px;
 }
 
 .nav{
@@ -50,16 +51,16 @@ margin:auto;
 
 .card{
 background:white;
-padding:25px;
-border-radius:12px;
+padding:20px;
+border-radius:10px;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
 .card img{
 width:100%;
-height:280px;
+height:260px;
 object-fit:cover;
-border-radius:10px;
+border-radius:8px;
 }
 
 .card p{
@@ -85,16 +86,15 @@ box-shadow:0 0 10px rgba(0,0,0,0.1);
 .codebox{
 background:white;
 padding:30px;
-margin:30px auto;
+margin:40px auto;
 border-radius:10px;
-text-align:center;
-max-width:500px;
+max-width:450px;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
 input{
 padding:12px;
-width:80%;
+width:85%;
 font-size:16px;
 border:1px solid #ccc;
 border-radius:5px;
@@ -210,7 +210,7 @@ margin-top:40px;
 
 <div class="codebox">
 
-<h2>Enter Your 6-Digit Code</h2>
+<h2>Enter Your 6 Digit Code</h2>
 
 <input type="text" id="code" maxlength="6" placeholder="Enter Code">
 
@@ -234,10 +234,37 @@ margin-top:40px;
 <script>
 
 let users={
-"622906":{name:"Abel Tesfaye",photo:"https://i.pravatar.cc/150?img=1",region:"Addis Ababa"},
-"460068":{name:"Sara Mohammed",photo:"https://i.pravatar.cc/150?img=2",region:"Oromia"},
-"460069":{name:"Daniel Bekele",photo:"https://i.pravatar.cc/150?img=3",region:"Amhara"},
-"460070":{name:"Rahel Girma",photo:"https://i.pravatar.cc/150?img=4",region:"Tigray"}
+
+"622906":{
+name:"ASHENAFI AYALEW GELETA",
+gender:"Male",
+age:"19",
+dob:"21/2/1997",
+id:"622906",
+phone:"+251917602171",
+place:"OROMIA, AMBO CITY ADMINISTRATION",
+country:"CANADA 🇨🇦",
+status:"Verified",
+reg:"2026-03-06",
+update:"2026-03-06",
+photo:"IMG_20260309_152208_774.jpg"
+},
+
+"460068":{
+name:"Sara Mohammed",
+gender:"Female",
+age:"23",
+dob:"12/5/2002",
+id:"460068",
+phone:"+251900000000",
+place:"Oromia",
+country:"Canada 🇨🇦",
+status:"Verified",
+reg:"2026-03-07",
+update:"2026-03-07",
+photo:"https://i.pravatar.cc/200?img=5"
+}
+
 };
 
 function checkCode(){
@@ -252,7 +279,6 @@ return;
 if(users[code]){
 
 localStorage.setItem("user",JSON.stringify(users[code]));
-
 window.location.href="personal.html";
 
 }else{
