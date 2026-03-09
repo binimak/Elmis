@@ -148,14 +148,14 @@ color:#555;
 <div class="card">
 
 <div class="profile">
-<img id="photo">
+<img id="photo" scr="">
 </div>
 
-<div class="name" id="name"></div>
+<div class="name"></div>
 
-<table>
+  <table>
 
-<tr><td>Name</td><td id="name2"></td></tr>
+<tr><td>Name</td><td id="name"></td></tr>
 <tr><td>Gender</td><td id="gender"></td></tr>
 <tr><td>Age</td><td id="age"></td></tr>
 <tr><td>Date of Birth</td><td id="dob"></td></tr>
@@ -195,17 +195,17 @@ color:#555;
 
 <script>
 
-/* load user */
-
 let user = JSON.parse(localStorage.getItem("user"));
+
+if(!user){
+window.location.href="index.html";
+}
+  
 
 if(user){
 
 document.getElementById("photo").src=user.photo;
-
 document.getElementById("name").innerHTML=user.name;
-document.getElementById("name2").innerHTML=user.name;
-
 document.getElementById("gender").innerHTML=user.gender;
 document.getElementById("age").innerHTML=user.age;
 document.getElementById("dob").innerHTML=user.dob;
