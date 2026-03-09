@@ -1,307 +1,152 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html lang="am">
 <head>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Ministry of Labor and Skills</title>
-<h3>ስራ እና ክህሎት ሚኒስቴር</h3>
-<style>
+<meta charset="UTF-8">
+<title>Ministry of Labor and Skills</title><style>
 
 body{
-font-family:Arial;
 margin:0;
-background:#f5f5f5;
+font-family:Arial;
+background:#f4f4f4;
 }
+
+/* header */
 
 header{
-background:none;
-color:blue;
-padding:20px;
+background:#0b3d91;
+color:white;
 text-align:center;
+padding:20px;
 }
 
-.nav{
-background:#072c6b;
-display:flex;
-justify-content:center;
-gap:20px;
-padding:12px;
-flex-wrap:wrap;
+header img{
+width:90px;
 }
 
-.nav a{
+header h1{
+margin:5px;
+}
+
+header p{
+font-size:14px;
+margin-top:-5px;
+}
+
+/* slider */
+
+.slider{
+max-width:1000px;
+margin:20px auto;
+position:relative;
+}
+
+.slides{
+display:none;
+}
+
+.slides img{
+width:100%;
+height:420px;
+object-fit:cover;
+border-radius:10px;
+}
+
+.text{
+position:absolute;
+bottom:30px;
+left:30px;
+color:white;
+background:rgba(0,0,0,0.5);
+padding:15px;
+border-radius:8px;
+}
+
+.readbtn{
+display:inline-block;
+margin-top:10px;
+padding:8px 15px;
+background:#0b3d91;
 color:white;
 text-decoration:none;
-font-size:15px;
-}
-
-.section{
-padding:30px;
-text-align:center;
-}
-
-.ministers{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-max-width:1000px;
-margin:auto;
-}
-
-.card{
-background:white;
-padding:10px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
-.card img{
-width:100%;
-height:450px;
-object-fit:cover;
-border-radius:30px;
-}
-
-.card p{
-font-weight:bold;
-margin-top:10px;
-}
-
-.news{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-max-width:900px;
-margin:auto;
-}
-
-.news div{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
-.codebox{
-background:white;
-padding:30px;
-margin:30px auto;
-border-radius:10px;
-text-align:center;
-max-width:500px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
-input{
-padding:12px;
-width:80%;
-font-size:16px;
-border:1px solid #ccc;
 border-radius:5px;
 }
 
-button{
-padding:12px 30px;
-background:#0b3d91;
-color:white;
-border:none;
-margin-top:15px;
-border-radius:5px;
+.prev,.next{
 cursor:pointer;
+position:absolute;
+top:50%;
+padding:16px;
+color:white;
+font-size:22px;
+background:rgba(0,0,0,0.5);
 }
 
-button:hover{
-background:#072c6b;
+.next{
+right:0;
 }
 
-footer{
+/* ticker */
+
+.ticker{
 background:#0b3d91;
 color:white;
-padding:25px;
-text-align:center;
-margin-top:40px;
+padding:10px;
+margin-top:20px;
 }
 
-</style>
-
-</head>
-
-<body>
-
-<header>
+</style></head><body><header><img src="https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-19-07.jpg"><h1>Labor Market Information System</h1>
+<p>ስራና ክህሎት ሚኒስቴር</p></header><div class="slider"><div class="slides">
+<img src="https://e-lmis-online.netlify.app/image/photo_2_2025-11-29_18-19-07.jpg">
+<div class="text">
 <h2>Ministry of Labor and Skills</h2>
-</header>
-
-<div class="nav">
-<a href="#">Home</a>
-<a href="#">News</a>
-<a href="#">FAQ</a>
-<a href="#">Contact</a>
+<a href="#" class="readbtn">READ MORE</a>
 </div>
-
-<div class="section">
-
-<h2>Minister of Labor and Skills</h2>
-
-<div class="ministers">
-
-<div class="card">
+</div><div class="slides">
 <img src="https://e-lmis-online.netlify.app/image/photo_1_2025-11-29_18-19-07.jpg">
-<p>H.E Muferihat Kamil Ahmed</p>
+<div class="text">
+<h2>Labor Market Information System</h2>
+<a href="#" class="readbtn">READ MORE</a>
 </div>
-
-<div class="card">
+</div><div class="slides">
 <img src="https://e-lmis-online.netlify.app/image/photo_3_2025-11-29_18-58-10.jpg">
-<p>H.E Dr. Teshale Berecha</p>
+<div class="text">
+<h2>Digital Employment Service</h2>
+<a href="#" class="readbtn">READ MORE</a>
 </div>
+</div><a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
 
-<div class="card">
-<img src="https://e-lmis-online.netlify.app/image/photo_4_2025-11-29_18-58-10.jpg">
-<p>H.E Mr. Solomon Soka</p>
-</div>
+</div><div class="ticker">
+<marquee>
+Latest News : የስራ እድል መረጃ | Digital Employment Service | Ministry of Labor and Skills Ethiopia
+</marquee>
+</div><script>
 
-<div class="card">
-<img src="https://e-lmis-online.netlify.app/image/photo_1_2025-11-29_18-58-10.jpg">
-<p>H.E Mr. Daniel Teressa Shone</p>
-</div>
+let slideIndex=1;
+showSlides(slideIndex);
 
-<div class="card">
-<img src="https://e-lmis-online.netlify.app/image/photo_2025-11-29_19-17-01.jpg">
-<p>H.E Mrs. Nebiya Mohamed</p>
-</div>
-
-</div>
-
-</div>
-
-<div class="section">
-
-<h2>News</h2>
-
-<div class="news">
-
-<div>
-<p>የመንግስት አገልግሎትና አስተዳደር ሪፎርም</p>
-<p>MARCH 7, 2026</p>
-</div>
-
-<div>
-<p>የመንግስት አገልግሎትና አስተዳደር የሪፎርም ሥራ</p>
-<p>MARCH 7, 2026</p>
-</div>
-
-<div>
-<p>ብሩህ ሀገር የፈጠራ ሃሳብ ውድድር</p>
-<p>MARCH 7, 2026</p>
-</div>
-
-</div>
-
-</div>
-
-<div class="section">
-
-<h2>Frequently Asked Questions</h2>
-
-<p><b>What is the performance of job creation?</b></p>
-<p>In the first 11 months of the fiscal year 2,949,293 jobs were planned.</p>
-
-<p><b>What is Differentiation in Zoning and Training Fields?</b></p>
-<p>Explanation about zoning and training fields.</p>
-
-</div>
-
-<div class="codebox">
-
-<h2>Enter Your 6-Digit Code</h2>
-<span style="font-size:14px; color:gray;">ኮድ አስገባ</span>
-<input type="text" id="code" maxlength="6" placeholder="Enter Code">
-
-<br>
-
-<button onclick="checkCode()">Submit</button>
-
-<p id="msg"></p>
-
-</div>
-
-<footer>
-
-<h3>Contact Us</h3>
-
-<p>Tel: +251 116 671792</p>
-<p>Email: info@mols.gov.et</p>
-
-<p>© 2025 All rights reserved</p>
-
-</footer>
-
-<script>
-
-let users={
-
-"622906":{
-name:"Abel Tesfaye",
-photo:"https://i.pravatar.cc/150?img=1",
-region:"Addis Ababa"
-},
-
-"460068":{
-name:"Sara Mohammed",
-photo:"https://i.pravatar.cc/150?img=2",
-region:"Oromia"
-},
-
-"460069":{
-name:"Daniel Bekele",
-photo:"https://i.pravatar.cc/150?img=3",
-region:"Amhara"
-},
-
-"460070":{
-name:"Rahel Girma",
-photo:"https://i.pravatar.cc/150?img=4",
-region:"Tigray"
+function plusSlides(n){
+showSlides(slideIndex+=n);
 }
 
-};
+function showSlides(n){
 
-function checkCode(){
+let i;
+let slides=document.getElementsByClassName("slides");
 
-let code=document.getElementById("code").value;
+if(n>slides.length){slideIndex=1}
+if(n<1){slideIndex=slides.length}
 
-if(code.length!=6){
+for(i=0;i<slides.length;i++){
+slides[i].style.display="none";
+}
 
-document.getElementById("msg").innerHTML="Code must be 6 digits";
-return;
+slides[slideIndex-1].style.display="block";
 
 }
 
-if(users[code]){
+setInterval(function(){
+plusSlides(1);
+},4000);
 
-localStorage.setItem("user",JSON.stringify(users[code]));
-window.location.href="personal.html";
-
-}
-
-else{
-
-document.getElementById("msg").innerHTML="Invalid Code";
-
-}
-
-}
-
-document.getElementById("code").addEventListener("keypress",function(e){
-
-if(e.key==="Enter"){
-checkCode();
-}
-
-});
-
-</script>
-
-</body>
+</script></body>
 </html>
