@@ -1,195 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
+<title>Personal Page</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Personal Information</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <style>
-
-body{
-font-family:Arial;
-background:#f4f6f9;
-margin:0;
-padding:0;
-text-align:center;
-}
-
-.logo img{
-width:80px;
-margin-top:20px;
-}
-
-h1{
-color:#3b6ea5;
-margin:10px 0 20px;
-}
-
-.card{
-width:90%;
-max-width:500px;
-margin:auto;
-background:white;
-border:3px solid #3b6ea5;
-border-radius:20px;
-padding:20px;
-box-shadow:0 4px 10px rgba(0,0,0,0.2);
-}
-
-.profile img{
-width:200px;
-height:200px;
-object-fit:cover;
-border-radius:20px;
-border:4px solid #3b6ea5;
-}
-
-.name{
-font-size:20px;
-margin-top:10px;
-font-weight:bold;
-}
-
-table{
-width:100%;
-margin-top:20px;
-border-collapse:collapse;
-}
-
-td{
+#idcard{
+border:1px solid black;
+width:300px;
 padding:10px;
-border-bottom:1px dashed #ccc;
-text-align:left;
-}
-
-td:first-child{
-color:#3b6ea5;
-font-weight:bold;
-width:50%;
-}
-
-.verified{
-color:green;
-font-weight:bold;
-}
-
-.document-box{
-max-width:700px;
-margin:30px auto;
-background:#fff;
-padding:15px;
-border-radius:12px;
-box-shadow:0 4px 12px rgba(0,0,0,0.15);
-}
-
-.document-box img{
-width:100%;
-border-radius:10px;
-}
-
-.upload-box{
-margin-top:30px;
-}
-
-.upload-area{
-border:2px dashed #cbd5e1;
-padding:25px;
-border-radius:12px;
-background:#f8fafc;
-}
-
-.choose-btn{
-background:#0f766e;
-color:white;
-padding:14px 22px;
-border-radius:10px;
-font-size:16px;
-font-weight:bold;
-cursor:pointer;
-display:inline-block;
-margin-top:10px;
-}
-
-input[type="file"]{
-display:none;
-}
-
-.submit-btn{
 margin-top:20px;
-padding:10px 20px;
-background:#e2e8f0;
-border:none;
-border-radius:8px;
-font-weight:bold;
-cursor:pointer;
 }
-
-#file-name{
-display:block;
-margin-top:10px;
-color:#555;
-}
-
 </style>
 
 </head>
 
 <body>
 
-<div class="logo">
-<img src="logo.png">
-</div>
+<h2>Personal Information</h2>
 
-<h1>Personal Information</h1>
+<img id="photo" src="" width="150">
+<br><br>
 
-<div class="card">
+<img id="documentphoto" src="" width="200">
 
-<div class="profile">
-<img id="photo" scr="">
-</div>
+<table border="1">
 
-<div class="name"></div>
+<tr>
+<td>Name</td>
+<td id="name"></td>
+</tr>
 
-  <table>
+<tr>
+<td>Gender</td>
+<td id="gender"></td>
+</tr>
 
-<tr><td>Name</td><td id="name"></td></tr>
-<tr><td>Gender</td><td id="gender"></td></tr>
-<tr><td>Age</td><td id="age"></td></tr>
-<tr><td>Date of Birth</td><td id="dob"></td></tr>
-<tr><td>E-LMIS ID Number</td><td id="id"></td></tr>
-<tr><td>Phone Number</td><td id="phone"></td></tr>
-<tr><td>Place of Birth</td><td id="place"></td></tr>
-<tr><td>Country Where Process Started</td><td id="country"></td></tr>
-<tr><td>Status</td><td class="verified" id="status"></td></tr>
-<tr><td>Registration Date</td><td id="reg"></td></tr>
-<tr><td>Last Update</td><td id="update"></td></tr>
+<tr>
+<td>Age</td>
+<td id="age"></td>
+</tr>
+
+<tr>
+<td>Date of Birth</td>
+<td id="dob"></td>
+</tr>
+
+<tr>
+<td>ID Number</td>
+<td id="id"></td>
+</tr>
+
+<tr>
+<td>Phone Number</td>
+<td id="phone"></td>
+</tr>
+
+<tr>
+<td>Place</td>
+<td id="place"></td>
+</tr>
+
+<tr>
+<td>Country</td>
+<td id="country"></td>
+</tr>
+
+<tr>
+<td>Status</td>
+<td id="status"></td>
+</tr>
+
+<tr>
+<td>Register Date</td>
+<td id="reg"></td>
+</tr>
+
+<tr>
+<td>Last Update</td>
+<td id="update"></td>
+</tr>
 
 </table>
 
-</div>
+<br><br>
 
-<div class="document-box">
-<img src="Picsart_26-03-09_16-41-42-233.jpg">
-</div>
+<h3>Upload Payment Receipt</h3>
 
-<div class="upload-box">
+<input type="file" id="receipt">
+<p id="file-name">No file chosen</p>
 
-<h3>Upload receipt (photo) / የክፍያ ደረሰኝ ፎቶ</h3>
+<br>
+<img id="receipt-preview" width="200">
 
-<div class="upload-area">
+<br><br>
 
-<input type="file" id="receipt" accept="image/png, image/jpeg" capture="environment">
+<h3>Your QR Code</h3>
+<div id="qrcode"></div>
 
-<label for="receipt" class="choose-btn">📷 Choose / Take Photo</label>
+<br><br>
 
-<span id="file-name">No file chosen</span>
+<button onclick="downloadID()">Download ID Card</button>
 
-</div>
+<div id="idcard">
 
-<button class="submit-btn">Submit</button>
+<h3>ID CARD</h3>
+
+<img id="cardphoto" width="100"><br>
+
+Name: <span id="cardname"></span><br>
+ID: <span id="cardid"></span><br>
 
 </div>
 
@@ -200,38 +121,73 @@ let user = JSON.parse(localStorage.getItem("user"));
 if(!user){
 window.location.href="index.html";
 }
-  
 
-if(user){
+document.getElementById("photo").src = user.photo;
+document.getElementById("documentphoto").src = user.documentphoto;
 
-document.getElementById("Photo").src=user.photo;
-document.getElementById("Name").innerHTML=user.name;
-document.getElementById("Gender").innerHTML=user.gender;
-document.getElementById("Age").innerHTML=user.age;
-document.getElementById("Date of Birth").innerHTML=user.dob;
-document.getElementById("ELMIS-ID NUMBER").innerHTML=user.id;
-document.getElementById("Phone Number").innerHTML=user.phone;
-document.getElementById("Birth Please").innerHTML=user.place;
-document.getElementById("Country Where Process Started ").innerHTML=user.country;
-document.getElementById("Status").innerHTML="✔ Verified "+user.status;
-document.getElementById("Gegistration Date").innerHTML=user.reg;
-document.getElementById("Last Update ").innerHTML=user.update;
-document.getElementById("Visa Type ").innerHTML=user.update;
-}
+document.getElementById("name").innerHTML = user.name;
+document.getElementById("gender").innerHTML = user.gender;
+document.getElementById("age").innerHTML = user.age;
+document.getElementById("dob").innerHTML = user.dob;
+document.getElementById("id").innerHTML = user.id;
+document.getElementById("phone").innerHTML = user.phone;
+document.getElementById("place").innerHTML = user.place;
+document.getElementById("country").innerHTML = user.country;
 
-/* upload name */
+document.getElementById("status").innerHTML = "✔ Verified";
+
+document.getElementById("reg").innerHTML = user.reg;
+document.getElementById("update").innerHTML = user.update;
+
+document.getElementById("cardphoto").src = user.photo;
+document.getElementById("cardname").innerHTML = user.name;
+document.getElementById("cardid").innerHTML = user.id;
 
 document.getElementById("receipt").addEventListener("change", function(){
 
-const fileName=this.files[0]?.name || "No file chosen";
+const file = this.files[0];
 
-document.getElementById("file-name").textContent=fileName;
+const fileName = file ? file.name : "No file chosen";
+
+document.getElementById("file-name").textContent = fileName;
+
+if(file){
+
+const reader = new FileReader();
+
+reader.onload = function(e){
+
+document.getElementById("receipt-preview").src = e.target.result;
+
+}
+
+reader.readAsDataURL(file);
+
+}
 
 });
 
-</script
-...
-</div>
+new QRCode(document.getElementById("qrcode"), {
+
+text: user.id,
+width: 150,
+height: 150
+
+});
+
+function downloadID(){
+
+const link = document.createElement("a");
+
+link.download = "ID-Card.html";
+
+link.href = "data:text/html;charset=utf-8," + encodeURIComponent(document.documentElement.outerHTML);
+
+link.click();
+
+}
+
+</script>
 
 </body>
 </html>
