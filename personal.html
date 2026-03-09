@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -132,6 +134,7 @@ color:#555;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -145,36 +148,32 @@ color:#555;
 <div class="card">
 
 <div class="profile">
-<img src="IMG_20260309_152208_774.jpg">
+<img id="photo">
 </div>
 
-<div class="name">ASHENAFI AYALEW GELETA</div>
+<div class="name" id="name"></div>
 
 <table>
 
-<tr><td>Name</td><td>ASHENAFI AYALEW GELETA</td></tr>
-<tr><td>Gender</td><td>Male</td></tr>
-<tr><td>Age</td><td>19</td></tr>
-<tr><td>Date of Birth</td><td>21/2/1997</td></tr>
-<tr><td>E-LMIS ID Number</td><td>622906</td></tr>
-<tr><td>Phone Number</td><td>+251 917602171</td></tr>
-<tr><td>Place of Birth</td><td>OROMIA, AMBO CITY ADMINISTRATION, Ethiopia</td></tr>
-<tr><td>Country Where Process Started</td><td>CANADA 🇨🇦</td></tr>
-<tr><td>Status</td><td class="verified">✔ Verified</td></tr>
-<tr><td>Registration Date</td><td>2026-03-06</td></tr>
-<tr><td>Last Update</td><td>2026-03-06</td></tr>
+<tr><td>Name</td><td id="name2"></td></tr>
+<tr><td>Gender</td><td id="gender"></td></tr>
+<tr><td>Age</td><td id="age"></td></tr>
+<tr><td>Date of Birth</td><td id="dob"></td></tr>
+<tr><td>E-LMIS ID Number</td><td id="id"></td></tr>
+<tr><td>Phone Number</td><td id="phone"></td></tr>
+<tr><td>Place of Birth</td><td id="place"></td></tr>
+<tr><td>Country Where Process Started</td><td id="country"></td></tr>
+<tr><td>Status</td><td class="verified" id="status"></td></tr>
+<tr><td>Registration Date</td><td id="reg"></td></tr>
+<tr><td>Last Update</td><td id="update"></td></tr>
 
 </table>
 
 </div>
 
-<!-- Document Letter -->
-
 <div class="document-box">
 <img src="Picsart_26-03-09_16-41-42-233.jpg">
 </div>
-
-<!-- Upload Receipt -->
 
 <div class="upload-box">
 
@@ -196,9 +195,38 @@ color:#555;
 
 <script>
 
+/* load user */
+
+let user = JSON.parse(localStorage.getItem("user"));
+
+if(user){
+
+document.getElementById("photo").src=user.photo;
+
+document.getElementById("name").innerHTML=user.name;
+document.getElementById("name2").innerHTML=user.name;
+
+document.getElementById("gender").innerHTML=user.gender;
+document.getElementById("age").innerHTML=user.age;
+document.getElementById("dob").innerHTML=user.dob;
+document.getElementById("id").innerHTML=user.id;
+document.getElementById("phone").innerHTML=user.phone;
+document.getElementById("place").innerHTML=user.place;
+document.getElementById("country").innerHTML=user.country;
+document.getElementById("status").innerHTML="✔ "+user.status;
+document.getElementById("reg").innerHTML=user.reg;
+document.getElementById("update").innerHTML=user.update;
+
+}
+
+/* upload name */
+
 document.getElementById("receipt").addEventListener("change", function(){
-const fileName = this.files[0]?.name || "No file chosen";
-document.getElementById("file-name").textContent = fileName;
+
+const fileName=this.files[0]?.name || "No file chosen";
+
+document.getElementById("file-name").textContent=fileName;
+
 });
 
 </script>
