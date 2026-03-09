@@ -1,83 +1,151 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Personal Page</title>
+<title>Personal Information</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f2f2f2;
+text-align:center;
+margin:0;
+padding:0;
+}
+
+.logo img{
+width:120px;
+margin-top:20px;
+}
+
+h1{
+margin-top:10px;
+}
+
+.card{
+background:white;
+width:90%;
+max-width:500px;
+margin:20px auto;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.profile img{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+}
+
+table{
+width:100%;
+margin-top:20px;
+border-collapse:collapse;
+}
+
+td{
+padding:8px;
+border-bottom:1px solid #ddd;
+text-align:left;
+}
+
+.document-box img{
+width:90%;
+max-width:400px;
+margin-top:20px;
+}
+
+.upload-box{
+margin-top:20px;
+}
+
+.upload-area{
+margin-top:10px;
+}
+
+.choose-btn{
+background:#007bff;
+color:white;
+padding:10px 20px;
+border-radius:6px;
+cursor:pointer;
+display:inline-block;
+}
+
+.submit-btn{
+margin-top:20px;
+padding:10px 20px;
+background:#2e8f0c;
+border:none;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
+
+#file-name{
+display:block;
+margin-top:10px;
+color:#555;
+}
+
+</style>
 </head>
 
 <body>
 
-<h2>Personal Information</h2>
+<div class="logo">
+<img src="logo.png">
+</div>
 
-<img id="photo" src="" width="150">
-<br><br>
+<h1>Personal Information</h1>
 
-<img id="documentphoto" src="" width="200">
+<div class="card">
 
-<table border="1">
+<div class="profile">
+<img id="photo" src="">
+</div>
 
-<tr>
-<td>Name</td>
-<td id="name"></td>
-</tr>
+<div class="name"></div>
 
-<tr>
-<td>Gender</td>
-<td id="gender"></td>
-</tr>
-
-<tr>
-<td>Age</td>
-<td id="age"></td>
-</tr>
-
-<tr>
-<td>Date of Birth</td>
-<td id="dob"></td>
-</tr>
-
-<tr>
-<td>ID Number</td>
-<td id="id"></td>
-</tr>
-
-<tr>
-<td>Phone Number</td>
-<td id="phone"></td>
-</tr>
-
-<tr>
-<td>Place</td>
-<td id="place"></td>
-</tr>
-
-<tr>
-<td>Country</td>
-<td id="country"></td>
-</tr>
-
-<tr>
-<td>Status</td>
-<td id="status"></td>
-</tr>
-
-<tr>
-<td>Register Date</td>
-<td id="reg"></td>
-</tr>
-
-<tr>
-<td>Last Update</td>
-<td id="update"></td>
-</tr>
-
+<table>
+<tr><td>Name</td><td id="name"></td></tr>
+<tr><td>Gender</td><td id="gender"></td></tr>
+<tr><td>Age</td><td id="age"></td></tr>
+<tr><td>Date of Birth</td><td id="dob"></td></tr>
+<tr><td>E-LMIS ID Number</td><td id="id"></td></tr>
+<tr><td>Phone Number</td><td id="phone"></td></tr>
+<tr><td>Place of Birth</td><td id="place"></td></tr>
+<tr><td>Country Where Process Started</td><td id="country"></td></tr>
+<tr><td>Status</td><td id="status"></td></tr>
+<tr><td>Registration Date</td><td id="reg"></td></tr>
+<tr><td>Last Update</td><td id="update"></td></tr>
 </table>
 
-<br><br>
+</div>
 
-<h3>Upload Payment Receipt</h3>
+<div class="document-box">
+<img src="Picsart_26-03-09_16-41-42-233.jpg">
+</div>
 
-<input type="file" id="receipt">
-<p id="file-name">No file chosen</p>
+<div class="upload-box">
+
+<h3>Upload receipt (photo) / የክፍያ ደረሰኝ ፎቶ</h3>
+
+<div class="upload-area">
+
+<input type="file" id="receipt" accept="image/png, image/jpeg" capture="environment">
+
+<label for="receipt" class="choose-btn">📷 Choose / Take Photo</label>
+
+<span id="file-name">No file chosen</span>
+
+</div>
+
+<button class="submit-btn">Submit</button>
+
+</div>
 
 <script>
 
@@ -87,30 +155,22 @@ if(!user){
 window.location.href="index.html";
 }
 
-document.getElementById("photo").src = user.photo;
-document.getElementById("documentphoto").src = user.documentphoto;
+if(user){
 
-document.getElementById("name").innerHTML = user.name;
-document.getElementById("gender").innerHTML = user.gender;
-document.getElementById("age").innerHTML = user.age;
-document.getElementById("dob").innerHTML = user.dob;
-document.getElementById("id").innerHTML = user.id;
-document.getElementById("phone").innerHTML = user.phone;
-document.getElementById("place").innerHTML = user.place;
-document.getElementById("country").innerHTML = user.country;
+document.getElementById("photo").src=user.photo;
+document.getElementById("name").innerHTML=user.name;
+document.getElementById("gender").innerHTML=user.gender;
+document.getElementById("age").innerHTML=user.age;
+document.getElementById("dob").innerHTML=user.dob;
+document.getElementById("id").innerHTML=user.id;
+document.getElementById("phone").innerHTML=user.phone;
+document.getElementById("place").innerHTML=user.place;
+document.getElementById("country").innerHTML=user.country;
+document.getElementById("status").innerHTML="✔ Verified "+user.status;
+document.getElementById("reg").innerHTML=user.reg;
+document.getElementById("update").innerHTML=user.update;
 
-document.getElementById("status").innerHTML = "✔ Verified";
-
-document.getElementById("reg").innerHTML = user.reg;
-document.getElementById("update").innerHTML = user.update;
-
-document.getElementById("receipt").addEventListener("change", function(){
-
-const fileName = this.files[0] ? this.files[0].name : "No file chosen";
-
-document.getElementById("file-name").textContent = fileName;
-
-});
+}
 
 </script>
 
