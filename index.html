@@ -3,6 +3,7 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ministry of Labor and Skills</title>
 
 <style>
@@ -67,6 +68,21 @@ font-weight:bold;
 margin-top:10px;
 }
 
+.news{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+max-width:900px;
+margin:auto;
+}
+
+.news div{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
 .codebox{
 background:white;
 padding:30px;
@@ -99,11 +115,6 @@ button:hover{
 background:#072c6b;
 }
 
-#msg{
-margin-top:10px;
-color:red;
-}
-
 footer{
 background:#0b3d91;
 color:white;
@@ -112,90 +123,11 @@ text-align:center;
 margin-top:40px;
 }
 
-/* E-LMIS PAGE */
-
-.elmis{
-display:none;
-background:#f2f2f2;
-}
-
-.top-text{
-padding:20px;
-font-size:16px;
-color:#444;
-}
-
-.faq{
-background:white;
-margin:10px;
-border-radius:8px;
-border:1px solid #ddd;
-}
-
-.faq-item{
-padding:18px;
-border-bottom:1px solid #ddd;
-font-weight:bold;
-color:#2b5c8a;
-}
-
-.code-section{
-text-align:center;
-margin-top:40px;
-}
-
-.code-section h2{
-color:#2b5c8a;
-font-size:28px;
-}
-
-.input-box{
-max-width:320px;
-margin:20px auto;
-}
-
-.contact-box{
-margin:50px 20px;
-border:3px solid #1f5fa8;
-border-radius:25px;
-padding:35px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:white;
-}
-
-.contact-left{
-font-size:22px;
-font-weight:bold;
-color:#2b5c8a;
-}
-
-.contact-btn{
-background:#1f5fa8;
-color:white;
-padding:22px 45px;
-border-radius:60px;
-font-size:26px;
-}
-
-.footer2{
-background:#1f4f9b;
-color:white;
-text-align:center;
-padding:30px;
-margin-top:40px;
-}
-
 </style>
 
 </head>
 
 <body>
-
-<!-- MAIN PAGE -->
-
-<div id="main">
 
 <header>
 <h2>Ministry of Labor and Skills</h2>
@@ -210,131 +142,133 @@ margin-top:40px;
 
 <div class="section">
 
-<h2>Enter Your 6-Digit Code</h2>
-<p>ELMIS ኮድ አስገባ</p>
+<h2>Minister of Labor and Skills</h2>
+
+<div class="ministers">
+
+<div class="card">
+<img src="https://e-lmis-online.netlify.app/image/photo_1_2025-11-29_18-19-07.jpg">
+<p>H.E Muferihat Kamil Ahmed</p>
+</div>
+
+<div class="card">
+<img src="https://e-lmis-online.netlify.app/image/photo_3_2025-11-29_18-58-10.jpg">
+<p>H.E Dr. Teshale Berecha</p>
+</div>
+
+<div class="card">
+<img src="https://e-lmis-online.netlify.app/image/photo_4_2025-11-29_18-58-10.jpg">
+<p>H.E Mr. Solomon Soka</p>
+</div>
+
+<div class="card">
+<img src="https://e-lmis-online.netlify.app/image/photo_1_2025-11-29_18-58-10.jpg">
+<p>H.E Mr. Daniel Teressa Shone</p>
+</div>
+
+<div class="card">
+<img src="https://e-lmis-online.netlify.app/image/photo_2025-11-29_19-17-01.jpg">
+<p>H.E Mrs. Nebiya Mohamed</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>News</h2>
+
+<div class="news">
+
+<div>
+<p>የመንግስት አገልግሎትና አስተዳደር ሪፎርም</p>
+<p>MARCH 7, 2026</p>
+</div>
+
+<div>
+<p>የመንግስት አገልግሎትና አስተዳደር የሪፎርም ሥራ</p>
+<p>MARCH 7, 2026</p>
+</div>
+
+<div>
+<p>ብሩህ ሀገር የፈጠራ ሃሳብ ውድድር</p>
+<p>MARCH 7, 2026</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Frequently Asked Questions</h2>
+
+<p><b>What is the performance of job creation?</b></p>
+<p>In the first 11 months of the fiscal year 2,949,293 jobs were planned.</p>
+
+<p><b>What is Differentiation in Zoning and Training Fields?</b></p>
+<p>Explanation about zoning and training fields.</p>
+
+</div>
 
 <div class="codebox">
 
-<input type="text" id="code1" maxlength="6" placeholder="Enter 6-digit number">
+<h2>Enter Your 6-Digit Code</h2>
+
+<input type="text" id="code" maxlength="6" placeholder="Enter Code">
 
 <br>
 
-<button onclick="firstLogin()">Submit</button>
+<button onclick="checkCode()">Submit</button>
 
 <p id="msg"></p>
-
-</div>
 
 </div>
 
 <footer>
 
 <h3>Contact Us</h3>
+
 <p>Tel: +251 116 671792</p>
 <p>Email: info@mols.gov.et</p>
+
 <p>© 2025 All rights reserved</p>
 
 </footer>
 
-</div>
-
-<!-- E-LMIS PAGE -->
-
-<div class="elmis" id="elmis">
-
-<div class="top-text">
-Of the jobs created, 49.7 percent were in rural areas and 50.3 percent in urban areas.
-</div>
-
-<div class="faq">
-
-<div class="faq-item">
-+ What is Differentiation in Zoning and Training Fields?
-</div>
-
-<div class="faq-item">
-+ Training Areas Differentiation
-</div>
-
-</div>
-
-<div class="code-section">
-
-<h2>Enter Your 6-Digit Code</h2>
-
-<div class="input-box">
-<input type="text" id="code" placeholder="Enter 6-digit number" maxlength="6">
-</div>
-
-<button onclick="secondLogin()">Submit</button>
-
-<p id="msg2" style="color:red"></p>
-
-</div>
-
-<div class="contact-box">
-
-<div class="contact-left">
-The Ministry<br>
-of Labor & Skills
-</div>
-
-<div class="contact-btn">
-Contact Us
-</div>
-
-</div>
-
-<div class="footer2">
-
-<h2>Contact Us</h2>
-
-<p>Tel: +251 116 671792</p>
-
-<p>Email: info@mols.gov.et</p>
-
-<p>© 2025 All rights reserved</p>
-
-</div>
-
-</div>
-
 <script>
 
-function firstLogin(){
+let users={
 
-let c1=document.getElementById("code1").value;
+"460067":{
+name:"Abel Tesfaye",
+photo:"https://i.pravatar.cc/150?img=1",
+region:"Addis Ababa"
+},
 
-if(c1==="460067"){
+"460068":{
+name:"Sara Mohammed",
+photo:"https://i.pravatar.cc/150?img=2",
+region:"Oromia"
+},
 
-document.getElementById("main").style.display="none";
-document.getElementById("elmis").style.display="block";
+"460069":{
+name:"Daniel Bekele",
+photo:"https://i.pravatar.cc/150?img=3",
+region:"Amhara"
+},
 
-}else{
-
-document.getElementById("msg").innerHTML="የገባው ኮድ ትክክል አይደለም";
-
+"460070":{
+name:"Rahel Girma",
+photo:"https://i.pravatar.cc/150?img=4",
+region:"Tigray"
 }
 
-}
+};
 
-function secondLogin(){
+function checkCode(){
 
 let code=document.getElementById("code").value;
 
-if(code==="460067"){
-
-window.location.href="id.html";
-
-}else{
-
-document.getElementById("msg2").innerHTML="የገባው ኮድ ትክክል አይደለም";
-
-}
-
-}
-
-</script>
-
-</body>
-</html>
+if(code.length!=6){
