@@ -3,7 +3,6 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Ministry of Labor and Skills</title>
 
 <style>
@@ -14,15 +13,23 @@ margin:0;
 background:#f5f5f5;
 }
 
+/* HEADER */
+
 header{
-background:#0b3d91;
-color:white;
+background:white;
 padding:20px;
 text-align:center;
+border-bottom:2px solid #ddd;
 }
 
+header img{
+width:260px;
+}
+
+/* NAVIGATION */
+
 .nav{
-background:#072c6b;
+background:#0b3d91;
 display:flex;
 justify-content:center;
 gap:20px;
@@ -36,10 +43,81 @@ text-decoration:none;
 font-size:15px;
 }
 
+/* SLIDER */
+
+.slider{
+max-width:1000px;
+margin:40px auto;
+position:relative;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.slide{
+display:none;
+position:relative;
+}
+
+.slide img{
+width:100%;
+height:420px;
+object-fit:cover;
+}
+
+.text{
+position:absolute;
+top:35%;
+left:40px;
+color:white;
+}
+
+.text h2{
+margin:0;
+font-size:30px;
+}
+
+.text p{
+font-size:20px;
+margin:10px 0;
+}
+
+.text a{
+background:#0b3d91;
+padding:12px 25px;
+color:white;
+text-decoration:none;
+border-radius:8px;
+}
+
+/* DOTS */
+
+.dots{
+text-align:center;
+margin-top:10px;
+}
+
+.dot{
+height:10px;
+width:10px;
+margin:4px;
+background:#bbb;
+border-radius:50%;
+display:inline-block;
+}
+
+.active{
+background:#0b3d91;
+}
+
+/* SECTIONS */
+
 .section{
-padding:30px;
+padding:40px;
 text-align:center;
 }
+
+/* MINISTER CARDS */
 
 .ministers{
 display:grid;
@@ -51,8 +129,8 @@ margin:auto;
 
 .card{
 background:white;
-padding:25px;
-border-radius:12px;
+padding:20px;
+border-radius:10px;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
@@ -65,8 +143,9 @@ border-radius:10px;
 
 .card p{
 font-weight:bold;
-margin-top:10px;
 }
+
+/* NEWS */
 
 .news{
 display:grid;
@@ -83,10 +162,12 @@ border-radius:10px;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
+/* CODE LOGIN */
+
 .codebox{
 background:white;
 padding:30px;
-margin:30px auto;
+margin:40px auto;
 border-radius:10px;
 text-align:center;
 max-width:500px;
@@ -115,6 +196,8 @@ button:hover{
 background:#072c6b;
 }
 
+/* FOOTER */
+
 footer{
 background:#0b3d91;
 color:white;
@@ -124,13 +207,12 @@ margin-top:40px;
 }
 
 </style>
-
 </head>
 
 <body>
 
 <header>
-<h2>Ministry of Labor and Skills</h2>
+<img src="logo.jpg">
 </header>
 
 <div class="nav">
@@ -140,8 +222,48 @@ margin-top:40px;
 <a href="#">Contact</a>
 </div>
 
-<div class="section">
+<!-- SLIDER -->
 
+<div class="slider">
+
+<div class="slide">
+<img src="https://e-lmis-online.netlify.app/image/photo_1_2025-11-29_18-19-07.jpg">
+<div class="text">
+<h2>Minister of Labor and Skills</h2>
+<p>H.E Muferihat Kamil Ahmed</p>
+<a href="#">READ MORE</a>
+</div>
+</div>
+
+<div class="slide">
+<img src="https://e-lmis-online.netlify.app/image/photo_3_2025-11-29_18-58-10.jpg">
+<div class="text">
+<h2>State Minister</h2>
+<p>Dr. Teshale Berecha</p>
+<a href="#">READ MORE</a>
+</div>
+</div>
+
+<div class="slide">
+<img src="https://e-lmis-online.netlify.app/image/photo_4_2025-11-29_18-58-10.jpg">
+<div class="text">
+<h2>State Minister</h2>
+<p>Mr. Solomon Soka</p>
+<a href="#">READ MORE</a>
+</div>
+</div>
+
+</div>
+
+<div class="dots">
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+</div>
+
+<!-- MINISTERS -->
+
+<div class="section">
 <h2>Minister of Labor and Skills</h2>
 
 <div class="ministers">
@@ -163,17 +285,13 @@ margin-top:40px;
 
 <div class="card">
 <img src="https://e-lmis-online.netlify.app/image/photo_1_2025-11-29_18-58-10.jpg">
-<p>H.E Mr. Daniel Teressa Shone</p>
-</div>
-
-<div class="card">
-<img src="https://e-lmis-online.netlify.app/image/photo_2025-11-29_19-17-01.jpg">
-<p>H.E Mrs. Nebiya Mohamed</p>
+<p>H.E Mr. Daniel Teressa</p>
 </div>
 
 </div>
-
 </div>
+
+<!-- NEWS -->
 
 <div class="section">
 
@@ -187,18 +305,19 @@ margin-top:40px;
 </div>
 
 <div>
-<p>የመንግስት አገልግሎትና አስተዳደር የሪፎርም ሥራ</p>
+<p>የመንግስት አገልግሎትና አስተዳደር</p>
 <p>MARCH 7, 2026</p>
 </div>
 
 <div>
-<p>ብሩህ ሀገር የፈጠራ ሃሳብ ውድድር</p>
+<p>ብሩህ ሀገር የፈጠራ ሃሳብ</p>
 <p>MARCH 7, 2026</p>
 </div>
 
 </div>
-
 </div>
+
+<!-- FAQ -->
 
 <div class="section">
 
@@ -211,6 +330,8 @@ margin-top:40px;
 <p>Explanation about zoning and training fields.</p>
 
 </div>
+
+<!-- CODE LOGIN -->
 
 <div class="codebox">
 
@@ -231,6 +352,7 @@ margin-top:40px;
 <h3>Contact Us</h3>
 
 <p>Tel: +251 116 671792</p>
+
 <p>Email: info@mols.gov.et</p>
 
 <p>© 2025 All rights reserved</p>
@@ -239,15 +361,41 @@ margin-top:40px;
 
 <script>
 
+let slideIndex=0;
+showSlides();
+
+function showSlides(){
+
+let i;
+let slides=document.getElementsByClassName("slide");
+let dots=document.getElementsByClassName("dot");
+
+for(i=0;i<slides.length;i++){
+slides[i].style.display="none";
+}
+
+slideIndex++;
+
+if(slideIndex>slides.length){slideIndex=1}
+
+for(i=0;i<dots.length;i++){
+dots[i].className=dots[i].className.replace(" active","");
+}
+
+slides[slideIndex-1].style.display="block";
+dots[slideIndex-1].className+=" active";
+
+setTimeout(showSlides,4000);
+
+}
+
 function checkCode(){
 
 let code=document.getElementById("code").value;
 
 if(code=="460067"){
 window.location.href="personal.html";
-}
-
-else{
+}else{
 document.getElementById("msg").innerHTML="Invalid Code";
 }
 
