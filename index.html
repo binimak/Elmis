@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ministry of Labor and Skills</title>
 
@@ -39,6 +40,7 @@ button:hover{background:#072c6b;}
 footer{background:#0b3d91;color:white;padding:25px;text-align:center;margin-top:40px;}
 
 </style>
+
 </head>
 
 <body>
@@ -111,27 +113,24 @@ footer{background:#0b3d91;color:white;padding:25px;text-align:center;margin-top:
 </div>
 
 <div class="section">
-<h2>Frequently Asked Questions</h2>
 
-<p><b>What is the performance of job creation?</b></p>
-<p>In the first 11 months of the fiscal year 2,949,293 jobs were planned.</p>
-
-<p><b>What is Differentiation in Zoning and Training Fields?</b></p>
-<p>Explanation about zoning and training fields.</p>
-
-</div>
+<h2>Enter Your Codes</h2>
 
 <div class="codebox">
 
-<h2>Enter Your 6-Digit Code</h2>
+<input type="text" id="code1" maxlength="6" placeholder="Enter First Code">
 
-<input type="text" id="code" maxlength="6" placeholder="Enter Code">
+<br><br>
+
+<input type="text" id="code2" maxlength="6" placeholder="Enter Second Code">
 
 <br>
 
 <button onclick="checkCode()">Submit</button>
 
 <p id="msg"></p>
+
+</div>
 
 </div>
 
@@ -151,19 +150,18 @@ footer{background:#0b3d91;color:white;padding:25px;text-align:center;margin-top:
 
 function checkCode(){
 
-let code=document.getElementById("code").value;
+let code1=document.getElementById("code1").value;
+let code2=document.getElementById("code2").value;
 
-if(code.length!=6){
-
-document.getElementById("msg").innerHTML="Please enter 6 digit code";
-
-return;
-
-}
-
-localStorage.setItem("usercode",code);
+if(code1==="460067" && code2==="123456"){
 
 window.location.href="personal.html";
+
+}else{
+
+document.getElementById("msg").innerHTML="Invalid Codes";
+
+}
 
 }
 
