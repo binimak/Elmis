@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 
@@ -76,7 +76,47 @@ padding:20px;
 border-radius:10px;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
+.slider{
+width:90%;
+margin:auto;
+margin-top:20px;
+border-radius:20px;
+overflow:hidden;
+position:relative;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
 
+.slider img{
+width:100%;
+display:block;
+}
+
+.slider-text{
+position:absolute;
+top:30%;
+left:40px;
+color:white;
+}
+
+.slider-text h2{
+font-size:20px;
+margin-bottom:10px;
+}
+
+.slider-text p{
+font-size:16px;
+margin-bottom:15px;
+}
+
+.slider-text button{
+background:#0b5ed7;
+border:none;
+color:white;
+padding:10px 20px;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
 .codebox{
 background:white;
 padding:30px;
@@ -86,7 +126,77 @@ text-align:center;
 max-width:500px;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
+.footer{
+background:#1f5d9c;
+color:white;
+padding:50px 20px;
+}
 
+.footer-container{
+max-width:1000px;
+margin:auto;
+}
+
+.footer-logo{
+width:180px;
+margin-bottom:20px;
+}
+
+.about{
+line-height:1.8;
+margin-bottom:30px;
+}
+
+.footer-grid{
+display:flex;
+gap:80px;
+flex-wrap:wrap;
+}
+
+.footer h2{
+margin-bottom:10px;
+font-size:26px;
+}
+
+.footer p{
+margin:6px 0;
+}
+
+.social{
+margin-top:30px;
+}
+
+.social a{
+display:inline-block;
+width:45px;
+height:45px;
+line-height:45px;
+text-align:center;
+background:white;
+color:#1f5d9c;
+border-radius:10px;
+margin-right:15px;
+font-size:22px;
+text-decoration:none;
+}
+
+.footer-bottom{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.lang{
+background:white;
+border:none;
+padding:10px 18px;
+border-radius:20px;
+font-weight:bold;
+color:#1f5d9c;
+cursor:pointer;
+}
 input{
 padding:12px;
 width:80%;
@@ -94,17 +204,232 @@ font-size:16px;
 border:1px solid #ccc;
 border-radius:5px;
 }
+.stats{
+text-align:center;
+padding:50px 20px;
+background:#f5f5f5;
+}
 
+.register{
+display:inline-block;
+padding:12px 30px;
+border:3px solid #1f5d9c;
+border-radius:40px;
+color:#1f5d9c;
+font-weight:bold;
+margin-bottom:40px;
+text-decoration:none;
+}
+
+.stats h2{
+color:#1f5d9c;
+font-size:30px;
+}
+
+.stats hr{
+width:80%;
+margin:30px auto;
+border:1px solid #ddd;
+}
+
+.map-box{
+max-width:600px;
+margin:auto;
+}
+
+.map-box img{
+width:100%;
+}
+
+/* FAQ */
+
+.faq{
+padding:50px 20px;
+text-align:center;
+background:white;
+}
+
+.faq h2{
+color:#1f5d9c;
+margin-bottom:30px;
+}
+
+.faq-box{
+max-width:700px;
+margin:auto;
+}
+
+.faq-btn{
+width:100%;
+padding:15px;
+border:none;
+background:#1f5d9c;
+color:white;
+font-size:18px;
+text-align:left;
+margin-top:10px;
+cursor:pointer;
+border-radius:6px;
+}
+
+.faq-content{
+display:none;
+background:#f5f5f5;
+padding:15px;
+text-align:left;
+}
 button{
 padding:12px 30px;
 background:#0b3d91;
-color:white;
+color:white ;
 border:none;
 margin-top:15px;
 border-radius:5px;
 cursor:pointer;
 }
+.news-section{
+padding:40px 20px;
+background:#f5f5f5;
+}
 
+.news-card{
+max-width:750px;
+margin:auto;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+background:white;
+position:relative;
+}
+
+.news-card img{
+width:100%;
+display:block;
+}
+.register-section{
+text-align:center;
+padding:60px 20px;
+background:#f5f5f5;
+}
+
+.register-section h2{
+color:#1f5d9c;
+font-size:28px;
+margin-bottom:20px;
+}
+
+.register-section hr{
+width:80%;
+margin:20px auto;
+border:1px solid #ddd;
+}
+
+.video-box{
+max-width:700px;
+margin:auto;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+.video-box video{
+width:100%;
+height:auto;
+}
+
+.register-btn{
+display:inline-block;
+margin-top:40px;
+padding:15px 40px;
+border:3px solid #1f5d9c;
+border-radius:40px;
+color:#1f5d9c;
+font-size:20px;
+text-decoration:none;
+}
+
+.register-btn:hover{
+background:#1f5d9c;
+color:white;
+}
+.news-text{
+position:absolute;
+bottom:80px;
+left:20px;
+right:20px;
+color:white;
+font-size:20px;
+font-weight:bold;
+text-shadow:0 2px 5px rgba(0,0,0,0.6);
+}
+.login-section{
+text-align:center;
+padding:60px 20px;
+background:#f5f5f5;
+}
+
+.login-section h2{
+color:#1f5d9c;
+font-size:30px;
+}
+
+.am{
+font-size:18px;
+color:#666;
+margin-bottom:20px;
+}
+
+#code{
+width:90%;
+max-width:500px;
+padding:18px;
+font-size:18px;
+border-radius:20px;
+border:1px solid #ccc;
+}
+
+button{
+margin-top:20px;
+padding:15px 40px;
+background:#1f5d9c;
+color:white;
+border:none;
+border-radius:30px;
+font-size:20px;
+}
+
+.contact-box{
+margin-top:50px;
+border:4px solid #1f5d9c;
+border-radius:30px;
+padding:40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.left h3{
+color:#1f5d9c;
+font-size:24px;
+}
+
+.contact-btn{
+background:#1f5d9c;
+color:white;
+padding:20px 40px;
+border-radius:40px;
+text-decoration:none;
+font-size:24px;
+}
+.news-date{
+background:#0d3f3b;
+color:white;
+text-align:center;
+padding:18px;
+font-weight:bold;
+letter-spacing:2px;
+}
 footer{
 background:#0b3d91;
 color:white;
@@ -117,22 +442,24 @@ margin-top:40px;
 </head>
 
 <body>
+<div class="slider">
 
-<header>
-<h2>Ministry of Labor and Skills</h2>
-</header>
+<img src="https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg">
 
-<div class="nav">
-<a href="#">Home</a>
-<a href="#">News</a>
-<a href="#">FAQ</a>
-<a href="#">Contact</a>
+<div class="slider-text">
+
+<h2>State Minister for Labor Employment and Market Sector</h2>
+
+<p>H.E Mr. Solomon Sokay</p>
+
+<button>READ MORE</button>
+
 </div>
 
+</div>
 
 <div class="section">
 
-<h2>Minister of Labor and Skills</h2>
 
 <div class="ministers">
 
@@ -140,7 +467,27 @@ margin-top:40px;
 <img src="https://e-lmis-online.netlify.app/image/photo_1_2025-11-29_18-19-07.jpg">
 <p>H.E Muferihat Kamil Ahmed</p>
 </div>
+<section class="news-section">
 
+<div class="news-card">
+
+<img src="https://e-lmis-online.netlify.app/image/photo_1_2025-11-29_18-58-10.jpg">
+
+<div class="news-text">
+
+<h3>የሀገር አቀፍ የስራ ዕድል ልማት ፕሮግራም</h3>
+
+</div>
+
+<div class="news-date">
+
+MARCH 10, 2026
+
+</div>
+
+</div>
+
+</section>
 <div class="card">
 <img src="https://e-lmis-online.netlify.app/image/photo_3_2025-11-29_18-58-10.jpg">
 <p>H.E Dr. Teshale Berecha</p>
@@ -173,7 +520,47 @@ margin-top:40px;
 
 </div>
 </div>
+<section class="stats">
 
+<a class="register">Register here</a>
+
+<h2>Basic Employment Statistics</h2>
+
+<hr>
+
+<div class="map-box">
+
+<img src="https://e-lmis-online.netlify.app/image/photo_2025-11-29_19-17-01.jpg">
+
+</div>
+
+</section>
+
+
+<section class="faq">
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-box">
+
+<button class="faq-btn">What is E-LMIS?</button>
+<div class="faq-content">
+<p>E-LMIS is an electronic Labor Market Information System used to manage employment data.</p>
+</div>
+
+<button class="faq-btn">How can I register?</button>
+<div class="faq-content">
+<p>You can register through the E-LMIS online portal.</p>
+</div>
+
+<button class="faq-btn">Who can use the system?</button>
+<div class="faq-content">
+<p>Job seekers, employers, and government institutions can use the system.</p>
+</div>
+
+</div>
+
+</section>
 
 <div class="section">
 
@@ -185,24 +572,104 @@ margin-top:40px;
 
 </div>
 
+<section class="register-section">
 
-<div class="codebox">
+<h2>How to register on E-LMIS</h2>
+<hr>
 
-<h2>Enter Your 6-Digit Code</h2>
+<div class="video-box">
 
-<input type="text" id="code" maxlength="6" placeholder="Enter Code">
-
-<br>
-
-<button onclick="checkCode()">Submit</button>
-
-<p id="msg" style="color:red"></p>
+<video controls poster="image/photo_1_2025-11-29_18-58-10.jpg">
+<source src="video/elmis.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 
 </div>
 
+<a href="register.html" class="register-btn">Register here</a>
 
-<footer>
+<section class="login-section">
 
+<h2>Enter Your 6-Digit Code</h2>
+<p class="am">ኮድ አስገባ</p>
+
+<input type="number" id="code" placeholder="Enter 6-digit number">
+
+<button onclick="checkCode()">Submit</button>
+
+<p id="msg"></p>
+
+<div class="contact-box">
+
+<div class="left">
+<h3>The Ministry<br>of Labor & Skills</h3>
+</div>
+
+<div class="right">
+<a href="#" class="contact-btn">Contact Us</a>
+</div>
+
+</div>
+
+</section>
+</div>
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<img src="https://e-lmis-online.netlify.app/image/logo.png" class="footer-logo">
+
+<p class="about">
+The Ministry of Labour and Skills was established following the National Reform.
+The Ministry of Labour and Skills was founded with Proclamation No. 1263/2022,
+which oversees national job creation, skills development, and labor concerns.
+</p>
+
+<div class="footer-grid">
+
+<div>
+
+<h2>Get In Touch</h2>
+
+<p>Tel no: +251 116 671792</p>
+<p>Po Box: 25534</p>
+<p>Fax: +251 116 671568</p>
+<p>Address: Behind Lambert Ethiopian Technical and Vocational Institute</p>
+<p>Email: info@MoLS.gov.et</p>
+
+</div>
+
+<div>
+
+<h2>Menu</h2>
+
+<p>Privacy Policy</p>
+<p>Copyright</p>
+
+</div>
+
+</div>
+
+<div class="social">
+
+<a href="#">📘</a>
+<a href="#">🐦</a>
+<a href="#">▶</a>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>© 2025 All rights reserved</p>
+
+<button class="lang">🇺🇸 EN</button>
+
+</div>
+
+</div>
+
+</footer>
 <h3>Contact Us</h3>
 
 <p>Tel: +251 116 671792</p>
@@ -211,7 +678,46 @@ margin-top:40px;
 
 </footer>
 
+<script>
 
+function checkCode(){
+
+let code=document.getElementById("code").value;
+
+if(code.length!=6){
+document.getElementById("msg").innerHTML="Code must be 6 digits";
+return;
+}
+
+if(code=="123456"){
+window.location.href="personal.html";
+}
+else{
+document.getElementById("msg").innerHTML="Invalid Code";
+}
+
+}
+
+<script>
+let btn=document.querySelectorAll(".faq-btn");
+
+btn.forEach(function(b){
+
+b.addEventListener("click",function(){
+
+let content=this.nextElementSibling;
+
+if(content.style.display==="block"){
+content.style.display="none";
+}else{
+content.style.display="block";
+}
+
+});
+
+});
+
+</script>
 <script>
 
 let users={
@@ -255,7 +761,7 @@ document.getElementById("msg").innerHTML="Invalid Code";
 }
 
 }
-
+  
 </script>
 
 </body>
