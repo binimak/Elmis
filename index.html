@@ -238,7 +238,129 @@ documents:[
 }
 
 };
+<!DOCTYPE html><html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Information</title><style>
 
+body{
+font-family:Arial;
+margin:0;
+background:#f5f5f5;
+}
+
+.header{
+background:#0b3d91;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+margin-bottom:20px;
+}
+
+.upload-area{
+border:2px dashed #cfd8dc;
+padding:30px;
+border-radius:10px;
+text-align:center;
+}
+
+.upload-area img{
+width:120px;
+margin-bottom:10px;
+display:none;
+border-radius:8px;
+}
+
+button{
+padding:14px 30px;
+background:#0b3d91;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+}
+
+.submit-btn{
+width:100%;
+margin-top:20px;
+}
+
+.file-text{
+color:#888;
+margin-top:10px;
+}
+
+</style></head><body><div class="header">
+<h2>Personal Information</h2>
+</div><div class="container"><div class="card"><h3>Upload receipt (photo) / የክፍያ ደረሰኝ ፎቶ</h3><div class="upload-area"><img id="preview"><input type="file" id="receipt" accept="image/*"><br><br>
+
+<button onclick="openFile()">Choose / Take photo</button>
+
+<p class="file-text" id="fileName">No file chosen</p></div><button class="submit-btn" onclick="submitReceipt()">Submit receipt</button>
+
+</div></div><script>
+
+let receiptPhoto="";
+
+function openFile(){
+document.getElementById("receipt").click();
+}
+
+document.getElementById("receipt").addEventListener("change",function(){
+
+let file=this.files[0];
+
+if(file){
+
+document.getElementById("fileName").innerText=file.name;
+
+let reader=new FileReader();
+
+reader.onload=function(e){
+
+receiptPhoto=e.target.result;
+
+let img=document.getElementById("preview");
+img.src=receiptPhoto;
+img.style.display="block";
+
+}
+
+reader.readAsDataURL(file);
+
+}
+
+});
+
+function submitReceipt(){
+
+if(receiptPhoto==""){
+alert("Please upload receipt photo");
+return;
+}
+
+localStorage.setItem("receiptPhoto",receiptPhoto);
+
+alert("Receipt submitted successfully");
+
+}
+
+</script></body>
+</html>
 function checkCode(){
 
 let code=document.getElementById("code").value;
