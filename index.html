@@ -35,52 +35,10 @@ text-decoration:none;
 font-size:15px;
 }
 
-.section{
-padding:30px;
-text-align:center;
-}
-
-.ministers{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-max-width:1000px;
-margin:auto;
-}
-
-.card{
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
-.card img{
-width:100%;
-height:280px;
-object-fit:cover;
-border-radius:10px;
-}
-
-.news{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-max-width:900px;
-margin:auto;
-}
-
-.news div{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
 .codebox{
 background:white;
-padding:30px;
-margin:30px auto;
+padding:40px;
+margin:60px auto;
 border-radius:10px;
 text-align:center;
 max-width:500px;
@@ -129,61 +87,9 @@ margin-top:40px;
 <a href="#">Contact</a>
 </div>
 
-<div class="section">
-
-<h2>Minister of Labor and Skills</h2>
-
-<div class="ministers">
-
-<div class="card">
-<img src="https://e-lmis-online.netlify.app/image/photo_1_2025-11-29_18-19-07.jpg">
-<p>H.E Muferihat Kamil Ahmed</p>
-</div>
-
-<div class="card">
-<img src="https://e-lmis-online.netlify.app/image/photo_3_2025-11-29_18-58-10.jpg">
-<p>H.E Dr. Teshale Berecha</p>
-</div>
-
-<div class="card">
-<img src="https://e-lmis-online.netlify.app/image/photo_4_2025-11-29_18-58-10.jpg">
-<p>H.E Mr. Solomon Soka</p>
-</div>
-
-</div>
-</div>
-
-<div class="section">
-
-<h2>News</h2>
-
-<div class="news">
-
-<div>
-<p>የመንግስት አገልግሎትና አስተዳደር ሪፎርም</p>
-<p>MARCH 7, 2026</p>
-</div>
-
-<div>
-<p>ብሩህ ሀገር የፈጠራ ሃሳብ ውድድር</p>
-<p>MARCH 7, 2026</p>
-</div>
-
-</div>
-</div>
-
-<div class="section">
-
-<h2>Frequently Asked Questions</h2>
-
-<p><b>What is the performance of job creation?</b></p>
-<p>In the first 11 months of the fiscal year 2,949,293 jobs were planned.</p>
-
-</div>
-
 <div class="codebox">
 
-<h2>Enter Your 6-Digit Code</h2>
+<h2>Enter Your 6 Digit Code</h2>
 
 <input type="text" id="code" maxlength="6" placeholder="Enter Code">
 
@@ -205,39 +111,24 @@ margin-top:40px;
 
 <script>
 
-let users={
+let users={}
 
-"464667":{
-name:"BINIYA MEKONENN WONDEM",
-gender:"Male",
-age:"332",
-  DateofBirth:"25/25/25",
-  Id:"ELMIS 121212",
-PhoneNumber:"0912142532",
-  CountryProducedStarted:"canada",
- region:"A/A",
-job:"ሌባ",
-photo:"IMG_20260309_152208_774.jpg",
-documents:[
-"https://via.placeholder.com/400x250?text=Application+Letter",
-"https://via.placeholder.com/400x250?text=Training+Certificate"
-]
-},
+for(let i=1;i<=100;i++){
 
-"464668":{
-name:"Sara Mohammed",
-gender:"Female",
-age:"211",
-region:"Oromia",
-job:"Designer",
-photo:"https://i.pravatar.cc/200?img=2",
-documents:[
-"https://via.placeholder.com/400x250?text=Diploma+Certificate",
-"https://via.placeholder.com/400x250?text=Work+Experience"
-]
+let code=464600+i;
 
+users[code]={
 
-};
+name:"User "+i,
+gender:i%2==0?"Female":"Male",
+age:20+i,
+region:"Addis Ababa",
+job:"Worker",
+photo:"https://i.pravatar.cc/200?img="+i
+
+}
+
+}
 
 function checkCode(){
 
@@ -258,3 +149,8 @@ document.getElementById("msg").innerHTML="Invalid Code";
 }
 
 }
+
+</script>
+
+</body>
+</html>
