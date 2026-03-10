@@ -330,14 +330,10 @@ document.getElementById("fileName").innerText=file.name;
 
 let reader=new FileReader();
 
-reader.onload=function(e){
-
+reader.onload=function(event){
 receiptPhoto=e.target.result;
-
-let img=document.getElementById("preview");
-img.src=receiptPhoto;
-img.style.display="block";
-
+document.querySelector(".upload-area img").src=receiptPhoto;
+document.querySelector(".upload-area img").style.display="block";
 }
 
 reader.readAsDataURL(file);
@@ -359,31 +355,6 @@ alert("Receipt submitted successfully");
 
 }
 
-</script></body>
-</html>
-function checkCode(){
-
-let code=document.getElementById("code").value;
-
-if(code.length!=6){
-document.getElementById("msg").innerHTML="Code must be 6 digits";
-return;
-}
-
-if(users[code]){
-
-localStorage.setItem("user",JSON.stringify(users[code]));
-window.location.href="personal.html";
-
-}else{
-
-document.getElementById("msg").innerHTML="Invalid Code";
-
-}
-
-}
-
 </script>
-
 </body>
 </html>
