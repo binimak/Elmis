@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Personal Information</title>
@@ -10,59 +11,76 @@
 
 body{
 font-family:Arial;
-background:#f2f2f2;
 margin:0;
+background:#f2f2f2;
+}
+
+/* HEADER */
+
+header{
+background:white;
 text-align:center;
+padding:20px;
+border-bottom:3px solid #0b3d91;
 }
 
-/* logo */
-
-.logo img{
-width:120px;
-margin-top:20px;
+header img{
+width:140px;
 }
 
-/* title */
+header h2{
+margin:10px 0 0 0;
+color:#0b3d91;
+}
 
-h1{
+/* TITLE */
+
+.title{
+text-align:center;
 color:#2f5d94;
+margin:30px 0;
+font-size:28px;
 }
 
-/* card */
+/* CARD */
 
 .card{
 background:white;
 margin:20px;
-padding:20px;
+padding:25px;
 border-radius:20px;
 border:4px solid #2f5d94;
 }
 
-/* profile photo */
+/* PROFILE PHOTO */
+
+.profile{
+text-align:center;
+margin-bottom:20px;
+}
 
 .profile img{
-width:80px;
-height:80px;
-border-radius:50%;
+width:170px;
+height:200px;
+border-radius:15px;
 border:4px solid #2f5d94;
 object-fit:cover;
 }
 
-/* table */
+/* TABLE */
 
 table{
 width:100%;
 border-collapse:collapse;
-margin-top:10px;
 }
 
 td{
-padding:12px;
+padding:14px;
 border-bottom:1px dashed #ccc;
+font-size:16px;
 }
 
 .label{
-text-align:left;
 color:#2f5d94;
 font-weight:bold;
 }
@@ -71,7 +89,7 @@ font-weight:bold;
 text-align:right;
 }
 
-/* verified */
+/* VERIFIED */
 
 .verified{
 background:#28a745;
@@ -81,38 +99,35 @@ border-radius:20px;
 font-weight:bold;
 }
 
-/* document slider */
+/* DOCUMENT PHOTO */
 
-.document-box{
-position:relative;
+.document{
 background:white;
-margin:20px auto;
+margin:20px;
 padding:10px;
 border-radius:15px;
 box-shadow:0 4px 10px rgba(0,0,0,0.2);
-max-width:700px;
 }
 
-.document-box img{
+.document img{
 width:100%;
 border-radius:10px;
 }
 
-.prev,.next{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-background:#666;
+/* FOOTER */
+
+footer{
+background:#0b3d91;
 color:white;
-border:none;
-padding:10px 15px;
-font-size:20px;
-border-radius:6px;
-cursor:pointer;
+text-align:center;
+padding:20px;
+margin-top:40px;
 }
 
-.prev{left:5px;}
-.next{right:5px;}
+footer p{
+margin:5px;
+font-size:14px;
+}
 
 </style>
 
@@ -120,11 +135,21 @@ cursor:pointer;
 
 <body>
 
-<div class="logo">
+<!-- HEADER -->
+
+<header>
+
 <img src="logo.png">
+
+<h2>Ministry of Labor and Skills</h2>
+
+</header>
+
+<div class="title">
+Personal Information
 </div>
 
-<h1>Personal Information</h1>
+<!-- CARD -->
 
 <div class="card">
 
@@ -136,7 +161,7 @@ cursor:pointer;
 
 <tr>
 <td class="label">Name</td>
-<td class="value">TEMESGEN ADISU GANTA</td>
+<td class="value">ASHENAFI AYALEW GETU</td>
 </tr>
 
 <tr>
@@ -146,12 +171,12 @@ cursor:pointer;
 
 <tr>
 <td class="label">Age</td>
-<td class="value">19</td>
+<td class="value">27</td>
 </tr>
 
 <tr>
 <td class="label">Date of Birth</td>
-<td class="value">2005-05-10</td>
+<td class="value">1989-04-20</td>
 </tr>
 
 <tr>
@@ -166,17 +191,22 @@ cursor:pointer;
 
 <tr>
 <td class="label">Phone Number</td>
-<td class="value">+251 900000000</td>
+<td class="value">+251 918 029 437</td>
 </tr>
 
 <tr>
 <td class="label">Place of Birth</td>
-<td class="value">Addis Ababa</td>
+<td class="value">Bahir Dar, Ethiopia</td>
 </tr>
 
 <tr>
 <td class="label">Visa Type</td>
 <td class="value">Work Visa</td>
+</tr>
+
+<tr>
+<td class="label">Country Where Process Started</td>
+<td class="value">Canada 🇨🇦</td>
 </tr>
 
 <tr>
@@ -188,46 +218,23 @@ cursor:pointer;
 
 </div>
 
-<!-- document photos -->
+<!-- DOCUMENT PHOTO -->
 
-<div class="document-box">
+<div class="document">
 
-<button class="prev" onclick="prev()">❮</button>
-
-<img id="doc" src="doc1.jpg">
-
-<button class="next" onclick="next()">❯</button>
+<img src="doc1.jpg">
 
 </div>
 
-<script>
+<!-- FOOTER -->
 
-var docs=[
-"doc1.jpg",
-"doc2.jpg",
-"doc3.jpg",
-"doc4.jpg"
-];
+<footer>
 
-var i=0;
+<p>Ministry of Labor and Skills</p>
+<p>Addis Ababa, Ethiopia</p>
+<p>© 2026 All Rights Reserved</p>
 
-function show(){
-document.getElementById("doc").src=docs[i];
-}
-
-function next(){
-i++;
-if(i>=docs.length){i=0;}
-show();
-}
-
-function prev(){
-i--;
-if(i<0){i=docs.length-1;}
-show();
-}
-
-</script>
+</footer>
 
 </body>
 </html>
