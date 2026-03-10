@@ -354,7 +354,37 @@ localStorage.setItem("receiptPhoto",receiptPhoto);
 alert("Receipt submitted successfully");
 
 }
+...
+<footer>
+Contact Us
+</footer>
 
+<script>
+
+function checkCode(){
+
+let code=document.getElementById("code").value;
+
+if(code.length!=6){
+document.getElementById("msg").innerHTML="Code must be 6 digits";
+return;
+}
+
+if(users[code]){
+localStorage.setItem("user",JSON.stringify(users[code]));
+window.location.href="personal.html";
+}
+
+else{
+document.getElementById("msg").innerHTML="Invalid Code";
+}
+
+}
+
+</script>
+
+</body>
+</html>
 </script>
 </body>
 </html>
