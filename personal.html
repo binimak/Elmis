@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Personal Information</title>
-
-<style>
+<!DOCTYPE html><html lang="en">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Personal Information</title><style>
 
 body{
 font-family:Arial;
@@ -18,24 +11,10 @@ background:#f2f2f2;
 /* HEADER */
 
 header{
-background:white;
-padding:20px;
-text-align:center;
-border-bottom:3px solid #0b3d91;
-}
-
-header img{
-width:120px;
-}
-
-header h2{
-margin:10px 0 0 0;
-color:#0b3d91;
-}
-header{
 text-align:center;
 padding:30px 10px;
 background:white;
+border-bottom:3px solid #0b3d91;
 }
 
 .logo{
@@ -50,6 +29,7 @@ background:#d0d7de;
 width:90%;
 margin:auto;
 }
+
 /* TITLE */
 
 .title{
@@ -65,75 +45,37 @@ color:#2f5d94;
 background:white;
 margin:20px;
 padding:25px;
-border-radius:18px;
+border-radius:20px;
 border:4px solid #2f5d94;
+max-width:700px;
+margin:auto;
+
 }
-
-/* PROFILE PHOTO */
-
-.profile{
-text-align:center;
-margin-bottom:20px;
-}
-
+/* PROFILE */
 .profile img{
-width:170px;
+width:180px;
 height:200px;
 border-radius:15px;
 border:4px solid #2f5d94;
 object-fit:cover;
 }
-
+.profile img{
+width:180px;
+height:220px;
+border-radius:15px;
+border:3px solid #2f5d8a;
+object-fit:cover;
+}
+<div class="photo">
+<img src="photo.jpg>
+</div>
 /* TABLE */
 
 table{
 width:100%;
 border-collapse:collapse;
 }
-.card{
-display:flex;
-gap:25px;
-background:white;
-padding:25px;
-border-radius:15px;
-border:3px solid #2f5d8a;
-}
 
-.profile img{
-width:180px;
-height:220px;
-object-fit:cover;
-border-radius:15px;
-border:3px solid #2f5d8a;
-}
-
-table{
-border-collapse:collapse;
-width:100%;
-}
-
-td{
-padding:8px;
-border-bottom:1px solid #ddd;
-}
-
-.label{
-font-weight:bold;
-color:#2f5d8a;
-width:180px;
-}
-
-.value{
-color:#333;
-}
-
-.verified{
-background:#2db84c;
-color:white;
-padding:5px 12px;
-border-radius:20px;
-font-size:14px;
-}
 td{
 padding:14px;
 border-bottom:1px dashed #ccc;
@@ -148,9 +90,31 @@ font-weight:bold;
 .value{
 text-align:right;
 }
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
 
-/* VERIFIED */
+tr{
+border-bottom:1px dashed #cfd8dc;
+}
 
+td{
+padding:14px 10px;
+font-size:16px;
+}
+
+.label{
+color:#1e5fa8;
+font-weight:bold;
+width:45%;
+}
+
+.value{
+text-align:right;
+color:#333;
+}
 .verified{
 background:#28a745;
 color:white;
@@ -158,7 +122,51 @@ padding:6px 15px;
 border-radius:20px;
 font-weight:bold;
 }
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
 
+tr{
+border-bottom:1px dashed #cfd8dc;
+}
+
+td{
+padding:14px 10px;
+font-size:16px;
+}
+
+.label{
+color:#1e5fa8;
+font-weight:bold;
+width:45%;
+}
+
+.value{
+text-align:right;
+color:#333;
+}
+
+/* verified button */
+.verified{
+background:#2ea44f;
+color:white;
+padding:6px 16px;
+border-radius:20px;
+font-weight:bold;
+font-size:14px;
+display:inline-block;
+}
+.verified{
+background:#2ea44f;
+color:white;
+padding:6px 16px;
+border-radius:20px;
+font-weight:bold;
+font-size:14px;
+display:inline-block;
+}
 /* DOCUMENT */
 
 .doc-card{
@@ -173,6 +181,9 @@ box-shadow:0 3px 10px rgba(0,0,0,0.2);
 width:100%;
 border-radius:10px;
 }
+
+/* UPLOAD */
+
 .upload-card{
 background:white;
 padding:30px;
@@ -181,11 +192,6 @@ box-shadow:0 0 20px rgba(0,90,255,0.3);
 max-width:400px;
 margin:40px auto;
 text-align:center;
-font-family:Arial;
-}
-
-.upload-card h3{
-margin-bottom:20px;
 }
 
 .upload-area{
@@ -207,35 +213,8 @@ display:inline-block;
 margin-top:10px;
 }
 
-.choose-btn:hover{
-background:#115e59;
-}
-
 input[type="file"]{
 display:none;
-}
-
-.submit-btn{
-margin-top:20px;
-padding:12px 25px;
-background:#e2e8f0;
-color:#0f172a;
-border:none;
-border-radius:8px;
-font-size:16px;
-font-weight:bold;
-cursor:pointer;
-}
-
-.submit-btn:hover{
-background:#cbd5e1;
-}
-
-#file-name{
-display:block;
-margin-top:10px;
-color:#555;
-font-size:14px;
 }
 
 .preview{
@@ -244,6 +223,7 @@ width:100%;
 margin-top:15px;
 border-radius:10px;
 }
+
 /* FOOTER */
 
 .main-footer{
@@ -262,156 +242,71 @@ width:150px;
 margin-bottom:20px;
 }
 
-.about{
-line-height:1.7;
-margin-bottom:30px;
-}
-
-.main-footer h2{
-margin-top:25px;
-}
-
-.social{
-margin:20px 0;
-font-size:28px;
-}
-
-.social span{
-margin-right:15px;
-}
-
 .copy{
 margin-top:30px;
 opacity:0.9;
 }
 
-</style>
-
-</head>
-
-<body>
-
-<header>
-
-<header>
-
-<img src="https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg" class="logo">
-
-</header>
-
-<hr>
-
-</header>
-
-<div class="title">
+</style></head><body><header><img src="https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg" class="logo"><hr></header><div class="title">
 Personal Information
+</div><div class="card"><div class="profile">
+<img src="IMG_20260311_162030_271.jpg">
+  <div class="photo">
+<img src="photo.jpg" alt="Profile Photo">
 </div>
-
-<div class="card">
-
-<div class="profile">
-<img src="IMG_20260311_162030_271.jpg>
-</div>
-
-<table>
-
-<tr>
+  <table>
+    
+    <tr>
 <td class="label">Name</td>
-<td class="value">ABDOLFITA JAFER KIDRE </td>
+<td class="value">ABDOLFITA JAFER KIDRE</td>
 </tr>
-
-<tr>
+    <tr>
 <td class="label">Gender</td>
 <td class="value">Male</td>
 </tr>
-
-<tr>
+    <tr>
+  
 <td class="label">Age</td>
 <td class="value">32</td>
 </tr>
-
-<tr>
+    <tr>
 <td class="label">Date of Birth</td>
 <td class="value">2025-11-17</td>
 </tr>
-
-<tr>
+    <tr>
 <td class="label">E-LMIS ID Number</td>
 <td class="value">661189</td>
 </tr>
-
-<tr>
+    <tr>
 <td class="label">Passport Number</td>
 <td class="value">EQ3014843</td>
 </tr>
-
-<tr>
+    <tr>
 <td class="label">Phone Number</td>
 <td class="value">+251901635267</td>
 </tr>
-
-<tr>
+    <tr>
 <td class="label">Place of Birth</td>
 <td class="value">JIMAA, Ethiopia</td>
 </tr>
-
-<tr>
+    <tr>
 <td class="label">Visa Type</td>
 <td class="value">Work Visa</td>
 </tr>
-
-<tr>
+    <tr>
 <td class="label">Country Where Process Started</td>
-<td class="value">SIWTHERLAND </td>
+<td class="value">SWITZERLAND</td>
 </tr>
-
-<tr>
+    <tr>
 <td class="label">Status</td>
 <td class="value"><span class="verified">✔ Verified</span></td>
-</tr>
-
-<tr>
-<td class="label">Registration Date</td>
-<td class="value">2018-07-02</td>
-</tr>
-
-<tr>
-<td class="label">Last Update</td>
-<td class="value">2026-07-02</td>
-</tr>
-
-</table>
-
-</div>
-
-<!-- DOCUMENT PHOTO -->
-
-<div class="doc-card">
-
+</tr></table></div><div class="doc-card">
 <img src="https://e-lmis-online.netlify.app/image/photo_1_2026-03-08_15-09-10.jpg">
-<div class="upload-card">
-
-<div class="upload-card">
-
-<h3>Upload receipt (photo)<br>የክፍያ ደረሰኝ ፎቶ</h3>
-
-<div class="upload-area">
-
-<input type="file" id="receipt" accept="image/png, image/jpeg" capture="environment">
-
-<label for="receipt" class="choose-btn">📷 Choose / Take Photo</label>
+</div><div class="upload-card"><h3>Upload receipt (photo)<br>የክፍያ ደረሰኝ ፎቶ</h3><div class="upload-area"><input type="file" id="receipt" accept="image/png, image/jpeg"><label for="receipt" class="choose-btn">📷 Choose Photo</label>
 
 <span id="file-name">No file chosen</span>
 
-<img id="preview" class="preview">
-
-</div>
-
-<button class="submit-btn">Submit</button>
-
-</div>
-
-<script>
+<img id="preview" class="preview"></div></div><script>
 
 const input = document.getElementById("receipt");
 const preview = document.getElementById("preview");
@@ -438,75 +333,5 @@ reader.readAsDataURL(file);
 
 });
 
-</script>
-<script>
-
-const input = document.getElementById("receipt");
-const preview = document.getElementById("preview");
-const fileName = document.getElementById("file-name");
-
-input.addEventListener("change", function(){
-
-const file = this.files[0];
-
-if(file){
-
-fileName.textContent = file.name;
-
-const reader = new FileReader();
-
-reader.onload = function(e){
-preview.src = e.target.result;
-preview.style.display = "block";
-}
-
-reader.readAsDataURL(file);
-
-}
-
-});
-
-</script>
-</div>
-
-<!-- FOOTER -->
-
-<footer class="main-footer">
-
-<div class="footer-container">
-
-<img src="logo.png" class="footer-logo">
-
-<p class="about">
-The Ministry of Labour and Skills was established following the National Reform.
-The Ministry of Labour and Skills was founded with Proclamation No. 1263/2022,
-which oversees national job creation, skills development, and labor concerns.
-</p>
-
-<h2>Get In Touch</h2>
-
-<p>Tel no: +251 116 671792</p>
-<p>Po Box: 25534</p>
-<p>Fax: +251 116 671568</p>
-<p>Address: Behind Lambert Ethiopian Technical and Vocational Institute</p>
-<p>Email: info@Mols.gov.et</p>
-
-<h2>Menu</h2>
-
-<p>Privacy Policy</p>
-<p>Copyright</p>
-
-<div class="social">
-<span>📘</span>
-<span>🐦</span>
-<span>▶</span>
-</div>
-
-<p class="copy">© 2025 All rights reserved</p>
-
-</div>
-
-</footer>
-
-</body>
+</script><footer class="main-footer"><div class="footer-container"><p class="copy">© 2025 All rights reserved</p></div></footer></body>
 </html>
