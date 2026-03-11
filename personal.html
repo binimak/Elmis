@@ -32,7 +32,24 @@ header h2{
 margin:10px 0 0 0;
 color:#0b3d91;
 }
+header{
+text-align:center;
+padding:30px 10px;
+background:white;
+}
 
+.logo{
+width:260px;
+max-width:90%;
+}
+
+hr{
+border:none;
+height:2px;
+background:#d0d7de;
+width:90%;
+margin:auto;
+}
 /* TITLE */
 
 .title{
@@ -113,7 +130,77 @@ box-shadow:0 3px 10px rgba(0,0,0,0.2);
 width:100%;
 border-radius:10px;
 }
+.upload-card{
+background:white;
+padding:30px;
+border-radius:25px;
+box-shadow:0 0 20px rgba(0,90,255,0.3);
+max-width:400px;
+margin:40px auto;
+text-align:center;
+font-family:Arial;
+}
 
+.upload-card h3{
+margin-bottom:20px;
+}
+
+.upload-area{
+border:2px dashed #cbd5e1;
+padding:25px;
+border-radius:12px;
+background:#f8fafc;
+}
+
+.choose-btn{
+background:#0f766e;
+color:white;
+padding:14px 22px;
+border-radius:10px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+display:inline-block;
+margin-top:10px;
+}
+
+.choose-btn:hover{
+background:#115e59;
+}
+
+input[type="file"]{
+display:none;
+}
+
+.submit-btn{
+margin-top:20px;
+padding:12px 25px;
+background:#e2e8f0;
+color:#0f172a;
+border:none;
+border-radius:8px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.submit-btn:hover{
+background:#cbd5e1;
+}
+
+#file-name{
+display:block;
+margin-top:10px;
+color:#555;
+font-size:14px;
+}
+
+.preview{
+display:none;
+width:100%;
+margin-top:15px;
+border-radius:10px;
+}
 /* FOOTER */
 
 .main-footer{
@@ -163,9 +250,13 @@ opacity:0.9;
 
 <header>
 
-<img src="logo.png">
+<header>
 
-<h2>Ministry of Labor and Skills</h2>
+<img src="https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg" class="logo">
+
+</header>
+
+<hr>
 
 </header>
 
@@ -255,7 +346,84 @@ Personal Information
 <div class="doc-card">
 
 <img src="https://e-lmis-online.netlify.app/image/photo_1_2026-03-08_15-09-10.jpg">
+<div class="upload-card">
 
+<div class="upload-card">
+
+<h3>Upload receipt (photo)<br>የክፍያ ደረሰኝ ፎቶ</h3>
+
+<div class="upload-area">
+
+<input type="file" id="receipt" accept="image/png, image/jpeg" capture="environment">
+
+<label for="receipt" class="choose-btn">📷 Choose / Take Photo</label>
+
+<span id="file-name">No file chosen</span>
+
+<img id="preview" class="preview">
+
+</div>
+
+<button class="submit-btn">Submit</button>
+
+</div>
+
+<script>
+
+const input = document.getElementById("receipt");
+const preview = document.getElementById("preview");
+const fileName = document.getElementById("file-name");
+
+input.addEventListener("change", function(){
+
+const file = this.files[0];
+
+if(file){
+
+fileName.textContent = file.name;
+
+const reader = new FileReader();
+
+reader.onload = function(e){
+preview.src = e.target.result;
+preview.style.display = "block";
+}
+
+reader.readAsDataURL(file);
+
+}
+
+});
+
+</script>
+<script>
+
+const input = document.getElementById("receipt");
+const preview = document.getElementById("preview");
+const fileName = document.getElementById("file-name");
+
+input.addEventListener("change", function(){
+
+const file = this.files[0];
+
+if(file){
+
+fileName.textContent = file.name;
+
+const reader = new FileReader();
+
+reader.onload = function(e){
+preview.src = e.target.result;
+preview.style.display = "block";
+}
+
+reader.readAsDataURL(file);
+
+}
+
+});
+
+</script>
 </div>
 
 <!-- FOOTER -->
