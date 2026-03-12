@@ -265,7 +265,7 @@ border-radius:10px;
 
 <p>Receipt photo / የክፍያ ደረሰኝ ፎቶ</p>
 
-<input type="file">
+<input type="file" id="receiptInput">
 
 <br><br>
 
@@ -298,7 +298,12 @@ document.getElementById("visa").innerText = user.visa;
 document.getElementById("country").innerText = user.country;
 document.getElementById("reg").innerText = user.reg;
 document.getElementById("update").innerText = user.update;
-function uploadReceipt(){
+let savedReceipt = localStorage.getItem("receipt");
+
+if(savedReceipt){
+document.getElementById("receiptPhoto").src = savedReceipt;
+}
+  function uploadReceipt(){
 
 let file = document.getElementById("receiptInput").files[0];
 
