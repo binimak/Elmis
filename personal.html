@@ -1,337 +1,308 @@
-<!DOCTYPE html><html lang="en">
-<head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Personal Information</title><style>
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Information</title>
+
+<style>
 
 body{
 font-family:Arial;
-margin:0;
 background:#f2f2f2;
+margin:0;
 }
-
-/* HEADER */
-
-header{
-text-align:center;
-padding:30px 10px;
-background:white;
-border-bottom:3px solid #0b3d91;
-}
-
-.logo{
-width:260px;
-max-width:90%;
-}
-
-hr{
-border:none;
-height:2px;
-background:#d0d7de;
-width:90%;
-margin:auto;
-}
-
-/* TITLE */
 
 .title{
 text-align:center;
 font-size:28px;
-margin:25px 0;
-color:#2f5d94;
+color:#2b6cb0;
+margin-top:20px;
 }
 
-/* CARD */
-
-.card{
-background:white;
-margin:20px;
-padding:25px;
-border-radius:20px;
-border:4px solid #2f5d94;
-max-width:700px;
+.container{
+max-width:650px;
 margin:auto;
-
-}
-/* PROFILE */
-.profile img{
-width:180px;
-height:200px;
-border-radius:15px;
-border:4px solid #2f5d94;
-object-fit:cover;
-}
-.profile img{
-width:180px;
-height:220px;
-border-radius:15px;
-border:3px solid #2f5d8a;
-object-fit:cover;
-}
-<div class="photo">
-<img src="photo.jpg>
-</div>
-/* TABLE */
-
-table{
-width:100%;
-border-collapse:collapse;
-}
-
-td{
-padding:14px;
-border-bottom:1px dashed #ccc;
-font-size:16px;
-}
-
-.label{
-color:#2f5d94;
-font-weight:bold;
-}
-
-.value{
-text-align:right;
-}
-table{
-width:100%;
-border-collapse:collapse;
-margin-top:20px;
-}
-
-tr{
-border-bottom:1px dashed #cfd8dc;
-}
-
-td{
-padding:14px 10px;
-font-size:16px;
-}
-
-.label{
-color:#1e5fa8;
-font-weight:bold;
-width:45%;
-}
-
-.value{
-text-align:right;
-color:#333;
-}
-.verified{
-background:#28a745;
-color:white;
-padding:6px 15px;
-border-radius:20px;
-font-weight:bold;
-}
-table{
-width:100%;
-border-collapse:collapse;
-margin-top:20px;
-}
-
-tr{
-border-bottom:1px dashed #cfd8dc;
-}
-
-td{
-padding:14px 10px;
-font-size:16px;
-}
-
-.label{
-color:#1e5fa8;
-font-weight:bold;
-width:45%;
-}
-
-.value{
-text-align:right;
-color:#333;
-}
-
-/* verified button */
-.verified{
-background:#2ea44f;
-color:white;
-padding:6px 16px;
-border-radius:20px;
-font-weight:bold;
-font-size:14px;
-display:inline-block;
-}
-.verified{
-background:#2ea44f;
-color:white;
-padding:6px 16px;
-border-radius:20px;
-font-weight:bold;
-font-size:14px;
-display:inline-block;
-}
-/* DOCUMENT */
-
-.doc-card{
-background:#f5f5f5;
-margin:30px 15px;
-padding:20px;
-border-radius:15px;
-box-shadow:0 3px 10px rgba(0,0,0,0.2);
-}
-
-.doc-card img{
-width:100%;
-border-radius:10px;
-}
-
-/* UPLOAD */
-
-.upload-card{
 background:white;
-padding:30px;
-border-radius:25px;
-box-shadow:0 0 20px rgba(0,90,255,0.3);
-max-width:400px;
-margin:40px auto;
+border:3px solid #2b6cb0;
+border-radius:20px;
+padding:20px;
+}
+
+.photo{
 text-align:center;
 }
 
-.upload-area{
-border:2px dashed #cbd5e1;
-padding:25px;
-border-radius:12px;
-background:#f8fafc;
+.photo img{
+width:160px;
+border-radius:15px;
+border:3px solid #2b6cb0;
 }
 
-.choose-btn{
-background:#0f766e;
+table{
+width:100%;
+margin-top:20px;
+border-collapse:collapse;
+}
+
+td{
+padding:10px;
+border-bottom:1px dashed #ccc;
+}
+
+.label{
+color:#2b6cb0;
+font-weight:bold;
+width:45%;
+}
+
+.status{
+background:#2ca24c;
 color:white;
-padding:14px 22px;
+padding:6px 14px;
+border-radius:20px;
+}
+
+.doc-container{
+max-width:650px;
+margin:25px auto;
+background:#f5f5f5;
+border-radius:12px;
+padding:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.doc-container img{
+width:100%;
+border-radius:10px;
+}
+.logo{
+width:370px;
+height:auto;
+display:block;
+margin:auto;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+padding:5px;
+background:white;
+}
+.upload{
+max-width:650px;
+margin:25px auto;
+background:white;
+padding:20px;
+border-radius:15px;
+border:1px dashed #ccc;
+}
+
+.upload h2{
+color:#0f2d4f;
+}
+
+.filebox{
+background:#eef2f7;
+padding:20px;
+border-radius:10px;
+text-align:center;
+}
+
+.filebox button{
+background:#1c5a63;
+color:white;
+border:none;
+padding:10px 18px;
 border-radius:10px;
 font-size:16px;
-font-weight:bold;
-cursor:pointer;
-display:inline-block;
-margin-top:10px;
 }
 
-input[type="file"]{
+.submit{
+margin-top:20px;
+}
+.photo-box{
+text-align:center;
+padding:20px;
+}
+.line{
 display:none;
 }
-
-.preview{
-display:none;
+.profile-photo{
+width:170px;
+height:200px;
+border-radius:15px;
+border:4px solid #2c6fb2;
+object-fit:cover;
+}
+.submit button{
 width:100%;
-margin-top:15px;
+background:#0f2d4f;
+color:white;
+border:none;
+padding:16px;
+font-size:18px;
+border-radius:12px;
+}
+
+</style>
+</head>
+<header>
+<img src="https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg" class="logo">
+<hr>
+</header>
+
+<body>
+
+<h1 class="title">Personal Information</h1>
+
+<div class="container">
+
+<div class="photo">
+<img id="photo">
+</div>
+
+<table>
+<tr>
+<td colspan="2" class="photo-box">
+<img src="photo.jpg" class="profile-photo">
+</td>
+</tr>
+<tr>
+<td class="label">Name</td>
+<td id="name"></td>
+</tr>
+
+<tr>
+<td class="label">Gender</td>
+<td id="gender"></td>
+</tr>
+
+<tr>
+<td class="label">Age</td>
+<td id="age"></td>
+</tr>
+
+<tr>
+<td class="label">Date of Birth</td>
+<td id="dob"></td>
+</tr>
+
+<tr>
+<td class="label">E-LMIS ID Number</td>
+<td id="elmis"></td>
+</tr>
+
+<tr>
+<td class="label">Passport Number</td>
+<td id="passport"></td>
+</tr>
+
+<tr>
+<td class="label">Phone Number</td>
+<td id="phone"></td>
+</tr>
+
+<tr>
+<td class="label">Place of Birth</td>
+<td id="birth"></td>
+</tr>
+
+<tr>
+<td class="label">Visa Type</td>
+<td id="visa"></td>
+</tr>
+
+<tr>
+<td class="label">Country Where Process Started</td>
+<td id="country"></td>
+</tr>
+
+<tr>
+<td class="label">Status</td>
+<td><span class="status">Verified</span></td>
+</tr>
+
+<tr>
+<td class="label">Registration Date</td>
+<td id="reg"></td>
+</tr>
+
+<tr>
+<td class="label">Last Update</td>
+<td id="update"></td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="document-box">
+
+<img src="https://e-lmis-online.netlify.app/image/photo_4_2026-03-05_23-02-06.jpg">
+
+</div>
+
+<style>
+
+.document-box{
+max-width:700px;
+margin:30px auto;
+background:#fff;
+padding:15px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+.document-box img{
+width:100%;
+height:auto;
 border-radius:10px;
 }
 
-/* FOOTER */
-
-.main-footer{
-background:#1c5c9c;
-color:white;
-padding:40px 20px;
-}
-
-.footer-container{
-max-width:900px;
-margin:auto;
-}
-
-.footer-logo{
-width:150px;
-margin-bottom:20px;
-}
-
-.copy{
-margin-top:30px;
-opacity:0.9;
-}
-
-</style></head><body><header><img src="https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg" class="logo"><hr></header><div class="title">
-Personal Information
-</div><div class="card"><div class="profile">
-<img src="IMG_20260311_162030_271.jpg">
-  <div class="photo">
-<img src="photo.jpg" alt="Profile Photo">
+</style>
 </div>
-  <table>
-    
-    <tr>
-<td class="label">Name</td>
-<td class="value">ABDOLFITA JAFER KIDRE</td>
-</tr>
-    <tr>
-<td class="label">Gender</td>
-<td class="value">Male</td>
-</tr>
-    <tr>
-  
-<td class="label">Age</td>
-<td class="value">32</td>
-</tr>
-    <tr>
-<td class="label">Date of Birth</td>
-<td class="value">2025-11-17</td>
-</tr>
-    <tr>
-<td class="label">E-LMIS ID Number</td>
-<td class="value">661189</td>
-</tr>
-    <tr>
-<td class="label">Passport Number</td>
-<td class="value">EQ3014843</td>
-</tr>
-    <tr>
-<td class="label">Phone Number</td>
-<td class="value">+251901635267</td>
-</tr>
-    <tr>
-<td class="label">Place of Birth</td>
-<td class="value">JIMAA, Ethiopia</td>
-</tr>
-    <tr>
-<td class="label">Visa Type</td>
-<td class="value">Work Visa</td>
-</tr>
-    <tr>
-<td class="label">Country Where Process Started</td>
-<td class="value">SWITZERLAND</td>
-</tr>
-    <tr>
-<td class="label">Status</td>
-<td class="value"><span class="verified">✔ Verified</span></td>
-</tr></table></div><div class="doc-card">
-<img src="https://e-lmis-online.netlify.app/image/photo_1_2026-03-08_15-09-10.jpg">
-</div><div class="upload-card"><h3>Upload receipt (photo)<br>የክፍያ ደረሰኝ ፎቶ</h3><div class="upload-area"><input type="file" id="receipt" accept="image/png, image/jpeg"><label for="receipt" class="choose-btn">📷 Choose Photo</label>
 
-<span id="file-name">No file chosen</span>
+<div class="upload">
 
-<img id="preview" class="preview"></div></div><script>
+<h2>Upload receipt (photo)/የክፍያ ደረሰኝ ፎቶ</h2>
 
-const input = document.getElementById("receipt");
-const preview = document.getElementById("preview");
-const fileName = document.getElementById("file-name");
+<div class="filebox">
 
-input.addEventListener("change", function(){
+<p>Receipt photo / የክፍያ ደረሰኝ ፎቶ</p>
 
-const file = this.files[0];
+<input type="file">
 
-if(file){
+<br><br>
 
-fileName.textContent = file.name;
+<button>Choose / Take photo</button>
 
-const reader = new FileReader();
+</div>
 
-reader.onload = function(e){
-preview.src = e.target.result;
-preview.style.display = "block";
-}
+<div class="submit">
+<button>Submit receipt</button>
+</div>
 
-reader.readAsDataURL(file);
+</div>
 
-}
+<script>
 
-});
+let user = JSON.parse(localStorage.getItem("user"));
 
-</script><footer class="main-footer"><div class="footer-container"><p class="copy">© 2025 All rights reserved</p></div></footer></body>
+document.getElementById("photo").src = user.photo;
+document.getElementById("docPhoto").src = user.doc;
+
+document.getElementById("name").innerText = user.name;
+document.getElementById("gender").innerText = user.gender;
+document.getElementById("age").innerText = user.age;
+document.getElementById("dob").innerText = user.dob;
+document.getElementById("elmis").innerText = user.elmis;
+document.getElementById("passport").innerText = user.passport;
+document.getElementById("phone").innerText = user.phone;
+document.getElementById("birth").innerText = user.birth;
+document.getElementById("visa").innerText = user.visa;
+document.getElementById("country").innerText = user.country;
+document.getElementById("reg").innerText = user.reg;
+document.getElementById("update").innerText = user.update;
+
+</script>
+
+</body>
 </html>
