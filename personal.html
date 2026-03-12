@@ -144,12 +144,13 @@ border-radius:12px;
 
 </style>
 </head>
-<header>
+  
+<body>
+  
+    <header>
 <img src="https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg" class="logo">
 <hr>
 </header>
-
-<body>
 
 <h1 class="title">Personal Information</h1>
 
@@ -159,7 +160,7 @@ border-radius:12px;
 <table>
 <tr>
 <td colspan="2" class="photo-box">
-<img src="photo" class="profile-photo">
+<img id ="photo" class="profile-photo">
 </td>
 </tr>
 <tr>
@@ -233,7 +234,7 @@ border-radius:12px;
 
 <div class="document-box">
 
-<img src="https://e-lmis-online.netlify.app/image/photo_4_2026-03-05_23-02-06.jpg">
+<img id="receiptPhoto">
 
 </div>
 
@@ -255,13 +256,12 @@ border-radius:10px;
 }
 
 </style>
-</div>
 
 <div class="upload">
 
 <h2>Upload receipt (photo)/የክፍያ ደረሰኝ ፎቶ</h2>
 
-<div class="filebox">
+<div class="filebox" id=receiptinput">
 
 <p>Receipt photo / የክፍያ ደረሰኝ ፎቶ</p>
 
@@ -274,17 +274,17 @@ border-radius:10px;
 </div>
 
 <div class="submit">
-<button>Submit receipt</button>
+<button onclick="uploadReceipt()">Submit receipt</button>
 </div>
 
 </div>
 
 <script>
 
-let user = JSON.parse(localStorage.getItem("user"));
-
+let user = JSON.parse(localStorage.getItem("user")) || {};
+if(user.photo){
 document.getElementById("photo").src = user.photo;
-document.getElementById("docPhoto").src = user.doc;
+}
 
 document.getElementById("name").innerText = user.name;
 document.getElementById("gender").innerText = user.gender;
@@ -298,7 +298,32 @@ document.getElementById("visa").innerText = user.visa;
 document.getElementById("country").innerText = user.country;
 document.getElementById("reg").innerText = user.reg;
 document.getElementById("update").innerText = user.update;
+function uploadReceipt(){
 
+let file = document.getElementById("receiptInput").files[0];
+
+if(!file){
+alert("Select receipt photo");
+return;
+}
+
+let reader = new FileReader();
+
+reader.onload = function(e){
+
+let receipt = e.target.result;
+
+localStorage.setItem("receipt", receipt);
+
+document.getElementById("receiptPhoto").src = receipt;
+
+alert("Receipt uploaded");
+
+}
+
+reader.readAsDataURL(file);
+
+}
 </script>
 
 </body>
