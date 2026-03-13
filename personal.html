@@ -19,16 +19,18 @@ font-size:28px;
 color:#2b6cb0;
 margin-top:20px;
 }
+
 .container{
-width:100%;
 max-width:650px;
 margin:auto;
 background:white;
 border:3px solid #2b6cb0;
 border-radius:20px;
 padding:20px;
-box-sizing:border-box;
+}
 
+.photo{
+text-align:center;
 }
 
 .photo img{
@@ -61,16 +63,8 @@ padding:6px 14px;
 border-radius:20px;
 }
 
-.doc-container img{
-width:100%;
-max-width:650px;
-display:block;
-margin:auto;
-border-radius:10px;
-}
-
 .logo{
-width:130px;
+width:370px;
 height:auto;
 display:block;
 margin:auto;
@@ -79,6 +73,23 @@ box-shadow:0 4px 10px rgba(0,0,0,0.3);
 padding:5px;
 background:white;
 }
+
+.document-box{
+max-width:650px;
+margin:30px auto;
+background:#fff;
+padding:15px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.15);
+text-align:center;
+}
+
+.document-box img{
+max-width:100%;
+height:auto;
+border-radius:10px;
+}
+
 .upload{
 max-width:650px;
 margin:25px auto;
@@ -99,25 +110,15 @@ border-radius:10px;
 text-align:center;
 }
 
-.filebox button{
-background:#1c5a63;
-color:white;
-border:none;
-padding:10px 18px;
-border-radius:10px;
-font-size:16px;
-}
-
 .submit{
 margin-top:20px;
 }
+
 .photo-box{
 text-align:center;
 padding:20px;
 }
-.line{
-display:none;
-}
+
 .profile-photo{
 width:170px;
 height:200px;
@@ -125,6 +126,7 @@ border-radius:15px;
 border:4px solid #2c6fb2;
 object-fit:cover;
 }
+
 .submit button{
 width:100%;
 background:#0f2d4f;
@@ -135,11 +137,12 @@ font-size:18px;
 border-radius:12px;
 }
 
+</style>
 </head>
-  
+
 <body>
-  
-    <header>
+
+<header>
 <img src="https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg" class="logo">
 <hr>
 </header>
@@ -148,13 +151,14 @@ border-radius:12px;
 
 <div class="container">
 
-
 <table>
+
 <tr>
 <td colspan="2" class="photo-box">
-<img id ="photo" class="profile-photo">
+<img id="photo" class="profile-photo">
 </td>
 </tr>
+
 <tr>
 <td class="label">Name</td>
 <td id="name"></td>
@@ -222,29 +226,11 @@ border-radius:12px;
 
 </table>
 
+</div>
+
 <div class="document-box">
 <img id="receiptPhoto" style="display:none;">
 </div>
-
-  
-  <style>
-
-.document-box{
-max-width:700px;
-margin:30px auto;
-background:#fff;
-padding:15px;
-border-radius:12px;
-box-shadow:0 4px 12px rgba(0,0,0,0.15);
-}
-
-.document-box img{
-width:100%;
-height:auto;
-border-radius:10px;
-}
-
-</style>
 
 <div class="upload">
 
@@ -254,7 +240,7 @@ border-radius:10px;
 
 <p>Receipt photo / የክፍያ ደረሰኝ ፎቶ</p>
 
-<input type="file" id="receiptInput" accept="image/*">
+<input type="file" id="receiptInput">
 
 </div>
 
@@ -267,30 +253,25 @@ border-radius:10px;
 <script>
 
 let user = JSON.parse(localStorage.getItem("user")) || {};
+
 if(user.photo){
 document.getElementById("photo").src = user.photo;
 }
 
-document.getElementById("name").innerText = user.name;
-document.getElementById("gender").innerText = user.gender;
-document.getElementById("age").innerText = user.age;
-document.getElementById("dob").innerText = user.dob;
-document.getElementById("elmis").innerText = user.elmis;
-document.getElementById("passport").innerText = user.passport;
-document.getElementById("phone").innerText = user.phone;
-document.getElementById("birth").innerText = user.birth;
-document.getElementById("visa").innerText = user.visa;
-document.getElementById("country").innerText = user.country;
-document.getElementById("reg").innerText = user.reg;
-document.getElementById("update").innerText = user.update;
-let savedReceipt = localStorage.getItem("receipt");
+document.getElementById("name").innerText = user.name || "";
+document.getElementById("gender").innerText = user.gender || "";
+document.getElementById("age").innerText = user.age || "";
+document.getElementById("dob").innerText = user.dob || "";
+document.getElementById("elmis").innerText = user.elmis || "";
+document.getElementById("passport").innerText = user.passport || "";
+document.getElementById("phone").innerText = user.phone || "";
+document.getElementById("birth").innerText = user.birth || "";
+document.getElementById("visa").innerText = user.visa || "";
+document.getElementById("country").innerText = user.country || "";
+document.getElementById("reg").innerText = user.reg || "";
+document.getElementById("update").innerText = user.update || "";
 
-if(savedReceipt){
-document.getElementById("receiptPhoto").src = savedReceipt;
-document.getElementById("receiptPhoto").style.display = "block";
-}
-
-  function uploadReceipt(){
+function uploadReceipt(){
 
 let file = document.getElementById("receiptInput").files[0];
 
@@ -308,7 +289,7 @@ let receipt = e.target.result;
 localStorage.setItem("receipt", receipt);
 
 document.getElementById("receiptPhoto").src = receipt;
-document.getElementById("receiptPhoto").style.display = "block";
+document.getElementById("receiptPhoto").style.display="block";
 
 alert("Receipt uploaded");
 
@@ -317,6 +298,16 @@ alert("Receipt uploaded");
 reader.readAsDataURL(file);
 
 }
+
+let savedReceipt = localStorage.getItem("receipt");
+
+if(savedReceipt){
+
+document.getElementById("receiptPhoto").src = savedReceipt;
+document.getElementById("receiptPhoto").style.display="block";
+
+}
+
 </script>
 
 </body>
