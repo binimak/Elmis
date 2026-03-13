@@ -255,7 +255,10 @@ border-radius:10px;
 
 <script>
 
-let user = JSON.parse(localStorage.getItem("user")) || {};
+
+  let user = JSON.parse(localStorage.getItem("user")) || {};
+
+document.getElementById("doc").src = user.doc; 
 
 if(user.photo){
 document.getElementById("photo").src = user.photo;
