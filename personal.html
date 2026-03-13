@@ -134,22 +134,7 @@ padding:16px;
 font-size:18px;
 border-radius:12px;
 }
-.document-box{
-max-width:700px;
-margin:30px auto;
-background:#fff;
-padding:15px;
-border-radius:12px;
-box-shadow:0 4px 12px rgba(0,0,0,0.15);
-}
 
-.document-box img{
-width:100%;
-height:auto;
-border-radius:10px;
-}
-
-</style>
 </head>
   
 <body>
@@ -302,7 +287,9 @@ let savedReceipt = localStorage.getItem("receipt");
 
 if(savedReceipt){
 document.getElementById("receiptPhoto").src = savedReceipt;
+document.getElementById("receiptPhoto").style.display = "block";
 }
+
   function uploadReceipt(){
 
 let file = document.getElementById("receiptInput").files[0];
