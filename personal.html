@@ -28,12 +28,7 @@ border:3px solid #2b6cb0;
 border-radius:20px;
 padding:20px;
 box-sizing:border-box;
-}
 
-}
-
-.photo{
-text-align:center;
 }
 
 .photo img{
@@ -66,14 +61,6 @@ padding:6px 14px;
 border-radius:20px;
 }
 
-.doc-container{
-max-width:650px;
-margin:25px auto;
-background:#f5f5f5;
-border-radius:12px;
-padding:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
 .doc-container img{
 width:100%;
 max-width:650px;
@@ -82,7 +69,6 @@ margin:auto;
 border-radius:10px;
 }
 
-}
 .logo{
 width:130px;
 height:auto;
@@ -147,6 +133,20 @@ border:none;
 padding:16px;
 font-size:18px;
 border-radius:12px;
+}
+.document-box{
+max-width:700px;
+margin:30px auto;
+background:#fff;
+padding:15px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+.document-box img{
+width:100%;
+height:auto;
+border-radius:10px;
 }
 
 </style>
@@ -244,7 +244,7 @@ border-radius:12px;
 
 <div class="document-box">
 
-<img id="receiptPhoto">
+<img id="receiptPhoto" style="display:none;">
 
 </div>
 
@@ -271,15 +271,11 @@ border-radius:10px;
 
 <h2>Upload receipt (photo)/የክፍያ ደረሰኝ ፎቶ</h2>
 
-<div class="filebox" id=receiptinput">
+<div class="filebox">
 
 <p>Receipt photo / የክፍያ ደረሰኝ ፎቶ</p>
 
-<div class="filebox">
-
-<br><br>
-
-<button>Choose / Take photo</button>
+<input type="file" id="receiptInput" accept="image/*">
 
 </div>
 
@@ -331,6 +327,7 @@ let receipt = e.target.result;
 localStorage.setItem("receipt", receipt);
 
 document.getElementById("receiptPhoto").src = receipt;
+document.getElementById("receiptPhoto").style.display = "block";
 
 alert("Receipt uploaded");
 
