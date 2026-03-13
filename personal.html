@@ -74,22 +74,6 @@ padding:5px;
 background:white;
 }
 
-.document-box{
-max-width:650px;
-margin:30px auto;
-background:#fff;
-padding:15px;
-border-radius:12px;
-box-shadow:0 4px 12px rgba(0,0,0,0.15);
-text-align:center;
-}
-
-.document-box img{
-max-width:100%;
-height:auto;
-border-radius:10px;
-}
-
 .upload{
 max-width:650px;
 margin:25px auto;
@@ -228,9 +212,28 @@ border-radius:12px;
 
 </div>
 
+<!-- Document Photo -->
+
 <div class="document-box">
-<img id="receiptPhoto" style="display:none;">
+<img src="https://e-lmis-online.netlify.app/image/photo_4_2026-03-05_23-02-06.jpg">
 </div>
+
+<style>
+.document-box{
+max-width:700px;
+margin:30px auto;
+background:#fff;
+padding:15px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+.document-box img{
+width:100%;
+height:auto;
+border-radius:10px;
+}
+</style>
 
 <div class="upload">
 
@@ -288,23 +291,11 @@ let receipt = e.target.result;
 
 localStorage.setItem("receipt", receipt);
 
-document.getElementById("receiptPhoto").src = receipt;
-document.getElementById("receiptPhoto").style.display="block";
-
 alert("Receipt uploaded");
 
 }
 
 reader.readAsDataURL(file);
-
-}
-
-let savedReceipt = localStorage.getItem("receipt");
-
-if(savedReceipt){
-
-document.getElementById("receiptPhoto").src = savedReceipt;
-document.getElementById("receiptPhoto").style.display="block";
 
 }
 
