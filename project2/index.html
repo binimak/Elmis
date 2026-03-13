@@ -3,7 +3,7 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Illuminati</title>
+<title>Illuminati Portal</title>
 
 <style>
 
@@ -14,10 +14,10 @@ color:white;
 text-align:center;
 }
 
-/* HERO SECTION */
+/* HERO */
 
 .hero{
-background-image:url("/project2/image/Screenshot_20260313-223016~2.jpg");
+background-image:url("photo.jpg");
 background-size:cover;
 background-position:center;
 height:100vh;
@@ -27,7 +27,7 @@ justify-content:center;
 align-items:center;
 }
 
-/* TITLE */
+/* TITLES */
 
 .hero h1{
 font-size:50px;
@@ -45,7 +45,7 @@ margin:10px 0;
 
 input{
 padding:12px;
-width:200px;
+width:220px;
 border:none;
 border-radius:6px;
 font-size:16px;
@@ -87,17 +87,33 @@ width:100%;
 <h1>Welcome</h1>
 <h2>Enter 6 Digit Code</h2>
 
-<input type="text" placeholder="6 Digit Code" maxlength="6">
+<input id="code" type="text" placeholder="6 Digit Code" maxlength="6">
 
 <br>
 
-<button>Submit</button>
+<button onclick="checkCode()">Submit</button>
 
 </div>
 
 <footer>
 © 2026 Illuminati Portal
 </footer>
+
+<script>
+
+function checkCode(){
+
+let code = document.getElementById("code").value;
+
+if(code.length == 6){
+window.location.href="personal.html";
+}else{
+alert("Enter valid 6 digit code");
+}
+
+}
+
+</script>
 
 </body>
 </html>
