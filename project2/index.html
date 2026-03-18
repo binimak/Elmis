@@ -288,25 +288,58 @@ margin:5px 0;
 
 </footer>
 
-
 <script>
 
+// 👇 USER DATABASE (each code = different person)
+var users = {
+
+"123456":{
+name:"Biniyam Mekonnen",
+photo:"images/biniyam.jpg",
+visaType:"Work Permit – Temporary Employment",
+job:"Waiter / Supermarket Assistant",
+employer:"BHP",
+location:"Toronto, Canada",
+from:"March 14, 2026",
+to:"March 14, 2028"
+},
+
+"654321":{
+name:"Dagif Besene",
+photo:"images/dagif.jpg",
+visaType:"Work Permit",
+job:"Cleaner",
+employer:"BHP",
+location:"Ontario, Canada",
+from:"2026",
+to:"2028"
+},
+
+"987654":{
+name:"Sara Mohammed",
+photo:"images/sara.jpg",
+visaType:"Work Permit",
+job:"Cashier",
+employer:"BHP",
+location:"Canada",
+from:"2026",
+to:"2028"
+}
+
+};
+
+// 👇 VERIFY FUNCTION
 function verifyCode(){
 
-var code=document.getElementById("code").value;
+var code = document.getElementById("code").value;
 
-var validCodes=[
-"123456",
-"654321",
-"987654",
-"111222",
-"222333",
-"333444"
-];
+if(users[code]){
 
-if(validCodes.includes(code)){
+// save data
+localStorage.setItem("user", JSON.stringify(users[code]));
 
-window.location.href="personal.html?code="+code;
+// go to personal page
+window.location.href="personal.html";
 
 }else{
 
