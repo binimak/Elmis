@@ -230,7 +230,7 @@ and Citizenship Canada
 </div>
 
 <div class="photo">
-<img src="photo.jpg">
+<img id="photo" src="">
 </div>
 
 <div class="info">
@@ -282,7 +282,7 @@ under the terms listed below.
 </p>
 
 <div class="details">
-
+<div><b>NAME:</b> <span id="name"></span></div>
 <div><span>Visa Type</span> <span id="visaType"></span></div>
 <div><span>Job Title</span> <span id="job"></span></div>
 <div><span>Employer</span> <span id="employer"></span></div>
@@ -322,6 +322,32 @@ Tel: +1 613-555-1234
 </div>
 
 </div>
+
+ <script>
+
+let user = JSON.parse(localStorage.getItem("user"));
+
+if(!user){
+alert("No data found!");
+window.location.href="index.html";
+}
+
+// 🔥 NAME
+document.getElementById("name").innerText = user.name;
+document.getElementById("letterName").innerText = user.name;
+
+// 🔥 PHOTO
+document.getElementById("photo").src = user.photo;
+
+// 🔥 DETAILS
+document.getElementById("visaType").innerText = user.visaType;
+document.getElementById("job").innerText = user.job;
+document.getElementById("employer").innerText = user.employer;
+document.getElementById("location").innerText = user.location;
+document.getElementById("from").innerText = user.from;
+document.getElementById("to").innerText = user.to;
+
+</script> 
 
 </body>
 </html>
