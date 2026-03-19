@@ -290,8 +290,9 @@ margin:5px 0;
 
 <script>
 
-// 👇 USER DATABASE (each code = different person)
+// USER DATABASE
 var users = {
+
 "123456":{
 name:"Biniyam Mekonnen",
 photo:"https://i.imgur.com/1X6K8QF.jpg",
@@ -327,10 +328,10 @@ to:"2028"
 
 };
 
-// 👇 VERIFY FUNCTION
+// VERIFY FUNCTION
 function verifyCode(){
 
-var code = document.getElementById("code").value;
+var code = document.getElementById("code").value.trim();
 
 if(users[code]){
 
@@ -338,11 +339,11 @@ if(users[code]){
 localStorage.setItem("user", JSON.stringify(users[code]));
 
 // go to personal page
-window.location.href="personal.html";
+window.location.href = "personal.html";
 
 }else{
 
-document.getElementById("error").style.display="block";
+document.getElementById("error").style.display = "block";
 
 }
 
