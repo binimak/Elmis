@@ -1,177 +1,199 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ILLUMINATIAM</title>
+<title>2025 Website</title>
 
 <style>
-body{
-  margin:0;
-  font-family:Arial;
-  background:black;
-  color:white;
-  text-align:center;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI', sans-serif;
 }
 
-a{color:gold;text-decoration:none;}
-a:hover{text-decoration:underline;}
+body{
+background:black;
+color:white;
+}
 
 /* HEADER */
 header{
-  background:#111;
-  padding:20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  flex-wrap:wrap;
+display:flex;
+justify-content:space-between;
+padding:20px;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
 }
 
-.flags img{
-  width:60px;
-  border-radius:5px;
-}
-
-.title{
-  flex:1;
-}
-
-.title h1{
-  color:gold;
-  font-size:32px;
-}
-
-.title h2{
-  font-size:14px;
-  color:#ccc;
-}
-
-.donate button{
-  background:gold;
-  color:black;
-  padding:10px 15px;
-  border:none;
-  border-radius:6px;
-  cursor:pointer;
+nav a{
+color:white;
+margin-left:15px;
+text-decoration:none;
 }
 
 /* HERO */
-.hero img{
-  width:90%;
-  max-width:600px;
-  margin:20px;
-  border-radius:10px;
-  box-shadow:0 0 30px gold;
+.hero{
+text-align:center;
+padding:60px 20px;
 }
 
-/* CARDS */
-.section{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:20px;
-  margin:20px;
+/* CONTAINER */
+.container{
+padding:20px;
+display:flex;
+flex-direction:column;
+gap:30px;
+align-items:center;
 }
 
+/* CARD */
 .card{
-  background:#1c1c1c;
-  width:260px;
-  padding:20px;
-  border-radius:10px;
-  box-shadow:0 0 15px gold;
+width:90%;
+max-width:400px;
+background:rgba(255,255,255,0.1);
+padding:20px;
+border-radius:15px;
+text-align:center;
 }
 
-.card img{
-  width:100%;
-  border-radius:10px;
+/* FULL IMAGE */
+.full-image{
+width:100%;
+height:100vh;
+position:relative;
 }
 
-.card h3{
-  color:gold;
+.full-image img{
+width:100%;
+height:100%;
+object-fit:cover;
 }
 
-button.main{
-  background:gold;
-  color:black;
-  padding:12px 30px;
-  border:none;
-  margin:20px;
-  border-radius:6px;
-  cursor:pointer;
+/* DOCUMENT BOX */
+.document-box{
+width:90%;
+max-width:400px;
+background:rgba(255,255,255,0.15);
+padding:20px;
+border-radius:20px;
+text-align:center;
 }
 
-/* FOOTER */
+/* VERIFY */
+.verify{
+text-align:center;
+margin:40px 0;
+}
+
+input{
+padding:12px;
+border:none;
+border-radius:6px;
+width:200px;
+}
+
+button{
+padding:12px 20px;
+border:none;
+background:#f6b93b;
+color:black;
+border-radius:6px;
+cursor:pointer;
+margin-left:10px;
+}
+
+button:hover{
+background:#fa983a;
+}
+
 footer{
-  background:#111;
-  padding:20px;
-  margin-top:30px;
+text-align:center;
+padding:20px;
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="flags">
-    <img src="https://flagcdn.com/w80/us.png">
-  </div>
-
-  <div class="title">
-    <h1>Ethiopia Illuminaty</h1>
-    <h2>THE SECRET SOCIETY REVEALED</h2>
-  </div>
-
-  <div class="flags">
-    <img src="https://flagcdn.com/w80/et.png">
-  </div>
-
-  <div class="donate">
-    <button onclick="window.location.href='https://www.illuminatiofficial.org/join-the-illuminati-members/'">
-      Donate
-    </button>
-  </div>
+<h2>🇪🇹 ETHIOPIA ILLUMINATY 🇺🇸</h2>
+<nav>
+<a href="#">Home</a>
+<a href="#">Money</a>
+<a href="#">Contact</a>
+</nav>
 </header>
 
 <div class="hero">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Eye_of_Providence.png/640px-Eye_of_Providence.png">
+<h1>🇪🇹 ETHIOPIA ILLUMINATY 🇺🇸</h1>
+<p>ኢትዮጵያ ኢሉሚናቲ ማህበር</p>
+<p>በኢትዮጵያ በመመዝገብ ህይወችሁን ይቀይሩ</p>
 </div>
 
-<div class="section">
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
-    <h3>Members</h3>
-    <p>Millions of people worldwide are part of Illuminatiam.</p>
-  </div>
+<div class="container">
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1602524810567-d037dfd8c4a3>
-    <h3>Beliefs</h3>
-    <p>Unity, power and global influence.</p>
-  </div>
+<!-- HOUSE -->
+<div class="card">
+<h3>House</h3>
+<p>ገንዘብ ድጋፍ የሚደረግበት እድል</p>
 </div>
 
-<button class="main" onclick="window.location.href='https://www.illuminatiofficial.org/join-the-illuminati-members/'">
-Join The Illuminati
-</button>
+<!-- DOCUMENT -->
+<div class="full-image">
+<h3>Document</h3>
+<p>የእርስዎ ሰነድ</p>
+<img src="https://i.postimg.cc/9QssJbv6/881696452b1df7d3ac077df8a7f76993.jpg" style="width:100%;border-radius:10px;">
+</div>
+
+<!-- MONEY -->
+<div class="card">
+<h3>Money</h3>
+<p> ከ700,000ሺህ -1,000,000ብር ገንዘብ
+ ቅድመ ክፍያ አለዉ ፈጥነዉ ይመዝገቡ.</p>
+</div>
+
+</div>
+
+<!-- FULL IMAGE (Money በታች) -->
+<div class="full-image">
+<img src="https://i.postimg.cc/Jzt5GWdm/IMG-20260320-013254-060.jpg">
+</div>
+
+<!-- VERIFY -->
+<div class="verify">
+<h2> ሚስጢር ኮድ ያስገቡ</h2>
+<input type="text" id="visa">
+<button onclick="checkVisa()">Verify</button>
+<p id="result"></p>
+</div>
 
 <footer>
-  <p>
-    <a href="#">Facebook</a> |
-    <a href="#">Twitter</a>
-  </p>
-
-  <p>
-    <a href="#">Archives</a> |
-    <a href="#">Testament</a> |
-    <a href="#">Illuminations</a>
-  </p>
-
-  <p>
-    <a href="#">Privacy</a> |
-    <a href="#">Contact</a>
-  </p>
-
-  <p>© 2026 Illuminatiam</p>
+<p>© 2028</p>
 </footer>
+
+<script>
+
+var users = {
+"1111":"Approved ✅",
+"2222":"Processing ⏳",
+"3333":"Rejected ❌"
+};
+
+function checkVisa(){
+var code = document.getElementById("visa").value;
+
+if(users[code]){
+document.getElementById("result").innerText = users[code];
+}else{
+document.getElementById("result").innerText = "Invalid ❌";
+}
+}
+
+</script>
 
 </body>
 </html>
