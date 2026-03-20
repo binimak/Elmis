@@ -169,3 +169,97 @@ padding:20px;
    <div class="full-image">
   <img src="https://i.postimg.cc/MG0CpW2r/5b263c94e8b4e190d2bbcf6b68419c73.jpg",
 </div>
+<!-- CODE VERIFICATION -->
+
+<div class="verify-box">
+
+<h2>Enter Canada Viza Number</h2>
+
+<input type="text" id="code" placeholder="Enter Code">
+
+<button onclick="verifyCode()">Verify</button>
+
+<div class="error" id="error">Invalid Code</div>
+
+</div>
+
+
+<footer>
+
+<h3>BHP</h3>
+
+<a href="#">About</a>
+<a href="#">What we do</a>
+<a href="#">Investors</a>
+<a href="#">Sustainability</a>
+<a href="#">Careers</a>
+
+<p>© BHP 2025</p>
+
+</footer>
+
+<script>
+
+// USER DATABASE
+var users = {
+
+"123456":{
+name:"Biniyam Mekonnen",
+photo:"https://i.postimg.cc/FRtK0jr0/Screenshot-20260319-234119.jpg",
+visaType:"Work Permit – Temporary Employment",
+job:"Waiter / Supermarket Assistant",
+employer:"BHP",
+location:"Toronto, Canada",
+from:"March 14, 2026",
+to:"March 14, 2028"
+},
+"654321":{
+name:"Dagif Besene",
+photo:"https://i.postimg.cc/V6Rc5M5x/IMG-20260318-204354-949.jpg",
+visaType:"Work Permit",
+job:"Cleaner",
+employer:"BHP",
+location:"Ontario, Canada",
+from:"2026",
+to:"2028"
+},
+"987654":{
+name:"Sara Mohammed",
+photo:"https://i.postimg.cc/6pRgyRmz/IMG-20260220-184535-333.jpg",
+visaType:"Work Permit",
+job:"Cashier",
+employer:"BHP",
+location:"Canada",
+from:"2026",
+to:"2028"
+
+}
+
+};
+
+// VERIFY FUNCTION
+function verifyCode(){
+
+var code = document.getElementById("code").value.trim();
+
+if(users[code]){
+
+// save data
+localStorage.setItem("user", JSON.stringify(users[code]));
+
+// go to personal page
+window.location.href = "personal.html";
+
+}else{
+
+document.getElementById("error").style.display = "block";
+
+}
+
+}
+
+</script>
+
+
+</body>
+</html>
