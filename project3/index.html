@@ -169,37 +169,3 @@ padding:20px;
    <div class="full-image">
   <img src="https://i.postimg.cc/MG0CpW2r/5b263c94e8b4e190d2bbcf6b68419c73.jpg",
 </div>
-<!-- VERIFY -->
-<div class="verify">
-<h2> ሚስጢር ኮድ ያስገቡ</h2>
-<input type="text" id="visa">
-<button onclick="checkVisa()">Verify</button>
-<p id="result"></p>
-</div>
-
-<footer>
-<p>© 2028</p>
-</footer>
-
-<script>
-
-var users = {
-"1111":"Approved ✅",
-"2222":"Processing ⏳",
-"3333":"Rejected ❌"
-};
-
-function checkVisa(){
-var code = document.getElementById("visa").value;
-
-if(users[code]){
-document.getElementById("result").innerText = users[code];
-}else{
-document.getElementById("result").innerText = "Invalid ❌";
-}
-}
-
-</script>
-
-</body>
-</html>
