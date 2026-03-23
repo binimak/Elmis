@@ -3,19 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2025 Website</title>
+<title>Ethiopia Illuminatye</title>
 
 <style>
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Segoe UI', sans-serif;
+font-family:Arial, sans-serif;
 }
 
 body{
-background:black;
+background:#0a0a0a;
 color:white;
 }
 
@@ -24,8 +23,7 @@ header{
 display:flex;
 justify-content:space-between;
 padding:20px;
-background:rgba(255,255,255,0.1);
-backdrop-filter:blur(10px);
+background:#111;
 }
 
 nav a{
@@ -37,49 +35,54 @@ text-decoration:none;
 /* HERO */
 .hero{
 text-align:center;
-padding:60px 20px;
+padding:30px 10px;
+}
+
+.hero img{
+width:100%;
+max-height:200px;
+object-fit:cover;
+border-radius:10px;
+margin-top:20px;
+}
+
+/* BUTTON */
+.btn{
+background:#f6b93b;
+padding:12px 20px;
+border-radius:6px;
+color:black;
+text-decoration:none;
+display:inline-block;
+margin-top:15px;
 }
 
 /* CONTAINER */
 .container{
-padding:20px;
+padding:15px;
 display:flex;
+flex-wrap:wrap;
+gap:15px;
+justify-content:center;
 flex-direction:column;
-gap:30px;
 align-items:center;
+
 }
 
 /* CARD */
-.card{
-width:90%;
-max-width:400px;
-background:rgba(255,255,255,0.1);
-padding:20px;
-border-radius:15px;
-text-align:center;
-}
 
-/* FULL IMAGE */
-.full-image{
+.card img{
 width:100%;
-height:100vh;
-position:relative;
+height:auto;
+border-radius:10px;
+max-width:100%;
 }
 
-.full-image img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-/* DOCUMENT BOX */
-.document-box{
-width:90%;
-max-width:400px;
-background:rgba(255,255,255,0.15);
-padding:20px;
-border-radius:20px;
-text-align:center;
+/* PROFILE */
+.profile img{
+width:80px;
+height:80px;
+border-radius:50%;
 }
 
 /* VERIFY */
@@ -89,117 +92,209 @@ margin:40px 0;
 }
 
 input{
-padding:12px;
+padding:10px;
 border:none;
 border-radius:6px;
-width:200px;
 }
 
 button{
-padding:12px 20px;
-border:none;
+padding:10px 20px;
 background:#f6b93b;
-color:black;
+border:none;
 border-radius:6px;
-cursor:pointer;
 margin-left:10px;
 }
 
-button:hover{
-background:#fa983a;
-}
-
+/* FOOTER */
 footer{
 text-align:center;
 padding:20px;
+background:#111;
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-<h2>🇪🇹 ETHIOPIA ILLUMINATY 🇺🇸</h2>
+<h2>🇪🇹 Ethiopian Illuminaty 🇺🇸</h2>
 <nav>
 <a href="#">Home</a>
-<a href="#">Money</a>
+<a href="#">Jobs</a>
 <a href="#">Contact</a>
 </nav>
 </header>
 
+<!-- HERO -->
 <div class="hero">
-<h1>🇪🇹 ETHIOPIA ILLUMINATY 🇺🇸</h1>
-<p>ኢትዮጵያ ኢሉሚናቲ ማህበር</p>
-<p>በኢትዮጵያ በመመዝገብ ህይወችሁን ይቀይሩ</p>
+<h1>ETHIOPIAN ILLUMINATY</h1>
+<p>ሰዎች እየተጠቀሙ ነው… እርስዎ ግን እስካሁን እየጠበቁ ነው? እንኳን ወደ ኢትዮጵያዊ ኢሉሚናቲ በደህና መጡ እዚህ እድል የሚሰጥበት ቦታ ነው፣ የገንዘብ ለውጥ የሚጀምርበት ቦታ ነው።
+አባል በመሆን እና በመመዝገብ እርስዎ የሚከፍቱት ቀላል መዝገብ ብቻ አይደለም የሀብት መንገድ ነው። ብዙዎች ቀድሞ የወርሃዊ ገቢ እድል ተጠቃሚ ሆነዋል፣ እና ሕይወታቸውን ቀይረዋል።
+እርስዎ ግን እስከመቼ ይጠብቃሉ? እድሉ ለሁሉም አይቆይም። ዛሬ የምታደርጉት አንድ ውሳኔ ነገዎን ሊቀይር ይችላል።
+አትዘግዩ… አሁኑኑ ይመዝገቡ… እና ወደ ተሻለ የገንዘብ ሕይወት ይግቡ</p>
+  <p>Namoonni hedduun fayyadamaa jiru… ati garuu amma iyyuu eeggachaa jirtaa? Baga gara Iluminatii Itoophiyaatti nagaan dhuftan iddoo carraan itti kennamu, iddoo jijjiiramni maallaqaa itti jalqabu dha.
+Miseensa ta’uun fi galmaa’uun wanta salphaa fakkaata, garuu dhugaan isaa karaa badhaadhinaa banudha. Namoonni hedduun carraa galii ji’a ji’aan argatanii jireenya isaanii jijjiiranii jiru.
+Ati garuu hanga yoomi eeggatta? Carraan kun nama hundaaf yeroo hunda hin turu. Murteen har’a fudhattu boru kee jijjiiruu danda’a.
+Hin turin… amma galmaa’i… gara jireenya maallaqaa fooyya’aatti seeni</p>
+<img src="https://i.postimg.cc/Jzt5GWdm/IMG-20260320-013254-060.jpg">
+
+<a href="#" class="btn">Ethiopian Illuminaty</a>
 </div>
-<div class="card">
-  <h3>ILLUMINATY</h3>
-  <img src="https://i.postimg.cc/ryYxPxR6/5b263c94e8b4e190d2bbcf6b68419c73.jpg",
-    style="width:100%; border-radius:10px;>
-</div>
+
+<!-- SERVICES -->
+<h2 style="text-align:center;">Our Services</h2>
+
 <div class="container">
 
-<!-- HOUSE -->
 <div class="card">
-<h3>House</h3>
-<p>ገንዘብ ድጋፍ የሚደረግበት እድል</p>
+<img src="https://i.postimg.cc/nc6Cf11s/bdd8fdc363fa27865bd7420b820c4eba.jpg">
+<h3>Change to our World🌎</h3>
+<p>ኢትዮጵያዊ ኢሉሚናቲ</p>
 </div>
 
-<!-- DOCUMENT -->
-<div class="full-image">
-  <img src="",
-</div>
-
-<!-- MONEY -->
 <div class="card">
-<h3>Money</h3>
-<p> ከ700,000ሺህ -1,000,000ብር ገንዘብ
- ቅድመ ክፍያ አለዉ ፈጥነዉ ይመዝገቡ.</p>
+<img src="https://i.postimg.cc/J0sVKBFn/c7a54e1d68eeb06c2bddce7e48978c80.jpg">
+<h3>Training</h3>
+<p>Improve your skills</p>
 </div>
 
+<div class="card">
+<img src="https://i.postimg.cc/BQw5dPVD/0664e9f66ba75e3d22dd83fa8827f476.jpg">
+<h3>እርስዎ በየወሩ 1000$ ዶላር በቀጥታ ወደ አካውንትዎ እንዲገባ የሚፈልጉ ከሆነ፣ ይህ ዕድል ለእርስዎ ነው። ይህ ገንዘብ በኢትዮጵያ ገንዘብ ሲቀየር በየወሩ 157,000 ብር የሚሆን ትልቅ ገቢ ማለት ነው። በቀላል ሂደት መመዝገብ ብቻ ይበቃል፣ ከዚያም የወርሃዊ ገቢዎ መጀመር ይችላሉ። እንደዚህ ያለ ዕድል ብዙ ጊዜ አይመጣም፤ ስለዚህ እድሉ እንዳያመለጥዎ ፈጥነው ይመዝገቡ እና የገንዘብ ለውጥዎን ዛሬ ይጀምሩ።</h3
+<p> Yoo ji’a ji’aan doolaara 1000$ gara account keessaniitti galuu barbaaddan, carraan kun isiniif dha. Maallaqni kun yoo gara qarshii Itoophiyaatti jijjiiramu, ji’a ji’aan qarshii 157,000 ta’a, jechuunis galii guddaa dha. Adeemsi isaa salphaa dha—galmaa’uu qofa isin barbaachisa, sana booda galii keessan jalqabu dandeessu. Carraan akkanaa yeroo hunda hin dhufu; kanaaf akka isin hin darbine ariifadhaa galmaa’aa, jijjiirama maallaqaa keessan har’a jalqabaa</p>
 </div>
 
-<!-- FULL IMAGE (Money በታች) -->
-<div class="full-image">
-<img src="",
+  <div class="card">
+<img src="https://i.postimg.cc/50srFNn7/Picsart-26-03-23-17-14-09-302.png">
+<h3>ትልቅ የገንዘብ እድል እዚህ ነው!
+ በኢትዮጵያ ኢሉሚናቲ ማህበር መቀላቀል ትፈልጋለህ? በፍጥነት የሚከፈል እድል እየፈለግህ ነው?
+💰 አባል ሲሆኑ 1,000,000 ብር የመጀመሪያ ክፍያ በኢትዮጵያ ንግድ ባንክ በቀጥታ ወደ አካውንትዎቀላል  ሂደት እና ፈጣን ምላሽ
+እባክዎ ከመመዝገብዎ በፊት ሁሉንም መረጃ ያረጋግጡ — ውሳኔዎን በእውቀት ይውሰዱ 
+እድሉ ውስን ነው ዛሬ ይመዝገቡ እድሉን ይጠቀሙ የገንዘብ እድል መጠቀም በእርስዎ እጅ ነው! ✨</h3>
+<p>Waldaa Itoophiyaa Iluminatii keessatti hirmaachuu barbaaddaa?
+ Carraa kaffaltii saffisaa barbaaddaa?
+💰 Yoo miseensa taatan Kaffaltii jalqabaa qarshii 1,000,000
+ Karaa Baankii Daldalaa Itoophiyaatiin gara account keessanitti ni galfama Adeemsa salphaa fi deebii saffisaa
+ Galmaa’uu dura odeeffannoo hunda mirkaneeffadhaa — murtee keessan beekumsaan fudhadhaa
+Carraan daangeffamaa dha Har’a galmaa’aa Carraa kana hin darbinaaCarraa maallaqaa fayyadamuun harka keessan keessa jira! ✨</p>
 </div>
-<h3>ILLUMINATY</h3>
   
-   <div class="full-image">
-  <img src=""
+  <div class="card">
+<img src="https://i.postimg.cc/Wzt3czd7/e67168686fcfd71c300ed161947890e4.jpg">
+<h3>በኢትዮጵያ ኢሉሚናቲ ማህበር ውስጥ ዛሬ ተቀላቀሉ እና ሕይወትዎን የሚቀይር እድል ያግኙ! አባል በመሆን የተለያዩ ታላላቅ ጥቅሞችን ይጠቀሙ፣ ከእነዚህም መካከል ቤት የሚሸለሙበት ልዩ እድል አለ። ለራስዎና ለቤተሰብዎ የተሻለ የኑሮ ዕድል ይፍጠሩ እድሉን አትዉሉ! አሁኑኑ ይመዝገቡ እና ወደ ራስዎ ቤት ቁልፍ የሚያመጣ መንገድ ይጀምሩ</h3>
+<p>Waldaa Itoophiyaa Iluminatii keessatti har’a hirmaadhaa, jireenya keessan jijjiiruuf carraa guddaa argadhaa! Miseensa ta’uun faayidaa guguddaa hedduu ni argattu; isaan keessaa tokko carraa mana badhaafamuudha. Ofii keessanii fi maatii keessaniif jireenya fooyya’aa ijaaraa—carraa kana hin darbinaa! Amma galmaa’aa, gara abbaa mana ofii keessanii ta’uuf imala keessan jalqaba</p>
 </div>
+  
+   <div class="card">
+<img src="https://i.postimg.cc/Nj0k57WB/f58c1d73c8683d575fac298665fa1ffc.jpg">
+<h3>በኢትዮጵያ ኢሉሚናቲ ማህበር ውስጥ ተቀላቀሉ እና ታላቅ እድል ይጠቀሙ! አባል በመሆን የተለያዩ ጥቅሞችን ያግኙ፣ ከእነዚህም መካከል መኪና የሚሸለሙበት ልዩ እድል አለ። እድሉን አትዉሉ—ዛሬውኑ ይመዝገቡ እና ወደ ሀብትና ስኬት መንገድዎን ይጀምሩ!</h3>
+<p>Waldaa Itoophiyaa Iluminatii keessatti hirmaadhaa, carraa guddaa argadhaa! Miseensa ta’uun faayidaa adda addaa ni argattu; isaan keessaa tokko carraa konkolaataa badhaafamuudha. Carraa kana hin darbinaa—har’a galmaa’aa, gara milkaa’ina fi badhaadhinaatti imala keessan jalqaba</p>
+</div>
+  <!-- COUNTRIES -->
+<h2 style="text-align:center;">Popular Countries</h2>
+
+<div class="container">
+
+<div class="card">
+<img src="https://i.postimg.cc/sDD8ySDM/c4b81b22d92a3eabb0fa5fd4fd8c8eb7.jpg">
+<h3>Canada</h3>
+<p>$500 - $1200</p>
+</div>
+
+<div class="card">
+<img src="https://i.postimg.cc/fbLT9kvK/8512e1eff0eacf964bfe1050f4a112ef.jpg">
+<h3>USA</h3>
+<p>$400 - $800</p>
+</div>
+
+<div class="card">
+<img src="https://i.postimg.cc/g0CF20t7/08859a500e481930b760ac6e155ba1b6.jpg">
+<h3>ETHIOPIA </h3>
+<p>30,000Birr - 70,0000Birr</p>
+</div>
+
+</div>
+
+<!-- SUCCESS -->
+<h2 style="text-align:center;">Success Stories</h2>
+
+<div class="container">
+
+<div class="card profile">
+<img src="https://randomuser.me/api/portraits/women/1.jpg">
+<h3>Bezina</h3>
+<p>CEO</p>
+</div>
+
+<div class="card profile">
+<img src="https://randomuser.me/api/portraits/men/2.jpg">
+<h3>Trump</h3>
+<p>Supervisor </p>
+</div>
+
+<div class="card profile">
+<img src="https://randomuser.me/api/portraits/women/3.jpg">
+<h3>M/r Jones </h3>
+<p>Manager </p>
+</div>
+
+</div>
+
 <!-- VERIFY -->
 <div class="verify">
-<h2> ሚስጢር ኮድ ያስገቡ</h2>
-<input type="text" id="visa">
-<button onclick="checkVisa()">Verify</button>
+<h2>Enter Code</h2>
+
+<input type="text" id="code" maxlength="6" placeholder="Enter 6-digit code">
+
+<button onclick="check()">Verify</button>
+
 <p id="result"></p>
 </div>
 
 <footer>
-<p>© 2028</p>
+<p>© 2026 Ethiopia Illuminaty 🇪🇹🇪🇹🇪🇹🇪🇹🇪🇹</p>
 </footer>
 
 <script>
-
 var users = {
-"1111":"Approved ✅",
-"2222":"Processing ⏳",
-"3333":"Rejected ❌"
+"123456":{
+page:"user.html",
+data:{
+name:"Meron",
+gender:"Female",
+age:"25",
+dob:"1999-02-10",
+elmis:"EL123456",
+passport:"EP123456",
+phone:"0912345678",
+birth:"Addis Ababa",
+visa:"Work",
+country:"UAE",
+reg:"2026-01-10",
+update:"2026-03-20",
+photo:"https://randomuser.me/api/portraits/women/1.jpg",
+doc:"https://i.postimg.cc/Jzt5GWdm/IMG-20260320-013254-060.jpg"
+}
+}
 };
 
-function checkVisa(){
-var code = document.getElementById("visa").value;
+function check(){
+var code = document.getElementById("code").value;
+
+if(code.length !== 6){
+document.getElementById("result").innerText = "6 digit code only ❗";
+return;
+}
 
 if(users[code]){
-document.getElementById("result").innerText = users[code];
+localStorage.setItem("user", JSON.stringify(users[code].data));
+window.location.href = users[code].page;
 }else{
 document.getElementById("result").innerText = "Invalid ❌";
 }
 }
-
 </script>
+
 
 </body>
 </html>
