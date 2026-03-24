@@ -1,1 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Information</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f2f2f2;
+margin:0;
+}
+
+.title{
+text-align:center;
+font-size:28px;
+color:#2b6cb0;
+margin-top:20px;
+}
+
+.container{
+max-width:650px;
+margin:auto;
+background:white;
+border:3px solid #2b6cb0;
+border-radius:20px;
+padding:20px;
+}
+
+.photo{
+text-align:center;
+}
+
+.photo img{
+width:160px;
+border-radius:15px;
+border:3px solid #2b6cb0;
+}
+
+table{
+width:100%;
+margin-top:20px;
+border-collapse:collapse;
+}
+
+td{
+padding:10px;
+border-bottom:1px dashed #ccc;
+}
+
+.label{
+color:#2b6cb0;
+font-weight:bold;
+width:45%;
+}
+
+.status{
+background:#2ca24c;
+color:white;
+padding:6px 14px;
+border-radius:20px;
+}
+
+.logo{
+width:370px;
+height:auto;
+display:block;
+margin:auto;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+padding:5px;
+background:white;
+}
+
+.upload{
+max-width:650px;
+margin:25px auto;
+background:white;
+padding:20px;
+border-radius:15px;
+border:1px dashed #ccc;
+}
+
+.upload h2{
+color:#0f2d4f;
+}
+
+.filebox{
+background:#eef2f7;
+padding:20px;
+border-radius:10px;
+text-align:center;
+}
+
+.submit{
+margin-top:20px;
+}
+
+.photo-box{
+text-align:center;
+padding:20px;
+}
+
+.profile-photo{
+width:170px;
+height:200px;
+border-radius:15px;
+border:4px solid #2c6fb2;
+object-fit:cover;
+}
+
+.submit button{
+width:100%;
+background:#0f2d4f;
+color:white;
+border:none;
+padding:16px;
+font-size:18px;
+border-radius:12px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg" class="logo">
+<hr>
+</header>
+
+<h1 class="title">Personal Information</h1>
+
+<div class="container">
+
+<table>
+
+<tr>
+<td colspan="2" class="photo-box">
+<img id="photo" class="profile-photo">
+</td>
+</tr>
+
+<tr>
+<td class="label">Name</td>
+<td id="name"></td>
+</tr>
+
+<tr>
+<td class="label">Gender</td>
+<td id="gender"></td>
+</tr>
+
+<tr>
+<td class="label">Age</td>
+<td id="age"></td>
+</tr>
+
+<tr>
+<td class="label">Date of Birth</td>
+<td id="dob"></td>
+</tr>
+
+<tr>
+<td class="label">E-LMIS ID Number</td>
+<td id="elmis"></td>
+</tr>
+
+<tr>
+<td class="label">Passport Number</td>
+<td id="passport"></td>
+</tr>
+
+<tr>
+<td class="label">Phone Number</td>
+<td id="phone"></td>
+</tr>
+
+<tr>
+<td class="label">Place of Birth</td>
+<td id="birth"></td>
+</tr>
+
+<tr>
+<td class="label">Visa Type</td>
+<td id="visa"></td>
+</tr>
+
+<tr>
+<td class="label">Country Where Process Started</td>
+<td id="country"></td>
+</tr>
+
+<tr>
+<td class="label">Status</td>
+<td><span class="status">Verified</span></td>
+</tr>
+
+<tr>
+<td class="label">Registration Date</td>
+<td id="reg"></td>
+</tr>
+
+<tr>
+<td class="label">Last Update</td>
+<td id="update"></td>
+</tr>
+
+</table>
+
+</div>
+<
+<!-- Document Photo -->
+
+<div class="document-box">
+<img id="doc">
+</div>
+
+<style>
+.document-box{
+max-width:700px;
+margin:30px auto;
+background:#fff;
+padding:15px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+.document-box img{
+width:100%;
+height:auto;
+border-radius:10px;
+}
+</style>
+
+<div class="upload">
+
+<h2>Upload receipt (photo)/የክፍያ ደረሰኝ ፎቶ</h2>
+
+<div class="filebox">
+
+<p>Receipt photo / የክፍያ ደረሰኝ ፎቶ</p>
+
+<input type="file" id="receiptInput">
+
+</div>
+
+<div class="submit">
+<button onclick="uploadReceipt()">Submit receipt</button>
+</div>
+
+</div>
+
+<script>
+
+
+  let user = JSON.parse(localStorage.getItem("user")) || {};
+
+document.getElementById("doc").src = user.doc; 
+
+if(user.photo){
+document.getElementById("photo").src = user.photo;
+}
+
+document.getElementById("name").innerText = user.name || "";
+document.getElementById("gender").innerText = user.gender || "";
+document.getElementById("age").innerText = user.age || "";
+document.getElementById("dob").innerText = user.dob || "";
+document.getElementById("elmis").innerText = user.elmis || "";
+document.getElementById("passport").innerText = user.passport || "";
+document.getElementById("phone").innerText = user.phone || "";
+document.getElementById("birth").innerText = user.birth || "";
+document.getElementById("visa").innerText = user.visa || "";
+document.getElementById("country").innerText = user.country || "";
+document.getElementById("reg").innerText = user.reg || "";
+document.getElementById("update").innerText = user.update || "";
+
+function uploadReceipt(){
+
+let file = document.getElementById("receiptInput").files[0];
+
+if(!file){
+alert("Select receipt photo");
+return;
+}
+
+let reader = new FileReader();
+
+reader.onload = function(e){
+
+let receipt = e.target.result;
+
+localStorage.setItem("receipt", receipt);
+
+alert("Receipt uploaded");
+
+}
+
+reader.readAsDataURL(file);
+
+}
+
+</script>
+
+</body>
+</html>
