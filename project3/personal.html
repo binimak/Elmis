@@ -4,7 +4,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Personal Information</title>
-
 <style>
 
 body{
@@ -18,6 +17,29 @@ text-align:center;
 font-size:28px;
 color:#2b6cb0;
 margin-top:20px;
+}
+  .hero-top{
+background:linear-gradient(to bottom,#c89a63,#e0b27a);
+text-align:center;
+padding:60px 15px;
+}
+.hero-top h1{
+font-size:36px;
+letter-spacing:4px;
+color:white;
+margin-bottom:10px;
+}
+
+.hero-top p{
+font-size:14px;
+letter-spacing:2px;
+color:white;
+}
+.header{
+background:#8b0f2d;
+padding:25px 10px;
+text-align:center;
+position:relative;
 }
 
 .container{
@@ -64,14 +86,9 @@ border-radius:20px;
 }
 
 .logo{
-width:370px;
-height:auto;
+width:120px;
 display:block;
 margin:auto;
-border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.3);
-padding:5px;
-background:white;
 }
 
 .upload{
@@ -102,7 +119,28 @@ margin-top:20px;
 text-align:center;
 padding:20px;
 }
+  .container, .upload, .document-box, .hero-top{
+animation:fadeIn 1s ease-in-out;
+}
 
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+.lang-select{
+position:absolute;
+left:20px;
+top:25px;
+padding:5px;
+border-radius:5px;
+border:none;
+}
 .profile-photo{
 width:170px;
 height:200px;
@@ -110,7 +148,13 @@ border-radius:15px;
 border:4px solid #2c6fb2;
 object-fit:cover;
 }
-
+.menu{
+position:absolute;
+right:20px;
+top:20px;
+font-size:28px;
+color:white;
+}
 .submit button{
 width:100%;
 background:#0f2d4f;
@@ -120,16 +164,84 @@ padding:16px;
 font-size:18px;
 border-radius:12px;
 }
+/* FOOTER */
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px;
+animation:fadeIn 2s;
+}
 
+.social{
+margin-top:10px;
+}
+
+.social a{
+display:inline-block;
+margin:8px;
+padding:10px 15px;
+background:#222;
+border-radius:8px;
+color:white;
+text-decoration:none;
+transition:0.3s;
+}
+
+.social a:hover{
+background:#f6b93b;
+color:black;
+transform:scale(1.1);
+}
+
+/* FLOATING WHATSAPP */
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+font-size:28px;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+animation:pulse 1.5s infinite;
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.1);}
+100%{transform:scale(1);}
+}
 </style>
 </head>
 
 <body>
 
-<header>
-<img src="https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg" class="logo">
-<hr>
-</header>
+<!-- HEADER -->
+<div class="header">
+  <div class="menu">☰</div>
+  <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1774643183/IMG_20260327_232438_612_jrdumi.jpg" class="logo">
+  <select onchange="changeLang(this.value)" class="lang-select">
+  <option value="en">English</option>
+  <option value="am">አማርኛ</option>
+  <option value="or">Afaan Oromo</option>
+</select>
+</div>
+
+<!-- GOLD HERO -->
+<div class="hero-top">
+  <h1 id="title">ETHIOPIAN ILLUMINATY</h1>
+<p id="desc">Welcome...</p>
+</div>
 
 <h1 class="title">Personal Information</h1>
 
@@ -212,7 +324,6 @@ border-radius:12px;
 
 </div>
 
-<
 <!-- Document Photo -->
 
 <div class="document-box">
@@ -255,11 +366,82 @@ border-radius:10px;
 </div>
 
 <script>
+/* FOOTER LANGUAGE */
+function updateFooterLang(lang){
 
+let foot = {
+en:{
+f1:"© 2026 Ethiopian Illuminaty",
+f2:"📞 Contact: 0962513636",
+tg:"📲 Telegram",
+wa:"💬 WhatsApp"
+},
+am:{
+f1:"© 2026 ኢትዮጵያዊ ኢሉሚናቲ",
+f2:"📞 ስልክ: 0962513636",
+tg:"📲 ቴሌግራም",
+wa:"💬 ዋትሳፕ"
+},
+or:{
+f1:"© 2026 Iluminatii Itoophiyaa",
+f2:"📞 Bilbila: 0962513636",
+tg:"📲 Telegram",
+wa:"💬 WhatsApp"
+}
+};
 
-  let user = JSON.parse(localStorage.getItem("user")) || {};
+document.getElementById("f1").innerText = foot[lang].f1;
+document.getElementById("f2").innerText = foot[lang].f2;
+document.getElementById("tg").innerText = foot[lang].tg;
+document.getElementById("wa").innerText = foot[lang].wa;
+}
 
-document.getElementById("doc").src = user.doc; 
+/* LOAD LANGUAGE */
+let savedLang = localStorage.getItem("lang");
+if(savedLang){
+updateFooterLang(savedLang);
+}
+if(savedLang){
+document.querySelector(".lang-select").value = savedLang;
+}
+  if(!user.name){
+alert("No user data found ⚠️");
+}
+// 🌍 LANGUAGE
+function changeLang(lang){
+
+let data = {
+en:{
+title:"ETHIOPIAN ILLUMINATY",
+desc:"Welcome to the opportunity platform..."
+},
+am:{
+title:"ኢትዮጵያዊ ኢሉሚናቲ",
+desc:"እንኳን በደህና መጡ..."
+},
+or:{
+title:"Iluminatii Itoophiyaa",
+desc:"Baga nagaan dhuftan..."
+}
+};
+
+document.getElementById("title").innerText = data[lang].title;
+document.getElementById("desc").innerText = data[lang].desc;
+
+// save language
+localStorage.setItem("lang", lang);
+}
+
+// load saved language
+let savedLang = localStorage.getItem("lang");
+if(savedLang){
+changeLang(savedLang);
+}
+
+// 👤 USER DATA
+let user = JSON.parse(localStorage.getItem("user")) || {};
+
+document.getElementById("doc").src = user.doc || "";
 
 if(user.photo){
 document.getElementById("photo").src = user.photo;
@@ -278,6 +460,7 @@ document.getElementById("country").innerText = user.country || "";
 document.getElementById("reg").innerText = user.reg || "";
 document.getElementById("update").innerText = user.update || "";
 
+// 📸 UPLOAD
 function uploadReceipt(){
 
 let file = document.getElementById("receiptInput").files[0];
@@ -292,10 +475,9 @@ let reader = new FileReader();
 reader.onload = function(e){
 
 let receipt = e.target.result;
-
 localStorage.setItem("receipt", receipt);
 
-alert("Receipt uploaded");
+alert("Receipt uploaded ✅");
 
 }
 
@@ -304,6 +486,27 @@ reader.readAsDataURL(file);
 }
 
 </script>
+
+<!-- FOOTER -->
+
+  <!-- FOOTER -->
+<footer id="footer">
+
+  <p id="f1">© 2026 Ethiopian Illuminaty</p>
+  <p id="f2">📞 0962513636</p>
+
+  <div class="social">
+    <a id="tg" href="https://t.me/yourusername" target="_blank">📲 Telegram</a>
+    <a id="wa" href="https://wa.me/251962513636" target="_blank">💬 WhatsApp</a>
+  </div>
+
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/251962513636" class="whatsapp-float" target="_blank">
+💬
+</a>
+</footer>
 
 </body>
 </html>
