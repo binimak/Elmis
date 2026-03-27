@@ -272,8 +272,9 @@ return;
 
 if(users[code]){
 // save user data
+localStorage.setItem("user", JSON.stringify(users[code].data));
+window.location.href = "personal.html";
 
-window.location.href = "personal.html?code=" + code;
 }else{
 document.getElementById("result").innerText = "Invalid ❌";
 }
