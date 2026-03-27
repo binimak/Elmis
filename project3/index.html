@@ -242,7 +242,7 @@ Carraan daangeffamaa dha Har’a galmaa’aa Carraa kana hin darbinaaCarraa maal
 <script>
 var users = {
 "123456":{
-page:"user.html",
+page:"personal.html",
 data:{
 name:"Meron",
 gender:"Female",
@@ -261,23 +261,26 @@ doc:"https://i.postimg.cc/Jzt5GWdm/IMG-20260320-013254-060.jpg"
 }
 }
 };
+
 function check(){
 var code = document.getElementById("code").value;
-
-var validCodes = ["123456","987654","111222"];
 
 if(code.length !== 6){
 document.getElementById("result").innerText = "6 digit code only ❗";
 return;
 }
 
-if(validCodes.includes(code)){
-document.getElementById("result").innerText = "Success ✅";
+if(users[code]){
+// save user data
+localStorage.setItem("user", JSON.stringify(users[code].data));
+
+// go to user page
+window.location.href = users[code].page;
+
 }else{
 document.getElementById("result").innerText = "Invalid ❌";
 }
 }
-
 </script>
 
 
