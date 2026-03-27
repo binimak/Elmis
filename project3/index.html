@@ -12,10 +12,9 @@ padding:0;
 box-sizing:border-box;
 font-family:Arial, sans-serif;
 }
-
 body{
-background:#0a0a0a;
-color:white;
+background:#ffffff;   /* ነጭ */
+color:#111;  
 }
 
 header{
@@ -26,46 +25,96 @@ background:#111;
 }
 /* NEW HEADER */
 .header{
-background:#8b0f2d;
-padding:25px 10px;
-text-align:center;
-position:relative;
+position:sticky;
+top:0;
+z-index:1000;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+padding:15px 20px;
+
+/* MODERN GLASS */
+background:rgba(139,15,45,0.85);
+backdrop-filter:blur(10px);
+
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+transition:0.3s ease;
 }
 
-.logo{
-width:120px;
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:10px;
+}
+  .sidebar{
+position:fixed;
+left:-250px;
+top:0;
+width:250px;
+height:100%;
+background:#111;
+padding:20px;
+transition:0.4s;
+z-index:999;
+}
+
+.sidebar a{
 display:block;
-margin:0 auto;
+color:white;
+margin:15px 0;
+text-decoration:none;
+}
+
+.sidebar.show{
+left:0;
+}
+.logo{
+width:110px;
+transition:0.3s;
+display:block;
+margin:auto;
 }
 
 .menu{
 position:absolute;
 right:20px;
 top:20px;
-font-size:28px;
+font-size:26px;
 color:white;
+}
+.menu:hover{
+transform:scale(1.2);
+color:#f6b93b;
+}
+
+.logo:hover{
+transform:scale(1.05);
+}
+
+/* scroll shrink effect */
+
+ .header.scrolled{
+padding:10px 20px;
+background:#5a0a1d;
 }
 
 /* GOLD SECTION */
 .hero-top{
-background:linear-gradient(to bottom,#c89a63,#c89a63);
+background:linear-gradient(135deg,#8b0f2d,#c89a63);
+color:white;
+padding:80px 20px;
 text-align:center;
-padding:50px 15px;
 }
 
 .hero-top h1{
-font-size:36px;
-letter-spacing:4px;
-color:white;
-margin-bottom:10px;
+font-size:40px;
+letter-spacing:5px;
+font-weight:bold;
 }
 
-.hero-top{
-background:linear-gradient(to bottom,#c89a63,#e0b27a);
-text-align:center;
-padding:60px 15px;
-}
-}
 nav a{
 color:white;
 margin-left:15px;
@@ -74,9 +123,16 @@ text-decoration:none;
 
 .hero{
 text-align:center;
-padding:30px 10px;
+padding:40px 15px;
+max-width:900px;
+margin:auto;
 }
 
+  .hero p{
+margin-top:15px;
+line-height:1.6;
+color:#444;
+}
 .hero img{
 width:100%;
 max-height:200px;
@@ -84,34 +140,104 @@ object-fit:cover;
 border-radius:10px;
 margin-top:20px;
 }
+
 .btn{
-background:#f6b93b;
-padding:12px 20px;
-border-radius:6px;
+background:linear-gradient(45deg,#f6b93b,#ffd369);
+padding:14px 25px;
+border-radius:30px;
 color:black;
 text-decoration:none;
 display:inline-block;
-margin-top:15px;
+margin-top:20px;
+font-weight:bold;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+transition:0.3s;
 }
 
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
 .container{
-padding:15px;
-display:flex;
-flex-wrap:wrap;
-gap:15px;
-justify-content:center;
-flex-direction:column;
-align-items:center;
-
+padding:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+.card, .hero, .btn{
+animation:fadeUp 0.8s ease;
 }
 
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+  .card{
+background:#fff;
+border-radius:15px;
+padding:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+transition:0.3s;
+text-align:center;
+}
+  .card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
 .card img{
 width:100%;
-height:auto;
+height:180px;
+object-fit:cover;
 border-radius:10px;
-max-width:100%;
+}
+.social-buttons{
+display:flex;
+flex-direction:column;
+gap:12px;
+margin-top:10px;
 }
 
+.social-buttons a{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+padding:14px;
+border-radius:10px;
+text-decoration:none;
+font-size:16px;
+font-weight:bold;
+transition:0.3s;
+}
+
+/* TELEGRAM */
+.tg-btn{
+background:#229ED9;
+color:white;
+}
+
+.tg-btn:hover{
+background:#1b8ec4;
+transform:scale(1.05);
+}
+
+/* WHATSAPP */
+.wa-btn{
+background:#25D366;
+color:white;
+}
+
+.wa-btn:hover{
+background:#1ebe5d;
+transform:scale(1.05);
+}
 .profile img{
 width:80px;
 height:80px;
@@ -137,11 +263,184 @@ border-radius:6px;
 margin-left:10px;
 }
 
-footer{
-text-align:center;
-padding:20px;
-background:#111;
+  /* FOOTER */
+/* MODERN FOOTER */
+.footer{
+background:linear-gradient(145deg,#0d0d0d,#111);
+color:#fff;
+padding:50px 20px 20px;
+margin-top:50px;
+position:relative;
+overflow:hidden;
 }
+
+/* glow effect */
+.footer::before{
+content:"";
+position:absolute;
+width:300px;
+height:300px;
+background:#f6b93b;
+filter:blur(120px);
+opacity:0.15;
+top:-50px;
+left:-50px;
+}
+
+/* SOCIAL ICONS BIG */
+.social-buttons{
+display:flex;
+flex-direction:column;
+gap:15px;
+margin-top:15px;
+}
+.lang-select{
+padding:12px;
+border-radius:10px;
+border:none;
+font-size:16px;
+background:white;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+.social-buttons a{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+padding:16px;
+border-radius:12px;
+font-size:17px;
+font-weight:bold;
+text-decoration:none;
+transition:0.3s;
+}
+
+/* TELEGRAM */
+.tg-btn{
+background:#229ED9;
+}
+.tg-btn:hover{
+transform:scale(1.07);
+box-shadow:0 0 15px #229ED9;
+}
+
+/* WHATSAPP */
+.wa-btn{
+background:#25D366;
+}
+.wa-btn:hover{
+transform:scale(1.07);
+box-shadow:0 0 15px #25D366;
+}
+
+/* LANGUAGE BUTTONS */
+.lang-buttons{
+margin-top:20px;
+display:flex;
+gap:10px;
+}
+
+.lang-buttons button{
+flex:1;
+padding:10px;
+border:none;
+border-radius:8px;
+background:#222;
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+.lang-buttons button:hover{
+background:#f6b93b;
+color:black;
+}
+
+/* SUBSCRIBE */
+.subscribe{
+margin-top:20px;
+}
+
+.subscribe input{
+width:100%;
+padding:12px;
+border-radius:8px;
+border:none;
+margin-bottom:10px;
+}
+
+.subscribe button{
+width:100%;
+padding:12px;
+background:#f6b93b;
+border:none;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* animation */
+.footer-box{
+animation:fadeUp 1s ease forwards;
+opacity:0;
+}
+
+.footer-box:nth-child(1){animation-delay:0.2s;}
+.footer-box:nth-child(2){animation-delay:0.4s;}
+.footer-box:nth-child(3){animation-delay:0.6s;}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+/* bottom */
+.footer-bottom{
+text-align:center;
+margin-top:25px;
+border-top:1px solid #222;
+padding-top:15px;
+font-size:13px;
+color:#888;
+}
+
+/* FLOATING WHATSAPP */
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+font-size:26px;
+padding:14px;
+border-radius:50%;
+text-decoration:none;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+animation:pulse 1.5s infinite;
+}
+
+/* ANIMATION */
+.fade-up{
+opacity:0;
+transform:translateY(40px);
+transition:0.6s ease;
+}
+
+.fade-up.show{
+opacity:1;
+transform:translateY(0);
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.1);}
+100%{transform:scale(1);}
+}
+
 </style>
 </head>
 
@@ -150,9 +449,13 @@ background:#111;
 <!-- HEADER -->
 <div class="header">
   <div class="menu">☰</div>
-  <img src="<img src="https://res.cloudinary.com/dwclusteb/image/upload/v1774646349/illuminati-official-logo_1_pptnjk.png">
+  <img class="logo" src="https://res.cloudinary.com/dwclusteb/image/upload/v1774646349/illuminati-official-logo_1_pptnjk.png">
+  <div class="sidebar" id="sidebar">
+  <a href="#">Home</a>
+  <a href="#">Services</a>
+  <a href="#">Contact</a>
 </div>
-
+</div>
 <!-- GOLD HERO -->
 <div class="hero-top">
   <h1>ILLUMINATIAM</h1>
@@ -279,8 +582,63 @@ Carraan daangeffamaa dha Har’a galmaa’aa Carraa kana hin darbinaaCarraa maal
 <p id="result"></p>
 </div>
 
-<footer>
-<p>© 2026 Ethiopia Illuminaty 🇪🇹🇪🇹🇪🇹🇪🇹🇪🇹</p>
+<!-- FOOTER -->
+<footer class="footer">
+
+<div class="footer-container">
+
+  <!-- LEFT -->
+  <div class="footer-box">
+    <h3 id="f-title">Ethiopian Illuminaty</h3>
+    <p id="f-desc">Building your future with opportunity and success.</p>
+
+    <!-- LANGUAGE -->
+    <select onchange="setLang(this.value)" class="lang-select">
+<option value="en">English</option>
+<option value="am">አማርኛ</option>
+<option value="or">Afaan Oromo</option>
+</select>
+    <div class="lang-buttons">
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('am')">AM</button>
+      <button onclick="setLang('or')">OR</button>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="footer-box">
+    <h4>Contact</h4>
+    <p id="f-phone">📞 0962513636</p>
+    <p>📍 Ethiopia</p>
+
+    <!-- SUBSCRIBE -->
+    <div class="subscribe">
+      <input type="email" placeholder="Enter your email">
+      <button>Subscribe</button>
+    </div>
+  </div>
+
+  <!-- SOCIAL -->
+  <div class="footer-box">
+    <h4>Follow Us</h4>
+
+    <div class="social-buttons">
+    <a id="tg" href="https://t.me/yourusername" target="_blank" class="tg-btn">
+📩 Telegram
+</a>
+
+<a id="wa" href="https://wa.me/251962513636" target="_blank" class="wa-btn">
+💬 WhatsApp
+</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer-bottom">
+  <p id="f-copy">© 2026 Ethiopian Illuminaty. All rights reserved.</p>
+</div>
+
 </footer>
 
 <script>
@@ -305,7 +663,82 @@ doc:"https://i.postimg.cc/Jzt5GWdm/IMG-20260320-013254-060.jpg"
 }
 }
 };
+window.addEventListener("scroll", function(){
+let header = document.querySelector(".header");
 
+if(window.scrollY > 50){
+header.classList.add("scrolled");
+}else{
+header.classList.remove("scrolled");
+}
+});
+  
+  document.querySelector(".menu").onclick = function(){
+document.getElementById("sidebar").classList.toggle("show");
+}
+  
+  // 🌍 FOOTER LANGUAGE
+  function setLang(lang){
+localStorage.setItem("lang", lang);
+updateFooterLang(lang);
+}
+function updateFooterLang(lang){
+
+let foot = {
+en:{
+title:"Ethiopian Illuminaty",
+desc:"Building your future with opportunity and success.",
+phone:"📞 0962513636",
+copy:"© 2026 Ethiopian Illuminaty. All rights reserved.",
+tg:"Telegram",
+wa:"WhatsApp"
+},
+am:{
+title:"ኢትዮጵያዊ ኢሉሚናቲ",
+desc:"የወደፊትዎን በእድልና በስኬት እንገንባ",
+phone:"📞 0962513636",
+copy:"© 2026 ኢትዮጵያዊ ኢሉሚናቲ",
+tg:"ቴሌግራም",
+wa:"ዋትሳፕ"
+},
+or:{
+title:"Iluminatii Itoophiyaa",
+desc:"Fuuldura keessan carraa fi milkaa’inaan ijaaruu",
+phone:"📞 0962513636",
+copy:"© 2026 Iluminatii Itoophiyaa",
+tg:"Telegram",
+wa:"WhatsApp"
+}
+};
+
+document.getElementById("f-title").innerText = foot[lang].title;
+document.getElementById("f-desc").innerText = foot[lang].desc;
+document.getElementById("f-phone").innerText = foot[lang].phone;
+document.getElementById("f-copy").innerText = foot[lang].copy;
+document.getElementById("tg").innerText = foot[lang].tg;
+document.getElementById("wa").innerText = foot[lang].wa;
+}
+
+// 🔄 LOAD LANGUAGE
+let savedLang = localStorage.getItem("lang");
+if(savedLang){
+updateFooterLang(savedLang);
+}
+
+// ✨ SCROLL ANIMATION
+let elements = document.querySelectorAll(".fade-up");
+
+function showOnScroll(){
+elements.forEach(el=>{
+let top = el.getBoundingClientRect().top;
+if(top < window.innerHeight - 80){
+el.classList.add("show");
+}
+});
+}
+
+window.addEventListener("scroll", showOnScroll);
+window.addEventListener("load", showOnScroll);
 function check(){
 var code = document.getElementById("code").value;
 
@@ -323,6 +756,7 @@ window.location.href = "personal.html";
 document.getElementById("result").innerText = "Invalid ❌";
 }
 }
+ 
 </script>
 
 
