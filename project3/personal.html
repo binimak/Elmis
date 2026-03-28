@@ -439,12 +439,14 @@ changeLang(savedLang);
 }
 
 // 👤 USER DATA (FIRST!)
-let user = JSON.parse(localStorage.getItem("user")) || {};
+let user = JSON.parse(localStorage.getItem("user"));
 
-// check first
-if(!user.name){
-alert("No user data found ⚠️");
+if(!user){
+alert("⚠️ እባክዎ መጀመሪያ ኮድ ያስገቡ");
+window.location.href = "index.html"; // homepage
 }
+// check first
+
 
 // then fill data
 document.getElementById("doc").src = user.doc || "";
