@@ -193,10 +193,6 @@ height:100%;
 background:linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent);
 transition:0.5s;
 }
-  
-.btn:hover::before
-left:100%;
-}
 .container{
 padding:20px;
 display:grid;
@@ -800,7 +796,6 @@ to:"2028"
 // VERIFY FUNCTION
 function verifyCode(){
 
-var code = document.getElementById("code").value.trim();
 
 if(users[code]){
 
@@ -853,7 +848,7 @@ this.style.borderColor = "green";
 this.style.borderColor = "#ddd";
 }
 });
-   window.location.href = "personal.html"; 
+
     // 🌍 FOOTER LANGUAGE
   function setLang(lang){
 localStorage.setItem("lang", lang);
