@@ -369,67 +369,9 @@ border-radius:10px;
 let user = JSON.parse(localStorage.getItem("user"));
 
 if(!user){
-alert("No data found!");
-window.location.href="index.html";
+  alert("No data found!");
+  window.location.href = "index.html";
 }
-
-// 🔥 NAME
-document.getElementById("name").innerText = user.name;
-
-document.querySelectorAll(".letterName").forEach(el=>{
-  el.innerText = user.name;
-});
-// 🔥 PHOTO
-document.getElementById("photo").src = user.photo;
-
-// 🔥 DETAILS
-document.getElementById("visaType").innerText = user.visaType;
-document.getElementById("job").innerText = user.job;
-document.getElementById("employer").innerText = user.employer;
-document.getElementById("location").innerText = user.location;
-document.getElementById("from").innerText = user.from;
-document.getElementById("to").innerText = user.to;
-
-
-// =====================
-// 📌 FOOTER LANGUAGE
-// =====================
-function updateFooterLang(lang){
-
-let foot = {
-en:{
-f1:"© 2026 Ethiopian Illuminaty",
-f2:"📞 Contact: 0962513636",
-tg:"📲 Telegram",
-wa:"💬 WhatsApp"
-},
-am:{
-f1:"© 2026 ኢትዮጵያዊ ኢሉሚናቲ",
-f2:"📞 ስልክ: 0962513636",
-tg:"📲 ቴሌግራም",
-wa:"💬 ዋትሳፕ"
-},
-or:{
-f1:"© 2026 Iluminatii Itoophiyaa",
-f2:"📞 Bilbila: 0962513636",
-tg:"📲 Telegram",
-wa:"💬 WhatsApp"
-}
-};
-
-document.getElementById("f1").innerText = foot[lang].f1;
-document.getElementById("f2").innerText = foot[lang].f2;
-document.getElementById("tg").innerText = foot[lang].tg;
-document.getElementById("wa").innerText = foot[lang].wa;
-}
-
-// =====================
-// 🔄 LOAD SAVED LANGUAGE
-// =====================
-let savedLang = localStorage.getItem("lang") || "en";
-changeLang(savedLang);
-document.querySelector(".lang-select").value = savedLang;
-
 
 // =====================
 // 📊 DISPLAY USER DATA
@@ -437,12 +379,12 @@ document.querySelector(".lang-select").value = savedLang;
 
 // PHOTO
 if(user.photo){
-document.getElementById("photo").src = user.photo;
+  document.getElementById("photo").src = user.photo;
 }
 
 // DOC
 if(user.doc){
-document.getElementById("doc").src = user.doc;
+  document.getElementById("doc").src = user.doc;
 }
 
 // TEXT DATA
@@ -454,8 +396,11 @@ document.getElementById("elmis").innerText = user.elmis || "—";
 document.getElementById("passport").innerText = user.passport || "—";
 document.getElementById("phone").innerText = user.phone || "—";
 document.getElementById("birth").innerText = user.birth || "—";
-document.getElementById("visa").innerText = user.visa || "—";
-document.getElementById("country").innerText = user.country || "—";
+
+// ✅ IMPORTANT (matching id)
+document.getElementById("visaType").innerText = user.visaType || "—";
+document.getElementById("location").innerText = user.location || "—";
+
 document.getElementById("reg").innerText = user.reg || "—";
 document.getElementById("update").innerText = user.update || "—";
 
@@ -475,20 +420,15 @@ return;
 let reader = new FileReader();
 
 reader.onload = function(e){
-
 let receipt = e.target.result;
 localStorage.setItem("receipt", receipt);
-
 alert("Receipt uploaded ✅");
-
 }
 
 reader.readAsDataURL(file);
 }
 
-
 </script>
-
 
 <!-- FOOTER -->
 
