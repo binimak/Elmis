@@ -450,28 +450,36 @@ document.querySelector(".lang-select").value = savedLang;
 // =====================
 
 // images
+let user = JSON.parse(localStorage.getItem("user"));
+
+if(!user){
+alert("No user found");
+window.location.href = "index.html";
+}
+
+// PHOTO
 if(user.photo){
 document.getElementById("photo").src = user.photo;
 }
 
+// DOC
 if(user.doc){
 document.getElementById("doc").src = user.doc;
 }
 
-// text
-document.getElementById("name").innerText = user.name || "";
-document.getElementById("gender").innerText = user.gender || "";
-document.getElementById("age").innerText = user.age || "";
-document.getElementById("dob").innerText = user.dob || "";
-document.getElementById("elmis").innerText = user.elmis || "";
-document.getElementById("passport").innerText = user.passport || "";
-document.getElementById("phone").innerText = user.phone || "";
-document.getElementById("birth").innerText = user.birth || "";
-document.getElementById("visa").innerText = user.visa || "";
-document.getElementById("country").innerText = user.country || "";
-document.getElementById("reg").innerText = user.reg || "";
-document.getElementById("update").innerText = user.update || "";
-
+// TEXT DATA
+document.getElementById("name").innerText = user.name || "—";
+document.getElementById("gender").innerText = user.gender || "—";
+document.getElementById("age").innerText = user.age || "—";
+document.getElementById("dob").innerText = user.dob || "—";
+document.getElementById("elmis").innerText = user.elmis || "—";
+document.getElementById("passport").innerText = user.passport || "—";
+document.getElementById("phone").innerText = user.phone || "—";
+document.getElementById("birth").innerText = user.birth || "—";
+document.getElementById("visa").innerText = user.visa || "—";
+document.getElementById("country").innerText = user.country || "—";
+document.getElementById("reg").innerText = user.reg || "—";
+document.getElementById("update").innerText = user.update || "—";
 
 // =====================
 // 📸 UPLOAD RECEIPT
