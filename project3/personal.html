@@ -364,9 +364,50 @@ border-radius:10px;
 </div>
 
 </div>
-
 <script>
-/* FOOTER LANGUAGE */
+
+// =====================
+// 👤 USER DATA (FIRST)
+// =====================
+let user = JSON.parse(localStorage.getItem("user"));
+
+if(!user){
+alert("⚠️ እባክዎ መጀመሪያ ኮድ ያስገቡ");
+window.location.href = "index.html";
+throw new Error("No user");
+}
+
+// =====================
+// 🌍 LANGUAGE SYSTEM
+// =====================
+function changeLang(lang){
+
+localStorage.setItem("lang", lang);
+
+let data = {
+en:{
+title:"ETHIOPIAN ILLUMINATY",
+desc:"Welcome to the opportunity platform..."
+},
+am:{
+title:"ኢትዮጵያዊ ኢሉሚናቲ",
+desc:"እንኳን በደህና መጡ..."
+},
+or:{
+title:"Iluminatii Itoophiyaa",
+desc:"Baga nagaan dhuftan..."
+}
+};
+
+document.getElementById("title").innerText = data[lang].title;
+document.getElementById("desc").innerText = data[lang].desc;
+
+updateFooterLang(lang);
+}
+
+// =====================
+// 📌 FOOTER LANGUAGE
+// =====================
 function updateFooterLang(lang){
 
 let foot = {
@@ -396,60 +437,28 @@ document.getElementById("tg").innerText = foot[lang].tg;
 document.getElementById("wa").innerText = foot[lang].wa;
 }
 
-/* LOAD LANGUAGE */
-let savedLang = localStorage.getItem("lang");
-if(savedLang){
-updateFooterLang(savedLang);
-}
-if(savedLang){
-document.querySelector(".lang-select").value = savedLang;
-}
-  
-// 🌍 LANGUAGE
-function changeLang(lang){
-
-let data = {
-en:{
-title:"ETHIOPIAN ILLUMINATY",
-desc:"Welcome to the opportunity platform..."
-},
-am:{
-title:"ኢትዮጵያዊ ኢሉሚናቲ",
-desc:"እንኳን በደህና መጡ..."
-},
-or:{
-title:"Iluminatii Itoophiyaa",
-desc:"Baga nagaan dhuftan..."
-}
-};
-
-document.getElementById("title").innerText = data[lang].title;
-document.getElementById("desc").innerText = data[lang].desc;
-
-// save language
-
-// load saved language
-let savedLang = localStorage.getItem("lang");
-if(savedLang){
+// =====================
+// 🔄 LOAD SAVED LANGUAGE
+// =====================
+let savedLang = localStorage.getItem("lang") || "en";
 changeLang(savedLang);
-}
-
-// 👤 USER DATA (FIRST!)
+document.querySelector(".lang-select").value = savedLang;
 
 
+// =====================
+// 📊 DISPLAY USER DATA
+// =====================
 
-// check first
-
-
-// then fill data
-if(user.doc){
-document.getElementById("doc").src = user.doc;
-}
-
+// images
 if(user.photo){
 document.getElementById("photo").src = user.photo;
 }
 
+if(user.doc){
+document.getElementById("doc").src = user.doc;
+}
+
+// text
 document.getElementById("name").innerText = user.name || "";
 document.getElementById("gender").innerText = user.gender || "";
 document.getElementById("age").innerText = user.age || "";
@@ -462,7 +471,11 @@ document.getElementById("visa").innerText = user.visa || "";
 document.getElementById("country").innerText = user.country || "";
 document.getElementById("reg").innerText = user.reg || "";
 document.getElementById("update").innerText = user.update || "";
-// 📸 UPLOAD
+
+
+// =====================
+// 📸 UPLOAD RECEIPT
+// =====================
 function uploadReceipt(){
 
 let file = document.getElementById("receiptInput").files[0];
@@ -484,10 +497,10 @@ alert("Receipt uploaded ✅");
 }
 
 reader.readAsDataURL(file);
-
 }
 
 </script>
+
 
 <!-- FOOTER -->
 
@@ -501,7 +514,6 @@ reader.readAsDataURL(file);
     <a id="wa" href="https://wa.me/251962513636" target="_blank">💬 WhatsApp</a>
   </div>
 
-</footer>
 
 <!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/251962513636" class="whatsapp-float" target="_blank">
