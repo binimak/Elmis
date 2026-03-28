@@ -364,18 +364,16 @@ border-radius:10px;
 </div>
 
 </div>
- <script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
 
 let user = JSON.parse(localStorage.getItem("user"));
 
 if(!user){
   alert("No data found!");
   window.location.href = "index.html";
+  return;
 }
-
-// =====================
-// 📊 DISPLAY USER DATA
-// =====================
 
 // PHOTO
 if(user.photo){
@@ -397,59 +395,34 @@ document.getElementById("passport").innerText = user.passport || "—";
 document.getElementById("phone").innerText = user.phone || "—";
 document.getElementById("birth").innerText = user.birth || "—";
 
-// ✅ IMPORTANT (matching id)
+// ✅ IMPORTANT (IDs must match HTML)
 document.getElementById("visaType").innerText = user.visaType || "—";
 document.getElementById("location").innerText = user.location || "—";
 
 document.getElementById("reg").innerText = user.reg || "—";
 document.getElementById("update").innerText = user.update || "—";
 
+});
 
-// =====================
 // 📸 UPLOAD RECEIPT
-// =====================
 function uploadReceipt(){
 
 let file = document.getElementById("receiptInput").files[0];
 
 if(!file){
-alert("Select receipt photo");
-return;
+  alert("Select receipt photo");
+  return;
 }
 
 let reader = new FileReader();
 
 reader.onload = function(e){
-let receipt = e.target.result;
-localStorage.setItem("receipt", receipt);
-alert("Receipt uploaded ✅");
-}
+  localStorage.setItem("receipt", e.target.result);
+  alert("Receipt uploaded ✅");
+};
 
 reader.readAsDataURL(file);
 }
-
 </script>
-
-<!-- FOOTER -->
-
-<footer id="footer">
-
-  <p id="f1">© 2026 Ethiopian Illuminaty</p>
-  <p id="f2">📞 0962513636</p>
-
-  <div class="social">
-    <a id="tg" href="https://t.me/yourusername" target="_blank">📲 Telegram</a>
-    <a id="wa" href="https://wa.me/251962513636" target="_blank">💬 WhatsApp</a>
-  </div>
-
-</footer>
-
-
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/251962513636" class="whatsapp-float" target="_blank">
-💬
-</a>
-</footer>
-
 </body>
 </html>
