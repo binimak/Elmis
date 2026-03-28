@@ -364,46 +364,6 @@ border-radius:10px;
 </div>
 
 </div>
-<script>
-
-// =====================
-// 👤 LOAD USER FIRST (IMPORTANT)
-// =====================
-let user = JSON.parse(localStorage.getItem("user"));
-
-if(!user){
-alert("⚠️ እባክዎ መጀመሪያ ኮድ ያስገቡ");
-window.location.href = "index.html";
-throw new Error("No user");
-}
-
-// =====================
-// 🌍 LANGUAGE SYSTEM
-// =====================
-function changeLang(lang){
-
-localStorage.setItem("lang", lang);
-
-let data = {
-en:{
-title:"ETHIOPIAN ILLUMINATY",
-desc:"Welcome to the opportunity platform..."
-},
-am:{
-title:"ኢትዮጵያዊ ኢሉሚናቲ",
-desc:"እንኳን በደህና መጡ..."
-},
-or:{
-title:"Iluminatii Itoophiyaa",
-desc:"Baga nagaan dhuftan..."
-}
-};
-
-document.getElementById("title").innerText = data[lang].title;
-document.getElementById("desc").innerText = data[lang].desc;
-
-updateFooterLang(lang);
-}
 
 // =====================
 // 📌 FOOTER LANGUAGE
