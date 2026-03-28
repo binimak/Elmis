@@ -1,82 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>User Profile</title>
+<title>Personal Info</title>
 
 <style>
 body{
 font-family:Arial;
 background:#f4f4f4;
-text-align:center;
-padding:40px;
+padding:20px;
 }
 
 .card{
+max-width:700px;
+margin:auto;
 background:white;
 padding:20px;
-border-radius:15px;
-max-width:400px;
-margin:auto;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.2);
 }
 
 img{
-width:100px;
-height:100px;
-border-radius:50%;
-margin-bottom:15px;
+width:120px;
+border-radius:10px;
 }
 
-h2{
-margin-bottom:10px;
+table{
+width:100%;
+margin-top:20px;
+border-collapse:collapse;
 }
 
-p{
-margin:6px 0;
-color:#444;
+td{
+padding:10px;
+border-bottom:1px solid #ddd;
 }
 
+.label{
+font-weight:bold;
+color:#555;
+}
+
+.status{
+color:green;
+font-weight:bold;
+}
+
+.document-box{
+margin-top:20px;
+}
+
+.document-box img{
+width:100%;
+border-radius:10px;
+}
+
+.upload{
+margin-top:30px;
+}
+
+button{
+padding:10px 20px;
+background:#f6b93b;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
 </style>
 </head>
 
 <body>
 
 <div class="card">
-<img id="photo">
+
 <h2 id="name"></h2>
 
-<p><b>Visa Type:</b> <span id="visa"></span></p>
-<p><b>Job:</b> <span id="job"></span></p>
-<p><b>Employer:</b> <span id="employer"></span></p>
-<p><b>Location:</b> <span id="location"></span></p>
-<p><b>From:</b> <span id="from"></span></p>
-<p><b>To:</b> <span id="to"></span></p>
+<img id="photo">
+
+<table>
+<tr><td class="label">Place of Birth</td><td id="birth"></td></tr>
+<tr><td class="label">Visa Type</td><td id="visaType"></td></tr>
+<tr><td class="label">Location</td><td id="location"></td></tr>
+<tr><td class="label">Status</td><td><span class="status">Verified</span></td></tr>
+<tr><td class="label">Registration Date</td><td id="reg"></td></tr>
+<tr><td class="label">Last Update</td><td id="update"></td></tr>
+</table>
+
+<div class="document-box">
+<img id="doc">
+</div>
+
+<div class="upload">
+<h3>Upload receipt</h3>
+<input type="file" id="receiptInput">
+<br><br>
+<button onclick="uploadReceipt()">Submit</button>
+</div>
 
 </div>
 
 <script>
+document.addEventListener("DOMContentLoaded", function(){
 
-// GET DATA
 let user = JSON.parse(localStorage.getItem("user"));
 
-if(user){
-
-document.getElementById("photo").src = user.photo;
-document.getElementById("name").innerText = user.name;
-document.getElementById("visa").innerText = user.visaType;
-document.getElementById("job").innerText = user.job;
-document.getElementById("employer").innerText = user.employer;
-document.getElementById("location").innerText = user.location;
-document.getElementById("from").innerText = user.from;
-document.getElementById("to").innerText = user.to;
-
-}else{
-
-document.body.innerHTML = "<h2>❌ No User Data Found</h2>";
-
+if(!user){
+alert("No data found!");
+window.location.href = "index.html";
+return;
 }
 
+// IMAGE
+if(user.photo){
+document.getElementById("photo").src = user.photo;
+}
+
+// TEXT
+document.getElementById("name").innerText = user.name || "—";
+document.getElementById("birth").innerText = user.birth || "—";
+document.getElementById("visaType").innerText = user.visaType || "—";
+document.getElementById("location").innerText = user.location || "—";
+document.getElementById("reg").innerText = user.reg || "—";
+document.getElementById("update").innerText = user.update || "—";
+
+});
+
+// UPLOAD RECEIPT
+function uploadReceipt(){
+
+let file = document.getElementById("receiptInput").files[0];
+
+if(!file){
+alert("Select receipt first");
+return;
+}
+
+let reader = new FileReader();
+
+reader.onload = function(e){
+localStorage.setItem("receipt", e.target.result);
+alert("Receipt uploaded ✅");
+};
+
+reader.readAsDataURL(file);
+}
 </script>
 
 </body>
