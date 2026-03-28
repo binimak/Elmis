@@ -755,61 +755,6 @@ Carraan daangeffamaa dha Har’a galmaa’aa Carraa kana hin darbinaaCarraa maal
 
 </footer>
 
-<script>
-var users = {
-"123456":{
-page:"personal.html",
-data:{
-name:"Meron",
-gender:"Female",
-age:"25",
-dob:"1999-02-10",
-elmis:"EL123456",
-passport:"EP123456",
-phone:"0912345678",
-birth:"Addis Ababa",
-visa:"Work",
-country:"UAE",
-reg:"2026-01-10",
-update:"2026-03-20",
-photo:"https://randomuser.me/api/portraits/women/1.jpg",
-doc:"https://i.postimg.cc/Jzt5GWdm/IMG-20260320-013254-060.jpg"
-}
-},
-  
-"1112233":{
-page:"personal.html",
-data:{
-name:"Meron",
-gender:"Female",
-age:"25",
-dob:"1999-02-10",
-elmis:"EL123456",
-passport:"EP123456",
-phone:"0912345678",
-birth:"Addis Ababa",
-visa:"Work",
-country:"UAE",
-reg:"2026-01-10",
-update:"2026-03-20",
-photo:"https://randomuser.me/api/portraits/women/1.jpg",
-doc:"https://i.postimg.cc/Jzt5GWdm/IMG-20260320-013254-060.jpg"
-}  
-}
-};
-window.addEventListener("scroll", function(){
-let header = document.querySelector(".header");
-
-if(window.scrollY > 50){
-header.classList.add("scrolled");
-}else{
-header.classList.remove("scrolled");
-}
-});
-  
-  document.querySelector(".menu").onclick = function(){
-document.getElementById("sidebar").classList.toggle("show");
-}
   
   function check(){
 var code = document.getElementById("code").value;
