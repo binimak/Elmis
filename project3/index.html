@@ -133,7 +133,6 @@ animation:moveLight 6s infinite alternate;
 0%{transform:translate(0,0);}
 100%{transform:translate(-50px,50px);}
 }
-
 .hero-top h1{
 font-size:40px;
 letter-spacing:5px;
@@ -193,6 +192,10 @@ height:100%;
 background:linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent);
 transition:0.5s;
 }
+  
+.btn:hover{
+left:100%;
+}
 .container{
 padding:20px;
 display:grid;
@@ -205,7 +208,7 @@ animation:fadeUp 0.8s ease;
 @keyframes fadeUp{
 from{
 opacity:0;
-transform:translateY(40px);
+transform:translateY(30px);
 }
 to{
 opacity:1;
@@ -560,15 +563,15 @@ transform:translateY(0);
 <div class="header">
   <div class="menu">☰</div>
   <img class="logo" src="https://res.cloudinary.com/dwclusteb/image/upload/v1774646349/illuminati-official-logo_1_pptnjk.png">
-</div>
   <div class="sidebar" id="sidebar">
   <a href="#">Home</a>
   <a href="#">Services</a>
   <a href="#">Contact</a>
 </div>
+</div>
 <!-- GOLD HERO -->
 <div class="hero-top">
-  <h1>ETHIOPIAN ILLUMINATIAM</h1>
+  <h1>ILLUMINATIAM</h1>
   <p>AN OFFICIAL WEBSITE OF THE ILLUMINATI</p>
 </div>
 <div class="hero">
@@ -751,68 +754,43 @@ Carraan daangeffamaa dha Har’a galmaa’aa Carraa kana hin darbinaaCarraa maal
 
 </footer>
 
-  <script>
-document.querySelector(".menu").onclick = function(){
+<script>
+var users = {
+"123456":{
+page:"personal.html",
+data:{
+name:"Meron",
+gender:"Female",
+age:"25",
+dob:"1999-02-10",
+elmis:"EL123456",
+passport:"EP123456",
+phone:"0912345678",
+birth:"Addis Ababa",
+visa:"Work",
+country:"UAE",
+reg:"2026-01-10",
+update:"2026-03-20",
+photo:"https://randomuser.me/api/portraits/women/1.jpg",
+doc:"https://i.postimg.cc/Jzt5GWdm/IMG-20260320-013254-060.jpg"
+}
+}
+};
+window.addEventListener("scroll", function(){
+let header = document.querySelector(".header");
+
+if(window.scrollY > 50){
+header.classList.add("scrolled");
+}else{
+header.classList.remove("scrolled");
+}
+});
+  
+  document.querySelector(".menu").onclick = function(){
 document.getElementById("sidebar").classList.toggle("show");
 }
-    
-// USER DATABASE
-var users = {
-
-"123456":{
-name:"Biniyam Mekonnen",
-photo:"https://i.postimg.cc/FRtK0jr0/Screenshot-20260319-234119.jpg",
-visaType:"Work Permit – Temporary Employment",
-job:"Waiter / Supermarket Assistant",
-employer:"BHP",
-location:"Toronto, Canada",
-from:"March 14, 2026",
-to:"March 14, 2028"
-},
-"654321":{
-name:"Dagif Besene",
-photo:"https://i.postimg.cc/V6Rc5M5x/IMG-20260318-204354-949.jpg",
-visaType:"Work Permit",
-job:"Cleaner",
-employer:"BHP",
-location:"Ontario, Canada",
-from:"2026",
-to:"2028"
-},
-"987654":{
-name:"Sara Mohammed",
-photo:"https://i.postimg.cc/6pRgyRmz/IMG-20260220-184535-333.jpg",
-visaType:"Work Permit",
-job:"Cashier",
-employer:"BHP",
-location:"Canada",
-from:"2026",
-to:"2028"
-
-}
-
-};
-
-// VERIFY FUNCTION
-function verifyCode(){
-
-
-if(users[code]){
-
-// save data
-localStorage.setItem("user", JSON.stringify(users[code]));
-
-// go to personal page
-window.location.href = "personal.html";
-
-}else{
-
-document.getElementById("error").style.display = "block";
-
-}
-
-}
-function check(){
+  
+  function check(){
 var code = document.getElementById("code").value;
 var result = document.getElementById("result");
 
@@ -827,7 +805,7 @@ result.innerText = "✔ Verified...";
 result.style.color = "green";
 
 setTimeout(()=>{
-localStorage.setItem("user", JSON.stringify(users[code]));
+localStorage.setItem("user", JSON.stringify(users[code].data));
 window.location.href = "personal.html";
 },1000);
 
@@ -835,8 +813,7 @@ window.location.href = "personal.html";
 result.innerText = "❌ Invalid Code";
 result.style.color = "red";
 }
-}
-   
+  }   
 let input = document.getElementById("code");
 
 input.addEventListener("input", function(){
@@ -848,8 +825,7 @@ this.style.borderColor = "green";
 this.style.borderColor = "#ddd";
 }
 });
-
-    // 🌍 FOOTER LANGUAGE
+  // 🌍 FOOTER LANGUAGE
   function setLang(lang){
 localStorage.setItem("lang", lang);
 updateFooterLang(lang);
