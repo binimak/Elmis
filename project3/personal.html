@@ -427,8 +427,6 @@ document.getElementById("title").innerText = data[lang].title;
 document.getElementById("desc").innerText = data[lang].desc;
 
 // save language
-localStorage.setItem("lang", lang);
-}
 
 // load saved language
 let savedLang = localStorage.getItem("lang");
@@ -437,17 +435,16 @@ changeLang(savedLang);
 }
 
 // 👤 USER DATA (FIRST!)
-let user = JSON.parse(localStorage.getItem("user"));
 
-if(!user){
-alert("⚠️ እባክዎ መጀመሪያ ኮድ ያስገቡ");
-window.location.href = "index.html"; // homepage
-}
+
+
 // check first
 
 
 // then fill data
-document.getElementById("doc").src = user.doc || "";
+if(user.doc){
+document.getElementById("doc").src = user.doc;
+}
 
 if(user.photo){
 document.getElementById("photo").src = user.photo;
@@ -494,7 +491,6 @@ reader.readAsDataURL(file);
 
 <!-- FOOTER -->
 
-  <!-- FOOTER -->
 <footer id="footer">
 
   <p id="f1">© 2026 Ethiopian Illuminaty</p>
