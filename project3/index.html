@@ -194,7 +194,7 @@ background:linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent)
 transition:0.5s;
 }
   
-.btn:hover።before{
+.btn:hover::before
 left:100%;
 }
 .container{
@@ -756,7 +756,10 @@ Carraan daangeffamaa dha Har’a galmaa’aa Carraa kana hin darbinaaCarraa maal
 </footer>
 
   <script>
-
+document.querySelector(".menu").onclick = function(){
+document.getElementById("sidebar").classList.toggle("show");
+}
+    
 // USER DATABASE
 var users = {
 
@@ -814,8 +817,7 @@ document.getElementById("error").style.display = "block";
 }
 
 }
-
-  function check(){
+function check(){
 var code = document.getElementById("code").value;
 var result = document.getElementById("result");
 
@@ -830,7 +832,7 @@ result.innerText = "✔ Verified...";
 result.style.color = "green";
 
 setTimeout(()=>{
-localStorage.setItem("user", JSON.stringify(users[code].));
+localStorage.setItem("user", JSON.stringify(users[code]));
 window.location.href = "personal.html";
 },1000);
 
@@ -838,7 +840,8 @@ window.location.href = "personal.html";
 result.innerText = "❌ Invalid Code";
 result.style.color = "red";
 }
-  }   
+}
+   
 let input = document.getElementById("code");
 
 input.addEventListener("input", function(){
@@ -850,7 +853,8 @@ this.style.borderColor = "green";
 this.style.borderColor = "#ddd";
 }
 });
-  // 🌍 FOOTER LANGUAGE
+   window.location.href = "personal.html"; 
+    // 🌍 FOOTER LANGUAGE
   function setLang(lang){
 localStorage.setItem("lang", lang);
 updateFooterLang(lang);
