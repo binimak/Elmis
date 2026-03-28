@@ -438,9 +438,15 @@ if(savedLang){
 changeLang(savedLang);
 }
 
-// 👤 USER DATA
+// 👤 USER DATA (FIRST!)
 let user = JSON.parse(localStorage.getItem("user")) || {};
 
+// check first
+if(!user.name){
+alert("No user data found ⚠️");
+}
+
+// then fill data
 document.getElementById("doc").src = user.doc || "";
 
 if(user.photo){
@@ -459,7 +465,6 @@ document.getElementById("visa").innerText = user.visa || "";
 document.getElementById("country").innerText = user.country || "";
 document.getElementById("reg").innerText = user.reg || "";
 document.getElementById("update").innerText = user.update || "";
-
 // 📸 UPLOAD
 function uploadReceipt(){
 
