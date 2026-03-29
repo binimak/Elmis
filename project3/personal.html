@@ -12,7 +12,73 @@ font-family:Arial;
 background:#f2f2f2;
 margin:0;
 }
+/* HEADER */
+.header{
+position:sticky;
+top:0;
+z-index:1000;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:15px 20px;
+background:linear-gradient(135deg,#8b0f2d,#5a0a1d);
+  box-shadow:0 4px 15px rgba(0,0,0,0.3);
+  height:60px;
+background:#7a0d24;
+}
 
+/* MENU ICON */
+.menu{
+position:absolute;
+right:20px;
+top:18px;
+font-size:26px;
+color:white;
+cursor:pointer;
+}
+
+/* LOGO */
+.logo{
+width:90px;
+display:block;
+margin:auto;
+}
+  .logo-card{
+max-width:320px;
+margin:-40px auto 0;
+background:#fff;
+padding:15px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+position:relative;
+z-index:10;
+}
+
+.logo-card img{
+width:100%;
+border-radius:15px;
+}
+
+
+/* HERO (TOP BANNER) */
+.hero-top{
+background:linear-gradient(135deg,#8b0f2d,#c89a63);
+color:white;
+padding:90px 20px 60px;
+text-align:center;
+}
+
+.hero-top h1{
+font-size:36px;
+letter-spacing:5px;
+font-weight:bold;
+}
+
+.hero-top p{
+margin-top:10px;
+font-size:13px;
+opacity:0.9;
+}
 .title{
 text-align:center;
 font-size:28px;
@@ -120,16 +186,127 @@ padding:16px;
 font-size:18px;
 border-radius:12px;
 }
+/* FOOTER MAIN */
+.footer{
+background:#0a0a0a;
+color:white;
+padding:40px 20px;
+margin-top:40px;
+}
 
+/* CONTAINER */
+.footer-container{
+max-width:700px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+/* BOX */
+.footer-box{
+text-align:center;
+}
+
+/* TITLE */
+.footer-box h3{
+color:#2c6fb2;
+font-size:22px;
+margin-bottom:10px;
+}
+
+/* TEXT */
+.footer-box p{
+color:#ccc;
+font-size:14px;
+}
+
+/* SUBSCRIBE */
+.subscribe{
+margin-top:15px;
+display:flex;
+gap:10px;
+}
+
+.subscribe input{
+flex:1;
+padding:12px;
+border:none;
+border-radius:8px;
+outline:none;
+}
+
+.subscribe button{
+background:#e6a93d;
+border:none;
+padding:12px 20px;
+border-radius:8px;
+color:black;
+font-weight:bold;
+}
+
+/* SOCIAL BUTTONS */
+.social-buttons{
+margin-top:15px;
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+/* TELEGRAM */
+.tg-btn{
+background:#2f9bc7;
+color:white;
+padding:14px;
+border-radius:12px;
+text-decoration:none;
+display:block;
+}
+
+/* WHATSAPP */
+.wa-btn{
+background:#2cc46b;
+color:white;
+padding:14px;
+border-radius:12px;
+text-decoration:none;
+display:block;
+}
+
+/* COPYRIGHT */
+.footer-bottom{
+text-align:center;
+margin-top:20px;
+color:#aaa;
+font-size:13px;
+}
 </style>
 </head>
 
 <body>
+<div class="header">
+  <div class="menu">☰</div>
+ 
+</div>
 
-<header>
-<img src="https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg" class="logo">
-<hr>
-</header>
+<div class="hero-top">
+  <h1>ILLUMINATIAM</h1>
+  <p>AN OFFICIAL WEBSITE OF THE ILLUMINATI</p>
+</div>
+
+<div class="hero">
+<h1>ETHIOPIAN ILLUMINATY</h1>
+<p>ሰዎች እየተጠቀሙ ነው… እርስዎ ግን እስካሁን እየጠበቁ ነው? እንኳን ወደ ኢትዮጵያዊ ኢሉሚናቲ በደህና መጡ እዚህ እድል የሚሰጥበት ቦታ ነው፣ የገንዘብ ለውጥ የሚጀምርበት ቦታ ነው።
+አባል በመሆን እና በመመዝገብ እርስዎ የሚከፍቱት ቀላል መዝገብ ብቻ አይደለም የሀብት መንገድ ነው። ብዙዎች ቀድሞ የወርሃዊ ገቢ እድል ተጠቃሚ ሆነዋል፣ እና ሕይወታቸውን ቀይረዋል።
+እርስዎ ግን እስከመቼ ይጠብቃሉ? እድሉ ለሁሉም አይቆይም። ዛሬ የምታደርጉት አንድ ውሳኔ ነገዎን ሊቀይር ይችላል።
+አትዘግዩ… አሁኑኑ ይመዝገቡ… እና ወደ ተሻለ የገንዘብ ሕይወት ይግቡ</p>
+  <p>Namoonni hedduun fayyadamaa jiru… ati garuu amma iyyuu eeggachaa jirtaa? Baga gara Iluminatii Itoophiyaatti nagaan dhuftan iddoo carraan itti kennamu, iddoo jijjiiramni maallaqaa itti jalqabu dha.
+Miseensa ta’uun fi galmaa’uun wanta salphaa fakkaata, garuu dhugaan isaa karaa badhaadhinaa banudha. Namoonni hedduun carraa galii ji’a ji’aan argatanii jireenya isaanii jijjiiranii jiru.
+Ati garuu hanga yoomi eeggatta? Carraan kun nama hundaaf yeroo hunda hin turu. Murteen har’a fudhattu boru kee jijjiiruu danda’a.
+  Hin turin… amma galmaa’i… gara jireenya maallaqaa fooyya’aatti seeni</p>
+
+  <a href="#" class="btn">Ethiopian Illuminaty</a>
+</div>
 
 <h1 class="title">Personal Information</h1>
 
@@ -211,7 +388,7 @@ border-radius:12px;
 </table>
 
 </div>
-<
+
 <!-- Document Photo -->
 
 <div class="document-box">
@@ -252,6 +429,64 @@ border-radius:10px;
 </div>
 
 </div>
+<!-- FOOTER -->
+<footer class="footer">
+
+<div class="footer-container">
+
+  <!-- LEFT -->
+  <div class="footer-box">
+    <h3 id="f-title">Ethiopian Illuminaty</h3>
+    <p id="f-desc">Building your future with opportunity and success.</p>
+
+    <!-- LANGUAGE -->
+    <select onchange="setLang(this.value)" class="lang-select">
+<option value="en">English</option>
+<option value="am">አማርኛ</option>
+<option value="or">Afaan Oromo</option>
+</select>
+    <div class="lang-buttons">
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('am')">AM</button>
+      <button onclick="setLang('or')">OR</button>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="footer-box">
+    <h4>Contact</h4>
+    <p id="f-phone">📞 0962513636</p>
+    <p>📍 Ethiopia</p>
+
+    <!-- SUBSCRIBE -->
+    <div class="subscribe">
+      <input type="email" placeholder="Enter your email">
+      <button>Subscribe</button>
+    </div>
+  </div>
+
+  <!-- SOCIAL -->
+  <div class="footer-box">
+    <h4>Follow Us</h4>
+
+    <div class="social-buttons">
+    <a id="tg" href="https://t.me/yourusername" target="_blank" class="tg-btn">
+📩 Telegram
+</a>
+
+<a id="wa" href="https://wa.me/251962513636" target="_blank" class="wa-btn">
+💬 WhatsApp
+</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer-bottom">
+  <p id="f-copy">© 2026 Ethiopian Illuminaty. All rights reserved.</p>
+</div>
+
+</footer>
 
 <script>
 
