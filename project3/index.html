@@ -823,10 +823,6 @@ if(users[code]){
 result.innerText = "✔ Verified...";
 result.style.color = "green";
 
-setTimeout(()=>{
-localStorage.setItem("user", JSON.stringify(users[code].data));
-window.location.href = "personal.html";
-},4000);
 }
 }else{
 result.innerText = "❌ Invalid Code";
