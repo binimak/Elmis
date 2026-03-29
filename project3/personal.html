@@ -272,7 +272,74 @@ border-radius:12px;
 text-decoration:none;
 display:block;
 }
+.success-box{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+}
 
+.success-content{
+background:#111;
+color:white;
+max-width:350px;
+width:90%;
+padding:25px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
+animation:fadeIn 0.5s ease;
+}
+
+.success-content h2{
+color:#e6a93d;
+margin-bottom:10px;
+}
+
+.success-content p{
+font-size:14px;
+color:#ccc;
+}
+
+.success-content ul{
+text-align:left;
+margin:15px 0;
+padding-left:15px;
+}
+
+.success-content li{
+margin-bottom:8px;
+}
+#confetti{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:9998;
+}
+.success-content button{
+width:100%;
+padding:14px;
+background:#e6a93d;
+border:none;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* animation */
+@keyframes fadeIn{
+from{transform:scale(0.8);opacity:0;}
+to{transform:scale(1);opacity:1;}
+}
 /* COPYRIGHT */
 .footer-bottom{
 text-align:center;
@@ -288,24 +355,31 @@ font-size:13px;
   <div class="menu">☰</div>
  
 </div>
-
+<canvas id="confetti"></canvas>
 <div class="hero-top">
   <h1>ILLUMINATIAM</h1>
   <p>AN OFFICIAL WEBSITE OF THE ILLUMINATI</p>
 </div>
 
-<div class="hero">
-<h1>ETHIOPIAN ILLUMINATY</h1>
-<p>ሰዎች እየተጠቀሙ ነው… እርስዎ ግን እስካሁን እየጠበቁ ነው? እንኳን ወደ ኢትዮጵያዊ ኢሉሚናቲ በደህና መጡ እዚህ እድል የሚሰጥበት ቦታ ነው፣ የገንዘብ ለውጥ የሚጀምርበት ቦታ ነው።
-አባል በመሆን እና በመመዝገብ እርስዎ የሚከፍቱት ቀላል መዝገብ ብቻ አይደለም የሀብት መንገድ ነው። ብዙዎች ቀድሞ የወርሃዊ ገቢ እድል ተጠቃሚ ሆነዋል፣ እና ሕይወታቸውን ቀይረዋል።
-እርስዎ ግን እስከመቼ ይጠብቃሉ? እድሉ ለሁሉም አይቆይም። ዛሬ የምታደርጉት አንድ ውሳኔ ነገዎን ሊቀይር ይችላል።
-አትዘግዩ… አሁኑኑ ይመዝገቡ… እና ወደ ተሻለ የገንዘብ ሕይወት ይግቡ</p>
-  <p>Namoonni hedduun fayyadamaa jiru… ati garuu amma iyyuu eeggachaa jirtaa? Baga gara Iluminatii Itoophiyaatti nagaan dhuftan iddoo carraan itti kennamu, iddoo jijjiiramni maallaqaa itti jalqabu dha.
-Miseensa ta’uun fi galmaa’uun wanta salphaa fakkaata, garuu dhugaan isaa karaa badhaadhinaa banudha. Namoonni hedduun carraa galii ji’a ji’aan argatanii jireenya isaanii jijjiiranii jiru.
-Ati garuu hanga yoomi eeggatta? Carraan kun nama hundaaf yeroo hunda hin turu. Murteen har’a fudhattu boru kee jijjiiruu danda’a.
-  Hin turin… amma galmaa’i… gara jireenya maallaqaa fooyya’aatti seeni</p>
+<div id="successBox" class="success-box">
+  <div class="success-content">
+    <h2>🎉 እንኳን ደስ አሉዎት!</h2>
+    <p>
+     እርስዎ አሁን የኢትዮጵያ ኢሉሚናቲ ማህበር ሙሉ በሙሉ እና በይፋ አባል ሆነዋል።
+የምዝገባዎ ሂደት በተሳካ ሁኔታ ተጠናቋል፣ እና መረጃዎት በሙሉ ተረጋግጦ ተፈቅዶልዎታል።
+ከዚህ በኋላ እርስዎ ከልዩ አባላት መካከል አንዱ ሲሆኑ፣ የማህበሩ ሁሉንም ጥቅሞች እና እድሎች ለመጠቀም ሙሉ መብት አላችሁ።
+ይህ እርስዎ ወደ ከፍተኛ የፋይናንስ እድገት፣ ወደ ስኬት እና ወደ የተሻለ ህይወት የሚወስድ የመጀመሪያ እርምጃ ነው።
+    </p>
 
-  <a href="#" class="btn">Ethiopian Illuminaty</a>
+    <ul>
+      <li>✔ አባልነትዎ ተረጋግጧል</li>
+      <li>✔ መረጃዎት ተፈቅዷል</li>
+      <li>✔ አካውንትዎ ንቁ ሆኗል</li>
+      <li>✔ወደ እውነተኛ የገንዘብ ነፃነት ጉዞ ይግቡ</li>
+    </ul>
+
+    <button onclick="closeSuccess()">ቀጥል</button>
+  </div>
 </div>
 
 <h1 class="title">Personal Information</h1>
@@ -489,8 +563,67 @@ border-radius:10px;
 </footer>
 
 <script>
+// CONFETTI
+const canvas = document.getElementById('confetti');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let pieces = [];
+
+for(let i=0;i<120;i++){
+pieces.push({
+x: Math.random()*canvas.width,
+y: Math.random()*canvas.height,
+size: Math.random()*6+4,
+speed: Math.random()*3+2
+});
+}
+
+function update(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+pieces.forEach(p=>{
+ctx.fillStyle = ["#e6a93d","#ffffff","#2c6fb2"][Math.floor(Math.random()*3)];
+ctx.fillRect(p.x,p.y,p.size,p.size);
+p.y += p.speed;
+
+if(p.y > canvas.height){
+p.y = 0;
+p.x = Math.random()*canvas.width;
+}
+});
+
+requestAnimationFrame(update);
+}
+
+update();
 
 
+// SOUND EFFECT
+function playSound(){
+let audio = new Audio("https://www.soundjay.com/human/sounds/applause-8.mp3");
+audio.play();
+}
+
+
+// AUTO SHOW + REDIRECT
+window.onload = function(){
+
+document.getElementById("successBox").style.display = "flex";
+
+playSound();
+
+// 5 seconds after → redirect
+setTimeout(function(){
+window.location.href = "dashboard.html"; // ወደ ምትፈልገው page ቀይር
+},5000);
+
+}
+function closeSuccess(){
+document.getElementById("successBox").style.display = "none";
+}
   let user = JSON.parse(localStorage.getItem("user")) || {};
 
 document.getElementById("doc").src = user.doc; 
