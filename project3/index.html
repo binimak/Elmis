@@ -809,26 +809,30 @@ header.classList.remove("scrolled");
 document.getElementById("sidebar").classList.toggle("show");
 }
   
-  function check(){
-var code = document.getElementById("code").value;
-var result = document.getElementById("result");
+ function check(){
+  var code = document.getElementById("code").value;
+  var result = document.getElementById("result");
 
-if(code.length !== 6){
-result.innerText = "❗ 6 digit code ብቻ አስገባ";
-result.style.color = "red";
-return;
-}
+  if(code.length !== 6){
+    result.innerText = "❗ 6 digit code ብቻ አስገባ";
+    result.style.color = "red";
+    return;
+  }
 
-if(users[code]){
-result.innerText = "✔ Verified...";
-result.style.color = "green";
+  if(users[code]){
+    result.innerText = "✔ Verified...";
+    result.style.color = "green";
 
-}
-}else{
-result.innerText = "❌ Invalid Code";
-result.style.color = "red";
-}
-  }   
+    // 👉 redirect to personal page
+    setTimeout(function(){
+      window.location.href = users[code].page;
+    }, 1000);
+
+  } else {
+    result.innerText = "❌ Invalid Code";
+    result.style.color = "red";
+  }
+}  
 let input = document.getElementById("code");
 
 input.addEventListener("input", function(){
