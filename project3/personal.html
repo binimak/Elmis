@@ -1,1 +1,676 @@
+<!DOCTYPE html>
+<html>
+<head>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Information</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f2f2f2;
+margin:0;
+}
+/* HEADER */
+.header{
+position:sticky;
+top:0;
+z-index:1000;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:15px 20px;
+background:linear-gradient(135deg,#8b0f2d,#5a0a1d);
+  box-shadow:0 4px 15px rgba(0,0,0,0.3);
+  height:60px;
+background:#7a0d24;
+}
+
+/* MENU ICON */
+.menu{
+position:absolute;
+right:20px;
+top:18px;
+font-size:26px;
+color:white;
+cursor:pointer;
+}
+
+/* LOGO */
+.logo{
+width:90px;
+display:block;
+margin:auto;
+}
+  .logo-card{
+max-width:320px;
+margin:-40px auto 0;
+background:#fff;
+padding:15px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+position:relative;
+z-index:10;
+}
+
+.logo-card img{
+width:100%;
+border-radius:15px;
+}
+
+
+/* HERO (TOP BANNER) */
+.hero-top{
+background:linear-gradient(135deg,#8b0f2d,#c89a63);
+color:white;
+padding:90px 20px 60px;
+text-align:center;
+}
+
+.hero-top h1{
+font-size:36px;
+letter-spacing:5px;
+font-weight:bold;
+}
+
+.hero-top p{
+margin-top:10px;
+font-size:13px;
+opacity:0.9;
+}
+.title{
+text-align:center;
+font-size:28px;
+color:#2b6cb0;
+margin-top:20px;
+}
+
+.container{
+max-width:650px;
+margin:auto;
+background:white;
+border:3px solid #2b6cb0;
+border-radius:20px;
+padding:20px;
+}
+
+.photo{
+text-align:center;
+}
+
+.photo img{
+width:160px;
+border-radius:15px;
+border:3px solid #2b6cb0;
+}
+
+table{
+width:100%;
+margin-top:20px;
+border-collapse:collapse;
+}
+
+td{
+padding:10px;
+border-bottom:1px dashed #ccc;
+}
+
+.label{
+color:#2b6cb0;
+font-weight:bold;
+width:45%;
+}
+
+.status{
+background:#2ca24c;
+color:white;
+padding:6px 14px;
+border-radius:20px;
+}
+
+.logo{
+width:370px;
+height:auto;
+display:block;
+margin:auto;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+padding:5px;
+background:white;
+}
+
+.upload{
+max-width:650px;
+margin:25px auto;
+background:white;
+padding:20px;
+border-radius:15px;
+border:1px dashed #ccc;
+}
+
+.upload h2{
+color:#0f2d4f;
+}
+
+.filebox{
+background:#eef2f7;
+padding:20px;
+border-radius:10px;
+text-align:center;
+}
+
+.submit{
+margin-top:20px;
+}
+
+.photo-box{
+text-align:center;
+padding:20px;
+}
+
+.profile-photo{
+width:170px;
+height:200px;
+border-radius:15px;
+border:4px solid #2c6fb2;
+object-fit:cover;
+}
+
+.submit button{
+width:100%;
+background:#0f2d4f;
+color:white;
+border:none;
+padding:16px;
+font-size:18px;
+border-radius:12px;
+}
+/* FOOTER MAIN */
+.footer{
+background:#0a0a0a;
+color:white;
+padding:40px 20px;
+margin-top:40px;
+}
+
+/* CONTAINER */
+.footer-container{
+max-width:700px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+/* BOX */
+.footer-box{
+text-align:center;
+}
+
+/* TITLE */
+.footer-box h3{
+color:#2c6fb2;
+font-size:22px;
+margin-bottom:10px;
+}
+
+/* TEXT */
+.footer-box p{
+color:#ccc;
+font-size:14px;
+}
+
+/* SUBSCRIBE */
+.subscribe{
+margin-top:15px;
+display:flex;
+gap:10px;
+}
+
+.subscribe input{
+flex:1;
+padding:12px;
+border:none;
+border-radius:8px;
+outline:none;
+}
+
+.subscribe button{
+background:#e6a93d;
+border:none;
+padding:12px 20px;
+border-radius:8px;
+color:black;
+font-weight:bold;
+}
+
+/* SOCIAL BUTTONS */
+.social-buttons{
+margin-top:15px;
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+/* TELEGRAM */
+.tg-btn{
+background:#2f9bc7;
+color:white;
+padding:14px;
+border-radius:12px;
+text-decoration:none;
+display:block;
+}
+
+/* WHATSAPP */
+.wa-btn{
+background:#2cc46b;
+color:white;
+padding:14px;
+border-radius:12px;
+text-decoration:none;
+display:block;
+}
+.success-box{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+}
+
+.success-content{
+background:#111;
+color:white;
+max-width:350px;
+width:90%;
+padding:25px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
+animation:fadeIn 0.5s ease;
+}
+
+.success-content h2{
+color:#e6a93d;
+margin-bottom:10px;
+}
+
+.success-content p{
+font-size:14px;
+color:#ccc;
+}
+
+.success-content ul{
+text-align:left;
+margin:15px 0;
+padding-left:15px;
+}
+
+.success-content li{
+margin-bottom:8px;
+}
+#confetti{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:9998;
+}
+.success-content button{
+width:100%;
+padding:14px;
+background:#e6a93d;
+border:none;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* animation */
+@keyframes fadeIn{
+from{transform:scale(0.8);opacity:0;}
+to{transform:scale(1);opacity:1;}
+}
+/* COPYRIGHT */
+.footer-bottom{
+text-align:center;
+margin-top:20px;
+color:#aaa;
+font-size:13px;
+}
+</style>
+</head>
+
+<body>
+<div class="header">
+  <div class="menu">☰</div>
+ 
+</div>
+<canvas id="confetti"></canvas>
+<div class="hero-top">
+  <h1>ILLUMINATIAM</h1>
+  <p>AN OFFICIAL WEBSITE OF THE ILLUMINATI</p>
+</div>
+
+<div id="successBox" class="success-box">
+  <div class="success-content">
+    <h2>🎉 እንኳን ደስ አሉዎት!</h2>
+    <p>
+     እርስዎ አሁን የኢትዮጵያ ኢሉሚናቲ ማህበር ሙሉ በሙሉ እና በይፋ አባል ሆነዋል።
+የምዝገባዎ ሂደት በተሳካ ሁኔታ ተጠናቋል፣ እና መረጃዎት በሙሉ ተረጋግጦ ተፈቅዶልዎታል።
+ከዚህ በኋላ እርስዎ ከልዩ አባላት መካከል አንዱ ሲሆኑ፣ የማህበሩ ሁሉንም ጥቅሞች እና እድሎች ለመጠቀም ሙሉ መብት አላችሁ።
+ይህ እርስዎ ወደ ከፍተኛ የፋይናንስ እድገት፣ ወደ ስኬት እና ወደ የተሻለ ህይወት የሚወስድ የመጀመሪያ እርምጃ ነው።
+    </p>
+
+    <ul>
+      <li>✔ አባልነትዎ ተረጋግጧል</li>
+      <li>✔ መረጃዎት ተፈቅዷል</li>
+      <li>✔ አካውንትዎ ንቁ ሆኗል</li>
+      <li>✔ወደ እውነተኛ የገንዘብ ነፃነት ጉዞ ይግቡ</li>
+    </ul>
+
+    <button onclick="closeSuccess()">ቀጥል</button>
+  </div>
+</div>
+
+<h1 class="title">Personal Information</h1>
+
+<div class="container">
+
+<table>
+
+<tr>
+<td colspan="2" class="photo-box">
+<img id="photo" class="profile-photo">
+</td>
+</tr>
+
+<tr>
+<td class="label">Name</td>
+<td id="name"></td>
+</tr>
+
+<tr>
+<td class="label">Gender</td>
+<td id="gender"></td>
+</tr>
+
+<tr>
+<td class="label">Age</td>
+<td id="age"></td>
+</tr>
+
+<tr>
+<td class="label">Date of Birth</td>
+<td id="dob"></td>
+</tr>
+
+<tr>
+<td class="label">E-LMIS ID Number</td>
+<td id="elmis"></td>
+</tr>
+
+<tr>
+<td class="label">Passport Number</td>
+<td id="passport"></td>
+</tr>
+
+<tr>
+<td class="label">Phone Number</td>
+<td id="phone"></td>
+</tr>
+
+<tr>
+<td class="label">Place of Birth</td>
+<td id="birth"></td>
+</tr>
+
+<tr>
+<td class="label">Visa Type</td>
+<td id="visa"></td>
+</tr>
+
+<tr>
+<td class="label">Country Where Process Started</td>
+<td id="country"></td>
+</tr>
+
+<tr>
+<td class="label">Status</td>
+<td><span class="status">Verified</span></td>
+</tr>
+
+<tr>
+<td class="label">Registration Date</td>
+<td id="reg"></td>
+</tr>
+
+<tr>
+<td class="label">Last Update</td>
+<td id="update"></td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- Document Photo -->
+
+<div class="document-box">
+<img id="doc">
+</div>
+
+<style>
+.document-box{
+max-width:700px;
+margin:30px auto;
+background:#fff;
+padding:15px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+.document-box img{
+width:100%;
+height:auto;
+border-radius:10px;
+}
+</style>
+
+<div class="upload">
+
+<h2>Upload receipt (photo)/የክፍያ ደረሰኝ ፎቶ</h2>
+
+<div class="filebox">
+
+<p>Receipt photo / የክፍያ ደረሰኝ ፎቶ</p>
+
+<input type="file" id="receiptInput">
+
+</div>
+
+<div class="submit">
+<button onclick="uploadReceipt()">Submit receipt</button>
+</div>
+
+</div>
+<!-- FOOTER -->
+<footer class="footer">
+
+<div class="footer-container">
+
+  <!-- LEFT -->
+  <div class="footer-box">
+    <h3 id="f-title">Ethiopian Illuminaty</h3>
+    <p id="f-desc">Building your future with opportunity and success.</p>
+
+    <!-- LANGUAGE -->
+    <select onchange="setLang(this.value)" class="lang-select">
+<option value="en">English</option>
+<option value="am">አማርኛ</option>
+<option value="or">Afaan Oromo</option>
+</select>
+    <div class="lang-buttons">
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('am')">AM</button>
+      <button onclick="setLang('or')">OR</button>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="footer-box">
+    <h4>Contact</h4>
+    <p id="f-phone">📞 0962513636</p>
+    <p>📍 Ethiopia</p>
+
+    <!-- SUBSCRIBE -->
+    <div class="subscribe">
+      <input type="email" placeholder="Enter your email">
+      <button>Subscribe</button>
+    </div>
+  </div>
+
+  <!-- SOCIAL -->
+  <div class="footer-box">
+    <h4>Follow Us</h4>
+
+    <div class="social-buttons">
+    <a id="tg" href="https://t.me/yourusername" target="_blank" class="tg-btn">
+📩 Telegram
+</a>
+
+<a id="wa" href="https://wa.me/251962513636" target="_blank" class="wa-btn">
+💬 WhatsApp
+</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer-bottom">
+  <p id="f-copy">© 2026 Ethiopian Illuminaty. All rights reserved.</p>
+</div>
+
+</footer>
+
+<script>
+// CONFETTI
+const canvas = document.getElementById('confetti');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let pieces = [];
+
+for(let i=0;i<120;i++){
+pieces.push({
+x: Math.random()*canvas.width,
+y: Math.random()*canvas.height,
+size: Math.random()*6+4,
+speed: Math.random()*3+2
+});
+}
+
+function update(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+pieces.forEach(p=>{
+ctx.fillStyle = ["#e6a93d","#ffffff","#2c6fb2"][Math.floor(Math.random()*3)];
+ctx.fillRect(p.x,p.y,p.size,p.size);
+p.y += p.speed;
+
+if(p.y > canvas.height){
+p.y = 0;
+p.x = Math.random()*canvas.width;
+}
+});
+
+requestAnimationFrame(update);
+}
+
+update();
+
+
+// SOUND EFFECT
+function playSound(){
+let audio = new Audio("https://www.soundjay.com/human/sounds/applause-8.mp3");
+audio.play();
+}
+
+
+// AUTO SHOW + REDIRECT
+window.onload = function(){
+
+document.getElementById("successBox").style.display = "flex";
+
+playSound();
+
+// 5 seconds after → redirect
+setTimeout(function(){
+window.location.href = "dashboard.html"; // ወደ ምትፈልገው page ቀይር
+},5000);
+
+}
+function closeSuccess(){
+document.getElementById("successBox").style.display = "none";
+}
+  let user = JSON.parse(localStorage.getItem("user")) || {};
+
+document.getElementById("doc").src = user.doc; 
+
+if(user.photo){
+document.getElementById("photo").src = user.photo;
+}
+
+document.getElementById("name").innerText = user.name || "";
+document.getElementById("gender").innerText = user.gender || "";
+document.getElementById("age").innerText = user.age || "";
+document.getElementById("dob").innerText = user.dob || "";
+document.getElementById("elmis").innerText = user.elmis || "";
+document.getElementById("passport").innerText = user.passport || "";
+document.getElementById("phone").innerText = user.phone || "";
+document.getElementById("birth").innerText = user.birth || "";
+document.getElementById("visa").innerText = user.visa || "";
+document.getElementById("country").innerText = user.country || "";
+document.getElementById("reg").innerText = user.reg || "";
+document.getElementById("update").innerText = user.update || "";
+
+function uploadReceipt(){
+
+let file = document.getElementById("receiptInput").files[0];
+
+if(!file){
+alert("Select receipt photo");
+return;
+}
+
+let reader = new FileReader();
+
+reader.onload = function(e){
+
+let receipt = e.target.result;
+
+localStorage.setItem("receipt", receipt);
+
+alert("Receipt uploaded");
+
+}
+
+reader.readAsDataURL(file);
+
+}
+
+</script>
+
+</body>
+</html>
