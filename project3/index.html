@@ -821,8 +821,8 @@ document.getElementById("sidebar").classList.toggle("show");
 
     // 👉 redirect to personal page
     setTimeout(function(){
-      window.location.href = users[code].page;
-    }, 1000);
+   window.location.href = users[code].page + "?code=" + code;
+}, 1000);
 
   } else {
     result.innerText = "❌ Invalid Code";
