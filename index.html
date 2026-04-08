@@ -1,707 +1,666 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ministry of Labor and Skills</title>
+<title>Ministry Platform</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
 body{
-width:100%;
-overflow-x:hidden;
- margin:0;
- padding:0;
- box-sizing:border-box
-  font-family: 'Poppins', 'Noto Sans Ethiopic', sans-serif;
-  font-size:15px;
-  line-height:1.7;
-
+margin:0;
+font-family:Poppins,sans-serif;
+background:#f1f5f9;
+color:#0f172a;
+  overflow-x: hidden;
 }
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+/* HEADER */
 .header{
-  width:100%;
-  background:white;
-  text-align:center;
-  padding:25px 0;
-  box-shadow:0 2px 10px rgba(0,0,0,0.1);
-  padding:40px 0;          
-   justify-content:center;   
+text-align:center;
+padding:15px;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+position:sticky;
+top:0;
+z-index:100;
 }
-
 .header img{
-  width:260px;
-  max-width:80%;
-}
-.nav{
-background:#072c6b;
-display:flex;
-justify-content:center;
-gap:20px;
-padding:12px;
-flex-wrap:wrap;
+width:180px;
 }
 
-.nav a{
-color:white;
-text-decoration:none;
-font-size:15px;
+/* WELCOME */
+.news-section{
+padding:20px;
 }
-.section{
-  padding:40px 0px;
-  width:100%;
-  background:#white; 
+ .section{
+text-align:center;
+padding:20px;
+}
+.section h2{
+margin:0;
+font-size:22px;
 }
 
- img{
-max-width:100%;
-display:block;
-} 
- h2{
-margin-bottom:22px;
+.section p{
+color:#64748b;
 }
-.ministers{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-
-/* REMOVE THESE */
-max-width:1000px;
-margin:auto;
-
-/* ADD THIS */
+ 
+ select{
 width:100%;
-padding:0;
-
+padding:14px;
+margin:10px 0;
+border-radius:12px;
+border:1px solid #e2e8f0;
+background:#f8fafc;
+}
+/* MINISTERS (VERTICAL) */
+.ministers{
+display:flex;
+flex-direction:column;
+gap:20px;
+padding:20px;
 }
 
 .card{
-background:transparent;
-padding:0;
-border-radius:0;
-box-shadow:none;
-text-align:center;
-margin:0;
-}
-
-.card img{
-width:100%;
-height:auto;
-border-radius:10px;
-display:block;
-}
-
-.news{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-width:100%;
-margin:0;
-}
-
-.news div{
-background:transparent;
-padding:0;
-box-shadow:none;
-
-}
-.slider{
-width:90%;
-margin:auto;
-margin-top:20px;
+background:white;
 border-radius:20px;
 overflow:hidden;
-position:relative;
- box-shadow:0 10px 25px rgba(0,0,0,0.2);
-height:350px;
- background: linear-gradient(135deg, #2c5c8a, #8fb3d9);
-  
-  /* 🔥 shadow */
-  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-
-}
-
-.slider img{
-width:100%;
-display:block;
-height:100%;
-object-fit:cover;
-border-radius:25px;
-  opacity:0.9;
-transition: opacity 0.6s ease-in-out;
-backdrop-filter: blur(10px);
-}
-slider::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  backdrop-filter: blur(8px);
-  background: rgba(0,0,0,0.2);
-to bottom,
-    rgba(0,0,0,0.3),
-    rgba(0,0,0,0.1)
-  );
-  z-index:1;
-}
-.slider-text{
-position:absolute;
-top:30%;
-left:30px;
-color:white;
-   z-index:2;
-}
-
-.slider-text h2{
-font-size:20px;
-margin-bottom:10px;
-font-weight:bold;
-}
-.dots{
-  position:absolute;
-  bottom:15px;
-  width:100%;
-  text-align:center;
-  z-index:2;
-}
-
-.dots span{
-  display:inline-block;
-  width:10px;
-  height:10px;
-  margin:5px;
-  background:#ccc;
-  border-radius:50%;
-transition:0.3s;
-}
- .dots .active{
-  background:#0b5ed7;
-  transform:scale(1.2);
-}
-.slider-text p{
-font-size:16px;
-margin-bottom:15px;
-}
-
-.slider-text button{
-background:#0b5ed7;
-border:none;
-color:white;
-padding:10px 20px;
-border-radius:8px;
-font-weight:bold;
-cursor:pointer;
-}
-.codebox{
-background:white;
-padding:30px;
-margin:30px auto;
-border-radius:10px;
-text-align:center;
-max-width:500px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
-.footer-container{
-max-width:1000px;
-margin:auto;
-}
-
-.footer-logo{
-width:180px;
-margin-bottom:20px;
-}
-
-.about{
-line-height:1.8;
-margin-bottom:30px;
-}
-
-.footer-grid{
-display:flex;
-gap:80px;
-flex-wrap:wrap;
-}
-
-.footer h2{
-margin-bottom:10px;
-font-size:26px;
-}
-
-.footer p{
-margin:6px 0;
-}
-
-.social{
-margin-top:30px;
-}
-.social a{
-display:inline-block;
-width:45px;
-height:45px;
-line-height:45px;
-text-align:center;
-background:#1e293b;
-color:#cbd5e1;
-border-radius:10px;
-margin-right:15px;
-font-size:22px;
-text-decoration:none;
-}
-
-.footer-bottom{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-top:40px;
-flex-wrap:wrap;
-}
-
-.lang{
-background:white;
-border:none;
-padding:10px 18px;
-border-radius:20px;
-font-weight:bold;
-color:#1f5d9c;
-cursor:pointer;
-}
-input{
-padding:12px;
-width:80%;
-font-size:16px;
-border:1px solid #ccc;
-border-radius:5px;
-}
-.stats{
-text-align:center;
-padding:50px 20px;
-background:#f5f5f5;
-}
-
-.register{
-display:inline-block;
-padding:12px 30px;
-border:3px solid #1f5d9c;
-border-radius:40px;
-color:#1f5d9c;
-font-weight:bold;
-margin-bottom:40px;
-text-decoration:none;
-}
-
-.stats h2{
-color:#1f5d9c;
-font-size:30px;
-}
-
-.stats hr{
-width:80%;
-margin:30px auto;
-border:1px solid #ddd;
-}
-
-.map-box{
-max-width:600px;
-margin:auto;
-}
-
-.map-box img{
-width:100%;
-}
-
-/* FAQ */
-
-.faq{
-background:#0b3d91; /* ሰማያዊ */
-padding:50px 20px;
-text-align:center;
-}
-
-.faq h2{
-color:#2c5c8a;
-font-size:30px;
-font-weight:700;
-margin-bottom:20px;
-  font-weight:bold;
-
-}
-.faq-box{
-background:white;
-border-radius:20px;
-padding:20px;
-max-width:700px;
-margin:auto;
-
-}
-.faq-btn{
-position:relative;
-background:#e2e8f0;
-color:#1f5d9c;
-border-radius:30px;
-font-weight:bold;
-padding:15px 20px;
-cursor:pointer;
-transition:0.3s;
-  color:#2c4a6b;
-  font-size:18px;
-  font-weight:bold;
-}
-.faq-btn::after{
-content:"+";
-position:absolute;
-right:20px;
-font-size:22px;
-font-weight:bold;
-}
-.faq-btn.active{
-  background:#1f5d9c;
-  color:white;
-}
- .faq-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.4s ease;
-  background: #f9f9f9;
-  border-radius: 10px;
-  margin-top: 5px;
-  
- }
-
-.faq-content p {padding: 15px;
-}
-button{
-padding:12px 30px;
-background:#0b3d91;
-color:white ;
-border:none;
-margin-top:15px;
-border-radius:5px;
-cursor:pointer;
- font-size:22px;
-}
-.news-section{
-background:transparent;
-padding:40px 20px;
-}
-section h2{
-color:white; 
-}
-.news-card{
-  width:100%;
-  max-width:100%;
-  margin:0;   /* ከጎን ክፍተት ያጠፋ */
-  border-radius:15px;
-  overflow:hidden;
-}
-
-.news-card img{
-  width:100%;
-  height:auto;
-  display:block;
-}
-
-.news-card img{
-height:230px;
-object-fit:cover;
-}
-.register-section{
-text-align:center;
-padding:60px 20px;
-background:#f5f5f5;
-}
-
-.register-section h2{
-color:#1f5d9c;
-font-size:28px;
-margin-bottom:20px;
-}
-
-.register-section hr{
-width:80%;
-margin:20px auto;
-border:1px solid #ddd;
-}
-
-.video-box{
-max-width:700px;
-margin:auto;
-border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+ transition:0.3s;
+ position:relative;
 overflow:hidden;
-box-shadow:0 5px 20px rgba(0,0,0,0.2);
-}
 
-.video-box video{
-width:100%;
-height:auto;
 }
-
+.card:hover img{
+transform:scale(1.08);
+}
 .register-btn{
-display:inline-block;
-margin-top:40px;
-padding:15px 40px;
-border:3px solid #1f5d9c;
-border-radius:40px;
-color:#1f5d9c;
-font-size:20px;
-text-decoration:none;
-}
-
-.register-btn:hover{
-background:#1f5d9c;
+display:block;
+width:90%;
+margin:20px auto;
+padding:15px;
+text-align:center;
+background:#2563eb;
 color:white;
-}
-.news-text{
-position:absolute;
-bottom:80px;
-left:20px;
-right:20px;
-color:white;
-font-size:20px;
+border-radius:15px;
 font-weight:bold;
-text-shadow:0 2px 5px rgba(0,0,0,0.6);
+text-decoration:none;
 }
 .login-section{
-text-align:center;
-padding:60px 20px;
-background:#f5f5f5;
-}
-
-.login-section h2{
-color:#1f5d9c;
-font-size:30px;
-}
-
-.am{
-font-size:18px;
-color:#666;
-margin-bottom:20px;
-}
-
-#code{
-width:90%;
-max-width:500px;
-padding:18px;
-font-size:18px;
+background:white;
+margin:20px;
+padding:20px;
 border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.login-section input{
+width:100%;
+padding:14px;
+border-radius:10px;
 border:1px solid #ccc;
+margin-top:10px;
 }
-
-button{
-margin-top:20px;
-padding:15px 40px;
-background:#1f5d9c;
-color:white;
-border:none;
-border-radius:30px;
-font-size:20px;
-}
-
 .contact-box{
-margin-top:50px;
-border:4px solid #1f5d9c;
-border-radius:30px;
-padding:40px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-flex-wrap:wrap;
-}
-
-.left h3{
-color:#1f5d9c;
-font-size:24px;
+background:#0d47a1;
+color:white;
+padding:15px;
+border-radius:15px;
+margin-top:20px;
 }
 
 .contact-btn{
-background:#1f5d9c;
-color:white;
-padding:20px 40px;
-border-radius:40px;
+background:white;
+color:#0d47a1;
+padding:8px 15px;
+border-radius:10px;
 text-decoration:none;
-font-size:24px;
+font-weight:bold;
 }
+.login-section button{
+width:100%;
+margin-top:15px;
+padding:14px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:10px;
+font-weight:bold;
+}
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+ transition:0.4s;
+
+}
+/* IMAGE OVERLAY */
+.card .overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
+.card p{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+background:rgba(0,0,0,0.5);
+color:white;
+padding:10px;
+}
+/* FORM */
+.form-box{
+background:white;
+margin:20px;
+padding:20px;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,0.1);
+}
+
+.form-box h2{
+text-align:center;
+margin-bottom:15px;
+}
+
+input{
+width:100%;
+padding:14px;
+margin:10px 0;
+border-radius:12px;
+border:1px solid #e2e8f0;
+font-size:14px;
+ background:#f8fafc;
+}
+
+
+/* FILE UPLOAD (VERTICAL) */
+.file-grid{
+display:flex;
+flex-direction:column;
+gap:12px;
+margin-top:10px;
+}
+
+.file-box{
+border:2px dashed #cbd5e1;
+border-radius:15px;
+padding:18px;
+text-align:center;
+cursor:pointer;
+background:#f8fafc;
+transition:0.3s;
+font-weight:500;
+}
+
+.file-box:hover{
+border-color:#2563eb;
+background:#e0ecff;
+}
+
+.file-box.active{
+border-color:#0d47a1;
+background:#e0ecff;
+}
+.file-box input{
+display:none;
+}
+
+.file-box img{
+width:100%;
+height:100px;
+object-fit:cover;
+border-radius:10px;
+margin-top:10px;
+ display:none;
+}
+
+/* BUTTON */
+button{
+width:100%;
+padding:15px;
+background:linear-gradient(90deg,#0d47a1,#2563eb);
+color:white;
+border:none;
+border-radius:12px;
+font-size:16px;
+margin-top:15px;
+font-weight:bold;
+}
+
+
+button:hover{
+background:#1e40af;
+}
+
+/* TOAST */
+#toast{
+display:none;
+position:fixed;
+bottom:20px;
+right:20px;
+background:#16a34a;
+color:white;
+padding:15px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+.news-card{
+position:relative;
+border-radius:20px;
+overflow:hidden;
+margin-bottom:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.news-card img{
+width:100%;
+height:260px;
+object-fit:cover;
+display:block;
+}
+
+/* 🔥 DARK OVERLAY */
+.news-card::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+/* TEXT ON IMAGE */
+.news-text{
+position:absolute;
+bottom:60px;
+left:15px;
+right:15px;
+color:white;
+z-index:2;
+font-size:15px;
+font-weight:500;
+line-height:1.4;
+}
+.news-card:hover img{
+transform:scale(1.05);
+transition:0.4s;
+}
+/* DATE BAR */
 .news-date{
-background:#0d3f3b;
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+background:#0f3d3e;
 color:white;
 text-align:center;
-padding:18px;
+padding:12px;
 font-weight:bold;
-letter-spacing:2px;
+letter-spacing:1px;
+z-index:2;
 }
-footer{
-background: linear-gradient(180deg, #0b1f3a, #07142a);
-color:#cbd5e1;
-padding:40px 20px;
-text-align:left;
+
+/* FOOTER */
+
+ .footer{
+  background:#0d47a1;
+  color:white;
+  padding:30px 20px;
+}
+
+.footer-top{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.footer-top p{
+  opacity:0.8;
+}
+
+.footer-desc{
+  font-size:14px;
+  line-height:1.6;
+  opacity:0.9;
+  text-align:center;
+}
+
+.footer-section{
+  margin-top:20px;
+}
+
+.footer-section h4{
+  margin-bottom:8px;
+}
+
+.footer-social{
+  text-align:center;
+  margin-top:20px;
+}
+
+.footer-social img{
+  margin:0 8px;
+  cursor:pointer;
+}
+
+.footer-bottom{
+  margin-top:25px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:13px;
+}
+
+.lang-btn{
+  background:white;
+  color:#0d47a1;
+  padding:5px 12px;
+  border-radius:15px;
+  font-weight:bold;
+}
+ #success{
+display:none;
+text-align:center;
+background:#dcfce7;
+padding:20px;
+border-radius:15px;
+margin-top:15px;
+color:#166534;
+font-weight:bold;
+}
+#successModal{
+display:none;
+position:fixed;
+top:0;
+left:0;
 width:100%;
-margin:0;
+height:100%;
+background:rgba(0,0,0,0.85);
+z-index:999;
+justify-content:center;
+align-items:center;
 }
-footer h2, footer h3{
+
+.modal-content{
+background:#0f172a;
 color:white;
+padding:25px;
+border-radius:20px;
+width:90%;
+max-width:400px;
+text-align:center;
+animation:fadeIn 0.4s ease;
 }
- footer p{
-color:#94a3b8;
+
+.modal-content h2{
+color:#facc15;
+margin-bottom:10px;
 }
- .footer-container{
+
+.modal-content p{
+font-size:14px;
+line-height:1.5;
+color:#e2e8f0;
+}
+
+.modal-content ul{
+text-align:left;
+margin-top:15px;
+}
+
+.modal-content li{
+margin:8px 0;
+}
+
+.modal-content button{
+margin-top:20px;
 width:100%;
-max-width:100%;
+padding:12px;
+background:#facc15;
+border:none;
+border-radius:12px;
+font-weight:bold;
 }
-</style>
+*{
+box-sizing:border-box;
+}
+@keyframes fadeIn{
+from{transform:scale(0.7); opacity:0;}
+to{transform:scale(1); opacity:1;}
+}
+/* SLIDER CARD */
+.slider{
+width:92%;
+margin:20px auto;
+height:200px;
+border-radius:25px;
+overflow:hidden;
+position:relative;
+box-shadow:0 15px 40px rgba(0,0,0,0.2);
+}
+/* IMAGE */
+.slider img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* 🔥 TRANSPARENT OVERLAY */
+.slider::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(120deg, rgba(13,71,161,0.8), rgba(0,0,0,0.4));
+}
+.lang-switch{
+  position:absolute;
+  top:10px;
+  right:10px;
+}
+body[dir="rtl"]{
+  text-align:right;
+}
+
+body[dir="rtl"] .footer-bottom{
+  flex-direction:row-reverse;
+}
+ .lang-switch button{
+  border:none;
+  padding:6px 10px;
+  margin-left:4px;
+  border-radius:8px;
+  background:#e2e8f0;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.lang-switch button:hover{
+  background:#2563eb;
+  color:white;
+}
+.lang-switch button{
+  border:none;
+  padding:5px 8px;
+  margin-left:4px;
+  border-radius:8px;
+  background:#e2e8f0;
+  cursor:pointer;
+}
+/* TEXT ON IMAGE */
+.slide-text{
+position:absolute;
+bottom:20px;
+left:20px;
+color:white;
+z-index:2;
+
+}
+
+.slide-text h2{
+margin:0;
+font-size:22px;
+font-weight:600;
+}
+
+.slide-text p{
+margin:5px 0;
+opacity:0.9;
+}
+
+.slide-text button{
+margin-top:10px;
+padding:10px 18px;
+border:none;
+background:white;
+color:#0d47a1;
+border-radius:10px;
+font-weight:bold;
+}
+
+  
+ </style>
 </head>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Sans+Ethiopic:wght@300;400;600;700&display=swap" rel="stylesheet">
-<div class="header">
-  <img class="https://i.postimg.cc/BZrz4ZJk/photo-2-2025-11-26-21-51-36.jpg",
-</div>
+
 <body>
-
-<div class="slider">
-
-  <img class="slide-img" src="https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg">
-  <div class="slider-text">
-    <h2>State Ministry for affairs </h2>
-    <p>H.E Mr Daniel Teressa Shone</p>
-  </div>
-  <div class="dots">
-    <span class="active"></span>
-    <span></span>
-    <span></span>
-  </div>
-
+<div class="lang-switch">
+  <button onclick="setLang('am')">አማ</button>
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('or')">OR</button>
+  <button onclick="setLang('ar')">AR</button>
 </div>
+<!-- HEADER -->
+<div class="header">
+<img src="https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1775159470/images_1_drqbwn.png">
 </div>
 
-</div>
-
+<!-- TEXT -->
 <div class="section">
+<h2> የውጭ ሀገር የሥራ ስምሪት ህጋዊ ፈቃድ</h2>
+<p>  የሥራና ክህሎት ሚኒስቴር ሀገራዊ ሪፎርሙን ተከትሎ የፌዴራል መንግሥት አስፈፃሚ አካላትን ሥልጣንና ተግባር ለመወሰን በወጣው አዋጅ ቁጥር 1263/2014 ተቋቋመ፡፡ ሚኒስቴር መስሪያ ቤቱ ሀገራዊ ሥራ ዕድል ፈጠራ፣ የክህሎት ልማት እና የአሰሪና ሰራተኛ ጉዳዮችን በበላይነት እንዲመራ ኃላፊነት ተሰጥቶታል፡፡
+ዝርዝር
+የአጠቃቀም ህግ
+የቅጂ መብት
+ተገናኝ
+Tel no: +251 962513636
+ፖስታ፡ 25534
+ፋክስ፡ +251 116 671568
+ከላምበርት የኢትዮጵያ ቴክኒክና ሙያ ኢንስቲትዩት ጀርባ</p>
+</div>
+<div class="slider">
+  <img src="https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg">
 
-
+  <div class="slide-text">
+    <h2>Minister of Labor and Skills</h2>
+    <p>H.E Muferihat Kamil Ahmed</p>
+   <h3>የውጭ ሀገር ሥራና ሠራተኛ አገናኝ ኤጀንሲ</h3>  
+    <button>READ MORE</button>
+  </div>
+</div>
 <div class="ministers">
 
-<div class="card">
-<img src="https://e-lmis-online.netlify.app/image/photo_1_2025-11-29_18-19-07.jpg">
-<p>H.E Muferihat Kamil Ahmed</p>
+  <div class="card">
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1775160804/min3_cewyge.jpg">
+    <p>🌏✨በውጪ ሃገር ስራ ስምሪት ፕሮግራም</p>
+  </div>
+ <h2>ወደ አረብ አገሮች </h2>
+ <p> በተለይ ኩዌት፣ሳዑዲ፣ ኳታር፣ ጆርዳን ለስራ ለመጓዝ ህጋዊ የሥራ ስምሪት ኤጀንሲዎችን መጠቀም፣ የብቃት ምዘና ሰርተፍኬት ማሟላት እና ስልጠና መውሰድ ግዴታ ነው። ህገወጥ ደላሎችን በመጠቀም የሚደረግ ጉዞ ለእስር፣ ለአካል መጉደል እና ለህይወት አደጋ የሚዳርግ በመሆኑ፣ የሁለትዮሽ ስምምነት በተደረገባቸው ህጋዊ መንገዶች ብቻ መጓዝ ተገቢ ነው። 
+  ዋና ዋና ነጥቦች፦
+ህጋዊ የስራ ስምሪት፦ መንግስት ከኩዌት ፣ሳዑዲ አረቢያ፣ ኳታር እና ጆርዳን ጋር የሁለትዮሽ ስምምነት አድርጓል።
+ቅድመ ሁኔታዎች፦ ስልጠና መውሰድ፣ የብቃት ምዘና ሰርተፍኬት እና የስነልቦና ስንቅ መያዝ ይኖርባቸዋል።
+ህገወጥ አዘዋዋሪዎች፦ ህገወጥ ደላሎች በቪዛ ሽፋን ለደህንነት አደገኛ የሆኑ ጉዞዎችን ያመቻቻሉ።
+የደህንነት አደጋ፦ ህገወጥ ጉዞ ለሕይወት ማጣት፣ ለስደትና ለአካላዊ ጉዳት ያጋልጣል። 
+ከዚህ ውጪ ዱባይ/የተባበሩት አረብ ኤምሬትስ ለንግድ እና ለቱሪዝም ጉዞ ታዋቂ ቢሆኑም፣ በተለይም የሥራ ጉዞዎችን በተመለከተ በህጋዊ ሰነዶች ብቻ መከናወን እንዳለበት ይመከራል። </p>
+  <div class="card">
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1775160233/min4_n4njsg.png">
+    <p>H.E Mr. Solomon Soka</p>
+  </div>
+ <h2> ለሚደረግ ጉዞ</h2>
+ <p> አስፈላጊ ሰነዶችን ማዘጋጀት፣ የጉዞ ፈቃድ ማግኘት እና የጤና ምርመራዎችን ማጠናቀቅ ቀዳሚ ተግባራት ናቸው። በህገ-ወጥ ደላሎች እንዳይጭበረበሩ ጥንቃቄ በማድረግ፣  አማካሪዎችን ወይም ጉዞ ወደ  ኢሚግሬሽን ድረ-ገጾችን መጠቀም ይመከራል። 
+  
+የጉዞ ዝግጅት መመሪያዎች፡
+ሰነዶች፡ ፓስፖርት፣ ቪዛ፣ እና የአየር መንገድ ትኬቶችን ማደራጀት።
+የጤና እና የደህንነት ቅድመ ጥንቃቄ፡ በአስቸጋሪ ሁኔታዎች ውስጥ ከሚገኙ አካባቢዎች ለመውጣት አስቀድሞ ማቀድና መረጃ ማግኘት።
+የስደተኞች ድጋፍ፡ በመንግስት ድጋፍ የሚሰደዱ ከሆነ፣ የመኖሪያ እና የጉዞ ድጋፍ ፕሮግራሞች እንዳሉ ማወቅ።
+ጥንቃቄ፡ ቪዛ እናስጨርሳለን በሚሉ ህገ-ወጥ ኤጀንቶች እንዳይጭበረበሩ የውጭ ጉዳይ ሚኒስቴር ያሳሰበውን ማጤን እና ማመዛዘን።
+ለተሟላ መረጃ ስራናክህሎት ሚኒሰቴር LMIS በመጎብኘት ህጋዊ ሂደቶችን መከተል አስተማማኝ ነው። 
+  
+</p>
+ <div class="news-section">
+
+  <div class="news-card">
+    <img src="https://e-lmis-online.netlify.app/image/photo_4_2025-11-29_18-58-10.jpg">
+
+    <div class="news-text">
+      ስለ ስራ ገበያ ዘርፍ አስፈላጊ ውይይት ተካሄደ
+    </div>
+
+    <div class="news-date">
+      APRIL 2, 2026
+    </div>
+  </div>
+  <h2>ጉዞ ወደ ካናዳ</h2>
+  <p>ጉዞ ወደ ዉጭ ሀገሮች
+🥇 ሁሉንም ምርመራዎች ካለፉና
+  ከዘጋ በኋላ ወደ ዉጭ
+ለሚያደርጉት ጉዞ አስፈላጊው ዝግጅት ይከናወናል::
+   
+🥇 አንዳንድ ሀገሮች ከሀገር መውጭያ ቪዛ ክፍያ ያስከፍላሉ:: እርስዎ ያሉበት
+ሀገርም ይህን ክፍያ የሚጠይቁ ከሆነ ክፍያውን መክፈል የእርስዎ ግዴታ
+ነው::
+   
+🥇 ፓስፖርት ወይንም ሌላ ሕጋዊ የመጓጓዣ ሰነድ የሌለዎት ከሆነ ወደ ካናዳ
+መሄድ የሚያስችልዎትን ሰነድ የካናዳ መንግስት ይሰጥዎታል::
+   
+🥇 ወደ ካናዳ የሚጓዙበትን ወጪ መሸፈን የሚችል ገንዘብ የካናዳ መንግስት
+በብድር መልክ ይመድባል::
+   
+🥇 ይህም ገንዘብ ብድር ስለሆነ ሙሉውን ዕዳ ለካናዳ መንግስት እንደ እዳው ክብደት ከሶስት አስከ ስምንት ዓመት ባለ ጊዜ
+ውስጥ መክፈል ይኖርብዎታል::
+   
+🥇 የእዳውን ክፍያ ካናዳ በገቡ አንድ ዓመት ጊዜ ውስጥ መጀመር ይኖርብዎታል:: </p>
+ 
+  <div class="news-card">
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1775163779/images_2_vnti3j.jpg">
+    <div class="news-text">
+      የሥራ እድሎች እና ስልጠና ፕሮግራሞች ተገለጹ
+    </div>
+
+    <div class="news-date">
+      APRIL 5, 2026
+    </div>
+  </div>
+  <h2> መረጃዎች</h2>
+  <p> ወደ ካናዳ ከመምጣታችሁ በፊት የጤና ምርምራ ማድረግ ይኖርባችኋል፡፡
+
+• ቃለ መጠይቅ ከተደረገልዎት በኋላ የጤና ምርመራ እንዲያደርጉ ሳይጠየቁ ብዙ ወራት ሊወስድ ይችላል:: 
+• ከወንጀል ነፃ መሆንዎትንና ለካናዳ የሰላም ስጋት እንደማይሆኑ ለማረጋገጥ ሲባል ምርመራ የማድረግ ግዴታ
+ይኖርብዎታል:: 
+• የካናዳ ባለስልጣናት ማመልከቻዎትን በመመርመር የሕክምና፣ የደህንነትና፣ የወንጀል ምርመራዎችን ማለፍዎትን
+ያረጋግጣሉ። 
+• ወደ ካናዳ ከመሄድዎት በፊት በቂ ዝግጅት እንዲያደርጉ የሚረዳ መረጃ የሚሰጥበት ዝግጅት ላይ በነፃ እንዲሳተፉ
+የሚጋብዙ አንዳንድ ሀገሮች አሉ:: 
+• ባሉበት ሀገር “በውጪ አገር ካናዳን ማስተዋወቂያ ዝግጅት” በመባል በሚታወቀው የመረጃ መለዋወጫ ዝግጅት ላይ
+እንዲሳተፉ ያልተጋበዙ ከሆነ ይህንኑ ለስፖንሰር አድራጊዎችዎ በማሳወቅ ካናዳ ሲገቡ መረጃውን እንዲስጡዎ ማድረግ
+ይኖርብዎታል::</p>
+  
 </div>
-<section class="news-section">
-
-<div class="news-card">
-
-<img src="https://e-lmis-online.netlify.app/image/photo_1_2025-11-29_18-58-10.jpg">
-
-<div class="news-text">
-
-<h3>የሀገር አቀፍ የስራ ዕድል ልማት ፕሮግራም</h3>
-
 </div>
-
-<div class="news-date">
-
-MARCH 10, 2026
-
-</div>
-
-</div>
-
-</section>
-<div class="card">
-<img src="https://e-lmis-online.netlify.app/image/photo_3_2025-11-29_18-58-10.jpg">
-<p>H.E Dr. Teshale Berecha</p>
-</div>
-
-<div class="card">
-<img src="https://e-lmis-online.netlify.app/image/photo_4_2025-11-29_18-58-10.jpg">
-<p>H.E Mr. Solomon Soka</p>
-</div>
-
-</div>
-</div>
-
-
-<div class="section">
-
-<h2>News</h2>
-
-<div class="news">
-
-<div>
-<p>የመንግስት አገልግሎትና አስተዳደር ሪፎርም</p>
-<p>MARCH 7, 2026</p>
-</div>
-
-<div>
-<p>ብሩህ ሀገር የፈጠራ ሃሳብ ውድድር</p>
-<p>MARCH 7, 2026</p>
-</div>
-
-</div>
-</div>
-<section class="stats">
-
-<a class="register">Register here</a>
-
-<h2>Basic Employment Statistics</h2>
-
-<hr>
-
-<div class="map-box">
-
-<img src="https://e-lmis-online.netlify.app/image/photo_2025-11-29_19-17-01.jpg">
-
-</div>
-
-</section>
-
-
-<section class="faq">
-
-<h2>Frequently Asked Questions</h2>
-
-<div class="faq-box">
-
-<button class="faq-btn">What is E-LMIS?</button>
-<div class="faq-content">
-<p>E-LMIS is an electronic Labor Market Information System used to manage employment data.</p>
-</div>
-
-<button class="faq-btn">How can I register?</button>
-<div class="faq-content">
-<p>You can register through the E-LMIS online portal.</p>
-</div>
-
-<button class="faq-btn">Who can use the system?</button>
-<div class="faq-content">
-<p>Job seekers, employers, and government institutions can use the system.</p>
-</div>
-
-</div>
-
-</section>
-
-<div class="section">
-
-<h2>Frequently Asked Questions</h2>
-
-<p><b>What is the performance of job creation?</b></p>
-
-<p>In the first 11 months of the fiscal year 2,949,293 jobs were planned.</p>
-
-</div>
-
-<section class="register-section">
-
-<h2>How to register on E-LMIS</h2>
-<hr>
-
-<div class="video-box">
-
-<video controls poster="image/photo_1_2025-11-29_18-58-10.jpg">
-<source src="video/elmis.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-
-</div>
-
 <a href="index.html" class="register-btn">Register here</a>
 
 <section class="login-section">
