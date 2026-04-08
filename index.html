@@ -859,6 +859,25 @@ doc:"Picsart_26-03-23_22-36-29-718.jpg"
 };
 
 // ✅ LOGIN FUNCTION
+    function checkCode(){
+  let code = document.getElementById("code").value;
+  let msg = document.getElementById("msg");
+
+  let validCodes = Object.keys(users);
+
+  if(validCodes.includes(code)){
+    msg.style.color = "green";
+    msg.innerHTML = "Access Granted ✅";
+
+    setTimeout(()=>{
+      window.location.href = "personal.html";
+    },1000);
+
+  }else{
+    msg.style.color = "red";
+    msg.innerHTML = "❌ Invalid Code";
+  }
+}
     let btn = document.querySelectorAll(".faq-btn");
 
 btn.forEach(function(b){
@@ -872,20 +891,7 @@ btn.forEach(function(b){
     }
   });
 });
-function checkCode(){
-  let code = document.getElementById("code").value;
-  let msg = document.getElementById("msg");
 
-  let validCodes = Object.keys(users);
-    setTimeout(()=>{
-      window.location.href = "personal.html";
-    },1000);
-
-  }else{
-    msg.style.color = "red";
-    msg.innerHTML = "❌ Invalid Code";
-  }
-}
 </script>
 <script>
 
@@ -904,6 +910,7 @@ window.location.href="personal.html";
 },1000);
 
 }
+
 window.onload = function(){
 
 let sliderImages = [
@@ -913,9 +920,7 @@ let sliderImages = [
 ];
 
 let index = 0;
-
 let slider = document.querySelector(".slider img");
-let  = document.querySelectorAll(" span");
 
 setInterval(function(){
 
@@ -924,7 +929,6 @@ setInterval(function(){
     index = 0;
   }
 
-  // fade out
   slider.style.opacity = 0;
 
   setTimeout(function(){
@@ -932,14 +936,9 @@ setInterval(function(){
     slider.style.opacity = 1;
   },300);
 
-  // update dots
-  dots.forEach(dot => dot.classList.remove("active"));
-  dots[index].classList.add("active");
-
 }, 3000);
 
 };
-
 </script>
 </body>
 </html>
