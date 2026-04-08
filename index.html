@@ -858,86 +858,48 @@ doc:"Picsart_26-03-23_22-36-29-718.jpg"
  },
 };
 
-// ✅ LOGIN FUNCTION
-    function checkCode(){
+
+function checkCode(){
   let code = document.getElementById("code").value;
   let msg = document.getElementById("msg");
 
-  let validCodes = Object.keys(users);
-
-  if(validCodes.includes(code)){
+  if(users[code]){
     msg.style.color = "green";
     msg.innerHTML = "Access Granted ✅";
 
     setTimeout(()=>{
       window.location.href = "personal.html";
     },1000);
-
   }else{
     msg.style.color = "red";
     msg.innerHTML = "❌ Invalid Code";
   }
 }
-    let btn = document.querySelectorAll(".faq-btn");
 
-btn.forEach(function(b){
-  b.addEventListener("click", function(){
-    let content = this.nextElementSibling;
-
-    if(content.style.display === "block"){
-      content.style.display = "none";
-    }else{
-      content.style.display = "block";
-    }
+// FAQ TOGGLE
+document.querySelectorAll(".faq-btn").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    let content = btn.nextElementSibling;
+    content.style.display =
+      content.style.display === "block" ? "none" : "block";
   });
 });
 
-</script>
-<script>
-
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-btn">ኮድ ካልሰራ ምን ልሁን?</button>
-    <div class="faq-content">
-      <p>ትክክለኛ 6-digit code አስገባ ወይም support አግኝ።</p>
-    </div>
-if(validCodes.includes(code)){
-document.getElementById("msg").innerHTML="Access Granted ✅";
-
-setTimeout(()=>{
-window.location.href="personal.html";
-},1000);
-
-}
-
+// SLIDER
 window.onload = function(){
+  let sliderImages = [
+    "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg",
+    "https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg",
+    "https://e-lmis-online.netlify.app/image/photo_1_2025-11-29_18-58-10.jpg"
+  ];
 
-let sliderImages = [
-"https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg",
-"https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg",
-"https://e-lmis-online.netlify.app/image/photo_1_2025-11-29_18-58-10.jpg"
-];
+  let index = 0;
+  let slider = document.querySelector(".slider img");
 
-let index = 0;
-let slider = document.querySelector(".slider img");
-
-setInterval(function(){
-
-  index++;
-  if(index >= sliderImages.length){
-    index = 0;
-  }
-
-  slider.style.opacity = 0;
-
-  setTimeout(function(){
+  setInterval(()=>{
+    index = (index + 1) % sliderImages.length;
     slider.src = sliderImages[index];
-    slider.style.opacity = 1;
-  },300);
-
-}, 3000);
-
+  },3000);
 };
 </script>
 </body>
