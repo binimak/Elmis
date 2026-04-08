@@ -743,7 +743,32 @@ which oversees national job creation, skills development, and labor concerns.
 </footer>
 
  <script>
-let btn=document.querySelectorAll(".faq-btn");
+<div class="faq-section">
+
+  <h2>❓ Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-btn">ወደ ውጭ ሀገር ለመሄድ ምን ያስፈልጋል?</button>
+    <div class="faq-content">
+      <p>ፓስፖርት፣ ቪዛ፣ የህክምና ምርመራ እና ህጋዊ ኤጀንሲ መጠቀም ያስፈልጋል።</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-btn">ህገወጥ ደላሎች አደገኛ ናቸው?</button>
+    <div class="faq-content">
+      <p>አዎ፣ ለህይወት አደጋ እና ህጋዊ ችግር ያመጣሉ። ህጋዊ መንገድ ብቻ ተጠቀም።</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-btn">ኮድ ካልሰራ ምን ልሁን?</button>
+    <div class="faq-content">
+      <p>ትክክለኛ 6-digit code አስገባ ወይም support አግኝ።</p>
+    </div>
+  </div>
+
+</div>
 
 btn.forEach(function(b){
 
@@ -833,26 +858,23 @@ doc:"Picsart_26-03-23_22-36-29-718.jpg"
 
 // ✅ LOGIN FUNCTION
 function checkCode(){
- let code = document.getElementById("code").value.trim();
+  let code = document.getElementById("code").value;
+  let msg = document.getElementById("msg");
 
- if(code.length !== 6){
-  document.getElementById("msg").innerHTML = "❌ Code must be 6 digits";
-  return;
- }
+  let validCodes = Object.keys(users);
 
- if(users[code]){
-  document.getElementById("msg").innerHTML = "✅ Access Granted";
+  if(validCodes.includes(code)){
+    msg.style.color = "green";
+    msg.innerHTML = "✅ Found: " + users[code].name;
 
-  // save user
-  localStorage.setItem("user", JSON.stringify(users[code]));
+    setTimeout(()=>{
+      window.location.href = "personal.html";
+    },1000);
 
-  setTimeout(()=>{
-    window.location.href = "personal.html";
-  },1000);
-
- }else{
-  document.getElementById("msg").innerHTML = "❌ Invalid Code";
- }
+  }else{
+    msg.style.color = "red";
+    msg.innerHTML = "❌ Invalid Code";
+  }
 }
 </script>
 <script>
@@ -875,7 +897,7 @@ let sliderImages = [
 let index = 0;
 
 let slider = document.querySelector(".slider img");
-let dots = document.querySelectorAll(".dots span");
+let dots = document.querySelectorAll(" span");
 
 setInterval(function(){
 
