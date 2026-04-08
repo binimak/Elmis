@@ -511,7 +511,13 @@ color:white;
 z-index:2;
 
 }
-
+.faq-content{
+  display:none;
+  padding:10px;
+  background:#f1f5f9;
+  border-radius:10px;
+  margin-top:5px;
+}
 .slide-text h2{
 margin:0;
 font-size:22px;
@@ -704,6 +710,22 @@ which oversees national job creation, skills development, and labor concerns.
 
 <div>
 
+   <div class="faq-section">
+
+  <h2>❓ Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-btn">ወደ ውጭ ሀገር ለመሄድ ምን ያስፈልጋል?</button>
+    <div class="faq-content">
+      <p>ፓስፖርት፣ ቪዛ፣ የህክምና ምርመራ እና ህጋዊ ኤጀንሲ መጠቀም ያስፈልጋል።</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-btn">ህገወጥ ደላሎች አደገኛ ናቸው?</button>
+    <div class="faq-content">
+      <p>አዎ፣ ለህይወት አደጋ እና ህጋዊ ችግር ያመጣሉ። ህጋዊ መንገድ ብቻ ተጠቀም።</p>
+    </div> 
 <h2>Get In Touch</h2>
 
 <p>Tel no: +251 116 671792</p>
@@ -743,36 +765,16 @@ which oversees national job creation, skills development, and labor concerns.
 </footer>
 
  <script>
-<div class="faq-section">
-
-  <h2>❓ Frequently Asked Questions</h2>
-
-  <div class="faq-item">
-    <button class="faq-btn">ወደ ውጭ ሀገር ለመሄድ ምን ያስፈልጋል?</button>
-    <div class="faq-content">
-      <p>ፓስፖርት፣ ቪዛ፣ የህክምና ምርመራ እና ህጋዊ ኤጀንሲ መጠቀም ያስፈልጋል።</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-btn">ህገወጥ ደላሎች አደገኛ ናቸው?</button>
-    <div class="faq-content">
-      <p>አዎ፣ ለህይወት አደጋ እና ህጋዊ ችግር ያመጣሉ። ህጋዊ መንገድ ብቻ ተጠቀም።</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-btn">ኮድ ካልሰራ ምን ልሁን?</button>
-    <div class="faq-content">
-      <p>ትክክለኛ 6-digit code አስገባ ወይም support አግኝ።</p>
-    </div>
-  </div>
-
-</div>
+   let btn = document.querySelectorAll(".faq-btn");
 
 btn.forEach(function(b){
+  b.addEventListener("click", function(){
+    let content = this.nextElementSibling;
 
-b.addEventListener("click",function(){
+    content.style.display =
+      content.style.display === "block" ? "none" : "block";
+  });
+});
 
 let content=this.nextElementSibling;
 
@@ -857,16 +859,24 @@ doc:"Picsart_26-03-23_22-36-29-718.jpg"
 };
 
 // ✅ LOGIN FUNCTION
+    let btn = document.querySelectorAll(".faq-btn");
+
+btn.forEach(function(b){
+  b.addEventListener("click", function(){
+    let content = this.nextElementSibling;
+
+    if(content.style.display === "block"){
+      content.style.display = "none";
+    }else{
+      content.style.display = "block";
+    }
+  });
+});
 function checkCode(){
   let code = document.getElementById("code").value;
   let msg = document.getElementById("msg");
 
   let validCodes = Object.keys(users);
-
-  if(validCodes.includes(code)){
-    msg.style.color = "green";
-    msg.innerHTML = "✅ Found: " + users[code].name;
-
     setTimeout(()=>{
       window.location.href = "personal.html";
     },1000);
@@ -878,6 +888,14 @@ function checkCode(){
 }
 </script>
 <script>
+
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-btn">ኮድ ካልሰራ ምን ልሁን?</button>
+    <div class="faq-content">
+      <p>ትክክለኛ 6-digit code አስገባ ወይም support አግኝ።</p>
+    </div>
 if(validCodes.includes(code)){
 document.getElementById("msg").innerHTML="Access Granted ✅";
 
@@ -897,7 +915,7 @@ let sliderImages = [
 let index = 0;
 
 let slider = document.querySelector(".slider img");
-let dots = document.querySelectorAll(" span");
+let  = document.querySelectorAll(" span");
 
 setInterval(function(){
 
