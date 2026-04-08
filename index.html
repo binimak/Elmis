@@ -760,18 +760,10 @@ content.style.display="block";
 });
 
 </script>
-<script>
-
-let validCodes = [
-"123456",
-"456321",
-"897456",
-"874512",
-"963258"
-];
-
-"333555":{
-
+  <script>
+// ✅ VALID CODES
+let users = {
+  "333555":{
 name:"REDIET ZEMENE SILESHE",
 gender:"Male",
 age:"22",
@@ -787,89 +779,63 @@ update:"2026-03-11",
 photo:"IMG_20260324_120929_674.jpg",
 doc:"Picsart_26-03-23_22-36-29-718.jpg"
 },
-
  "223344":{
- 
-
-name:"JELALU ABDO HUSSIN",
+  name:"solomon ZEMENE SILESHE",
 gender:"Male",
-age:"27",
-dob:"13/10/1995",
-elmis:"225172",
+age:"22",
+dob:"03/01/1992",
+ elmis:"225172",
 passport:"EP 9355023 ",
-phone:"+251960068348",
-birth:"ADISSABEBA KOLFAKARANIO Ethiopia",
+ phone:"+251960068348",
+ birth:"ADISSABEBA KOLFAKARANIO Ethiopia",
 visa:"Work Visa",
 country:"Kuwait 🇰🇼",
 reg:"2026-03-11",
 update:"2026-03-11",
-photo:"BG_Removed_20260324_172503.png",
-doc:"Picsart_26-03-24_17-31-13-255.jpg"
-},
-
- "123456":{
-
-name :"Malka lebawo",
-gender:"Male",
-age:"35",
-dob:"1990-03-12",
-elmis:"979890",
-passport:"In Progress",
-phone:"+251917013362",
-birth:"Gera, Jimma Oromia Region, Ethiopia",
-visa:"Work Visa",
-country:"Canada",
-reg:"2026-03-11",
-update:"2026-03-11",
-photo:"IMG_20260220_184535_333.jpg",
-doc:"Picsart_26-03-14_02-11-22-894.jpg"
+photo:"IMG_20260324_120929_674.jpg",
+doc:"Picsart_26-03-23_22-36-29-718.jpg"
  },
- "124456":{
-
-name :"Malka lebawo",
+ "333555":{
+    name:"solo ZEMENE SILESHE",
 gender:"Male",
-age:"35",
-dob:"1990-03-12",
-elmis:"979890",
-passport:"In Progress",
-phone:"+251917013362",
-birth:"Gera, Jimma Oromia Region, Ethiopia",
+age:"22",
+dob:"03/01/1992",
+ elmis:"225172",
+passport:"EP 9355023 ",
+ phone:"+251960068348",
+ birth:"ADISSABEBA KOLFAKARANIO Ethiopia",
 visa:"Work Visa",
-country:"Canada",
+country:"Kuwait 🇰🇼",
 reg:"2026-03-11",
 update:"2026-03-11",
-photo:"IMG_20260220_184535_333.jpg",
-doc:"Picsart_26-03-14_02-11-22-894.jpg"
- }, 
- 
-   },,
-   
-  
+photo:"IMG_20260324_120929_674.jpg",
+doc:"Picsart_26-03-23_22-36-29-718.jpg"
+ }
+};
+
+// ✅ LOGIN FUNCTION
 function checkCode(){
-<input type="text" id="code" maxlength="6" placeholder="Enter code">
-let code = document.getElementById("code").value;
+ let code = document.getElementById("code").value.trim();
 
-if(code.length != 6){
-document.getElementById("msg").innerHTML = "Code must be 6 digits";
-return;
+ if(code.length !== 6){
+  document.getElementById("msg").innerHTML = "❌ Code must be 6 digits";
+  return;
+ }
+
+ if(users[code]){
+  document.getElementById("msg").innerHTML = "✅ Access Granted";
+
+  // save user
+  localStorage.setItem("user", JSON.stringify(users[code]));
+
+  setTimeout(()=>{
+    window.location.href = "personal.html";
+  },1000);
+
+ }else{
+  document.getElementById("msg").innerHTML = "❌ Invalid Code";
+ }
 }
-
-if(validCodes.includes(code)){
-
-// dummy user (optional)
-localStorage.setItem("user", JSON.stringify({
-name:"Verified User",
-code:code
-}));
-
-window.location.href = "personal.html";
-
-}else{
-document.getElementById("msg").innerHTML = "Invalid Code";
-}
-
-}
-  
 </script>
 <script>
 if(validCodes.includes(code)){
@@ -890,7 +856,7 @@ let sliderImages = [
 
 let index = 0;
 
-let slider = document.querySelector(".slide-img");
+let slider = document.querySelector(".slider img");
 let dots = document.querySelectorAll(".dots span");
 
 setInterval(function(){
