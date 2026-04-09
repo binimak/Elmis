@@ -397,20 +397,6 @@ localStorage.setItem("vcode", savedCode);
 document.getElementById("vcode").innerText = savedCode;
 
 }
-  setInterval(()=>{
-let now = new Date();
-document.getElementById("time").innerText =
-"Last system check: " + now.toLocaleString();
-},1000);
-let savedCode = localStorage.getItem("vcode");
-
-if(!savedCode){
-  savedCode = "EL-" + Math.floor(100000 + Math.random() * 900000);
-  localStorage.setItem("vcode", savedCode);
-}
-
-document.getElementById("vcode").innerText = savedCode;
-window.onload = function(){
 
 // QR → verify page
 let url = "https://your-site.netlify.app/verify.html?id=12345";
