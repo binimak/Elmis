@@ -55,7 +55,33 @@ color:#2b6cb0;
 font-weight:bold;
 width:45%;
 }
+.qr-container{
+text-align:center;
+margin-top:20px;
+}
 
+.qr-wrapper{
+position:relative;
+display:inline-block;
+}
+
+.qr-wrapper img#qr{
+width:170px;
+border-radius:12px;
+box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+
+.qr-logo{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:45px;
+height:45px;
+border-radius:10px;
+background:white;
+padding:5px;
+}
 .status{
 background:#2ca24c;
 color:white;
@@ -102,7 +128,25 @@ margin-top:20px;
 text-align:center;
 padding:20px;
 }
-
+.progress{
+background:#e5e7eb;
+border-radius:10px;
+margin-top:15px;
+}
+.container{
+background-image:url('https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg');
+background-size:100px;
+background-repeat:no-repeat;
+background-position:right bottom;
+}
+.bar{
+width:80%;
+background:#22c55e;
+color:white;
+text-align:center;
+padding:8px;
+border-radius:10px;
+}
 .profile-photo{
 width:170px;
 height:200px;
@@ -110,7 +154,11 @@ border-radius:15px;
 border:4px solid #2c6fb2;
 object-fit:cover;
 }
-
+.social a{
+color:#90cdf4;
+text-decoration:none;
+margin:0 5px;
+}
 .submit button{
 width:100%;
 background:#0f2d4f;
@@ -120,7 +168,46 @@ padding:16px;
 font-size:18px;
 border-radius:12px;
 }
+.footer{
+background:#0f2d4f;
+color:white;
+margin-top:40px;
+padding:30px 15px;
+text-align:center;
+}
+.qr-wrapper{
+animation:float 2s infinite ease-in-out;
+}
+.secure-text{
+text-align:center;
+color:#dc2626;
+font-size:13px;
+margin-top:20px;
+}
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-5px);}
+100%{transform:translateY(0);}
+}
+.footer h3{
+margin:0;
+font-size:22px;
+}
 
+.footer p{
+margin:6px 0;
+font-size:14px;
+}
+
+.footer .contact{
+margin-top:10px;
+}
+
+.footer .copy{
+margin-top:15px;
+font-size:13px;
+color:#cbd5e1;
+}
 </style>
 </head>
 
@@ -130,7 +217,7 @@ border-radius:12px;
 <img src="https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg" class="logo">
 <hr>
 </header>
-
+<p id="time" style="text-align:center;"></p>
 <h1 class="title">Personal Information</h1>
 
 <div class="container">
@@ -202,12 +289,26 @@ border-radius:12px;
 <td class="label">Registration Date</td>
 <td id="reg"></td>
 </tr>
-
+<tr>
+<td class="label">Verification Code</td>
+<td id="vcode"></td>
+</tr>
 <tr>
 <td class="label">Last Update</td>
 <td id="update"></td>
 </tr>
 
+  <tr>
+<td class="label">Issuing Authority</td>
+<td>E-LMIS Authority</td>
+</tr>
+
+<tr>
+<td class="label">Office Location</td>
+<td>Addis Ababa, Ethiopia</td>
+</tr>
+  
+  
 </table>
 
 </div>
@@ -246,19 +347,70 @@ border-radius:10px;
 <input type="file" id="receiptInput">
 
 </div>
-
+<div class="progress">
+  <div class="bar">Process 70%</div>
+</div>
 <div class="submit">
 <button onclick="uploadReceipt()">Submit receipt</button>
 </div>
 
 </div>
+<div class="qr-container">
+  <p>Scan to Open</p>
 
+  <div class="qr-wrapper">
+    <img id="qr">
+    <img src="https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg" class="qr-logo">
+  </div>
+<p class="secure-text">
+⚠️ This system is protected and monitored. Unauthorized changes are prohibited.
+</p>
+</div>
+  <footer class="footer">
+  <div class="footer-container">
+
+    <h3>E-LMIS System</h3>
+    <p>Secure & Verified Personal Information Platform</p>
+
+    <div class="contact">
+      <p>📞 Tel: +251 116 671797</p>
+      <p>📍 Addis Ababa, Ethiopia</p>
+    </div>
+
+    <p class="copy">© 2026 E-LMIS. All Rights Reserved.</p>
+
+  </div>
+</footer>
 <script>
+ 
+  let receipt = localStorage.getItem("receipt");
 
+if(receipt){
+let img = document.createElement("img");
+img.src = receipt;
+img.style.width = "100%";
+img.style.marginTop = "10px";
+document.querySelector(".upload").appendChild(img);
+}
+  setInterval(()=>{
+let now = new Date();
+document.getElementById("time").innerText =
+"Last system check: " + now.toLocaleString();
+},1000);
+document.getElementById("vcode").innerText =
+"EL-" + Math.floor(100000 + Math.random() * 900000);
+window.onload = function(){
 
-  let user = JSON.parse(localStorage.getItem("user")) || {};
+// QR → verify page
+let url = "https://your-site.netlify.app/verify.html?id=12345";
 
-document.getElementById("doc").src = user.doc; 
+document.getElementById("qr").src =
+"https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + url;
+
+// USER DATA
+let user = JSON.parse(localStorage.getItem("user")) || {};
+
+document.getElementById("doc").src = user.doc || "";
 
 if(user.photo){
 document.getElementById("photo").src = user.photo;
@@ -277,6 +429,9 @@ document.getElementById("country").innerText = user.country || "";
 document.getElementById("reg").innerText = user.reg || "";
 document.getElementById("update").innerText = user.update || "";
 
+}
+
+// RECEIPT UPLOAD
 function uploadReceipt(){
 
 let file = document.getElementById("receiptInput").files[0];
@@ -289,13 +444,8 @@ return;
 let reader = new FileReader();
 
 reader.onload = function(e){
-
-let receipt = e.target.result;
-
-localStorage.setItem("receipt", receipt);
-
+localStorage.setItem("receipt", e.target.result);
 alert("Receipt uploaded");
-
 }
 
 reader.readAsDataURL(file);
@@ -303,6 +453,5 @@ reader.readAsDataURL(file);
 }
 
 </script>
-
 </body>
 </html>
