@@ -790,6 +790,19 @@ content.style.display="block";
 
 </script>
   <script>
+    
+// =======================
+// ✅ FAQ TOGGLE
+// =======================
+document.querySelectorAll(".faq-btn").forEach(btn => {
+  btn.addEventListener("click", function () {
+    let content = this.nextElementSibling;
+
+    content.style.display =
+      content.style.display === "block" ? "none" : "block";
+  });
+});
+
 // ✅ VALID CODES
 let users = {
   "000001":{
@@ -857,22 +870,19 @@ photo:"IMG_20260324_120929_674.jpg",
 doc:"Picsart_26-03-23_22-36-29-718.jpg"
  },
 };
-
-
 function checkCode(){
-  let code = document.getElementById("code").value;
+  let code = document.getElementById("code").value.trim();
   let msg = document.getElementById("msg");
 
   if(users[code]){
     msg.style.color = "green";
-    msg.innerHTML = "Access Granted ✅";
+    msg.innerHTML = "✅ Access Granted";
 
-    // ✅ user data save
+    // save user
     localStorage.setItem("user", JSON.stringify(users[code]));
-
-    // ✅ save code (optional)
     localStorage.setItem("vcode", code);
 
+    // redirect
     setTimeout(()=>{
       window.location.href = "personal.html";
     },1000);
@@ -882,22 +892,13 @@ function checkCode(){
     msg.innerHTML = "❌ Invalid Code";
   }
 }
-// FAQ TOGGLE
-document.querySelectorAll(".faq-btn").forEach(btn=>{
-  btn.addEventListener("click", ()=>{
-    
 
-  let index = 0;
-  let slider = document.querySelector(".slider img");
 
-  setInterval(()=>{
-    index = (index + 1) % sliderImages.length;
-    slider.src = sliderImages[index];
-  },3000);
-};
-
-// SLIDER
+// =======================
+// ✅ SLIDER (AUTO IMAGE)
+// =======================
 window.onload = function(){
+
   let sliderImages = [
     "https://e-lmis-online.netlify.app/image/photo_2025-11-29_18-23-08.jpg",
     "https://e-lmis-online.netlify.app/image/photo_2_2025-11-26_21-51-36.jpg",
@@ -907,11 +908,27 @@ window.onload = function(){
   let index = 0;
   let slider = document.querySelector(".slider img");
 
-  setInterval(()=>{
-    index = (index + 1) % sliderImages.length;
-    slider.src = sliderImages[index];
-  },3000);
+  if(slider){
+    setInterval(()=>{
+      index = (index + 1) % sliderImages.length;
+      slider.src = sliderImages[index];
+    },3000);
+  }
 };
+
+
+// =======================
+// ✅ OPTIONAL (CONTACT BUTTON)
+// =======================
+document.querySelectorAll(".contact-btn").forEach(btn=>{
+  btn.addEventListener("click", function(e){
+    e.preventDefault();
+    alert("Contact: +251 116 671792");
+  });
+});
+
 </script>
+
+
 </body>
 </html>
