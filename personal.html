@@ -381,71 +381,86 @@ box-shadow:0 4px 12px rgba(0,0,0,0.15);
   </div>
 </footer>
 <script>
-  let savedReceipt = localStorage.getItem("receipt");
 
-if(savedReceipt){
-  document.getElementById("receiptPhoto").src = savedReceipt;
-  document.getElementById("receiptPhoto").style.display = "block";
-}
- let savedCode = localStorage.getItem("vcode");
+// TIME
+setInterval(()=>{
+  let now = new Date();
+  document.getElementById("time").innerText =
+  "Last system check: " + now.toLocaleString();
+},1000);
+
+// VCODE
+let savedCode = localStorage.getItem("vcode");
 
 if(!savedCode){
-savedCode = "EL-" + Math.floor(100000 + Math.random() * 900000);
-localStorage.setItem("vcode", savedCode);
+  savedCode = "EL-" + Math.floor(100000 + Math.random() * 900000);
+  localStorage.setItem("vcode", savedCode);
 }
 
 document.getElementById("vcode").innerText = savedCode;
 
+
+// PAGE LOAD
+window.onload = function(){
+
+  // QR
+  let url = window.location.href;
+
+  document.getElementById("qr").src =
+  "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + url;
+
+  // USER DATA
+  let user = JSON.parse(localStorage.getItem("user")) || {};
+
+  document.getElementById("doc").src = user.doc || "";
+
+  if(user.photo){
+    document.getElementById("photo").src = user.photo;
+  }
+
+  document.getElementById("name").innerText = user.name || "";
+  document.getElementById("gender").innerText = user.gender || "";
+  document.getElementById("age").innerText = user.age || "";
+  document.getElementById("dob").innerText = user.dob || "";
+  document.getElementById("elmis").innerText = user.elmis || "";
+  document.getElementById("passport").innerText = user.passport || "";
+  document.getElementById("phone").innerText = user.phone || "";
+  document.getElementById("birth").innerText = user.birth || "";
+  document.getElementById("visa").innerText = user.visa || "";
+  document.getElementById("country").innerText = user.country || "";
+  document.getElementById("reg").innerText = user.reg || "";
+  document.getElementById("update").innerText = user.update || "";
+
+  // RECEIPT SHOW
+  let savedReceipt = localStorage.getItem("receipt");
+
+  if(savedReceipt){
+    document.getElementById("receiptPhoto").src = savedReceipt;
+    document.getElementById("receiptPhoto").style.display = "block";
+  }
+
 }
 
-// QR → verify page
-let url = "https://your-site.netlify.app/verify.html?id=12345";
-
-document.getElementById("qr").src =
-"https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + url;
-
-// USER DATA
-let user = JSON.parse(localStorage.getItem("user")) || {};
-
-document.getElementById("doc").src = user.doc || "";
-
-if(user.photo){
-document.getElementById("photo").src = user.photo;
-}
-
-document.getElementById("name").innerText = user.name || "";
-document.getElementById("gender").innerText = user.gender || "";
-document.getElementById("age").innerText = user.age || "";
-document.getElementById("dob").innerText = user.dob || "";
-document.getElementById("elmis").innerText = user.elmis || "";
-document.getElementById("passport").innerText = user.passport || "";
-document.getElementById("phone").innerText = user.phone || "";
-document.getElementById("birth").innerText = user.birth || "";
-document.getElementById("visa").innerText = user.visa || "";
-document.getElementById("country").innerText = user.country || "";
-document.getElementById("reg").innerText = user.reg || "";
-document.getElementById("update").innerText = user.update || "";
-
-}
 
 // RECEIPT UPLOAD
 function uploadReceipt(){
 
-let file = document.getElementById("receiptInput").files[0];
+  let file = document.getElementById("receiptInput").files[0];
 
-if(!file){
-alert("Select receipt photo");
-return;
-}
+  if(!file){
+    alert("Select receipt photo");
+    return;
+  }
 
-let reader = new FileReader();
+  let reader = new FileReader();
 
-reader.onload = function(e){
-localStorage.setItem("receipt", e.target.result);
-alert("Receipt uploaded");
-}
+  reader.onload = function(e){
+    localStorage.setItem("receipt", e.target.result);
+    alert("Receipt uploaded");
+    location.reload();
+  }
 
-reader.readAsDataURL(file);
+  reader.readAsDataURL(file);
 
 }
 
