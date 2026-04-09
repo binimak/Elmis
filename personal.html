@@ -371,6 +371,7 @@ color:#cbd5e1;
 </div>
 <div class="submit">
 <button onclick="uploadReceipt()">Submit receipt</button>
+<img id="receiptPhoto" style="display:none; width:100%; margin-top:10px; border-radius:10px;">
 </div>
 <div class="qr-container">
   <p>Scan to Open</p>
@@ -400,14 +401,15 @@ color:#cbd5e1;
 </footer>
 <script>
 
-// TIME
+// ================= TIME =================
 setInterval(()=>{
   let now = new Date();
   document.getElementById("time").innerText =
   "Last system check: " + now.toLocaleString();
 },1000);
 
-// VCODE
+
+// ================= VCODE =================
 let savedCode = localStorage.getItem("vcode");
 
 if(!savedCode){
@@ -418,27 +420,34 @@ if(!savedCode){
 document.getElementById("vcode").innerText = savedCode;
 
 
-// PAGE LOAD
+// ================= PAGE LOAD =================
 window.onload = function(){
 
-  // QR
+  // QR CODE
   let url = window.location.href;
 
   document.getElementById("qr").src =
   "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + url;
 
-  // USER DATA
-  
-let user = JSON.parse(localStorage.getItem("user")) || {};
 
-let docImg = document.getElementById("doc");
+  // ================= USER DATA =================
+  let user = JSON.parse(localStorage.getItem("user")) || {};
 
-if(user.doc && user.doc.startsWith("http")){
-  docImg.src = user.doc;
-}else{
-  // fallback image (important)
-  docImg.src = "https://via.placeholder.com/500x300?text=Document+Not+Available";
-}
+  // PROFILE PHOTO
+  if(user.photo){
+    document.getElementById("photo").src = user.photo;
+  }
+
+  // DOCUMENT IMAGE (FIXED)
+  let docImg = document.getElementById("doc");
+
+  if(user.doc){
+    docImg.src = user.doc;
+  }else{
+    docImg.src = "https://via.placeholder.com/600x800?text=No+Document";
+  }
+
+  // TEXT DATA
   document.getElementById("name").innerText = user.name || "";
   document.getElementById("gender").innerText = user.gender || "";
   document.getElementById("age").innerText = user.age || "";
@@ -452,18 +461,21 @@ if(user.doc && user.doc.startsWith("http")){
   document.getElementById("reg").innerText = user.reg || "";
   document.getElementById("update").innerText = user.update || "";
 
-  // RECEIPT SHOW
+
+  // ================= RECEIPT SHOW =================
   let savedReceipt = localStorage.getItem("receipt");
 
-  if(savedReceipt){
-    document.getElementById("receiptPhoto").src = savedReceipt;
-    document.getElementById("receiptPhoto").style.display = "block";
+  let receiptImg = document.getElementById("receiptPhoto");
+
+  if(savedReceipt && receiptImg){
+    receiptImg.src = savedReceipt;
+    receiptImg.style.display = "block";
   }
 
 }
 
 
-// RECEIPT UPLOAD
+// ================= RECEIPT UPLOAD =================
 function uploadReceipt(){
 
   let file = document.getElementById("receiptInput").files[0];
@@ -477,7 +489,7 @@ function uploadReceipt(){
 
   reader.onload = function(e){
     localStorage.setItem("receipt", e.target.result);
-    alert("Receipt uploaded");
+    alert("Receipt uploaded successfully");
     location.reload();
   }
 
