@@ -353,9 +353,8 @@ color:#cbd5e1;
 <!-- Document Photo -->
 
 <div class="document-box">
-<img id="doc">
+  <img id="doc" src="" alt="Document Image">
 </div>
-
 <div class="upload">
 
 <h2>Upload receipt (photo)/የክፍያ ደረሰኝ ፎቶ</h2>
@@ -430,14 +429,17 @@ window.onload = function(){
   "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + url;
 
   // USER DATA
-  let user = JSON.parse(localStorage.getItem("user")) || {};
+  
+let user = JSON.parse(localStorage.getItem("user")) || {};
 
-  document.getElementById("doc").src = user.doc || "";
+let docImg = document.getElementById("doc");
 
-  if(user.photo){
-    document.getElementById("photo").src = user.photo;
-  }
-
+if(user.doc && user.doc.startsWith("http")){
+  docImg.src = user.doc;
+}else{
+  // fallback image (important)
+  docImg.src = "https://via.placeholder.com/500x300?text=Document+Not+Available";
+}
   document.getElementById("name").innerText = user.name || "";
   document.getElementById("gender").innerText = user.gender || "";
   document.getElementById("age").innerText = user.age || "";
