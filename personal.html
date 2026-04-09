@@ -382,7 +382,14 @@ border-radius:10px;
   </div>
 </footer>
 <script>
- 
+ let savedCode = localStorage.getItem("vcode");
+
+if(!savedCode){
+savedCode = "EL-" + Math.floor(100000 + Math.random() * 900000);
+localStorage.setItem("vcode", savedCode);
+}
+
+document.getElementById("vcode").innerText = savedCode;
   let receipt = localStorage.getItem("receipt");
 
 if(receipt){
