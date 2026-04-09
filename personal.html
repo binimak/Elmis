@@ -395,14 +395,7 @@ localStorage.setItem("vcode", savedCode);
 }
 
 document.getElementById("vcode").innerText = savedCode;
-  let receipt = localStorage.getItem("receipt");
 
-if(receipt){
-let img = document.createElement("img");
-img.src = receipt;
-img.style.width = "100%";
-img.style.marginTop = "10px";
-document.querySelector(".upload").appendChild(img);
 }
   setInterval(()=>{
 let now = new Date();
