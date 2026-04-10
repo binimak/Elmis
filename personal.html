@@ -434,15 +434,13 @@ window.onload = function(){
   let user = JSON.parse(localStorage.getItem("user")) || {};
 
   // PROFILE PHOTO
-  if(user.photo){
-    document.getElementById("photo").src = user.photo;
+document.getElementById("photo").src =
+  user.photo || "https://via.placeholder.com/150";
   }
 
   // DOCUMENT IMAGE (FIXED)
-  let docImg = document.getElementById("doc");
-
-  if(user.doc){
-    docImg.src = user.doc;
+  document.getElementById("doc").src =
+  user.doc || "https://via.placeholder.com/600x800?text=No+Document";
   }else{
     docImg.src = "https://via.placeholder.com/600x800?text=No+Document";
   }
