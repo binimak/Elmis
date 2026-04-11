@@ -400,7 +400,10 @@ color:#cbd5e1;
   </div>
 </footer>
 <script>
-
+function getCode(){
+  let params = new URLSearchParams(window.location.search);
+  return params.get("code");
+}
 // ================= TIME =================
 setInterval(()=>{
   let now = new Date();
@@ -423,39 +426,48 @@ document.getElementById("vcode").innerText = savedCode;
 // ================= PAGE LOAD =================
 window.onload = function(){
 
-  // USER DATA
-  let user = JSON.parse(localStorage.getItem("user")) || {};
 
-  // QR CODE
-  let url = window.location.href;
-  document.getElementById("qr").src =
-  "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + url;
+  let params = new URLSearchParams(window.location.search);
 
-  // PROFILE PHOTO
+  let name = params.get("name");
+  let gender = params.get("gender");
+  let age = params.get("age");
+  let dob = params.get("dob");
+  let elmis = params.get("elmis");
+  let passport = params.get("passport");
+  let phone = params.get("phone");
+  let birth = params.get("birth");
+  let visa = params.get("visa");
+  let country = params.get("country");
+  let reg = params.get("reg");
+  let update = params.get("update");
+
+  let photo = params.get("photo");
+  let doc = params.get("doc");
+
+  // IMAGES
   document.getElementById("photo").src =
-  user.photo || "https://via.placeholder.com/150";
+    photo || "https://via.placeholder.com/150";
 
-  // DOCUMENT IMAGE
   document.getElementById("doc").src =
-  user.doc || "https://via.placeholder.com/600x800?text=No+Document";
+    doc || "https://via.placeholder.com/600x800?text=No+Document";
 
-  // TEXT DATA
-  document.getElementById("name").innerText = user.name || "";
-  document.getElementById("gender").innerText = user.gender || "";
-  document.getElementById("age").innerText = user.age || "";
-  document.getElementById("dob").innerText = user.dob || "";
-  document.getElementById("elmis").innerText = user.elmis || "";
-  document.getElementById("passport").innerText = user.passport || "";
-  document.getElementById("phone").innerText = user.phone || "";
-  document.getElementById("birth").innerText = user.birth || "";
-  document.getElementById("visa").innerText = user.visa || "";
-  document.getElementById("country").innerText = user.country || "";
-  document.getElementById("reg").innerText = user.reg || "";
-  document.getElementById("update").innerText = user.update || "";
+  // TEXT
+  document.getElementById("name").innerText = name || "";
+  document.getElementById("gender").innerText = gender || "";
+  document.getElementById("age").innerText = age || "";
+  document.getElementById("dob").innerText = dob || "";
+  document.getElementById("elmis").innerText = elmis || "";
+  document.getElementById("passport").innerText = passport || "";
+  document.getElementById("phone").innerText = phone || "";
+  document.getElementById("birth").innerText = birth || "";
+  document.getElementById("visa").innerText = visa || "";
+  document.getElementById("country").innerText = country || "";
+  document.getElementById("reg").innerText = reg || "";
+  document.getElementById("update").innerText = update || "";
 
 };
-
-
+  
 
 // ================= RECEIPT UPLOAD =================
 function uploadReceipt(){
