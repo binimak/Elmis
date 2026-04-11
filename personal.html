@@ -423,27 +423,21 @@ document.getElementById("vcode").innerText = savedCode;
 // ================= PAGE LOAD =================
 window.onload = function(){
 
+  // USER DATA
+  let user = JSON.parse(localStorage.getItem("user")) || {};
+
   // QR CODE
   let url = window.location.href;
-
   document.getElementById("qr").src =
   "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + url;
 
-
-  // ================= USER DATA =================
-  let user = JSON.parse(localStorage.getItem("user")) || {};
-
   // PROFILE PHOTO
-document.getElementById("photo").src =
+  document.getElementById("photo").src =
   user.photo || "https://via.placeholder.com/150";
-  }
 
-  // DOCUMENT IMAGE (FIXED)
+  // DOCUMENT IMAGE
   document.getElementById("doc").src =
   user.doc || "https://via.placeholder.com/600x800?text=No+Document";
-  }else{
-    docImg.src = "https://via.placeholder.com/600x800?text=No+Document";
-  }
 
   // TEXT DATA
   document.getElementById("name").innerText = user.name || "";
@@ -459,18 +453,8 @@ document.getElementById("photo").src =
   document.getElementById("reg").innerText = user.reg || "";
   document.getElementById("update").innerText = user.update || "";
 
+};
 
-  // ================= RECEIPT SHOW =================
-  let savedReceipt = localStorage.getItem("receipt");
-
-  let receiptImg = document.getElementById("receiptPhoto");
-
-  if(savedReceipt && receiptImg){
-    receiptImg.src = savedReceipt;
-    receiptImg.style.display = "block";
-  }
-
-}
 
 
 // ================= RECEIPT UPLOAD =================
@@ -492,7 +476,6 @@ function uploadReceipt(){
   }
 
   reader.readAsDataURL(file);
-
 }
 
 </script>
