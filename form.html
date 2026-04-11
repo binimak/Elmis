@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Profile Link</title>
+
+<style>
+body{
+font-family:Arial;
+background:#f2f2f2;
+padding:20px;
+}
+.container{
+max-width:500px;
+margin:auto;
+background:white;
+padding:20px;
+border-radius:15px;
+}
+input{
+width:100%;
+padding:12px;
+margin:8px 0;
+border-radius:8px;
+border:1px solid #ccc;
+}
+button{
+width:100%;
+padding:14px;
+background:#0f2d4f;
+color:white;
+border:none;
+border-radius:10px;
+font-size:16px;
+margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Create Personal Link</h2>
+
+<input id="name" placeholder="Name">
+<input id="gender" placeholder="Gender">
+<input id="age" placeholder="Age">
+<input id="photo" placeholder="Photo Link (https://...)">
+<input id="doc" placeholder="Document Link (https://...)">
+
+<button onclick="generateLink()">Generate Link</button>
+
+<input id="result" placeholder="Generated link will appear here">
+
+<button onclick="sendWhatsApp()">Send via WhatsApp</button>
+
+</div>
+
+<script>
+
+function generateLink(){
+
+let base = "https://yoursite.com/personal.html"; // 🔴 CHANGE THIS
+
+let name = encodeURIComponent(document.getElementById("name").value);
+let gender = encodeURIComponent(document.getElementById("gender").value);
+let age = encodeURIComponent(document.getElementById("age").value);
+let photo = encodeURIComponent(document.getElementById("photo").value);
+let doc = encodeURIComponent(document.getElementById("doc").value);
+
+let link = base + 
+"?name=" + name +
+"&gender=" + gender +
+"&age=" + age +
+"&photo=" + photo +
+"&doc=" + doc;
+
+document.getElementById("result").value = link;
+}
+
+function sendWhatsApp(){
+let link = document.getElementById("result").value;
+
+if(!link){
+alert("Generate link first");
+return;
+}
+
+let url = "https://wa.me/?text=" + encodeURIComponent(link);
+window.open(url, "_blank");
+}
+
+</script>
+
+</body>
+</html>
