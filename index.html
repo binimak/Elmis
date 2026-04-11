@@ -787,7 +787,7 @@ content.style.display="block";
 <script>
 
 // =======================
-// ✅ FAQ TOGGLE (FIXED)
+// FAQ TOGGLE (FIXED)
 // =======================
 document.querySelectorAll(".faq-btn").forEach(btn => {
   btn.addEventListener("click", function () {
@@ -797,9 +797,8 @@ document.querySelectorAll(".faq-btn").forEach(btn => {
   });
 });
 
-
 // =======================
-// ✅ USERS DATA (FIXED)
+// USERS DATA
 // =======================
 let users = {
 "000001": {
@@ -833,75 +832,11 @@ reg:"2026-03-11",
 update:"2026-03-11",
 photo:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1775769253/IMG-20260409-WA0011_syrzwh.jpg",
 doc:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1775859758/Picsart_26-04-11_00-36-35-581_uxkqtt.jpg",
-},
-"000003": {
-name: "IBRAHIM KEMAL GUDATO ",
-gender:"Male",
-age:"30",
-dob:"09/01/1988",
-elmis:"580046",
-passport:"EP7774512",
-phone:"+251910760407",
-birth:"Asella City Administration Ethiopia",
-visa:"Work Visa",
-country:"Canada 🇨🇦 ",
-reg:"2026-03-11",
-update:"2026-03-11",
-photo:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1775860726/IMG_20260411_013741_158_q5catn.jpg",
-doc:""
-},
-"000004": {
-name:"ERIBKAN WOGA AHIMED ",
-gender:"Female",
-age:"22",
-dob:"03/01/1992",
-elmis:"225172",
-passport:"EP 1452630",
-phone:"+251946245969",
-birth:"Southwest Ethiopia",
-visa:"Work Visa",
-country:"Kuwait 🇰🇼",
-reg:"2026-03-11",
-update:"2026-03-11",
-photo:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1775771340/IMG_20260410_004829_954_u7ifks.jpg",
-doc:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1775859858/Picsart_26-04-11_00-41-15-286_kkskxe.jpg",
-},
-"000005": {
-name:"SISAY WOLDE ETISO",
-gender:"Male",
-age:"36",
-dob:"01/01/1983",
-elmis:"EMBTT24987",
-passport:"EP 8674080",
-phone:"+251993844616",
-birth:"ADISSABEBA Ethiopia",
-visa:"Work Visa",
-country:"DUBAI",
-reg:"2026-03-11",
-update:"2026-03-11",
-photo:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1775772197/IMG_20260410_010248_966_srvozp.jpg",
-doc:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1775858992/Picsart_26-04-11_00-50-23-450_ktuckt.jpg",
-},
-"000006": {
-name:"MATEWAS BEKELE SULTO",
-gender:"Male",
-age:"33",
-dob:"01/17/1985",
-elmis:"EMBTT24987",
-passport:"EP 8674080",
-phone:"+251993844616",
-birth:"ADISSABEBA Ethiopia",
-visa:"Work Visa",
-country:"KUWAIT 🇰🇼",
-reg:"2026-03-11",
-update:"2026-03-11",
-photo:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1775772684/IMG_20260410_011100_672_mj1fzs.jpg",
-doc:"https://res.cloudinary.com/dwclusteb/image/upload/q_auto/f_auto/v1775858948/Picsart_26-04-11_00-55-07-482_o1ldcl.jpg",
 }
-};  
+};
 
 // =======================
-// ✅ CHECK CODE (IMPORTANT)
+// CHECK CODE
 // =======================
 function checkCode(){
 
@@ -913,13 +848,13 @@ function checkCode(){
     msg.style.color = "green";
     msg.innerHTML = "✅ Access Granted";
 
-    // save user data
+    // SAVE DATA
     localStorage.setItem("user", JSON.stringify(users[code]));
     localStorage.setItem("vcode", code);
 
-    // redirect
+    // REDIRECT
     setTimeout(()=>{
-    window.location.href = "personal.html?code=" + code;
+      window.location.href = "personal.html";
     },1000);
 
   }else{
@@ -928,9 +863,8 @@ function checkCode(){
   }
 }
 
-
 // =======================
-// ✅ SLIDER AUTO CHANGE
+// SLIDER
 // =======================
 window.onload = function(){
 
