@@ -297,30 +297,34 @@ Your appointed immigration Attorney in charge of your file as be send an Authori
     <p><strong>seincerely</strong></p>  
     <p><strong>RX ROBIN</strong></p>  
     <p>Government of Canada Toronto</p>  
-</div>  </div>  
- <script>  let user = JSON.parse(localStorage.getItem("user"));
+</div> 
+</div>  
+ <script>
+let user = JSON.parse(localStorage.getItem("user"));
 
 if(!user){
-alert("No data found!");
-window.location.href="index.html";
+    alert("Please enter code first!");
+    window.location.href = "index.html";
 }
 
-
-document.getElementById("name").innerText = user.name;
-
+// 🔥 NAME (ONLY THIS)
 document.querySelectorAll(".letterName").forEach(el=>{
-el.innerText = user.name;
+    el.innerText = user.name;
 });
 
+// 🔥 PHOTO
 document.getElementById("photo").src = user.photo;
 
-     document.getElementById("name").innerText = user.name;     document.getElementById("visaType").innerText = user.visaType;
+// ❌ REMOVE THESE (they break your code)
+ /*
+document.getElementById("name").innerText = user.name;
+document.getElementById("visaType").innerText = user.visaType;
 document.getElementById("job").innerText = user.job;
 document.getElementById("employer").innerText = user.employer;
 document.getElementById("location").innerText = user.location;
 document.getElementById("from").innerText = user.from;
 document.getElementById("to").innerText = user.to;
-
-</script>   
+*/
+</script>
 </body>  
 </html>
