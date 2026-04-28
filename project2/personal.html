@@ -243,12 +243,10 @@ box-sizing:border-box;
 
     <div class="info">  
         <p>Dear Mr. <span class="letterName"></span>,</p>  
-        <div><b>AGE:</b> 56</div>  
-        <div><b>SEX:</b> M</div>  
-        <div><b>NATIONALITY:</b> ETHIOPIAN</div>  
-        <div><b>Employee ID:</b> BHP-CA-738782</div>  
-        <div><b>DOCUMENT NO:</b> CA-WV-2026-5726</div>  
-
+        <div><b>JOB:</b> <span id="job"></span></div>
+<div><b>EMPLOYER:</b> <span id="employer"></span></div>
+<div><b>PASSPORT:</b> <span id="passport"></span></div>
+<div><b>age:</b> </b> <span id="age"></span></div>
         <div class="accepted">ACCEPTED</div>  
 
         <br><br>  
@@ -299,7 +297,7 @@ Your appointed immigration Attorney in charge of your file as be send an Authori
     <p>Government of Canada Toronto</p>  
 </div> 
 </div>  
- <script>
+<script>
 let user = JSON.parse(localStorage.getItem("user"));
 
 if(!user){
@@ -307,24 +305,18 @@ if(!user){
     window.location.href = "index.html";
 }
 
-// 🔥 NAME (ONLY THIS)
+// ✅ NAME
 document.querySelectorAll(".letterName").forEach(el=>{
     el.innerText = user.name;
 });
 
-// 🔥 PHOTO
+// ✅ PHOTO
 document.getElementById("photo").src = user.photo;
 
-// ❌ REMOVE THESE (they break your code)
- /*
-document.getElementById("name").innerText = user.name;
-document.getElementById("visaType").innerText = user.visaType;
+// ✅ NEW DATA
 document.getElementById("job").innerText = user.job;
 document.getElementById("employer").innerText = user.employer;
-document.getElementById("location").innerText = user.location;
-document.getElementById("from").innerText = user.from;
-document.getElementById("to").innerText = user.to;
-*/
+document.getElementById("passport").innerText = user.passport;
 </script>
 </body>  
 </html>
