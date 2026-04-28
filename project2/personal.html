@@ -1,394 +1,329 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Visa Letter</title>
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<title>Visa Letter</title>  <style>  
+@page {  
+    size: A4;  
+    margin:0;  
+}  
+  
+body{  
+    margin:0;  
+    background:#ccc;  
+    font-family: "Times New Roman", serif;  
+    font-size:18px;   /* before small → now bigger */  
+}  
+.document{  
+    display:flex;  
+    max-width:1150px;  
+    margin:20px auto;  
+    background:#fff;  
+    box-shadow:0 6px 25px rgba(0,0,0,0.15);  
+}  
+.left{  
+    width:300px;  
+    background:#f7f7f7;  
+    padding:25px;  
+    border-right:1px solid #ddd;  
+}  
+.header-left{  
+    display:flex;  
+    gap:10px;  
+    align-items:center;  
+    font-size:14px;  
+    margin-bottom:20px;  
+}  
+  
+.header-left img{  
+    width:40px;  
+}  
+  /* A4 PAGE */  
+.paper{  
+      flex:1;  
+    width:auto;  
+    height:auto;  
+    margin:auto;  
+    background:#fff;  
+    padding:30mm;  
+    box-sizing:border-box;  
+    position:relative;  
+    padding:20px;  
+}  
+  
+/* HEADER */  
+.header{  
+    display:flex;  
+    justify-content:space-between;  
+    align-items:center;  
+}  
+  
+.logo-left h1{  
+    margin:0;  
+    font-size:32px;  
+}  
+  
+.logo-left small{  
+    display:block;  
+    font-size:13px;  
+}  
+.letterName{  
+    font-weight:bold;  
+    color:#1b5e20;  
+    text-transform:uppercase;  
+}  
+  
+      
+.logo-center img{  
+    width:80px;  
+}  
+  
+.logo-right{  
+    text-align:center;  
+    font-size:23px;  
+}  
+text-align:center;  
+margin-bottom:20px;  
+}  
+ref{  
+font-size:13px;  
+color:#555;  
+text-align:right;  
+line-height:1.6;  
+}  
+  
+.title{  
+font-size:16px;  
+font-weight:700;  
+margin:25px 0 15px;  
+color:#222;  
+}  
+  
+p{  
+line-height:2;  
+color:#444;  
+font-size:17px;  
+margin-bottom:15px;  
+}  
+  
+.details{  
+margin:25px 0;  
+}  
+  
+.details div{  
+display:flex;  
+flex-wrap:wrap;  
+margin-bottom:10px;  
+font-size:15px;  
+}  
+  
+.details span{  
+width:200px;  
+font-weight:600;  
+color:#333;  
+}  
+  .photo{  
+    text-align:center;  
+    margin-bottom:20px;  
+}  
+.photo img{  
+width:120px;  
+height:130px;  
+border-radius:4px;  
+object-fit:cover;  
+border:1px solid #ccc;  
+}  
+  
+.info{  
+font-size:14px;  
+line-height:1.9;  
+color:#444;  
+word-break:break-word;  
+}  
+  
+.info b{  
+color:#333;  
+}  
+  
+.accepted{  
+margin-top:15px;  
+background:#00c853;  
+color:#fff  
+display:inline-block;  
+padding:6px 14px;  
+font-weight:bold;  
+border-radius:3px;  
+font-size:12px;  
+letter-spacing:1px;  
+}  
+  
+/* RIGHT PANEL */  
+  
+.right{  
+flex:1;  
+padding:40px 45px;  
+position:relative;  
+min-width:300px;  
+box-sizing:border-box;  
+}  
+/* TITLE */  
+.title{  
+    text-align:center;  
+    margin-top:15px;  
+    font-weight:bold;  
+    text-decoration:underline;  
+    font-size:17px;  
+}  
+  
+/* DETAILS */  
+.details{  
+    margin-top:20px;  
+    font-size:14px;  
+}  
+  
+.details p{  
+    margin:6px 0;  
+}  
+  
+/* BODY TEXT */  
+.content{  
+    margin-top:15px;  
+    font-size:17px;  
+    line-height:2;  
+}  
+  
+/* FOOT IMAGES */  
+.stamps{  
+    margin-top:25px;  
+    display:flex;  
+    justify-content:space-between;  
+    align-items:center;  
+}  
+  
+.stamps img{  
+    height:180px;  
+}  
+  
+/* SIGNATURE */  
+.signature{  
+    text-align:right;  
+    margin-top:10px;  
+}  
+  
+.signature img{  
+    height:100px;  
+}  
+  
+.signature p{  
+    margin:5px 0;  
+    font-size:5px;  
+}  
+  
+/* WATERMARK */  
+.watermark{  
+    position:absolute;  
+    top:50%;  
+    left:50%;  
+    transform:translate(-50%,-50%);  
+    width:260px;  
+    opacity:0.05;  
+}  
+</style>  </head>  <body>  <div class="document">  <!-- LEFT SIDE -->  
+<div class="left">  
 
-<style>
-@page {
-    size: A4;
-    margin:0;
-}
+    <div class="header-left">  
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg">  
+        <div>  
+            Immigration, Refugees<br>  
+            and Citizenship Canada  
+        </div>  
+    </div>  
 
-body{
-    margin:0;
-    background:#ccc;
-    font-family: "Times New Roman", serif;
-    font-size:18px;   /* before small → now bigger */
-}
-.document{
-    display:flex;
-    max-width:1150px;
-    margin:20px auto;
-    background:#fff;
-    box-shadow:0 6px 25px rgba(0,0,0,0.15);
-}
-.left{
-    width:300px;
-    background:#f7f7f7;
-    padding:25px;
-    border-right:1px solid #ddd;
-}
-.header-left{
-    display:flex;
-    gap:10px;
-    align-items:center;
-    font-size:14px;
-    margin-bottom:20px;
-}
+    <div class="photo">  
+        <img id="photo" src="">  
+    </div>  
 
-.header-left img{
-    width:40px;
-}
-  /* A4 PAGE */
-.paper{
-      flex:1;
-    width:auto;
-    height:auto;
-    margin:auto;
-    background:#fff;
-    padding:30mm;
-    box-sizing:border-box;
-    position:relative;
-    padding:20px;
-}
+    <div class="info">  
+        <p>Dear Mr. <span class="letterName"></span>,</p>  
+        <div><b>AGE:</b> 56</div>  
+        <div><b>SEX:</b> M</div>  
+        <div><b>NATIONALITY:</b> ETHIOPIAN</div>  
+        <div><b>Employee ID:</b> BHP-CA-738782</div>  
+        <div><b>DOCUMENT NO:</b> CA-WV-2026-5726</div>  
 
-/* HEADER */
-.header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
+        <div class="accepted">ACCEPTED</div>  
 
-.logo-left h1{
-    margin:0;
-    font-size:32px;
-}
+        <br><br>  
 
-.logo-left small{
-    display:block;
-    font-size:13px;
-}
-.letterName{
-    font-weight:bold;
-    color:#1b5e20;
-    text-transform:uppercase;
-}
-
-    
-.logo-center img{
-    width:80px;
-}
-
-.logo-right{
-    text-align:center;
-    font-size:23px;
-    margin-bottom:20px;
-}
-ref{
-font-size:13px;
-color:#555;
-text-align:right;
-line-height:1.6;
-}
-
-.title{
-font-size:16px;
-font-weight:700;
-margin:25px 0 15px;
-color:#222;
-}
-
-p{
-line-height:2;
-color:#444;
-font-size:17px;
-margin-bottom:15px;
-}
-
-.details{
-margin:25px 0;
-}
-
-.details div{
-display:flex;
-flex-wrap:wrap;
-margin-bottom:10px;
-font-size:15px;
-}
-
-.details span{
-width:200px;
-font-weight:600;
-color:#333;
-}
-  .photo{
-    text-align:center;
-    margin-bottom:20px;
-}
-.photo img{
-width:120px;
-height:130px;
-border-radius:4px;
-object-fit:cover;
-border:1px solid #ccc;
-}
-
-.info{
-font-size:14px;
-line-height:1.9;
-color:#444;
-word-break:break-word;
-}
-
-.info b{
-color:#333;
-}
-
-.accepted{
-margin-top:15px;
-background:#00c853;
-color:#fff;
-display:inline-block;
-padding:6px 14px;
-font-weight:bold;
-border-radius:3px;
-font-size:12px;
-letter-spacing:1px;
-}
-
-/* RIGHT PANEL */
-
-.right{
-flex:1;
-padding:40px 45px;
-position:relative;
-min-width:300px;
-box-sizing:border-box;
-}
-/* TITLE */
-.title{
-    text-align:center;
-    margin-top:15px;
-    font-weight:bold;
-    text-decoration:underline;
-    font-size:17px;
-}
-
-/* DETAILS */
-.details{
-    margin-top:20px;
-    font-size:14px;
-}
-
-.details p{
-    margin:6px 0;
-}
-
-/* BODY TEXT */
-.content{
-    margin-top:15px;
-    font-size:17px;
-    line-height:2;
-}
-
-/* FOOT IMAGES */
-.stamps{
-    margin-top:25px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.stamps img{
-    height:180px;
-}
-
-/* SIGNATURE */
-.signature{
-    text-align:right;
-    margin-top:10px;
-}
-
-.signature img{
-    height:100px;
-}
-
-.signature p{
-    margin:5px 0;
-    font-size:5px;
-}
-
-/* WATERMARK */
-.watermark{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    width:260px;
-    opacity:0.05;
-}
-</style>
-
-</head>
-
-<body>
-
-
-<div class="document">
-
-    <!-- LEFT SIDE -->
-    <div class="left">
-
-        <div class="header-left">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg">
-            <div>
-                Immigration, Refugees<br>
-                and Citizenship Canada
-            </div>
-        </div>
-
-        <div class="photo">
-            <img id="photo" src="">
-        </div>
-<p>Dear Mr. <span id="name">______</span></p>
-
-<p><b>AGE:</b> <span id="age">______</span></p>
-<p><b>SEX:</b> <span id="sex">______</span></p>
-<p><b>NATIONALITY:</b> <span id="nation">ETHIOPIAN</span></p>
-<p><b>Passport No:</b> <span id="passport">______</span></p>
-<p><b>Document No:</b> <span id="doc">______</span></p>
-<p><b>Job:</b> <span id="job"></span></p>
-
-<br>
-
-<p>
-Work: <span id="job"></span>
-</p>
-
-<p>
-... your new Employer <b><span id="employer"></span></b> in Canada.
-</p>
-<br>
-  <div class="accepted">ACCEPTED</div>
-
-            <br><br>
-
-            Issue Date: Mar 14, 2026<br>
-            Office: IRCC Regional Office, Ottawa
-        </div>
-
-    </div>
-<div class="paper">
-
-<!-- WATERMARK -->
-<img src="watermark.png" class="watermark">
-
-<!-- HEADER -->
-<div class="header">
-
-    <div class="logo-left">
-        <h1>Canada 🇨🇦</h1>
-        <small>CONSULATE GENERAL OF CANADA GOVT</small>
-        <small>Consulat général du Canada à New</small>
-    </div>
-
-    <div class="logo-center">
-        <img src="center-logo.png">
-    </div>
-
-    <div class="logo-right">
-        🇨🇦<br>
-        Embassy of Canada<br>
-        Ambassade du Canada
-    </div>
+        Issue Date: Mar 14, 2026<br>  
+        Office: IRCC Regional Office, Ottawa  
+    </div>  
 
 </div>
 
-<!-- TITLE -->
-<div class="title">
-VISA APPLICATION APPROVED NOTIFICATION LETTER
+<div class="paper">  <!-- WATERMARK -->  <img src="watermark.png" class="watermark">  <!-- HEADER -->  <div class="header">  <div class="logo-left">  
+    <h1>Canada 🇨🇦</h1>  
+    <small>CONSULATE GENERAL OF CANADA GOVT</small>  
+    <small>Consulat général du Canada à New</small>  
+</div>  
+
+<div class="logo-center">  
+    <img src="center-logo.png">  
+</div>  
+
+<div class="logo-right">  
+    🇨🇦<br>  
+    Embassy of Canada<br>  
+    Ambassade du Canada  
 </div>
 
-<!-- DETAILS -->
-<div class="details">
-<p><strong>REG : <span id="reg"></span></strong></p>
-<p><strong>Date : <span id="date"></span></strong></p>
-
-<p>Dear, <strong><i id="name3"></i></strong></p>
-
-<p>
-... PASSPORT NUMBER [ <span id="passport2"></span> ]
-</p>
-
-<p>
-Work: <span id="job2"></span>
-</p>
-<p>
-Greetings from the High Commission of Canada Government. I would like to inform you that you have been found eligible Entry Visa to Canada, type of Visa (W-1), under section 347 of Canadian Immigration and Nationality Act (CINA), and Canadian Immigration Law Store keeper Pcl Construction company canad (CIL). As you and your employer () has satisfied the requirements of the Canadian Immigration law, base on the section 527, you are found entitled to (W-1) Visa to live and engage your skill with your new Employer in Canada.
-</p>
-
-<p>
- I am pleased to apprise you that your application for entry Visa to Canada with <strong>passport</strong> has being considered and approved here in my office as Consulate of the High Commission of Canada, by the authority given to me from above. Your application has been considered with four years multiple entry Visa to work under <strong>PCL STORE KEEPER COMPANY CANADA</strong>. A parcel will be handle over to you on your appointment date: the parcel will remain sealed till you arrive in Canada, the parcel contains documents to further with your case file to enable you applying permanent resident to further with your future career in Canada.
-</p>
-
-<p>
-Your Application charges are:<strong><i>$190 CAD and CIS Charges: $455 CAD respectively.</i></strong></p>You are to make the payment immediately for your (W-1) Visa with the total sum of Total $645 CAD. (Six Hundred and Forty Five Canadian Dollars only). Your visa issuance and appointment date will be scheduled within 24 hours after the confirmation of your visa fee payment.
-</p>
-
-<p>
-Your appointed immigration Attorney in charge of your file as be send an Authorize Cashier payment details for your visa fee payment via Money Gram transfer.
-</p>
-
-</div>
-
-<!-- STAMPS -->
-<div class="stamps">
-    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1777332623/fc20083ed0e60832a245fc790196430a_spxok7.jpg">
-    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1777328165/7594153c3087664437d6e9767c854886_b1idrb.jpg">
-    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1777333121/ed746ce71ea952c256ca56e4ecaffa7c_kxyzew.jpg">
-</div>
-
-<!-- SIGNATURE -->
-<div class="signature">
-    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1777332470/da160b366c8ebfc41f8900a488f5d8ca_f18acv.jpg">
-    <p><strong>seincerely</strong></p>
-    <p><strong>RX ROBIN</strong></p>
-    <p>Government of Canada Toronto</p>
-</div>
-
-</div>
-<script>
-let user = JSON.parse(localStorage.getItem("user"));
+</div>  <!-- TITLE -->  <div class="title">  
+VISA APPLICATION APPROVED NOTIFICATION LETTER  
+</div>  <!-- DETAILS -->  <div class="details">  
+<p><strong>REG : PQ95487352A</strong></p>  
+<p><strong>Date : 15 NOVEMBER 2023</strong></p>  
+</div>  <!-- CONTENT -->  <div class="content">  <p>Dear, <strong><i>MOHAMMAD HARUN RASHID</i></strong></p>  <p>  
+Greetings from the High Commission of Canada Government. I would like to inform you that you have been found eligible Entry Visa to Canada, type of Visa (W-1), under section 347 of Canadian Immigration and Nationality Act (CINA), and Canadian Immigration Law Store keeper Pcl Construction company canad (CIL). As you and your employer () has satisfied the requirements of the Canadian Immigration law, base on the section 527, you are found entitled to (W-1) Visa to live and engage your skill with your new Employer in Canada.  
+</p>  <p>  
+I am pleased to apprise you that your application for entry Visa to Canada with <strong>PASSPORT NUMBER [ EE0322612 ]</strong> has being considered and approved here in my office as Consulate of the High Commission of Canada, by the authority given to me from above. Your application has been considered with four years multiple entry Visa to work under <strong>PCL STORE KEEPER COMPANY CANADA</strong>. A parcel will be handle over to you on your appointment date: the parcel will remain sealed till you arrive in Canada, the parcel contains documents to further with your case file to enable you applying permanent resident to further with your future career in Canada.  
+</p>  <p>  
+Your Application charges are:<strong><i>$190 CAD and CIS Charges: $455 CAD respectively.</i></strong></p>You are to make the payment immediately for your (W-1) Visa with the total sum of Total $645 CAD. (Six Hundred and Forty Five Canadian Dollars only). Your visa issuance and appointment date will be scheduled within 24 hours after the confirmation of your visa fee payment.  
+</p>  <p>  
+Your appointed immigration Attorney in charge of your file as be send an Authorize Cashier payment details for your visa fee payment via Money Gram transfer.  
+</p>  </div>  <!-- STAMPS -->  <div class="stamps">  
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1777332623/fc20083ed0e60832a245fc790196430a_spxok7.jpg">  
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1777328165/7594153c3087664437d6e9767c854886_b1idrb.jpg">  
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1777333121/ed746ce71ea952c256ca56e4ecaffa7c_kxyzew.jpg">  
+</div>  <!-- SIGNATURE -->  <div class="signature">  
+    <img src="https://res.cloudinary.com/dwclusteb/image/upload/v1777332470/da160b366c8ebfc41f8900a488f5d8ca_f18acv.jpg">  
+    <p><strong>seincerely</strong></p>  
+    <p><strong>RX ROBIN</strong></p>  
+    <p>Government of Canada Toronto</p>  
+</div>  </div>  
+ <script>  let user = JSON.parse(localStorage.getItem("user"));
 
 if(!user){
-    alert("No data found!");
-    window.location.href="index.html";
+alert("No data found!");
+window.location.href="index.html";
 }
 
-/* SET MULTIPLE ELEMENTS (CLASS BASED) */
-function setClass(className, value){
-    document.querySelectorAll("." + className).forEach(el=>{
-        el.textContent = value;
-    });
-}
+// 🔥 NAME
+document.getElementById("name").innerText = user.name;
 
-/* SET IMAGE */
-let photo = document.getElementById("photo");
-if(photo && user.photo){
-    photo.src = user.photo;
-}
+document.querySelectorAll(".letterName").forEach(el=>{
+el.innerText = user.name;
+});
+// 🔥 PHOTO
+document.getElementById("photo").src = user.photo;
 
-/* FILL DATA */
-setClass("name", user.name);
-setClass("age", user.age);
-setClass("sex", user.sex);
-setClass("passport", user.passport);
-setClass("doc", user.document);
-setClass("job", user.job);
-setClass("reg", user.reg);
-setClass("date", user.date);
-setClass("employer", user.employer);
-</script>
-</body>
+// 🔥 DETAILS
+document.getElementById("visaType").innerText = user.visaType;
+document.getElementById("job").innerText = user.job;
+document.getElementById("employer").innerText = user.employer;
+document.getElementById("location").innerText = user.location;
+document.getElementById("from").innerText = user.from;
+document.getElementById("to").innerText = user.to;
+
+</script>   
+</body>  
 </html>
