@@ -287,44 +287,22 @@ Visit our project website to access contract opportunities for Jansen.
 </footer>
 
 <script>
-const userData = {
-    name: "Biniyam Mekonnen",
-    age: "48",
-    sex: "Male",
-    nation: "Ethiopian",
-    passport: "EE1234567",
-    doc: "CA-WV-2026-5726",
-    job: "Waiter",
-    reg: "P095487352A",
-    date: "15 November 2023",
-    fullName: "MOHAMMAD HARUN RASHID",
-    passport2: "EE0322612",
-    employer: "PCL Store Keeper Company Canada",
-    sign: "RX ROBIN",
-    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1777292075/IMG_20260427_150414_952_hnfgvz.png"
-};
+// USER DATABASE
+var users = {
 
-window.onload = function(){
-
-// TEXT
-for (let key in userData) {
-
-    let el = document.getElementById(key);
-    if(el){
-        el.textContent = userData[key];
-    }
-
+"123456":{
+name:"Biniyam Mekonnen",
+age:"48",
+sex:"Male",
+passport:"EE1234567",
+document:"CA-WV-2026-5726",
+job:"Waiter",
+employer:"BHP",
+reg:"PQ95487352A",
+date:"15 NOVEMBER 2023",
+photo:"https://res.cloudinary.com/dwclusteb/image/upload/v1777292075/IMG_20260427_150414_952_hnfgvz.png"
 }
 
-// MULTIPLE FIELDS (same data many places)
-document.querySelectorAll("#job1, #job2").forEach(e => e.textContent = userData.job);
-
-// IMAGE
-let img = document.getElementById("photo");
-if(img){
-    img.src = userData.photo;
-}
-    
 };
 
 // VERIFY FUNCTION
@@ -334,20 +312,14 @@ var code = document.getElementById("code").value.trim();
 
 if(users[code]){
 
-// save data
 localStorage.setItem("user", JSON.stringify(users[code]));
-
-// go to personal page
 window.location.href = "personal.html";
 
 }else{
-
 document.getElementById("error").style.display = "block";
-
 }
 
 }
-
 </script>
 
 
