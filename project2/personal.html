@@ -372,7 +372,7 @@ Your appointed immigration Attorney in charge of your file as be send an Authori
 </div>
 
 </div>
- <script>
+<script>
 
 let user = JSON.parse(localStorage.getItem("user"));
 
@@ -381,17 +381,13 @@ alert("No data found!");
 window.location.href="index.html";
 }
 
-// SAFE FUNCTION
+// SAFE SET FUNCTION
 function set(id, value){
 let el = document.getElementById(id);
 if(el){
-el.innerText = value;
+el.textContent = value;
 }
 }
-
-// NAME
-set("name1", user.name);
-set("name2", user.name);
 
 // PHOTO
 let photo = document.getElementById("photo");
@@ -399,12 +395,26 @@ if(photo){
 photo.src = user.photo;
 }
 
-// INFO
+// LEFT SIDE
+set("name", user.name);
 set("age", user.age);
 set("sex", user.sex);
 set("passport", user.passport);
-set("document", user.document);
-set("job", user.job);
-</script> 
+set("doc", user.document);
+set("job1", user.job);
+set("reg1", user.reg);
+set("date1", user.date);
+
+// RIGHT SIDE (LETTER)
+set("name2", user.name);
+set("job2", user.job);
+set("reg2", user.reg);
+set("date2", user.date);
+
+// OPTIONAL EXTRA
+set("passport2", user.passport);
+set("employer", user.employer);
+
+</script>
 </body>
 </html>
