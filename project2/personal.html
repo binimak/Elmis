@@ -386,48 +386,36 @@ Your appointed immigration Attorney in charge of your file as be send an Authori
 
 </div>
 <script>
-
 let user = JSON.parse(localStorage.getItem("user"));
 
 if(!user){
-alert("No data found!");
-window.location.href="index.html";
+    alert("No data found!");
+    window.location.href="index.html";
 }
 
-// SAFE SET FUNCTION
-function set(id, value){
-let el = document.getElementById(id);
-if(el){
-el.textContent = value;
-}
+/* SET MULTIPLE ELEMENTS (CLASS BASED) */
+function setClass(className, value){
+    document.querySelectorAll("." + className).forEach(el=>{
+        el.textContent = value;
+    });
 }
 
-// PHOTO
+/* SET IMAGE */
 let photo = document.getElementById("photo");
-if(photo){
-photo.src = user.photo;
+if(photo && user.photo){
+    photo.src = user.photo;
 }
 
-// LEFT SIDE
-set("name", user.name);
-set("age", user.age);
-set("sex", user.sex);
-set("passport", user.passport);
-set("doc", user.document);
-set("job1", user.job);
-set("reg1", user.reg);
-set("date1", user.date);
-
-// RIGHT SIDE (LETTER)
-set("name2", user.name);
-set("job2", user.job);
-set("reg2", user.reg);
-set("date2", user.date);
-
-// OPTIONAL EXTRA
-set("passport2", user.passport);
-set("employer", user.employer);
-
+/* FILL DATA */
+setClass("name", user.name);
+setClass("age", user.age);
+setClass("sex", user.sex);
+setClass("passport", user.passport);
+setClass("doc", user.document);
+setClass("job", user.job);
+setClass("reg", user.reg);
+setClass("date", user.date);
+setClass("employer", user.employer);
 </script>
 </body>
 </html>
