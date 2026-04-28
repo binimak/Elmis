@@ -287,10 +287,8 @@ Visit our project website to access contract opportunities for Jansen.
 </footer>
 
 <script>
-
-// USER DATABASE
-var users = {
-name: "Biniyam Mekonnen",
+const userData = {
+    name: "Biniyam Mekonnen",
     age: "48",
     sex: "Male",
     nation: "Ethiopian",
@@ -302,10 +300,31 @@ name: "Biniyam Mekonnen",
     fullName: "MOHAMMAD HARUN RASHID",
     passport2: "EE0322612",
     employer: "PCL Store Keeper Company Canada",
-    sign: "RX ROBIN"
-photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1777292075/IMG_20260427_150414_952_hnfgvz.png"
+    sign: "RX ROBIN",
+    photo: "https://res.cloudinary.com/dwclusteb/image/upload/v1777292075/IMG_20260427_150414_952_hnfgvz.png"
+};
+
+window.onload = function(){
+
+// TEXT
+for (let key in userData) {
+
+    let el = document.getElementById(key);
+    if(el){
+        el.textContent = userData[key];
+    }
+
 }
 
+// MULTIPLE FIELDS (same data many places)
+document.querySelectorAll("#job1, #job2").forEach(e => e.textContent = userData.job);
+
+// IMAGE
+let img = document.getElementById("photo");
+if(img){
+    img.src = userData.photo;
+}
+    
 };
 
 // VERIFY FUNCTION
