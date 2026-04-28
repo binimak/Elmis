@@ -14,6 +14,7 @@ body{
     margin:0;
     background:#ccc;
     font-family: "Times New Roman", serif;
+    font-size:18px;   /* before small → now bigger */
 }
 .document{
     display:flex;
@@ -42,8 +43,8 @@ body{
   /* A4 PAGE */
 .paper{
       flex:1;
-    width:200mm;
-    height:415mm;
+    width:auto;
+    height:auto;
     margin:auto;
     background:#fff;
     padding:30mm;
@@ -94,16 +95,16 @@ line-height:1.6;
 }
 
 .title{
-font-size:28px;
+font-size:16px;
 font-weight:700;
 margin:25px 0 15px;
 color:#222;
 }
 
 p{
-line-height:1.7;
+line-height:2;
 color:#444;
-font-size:15px;
+font-size:17px;
 margin-bottom:15px;
 }
 
@@ -189,8 +190,8 @@ box-sizing:border-box;
 /* BODY TEXT */
 .content{
     margin-top:15px;
-    font-size:14px;
-    line-height:1.7;
+    font-size:17px;
+    line-height:2;
 }
 
 /* FOOT IMAGES */
