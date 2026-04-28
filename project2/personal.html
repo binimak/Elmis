@@ -255,7 +255,7 @@ box-sizing:border-box;
         </div>
 
         
-<p>Dear, <strong><i id="name2"></i></strong></p>
+<p>Dear Mr. <span id="name1"></span></p>
 <div><b>AGE:</b> <span id="age"></span></div>
 <div><b>SEX:</b> <span id="sex"></span></div>
 <div><b>NATIONALITY:</b> ETHIOPIAN</div>
@@ -351,6 +351,7 @@ Your appointed immigration Attorney in charge of your file as be send an Authori
 
 </div>
  <script>
+
 let user = JSON.parse(localStorage.getItem("user"));
 
 if(!user){
@@ -358,22 +359,30 @@ alert("No data found!");
 window.location.href="index.html";
 }
 
-// NAME (2 places)
-document.getElementById("name1").innerText = user.name;
-document.getElementById("name2").innerText = user.name;
+// SAFE FUNCTION
+function set(id, value){
+let el = document.getElementById(id);
+if(el){
+el.innerText = value;
+}
+}
+
+// NAME
+set("name1", user.name);
+set("name2", user.name);
 
 // PHOTO
-document.getElementById("photo").src = user.photo;
+let photo = document.getElementById("photo");
+if(photo){
+photo.src = user.photo;
+}
 
-// BASIC INFO
-document.getElementById("age").innerText = user.age;
-document.getElementById("sex").innerText = user.sex;
-document.getElementById("passport").innerText = user.passport;
-document.getElementById("document").innerText = user.document;
-
-// JOB INFO
-document.getElementById("job").innerText = user.job;
-
+// INFO
+set("age", user.age);
+set("sex", user.sex);
+set("passport", user.passport);
+set("document", user.document);
+set("job", user.job);
 </script> 
 </body>
 </html>
