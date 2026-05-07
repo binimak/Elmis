@@ -107,7 +107,21 @@ margin-bottom:15px;
 .details{  
 margin:25px 0;  
 }  
-  
+  .image-card{
+    margin-top:25px;
+    text-align:center;
+    width:100%;
+}
+
+.image-card img{
+    width:100%;
+    max-width:650px;
+    height:220px;
+    object-fit:cover;
+    border-radius:12px;
+    border:1px solid #ccc;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
 .details div{  
 display:flex;  
 flex-wrap:wrap;  
@@ -299,7 +313,14 @@ Your appointed immigration Attorney in charge of your file as be send an Authori
     <p>Government of Canada Toronto</p>  
 </div> 
 </div>  
-<script>
+</div> <!-- content ends -->
+
+<div class="image-card">
+   <img src="https://your-image-link.jpg">
+</div>
+
+<div class="stamps">
+    <script>
 let user = JSON.parse(localStorage.getItem("user"));
 
 if(!user){
